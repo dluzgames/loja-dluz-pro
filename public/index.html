@@ -5,31 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>DLuz Games — Loja Oficial | Softwares Gamer Pro, Emuladores 120 FPS & IA</title>
   <meta name="description" content="Compre na Loja Oficial DLuz Games com garantia Mercado Pago. DLuz Mobilador Pro v3.5.1 Zero Delay 120 FPS, Dluz Film PRO IA, GTA 5 Coop e Emuladores Turbinados. Envio Imediato por WhatsApp e E-mail." />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ml-yellow: #FFE600;
-      --ml-yellow-dark: #F5D800;
-      --ml-blue: #3483FA;
-      --ml-blue-hover: #2968C8;
-      --ml-blue-light: #EBF3FE;
-      --ml-green: #00A650;
-      --ml-green-light: #E6F7EE;
-      --ml-green-full: #00A650;
-      --ml-orange: #FF7733;
-      --ml-gray-bg: #EDEDED;
+      /* DLuz Modern Clean Identity */
+      --dluz-header-bg: #0B0F19;
+      --dluz-header-border: #1E293B;
+      --dluz-header-text: #F8FAFC;
+      --dluz-header-muted: #94A3B8;
+      
+      --ml-blue: #2563EB;
+      --ml-blue-hover: #1D4ED8;
+      --ml-blue-light: #EFF6FF;
+      --ml-green: #16A34A;
+      --ml-green-light: #F0FDF4;
+      --ml-green-full: #15803D;
+      --ml-orange: #EA580C;
+      --ml-gray-bg: #F8FAFC;
       --ml-card-bg: #FFFFFF;
-      --ml-text-main: rgba(0, 0, 0, 0.9);
-      --ml-text-sub: rgba(0, 0, 0, 0.55);
-      --ml-text-muted: rgba(0, 0, 0, 0.45);
-      --ml-border: #E6E6E6;
-      --ml-border-subtle: #EEEEEE;
-      --ml-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
-      --ml-shadow-hover: 0 7px 16px 0 rgba(0, 0, 0, 0.12);
-      --whatsapp-green: #25D366;
-      --whatsapp-hover: #20BD5A;
+      --ml-text-main: #0F172A;
+      --ml-text-sub: #475569;
+      --ml-text-muted: #94A3B8;
+      --ml-border: #E2E8F0;
+      --ml-border-subtle: #F1F5F9;
+      --ml-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.08);
+      --ml-shadow-hover: 0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+      --whatsapp-green: #16A34A;
+      --whatsapp-hover: #15803D;
     }
 
     * {
@@ -40,10 +45,10 @@
     }
 
     body {
-      font-family: "Proxima Nova", -apple-system, "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--ml-gray-bg);
       color: var(--ml-text-main);
-      line-height: 1.45;
+      line-height: 1.5;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -70,15 +75,15 @@
     }
 
     /* ==========================================
-       BARRA DE TOPO & HEADER ESTILO MERCADO LIVRE
+       BARRA DE TOPO & HEADER ESTILO DLUZ GAMES
        ========================================== */
     .ml-header {
-      background-color: var(--ml-yellow);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      background-color: var(--dluz-header-bg);
+      border-bottom: 1px solid var(--dluz-header-border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25);
     }
 
     .ml-header-top {
@@ -86,70 +91,73 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      padding: 10px 0 6px;
+      padding: 12px 0 8px;
     }
 
     .ml-logo {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
       cursor: pointer;
       flex-shrink: 0;
     }
 
-    .ml-logo-badge {
-      background: #1D1D1F;
-      color: #FFFFFF;
-      font-weight: 800;
-      font-size: 14px;
-      padding: 6px 10px;
-      border-radius: 6px;
-      letter-spacing: -0.04em;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+    .ml-logo-img {
+      height: 44px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
 
     .ml-logo-text {
-      font-size: 19px;
-      font-weight: 800;
-      color: #2D3277;
-      letter-spacing: -0.03em;
       display: flex;
       flex-direction: column;
-      line-height: 1.1;
+      line-height: 1.15;
+    }
+
+    .ml-logo-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
     }
 
     .ml-logo-sub {
       font-size: 10.5px;
       font-weight: 700;
-      color: #00A650;
+      color: #60A5FA;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
     }
 
-    /* Barra de Busca estilo Mercado Livre */
+    /* Barra de Busca Clean */
     .ml-search-wrap {
       flex: 1;
-      max-width: 620px;
+      max-width: 580px;
       position: relative;
     }
 
     .ml-search-input {
       width: 100%;
-      background: #FFFFFF;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 4px;
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 8px;
       padding: 10px 48px 10px 16px;
-      font-size: 15px;
-      color: rgba(0, 0, 0, 0.9);
+      font-size: 14px;
+      color: #F8FAFC;
       outline: none;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
-      transition: border-color 0.2s ease;
+      transition: all 0.2s ease;
+    }
+
+    .ml-search-input::placeholder {
+      color: #94A3B8;
     }
 
     .ml-search-input:focus {
-      border-color: var(--ml-blue);
+      border-color: #3B82F6;
+      background: #0F172A;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
     }
 
     .ml-search-btn {
@@ -160,120 +168,138 @@
       width: 44px;
       background: transparent;
       border: none;
-      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      border-left: 1px solid #334155;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #666666;
-      font-size: 16px;
+      color: #94A3B8;
+      font-size: 15px;
+      transition: color 0.15s;
     }
 
     .ml-search-btn:hover {
-      background: rgba(0, 0, 0, 0.04);
+      color: #F8FAFC;
     }
 
     .ml-header-promo {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(0, 0, 0, 0.8);
       flex-shrink: 0;
     }
 
     .ml-btn-link {
-      background: transparent;
-      border: none;
+      background: #1E293B;
+      border: 1px solid #334155;
       cursor: pointer;
       font-size: 13px;
       font-weight: 600;
-      color: rgba(0, 0, 0, 0.8);
+      color: #E2E8F0;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 10px;
-      border-radius: 4px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      transition: all 0.15s ease;
     }
 
     .ml-btn-link:hover {
-      background: rgba(0, 0, 0, 0.05);
-      color: rgba(0, 0, 0, 0.95);
+      background: #334155;
+      color: #FFFFFF;
+      border-color: #475569;
     }
 
-    /* Sub-barra de Navegação */
+    .ml-btn-link-wa {
+      background: rgba(22, 163, 74, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      color: #4ADE80;
+    }
+
+    .ml-btn-link-wa:hover {
+      background: rgba(22, 163, 74, 0.25);
+      border-color: #22C55E;
+      color: #FFFFFF;
+    }
+
+    /* Sub-barra de Categorias (Sem Scrollbar Quebrada) */
     .ml-header-nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 6px 0 10px;
-      font-size: 13.5px;
-      color: rgba(0, 0, 0, 0.7);
+      gap: 12px;
+      padding: 8px 0 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
     }
 
     .ml-nav-left {
       display: flex;
       align-items: center;
-      gap: 18px;
-      overflow-x: auto;
-    }
-
-    .ml-location-pill {
-      display: flex;
-      align-items: center;
       gap: 6px;
-      font-size: 12px;
-      color: rgba(0, 0, 0, 0.65);
-      cursor: pointer;
-      padding: 3px 6px;
-      border-radius: 4px;
-    }
-
-    .ml-location-pill:hover {
-      border: 1px solid rgba(0, 0, 0, 0.2);
+      flex-wrap: wrap;
     }
 
     .ml-category-btn {
-      font-size: 13.5px;
-      color: rgba(0, 0, 0, 0.75);
+      font-size: 13px;
+      color: #94A3B8;
       background: transparent;
-      border: none;
+      border: 1px solid transparent;
       cursor: pointer;
       white-space: nowrap;
       font-weight: 500;
-      padding: 4px 6px;
-      border-radius: 4px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      transition: all 0.15s ease;
     }
 
-    .ml-category-btn:hover, .ml-category-btn.active {
-      color: rgba(0, 0, 0, 0.95);
-      font-weight: 700;
+    .ml-category-btn:hover {
+      color: #FFFFFF;
+      background: #1E293B;
+    }
+
+    .ml-category-btn.active {
+      background: #2563EB;
+      color: #FFFFFF;
+      font-weight: 600;
+      border-color: #3B82F6;
     }
 
     .ml-nav-right {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
+      margin-left: auto;
+    }
+
+    .ml-coupon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #93C5FD;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
     }
 
     /* Banner Promocional do Topo */
     .ml-top-banner {
       background: #FFFFFF;
       border-bottom: 1px solid var(--ml-border);
-      padding: 8px 0;
+      padding: 10px 0;
       font-size: 12.5px;
-      color: rgba(0, 0, 0, 0.75);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      color: var(--ml-text-sub);
     }
 
     /* ==========================================
        PÁGINA DO PRODUTO (LAYOUT MERCADO LIVRE VIP)
        ========================================== */
     .ml-product-page {
-      padding: 16px 0 48px;
+      padding: 20px 0 48px;
     }
 
     .ml-breadcrumb {
@@ -282,7 +308,7 @@
       justify-content: space-between;
       font-size: 13px;
       color: var(--ml-blue);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .ml-breadcrumb-links {
@@ -296,13 +322,13 @@
       text-decoration: underline;
     }
 
-    /* Container Principal do Produto */
+    /* Container Principal 3 Colunas */
     .ml-product-container {
       background: #FFFFFF;
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: var(--ml-shadow);
-      border: 1px solid var(--ml-border-subtle);
-      padding: 24px;
+      border: 1px solid var(--ml-border);
+      padding: 28px;
       display: grid;
       grid-template-columns: 1fr 1.15fr 0.85fr;
       gap: 28px;
@@ -318,40 +344,50 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      width: 58px;
+      width: 60px;
       flex-shrink: 0;
     }
 
     .ml-thumb-item {
-      width: 54px;
-      height: 54px;
-      border-radius: 6px;
+      width: 58px;
+      height: 58px;
+      border-radius: 8px;
       border: 1px solid var(--ml-border);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 20px;
-      background: #F9F9F9;
-      transition: border-color 0.15s ease;
+      background: #F8FAFC;
+      overflow: hidden;
+      padding: 2px;
+      transition: all 0.15s ease;
+    }
+
+    .ml-thumb-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
     }
 
     .ml-thumb-item:hover, .ml-thumb-item.active {
       border: 2px solid var(--ml-blue);
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
     }
 
     .ml-main-stage {
       flex: 1;
       min-height: 420px;
-      border: 1px solid var(--ml-border-subtle);
-      border-radius: 8px;
+      border: 1px solid var(--ml-border);
+      border-radius: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at 50% 50%, #FAFAFA 0%, #FFFFFF 100%);
-      padding: 20px;
+      background: radial-gradient(circle at 50% 50%, #F8FAFC 0%, #FFFFFF 100%);
+      padding: 16px;
       position: relative;
+      overflow: hidden;
     }
 
     .ml-main-badge-ribbon {
@@ -362,22 +398,19 @@
       color: #FFFFFF;
       font-size: 11px;
       font-weight: 800;
-      padding: 3px 8px;
-      border-radius: 3px;
+      padding: 4px 9px;
+      border-radius: 4px;
       letter-spacing: 0.02em;
+      z-index: 2;
     }
 
-    .ml-main-stage-icon {
-      width: 140px;
-      height: 140px;
-      border-radius: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 64px;
-      color: #FFFFFF;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-      margin-bottom: 20px;
+    .ml-main-stage-img {
+      max-width: 100%;
+      max-height: 340px;
+      object-fit: contain;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      margin-bottom: 14px;
     }
 
     .ml-main-stage-label {
@@ -387,7 +420,7 @@
       font-weight: 600;
     }
 
-    /* Coluna 2: Informações do Produto (Título, Avaliações, Preço, Descrição) */
+    /* Coluna 2: Informações do Produto */
     .ml-info-col {
       display: flex;
       flex-direction: column;
@@ -406,7 +439,7 @@
       font-size: 22px;
       font-weight: 700;
       color: var(--ml-text-main);
-      line-height: 1.25;
+      line-height: 1.3;
       margin-bottom: 8px;
     }
 
@@ -419,8 +452,8 @@
     }
 
     .ml-stars {
-      color: var(--ml-blue);
-      font-size: 13px;
+      color: #F59E0B;
+      font-size: 14px;
       letter-spacing: 1px;
     }
 
@@ -432,23 +465,23 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: #FEEFE6;
-      color: var(--ml-orange);
+      background: #FEF3C7;
+      color: #B45309;
       font-size: 11px;
       font-weight: 700;
       padding: 3px 8px;
-      border-radius: 3px;
+      border-radius: 4px;
       width: fit-content;
       margin-bottom: 14px;
       text-transform: uppercase;
       letter-spacing: 0.03em;
     }
 
-    /* Bloco de Preço Mercado Livre */
+    /* Bloco de Preço */
     .ml-price-box {
       margin-bottom: 18px;
       padding-bottom: 16px;
-      border-bottom: 1px solid var(--ml-border-subtle);
+      border-bottom: 1px solid var(--ml-border);
     }
 
     .ml-price-old {
@@ -466,30 +499,30 @@
 
     .ml-price-symbol {
       font-size: 20px;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     .ml-price-value {
       font-size: 36px;
-      font-weight: 400;
+      font-weight: 700;
       letter-spacing: -0.02em;
       color: var(--ml-text-main);
     }
 
     .ml-price-discount {
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--ml-green);
     }
 
     .ml-installments {
-      font-size: 15px;
+      font-size: 14.5px;
       color: var(--ml-text-main);
       margin-top: 4px;
     }
 
     .ml-installments-pix {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--ml-green);
       font-weight: 600;
       margin-top: 2px;
@@ -539,21 +572,21 @@
 
     /* Descrição Completa */
     .ml-description-box {
-      border-top: 1px solid var(--ml-border-subtle);
+      border-top: 1px solid var(--ml-border);
       padding-top: 24px;
       margin-top: 10px;
     }
 
     .ml-desc-heading {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--ml-text-main);
       margin-bottom: 14px;
     }
 
     .ml-desc-body {
       font-size: 14.5px;
-      color: rgba(0, 0, 0, 0.7);
+      color: var(--ml-text-sub);
       line-height: 1.65;
     }
 
@@ -577,18 +610,19 @@
       margin-bottom: 6px;
     }
 
-    /* Coluna 3: Buy Box (Caixa de Compra Mercado Livre) */
+    /* Coluna 3: Buy Box (Caixa de Compra) */
     .ml-buy-box {
       border: 1px solid var(--ml-border);
-      border-radius: 8px;
-      padding: 20px;
+      border-radius: 10px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       gap: 16px;
       align-self: start;
       position: sticky;
-      top: 86px;
+      top: 96px;
       background: #FFFFFF;
+      box-shadow: var(--ml-shadow);
     }
 
     .ml-shipping-row {
@@ -610,29 +644,29 @@
     }
 
     .ml-shipping-sub {
-      font-size: 13px;
+      font-size: 12.5px;
       color: var(--ml-text-sub);
       line-height: 1.35;
     }
 
     .ml-stock-badge {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--ml-text-main);
     }
 
-    /* Botões Oficiais Mercado Livre */
+    /* Botões */
     .ml-btn-buy {
       width: 100%;
       background-color: var(--ml-blue);
       color: #FFFFFF;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 13px 18px;
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.1s ease;
+      transition: background-color 0.15s ease, transform 0.1s ease;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -652,8 +686,8 @@
       background-color: var(--whatsapp-green);
       color: #FFFFFF;
       border: none;
-      border-radius: 6px;
-      padding: 11px 18px;
+      border-radius: 8px;
+      padding: 12px 18px;
       font-size: 14px;
       font-weight: 700;
       cursor: pointer;
@@ -661,7 +695,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.15s ease;
       text-decoration: none;
     }
 
@@ -669,15 +703,15 @@
       background-color: var(--whatsapp-hover);
     }
 
-    /* Caixa do Vendedor (MercadoLíder Platinum) */
+    /* Caixa do Vendedor */
     .ml-seller-info-box {
-      border-top: 1px solid var(--ml-border-subtle);
+      border-top: 1px solid var(--ml-border);
       padding-top: 14px;
       font-size: 13px;
     }
 
     .ml-seller-title {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--ml-text-main);
       margin-bottom: 6px;
@@ -704,14 +738,14 @@
     }
 
     .ml-therm-level {
-      background: #EFEFEF;
+      background: #F1F5F9;
     }
 
-    .ml-therm-level.lvl-1 { background: #FFF0F0; }
-    .ml-therm-level.lvl-2 { background: #FFF7EB; }
-    .ml-therm-level.lvl-3 { background: #FFFEEB; }
-    .ml-therm-level.lvl-4 { background: #EBF8F0; }
-    .ml-therm-level.lvl-5 { background: #00A650; }
+    .ml-therm-level.lvl-1 { background: #FEE2E2; }
+    .ml-therm-level.lvl-2 { background: #FEF3C7; }
+    .ml-therm-level.lvl-3 { background: #FEF9C3; }
+    .ml-therm-level.lvl-4 { background: #DCFCE7; }
+    .ml-therm-level.lvl-5 { background: #16A34A; }
 
     .ml-seller-metrics-grid {
       display: grid;
@@ -720,7 +754,7 @@
       text-align: center;
       font-size: 10.5px;
       color: var(--ml-text-sub);
-      border-top: 1px solid var(--ml-border-subtle);
+      border-top: 1px solid var(--ml-border);
       padding-top: 10px;
     }
 
@@ -731,9 +765,9 @@
       margin-bottom: 2px;
     }
 
-    /* Garantias Mercado Pago */
+    /* Garantias */
     .ml-guarantees-box {
-      border-top: 1px solid var(--ml-border-subtle);
+      border-top: 1px solid var(--ml-border);
       padding-top: 14px;
       display: flex;
       flex-direction: column;
@@ -752,13 +786,13 @@
       color: var(--ml-blue);
     }
 
-    /* Formulário Embutido de Checkout Mercado Pago */
+    /* Formulário Embutido de Checkout */
     .ml-checkout-form-box {
-      background: #F8F9FA;
+      background: #F8FAFC;
       border: 1px solid var(--ml-border);
       border-radius: 8px;
       padding: 14px;
-      margin-top: 10px;
+      margin-top: 6px;
     }
 
     .ml-field-group {
@@ -766,8 +800,8 @@
     }
 
     .ml-field-label {
-      font-size: 11.5px;
-      font-weight: 700;
+      font-size: 12px;
+      font-weight: 600;
       color: var(--ml-text-main);
       display: block;
       margin-bottom: 4px;
@@ -777,106 +811,141 @@
       width: 100%;
       background: #FFFFFF;
       border: 1px solid var(--ml-border);
-      border-radius: 4px;
+      border-radius: 6px;
       padding: 9px 12px;
       font-size: 13.5px;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .ml-field-input:focus {
       border-color: var(--ml-blue);
-      box-shadow: 0 0 0 2px rgba(52, 131, 250, 0.15);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
     }
 
     /* ==========================================
-       CATÁLOGO GERAL (GRADE ESTILO MERCADO LIVRE)
+       CATÁLOGO GERAL (GRADE COM IMAGENS REAIS)
        ========================================== */
     .ml-catalog-view {
-      padding: 20px 0 48px;
+      padding: 24px 0 48px;
     }
 
     .ml-results-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       font-size: 14px;
       color: var(--ml-text-sub);
     }
 
     .ml-results-count {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--ml-text-main);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .ml-grid-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 20px;
     }
 
     .ml-card-poly {
       background: #FFFFFF;
-      border-radius: 8px;
-      border: 1px solid var(--ml-border-subtle);
+      border-radius: 12px;
+      border: 1px solid var(--ml-border);
       box-shadow: var(--ml-shadow);
-      padding: 16px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       position: relative;
     }
 
     .ml-card-poly:hover {
       transform: translateY(-3px);
       box-shadow: var(--ml-shadow-hover);
+      border-color: #CBD5E1;
     }
 
     .ml-card-thumb-wrap {
       width: 100%;
-      height: 190px;
-      border-radius: 6px;
+      height: 180px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0F172A;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       position: relative;
     }
 
-    .ml-card-icon {
-      font-size: 58px;
-      color: #FFFFFF;
-      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+    .ml-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
 
-    .ml-full-pill {
+    .ml-card-poly:hover .ml-card-img {
+      transform: scale(1.04);
+    }
+
+    .ml-card-badge-top {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px);
+      color: #38BDF8;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      max-width: calc(100% - 16px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      z-index: 2;
+    }
+
+    .ml-card-badge-bottom {
       position: absolute;
       bottom: 8px;
       left: 8px;
-      background: #00A650;
+      background: var(--ml-green);
       color: #FFFFFF;
       font-size: 10.5px;
       font-weight: 800;
-      font-style: italic;
       padding: 2px 7px;
       border-radius: 3px;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
+      z-index: 2;
+    }
+
+    .ml-card-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
     }
 
     .ml-card-poly-title {
       font-size: 14.5px;
       font-weight: 600;
       color: var(--ml-text-main);
-      line-height: 1.35;
+      line-height: 1.4;
       margin-bottom: 8px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      min-height: 40px;
     }
 
     .ml-card-poly-price-row {
@@ -888,13 +957,13 @@
 
     .ml-card-poly-price {
       font-size: 22px;
-      font-weight: 400;
+      font-weight: 700;
       color: var(--ml-text-main);
     }
 
     .ml-card-poly-discount {
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--ml-green);
     }
 
@@ -906,19 +975,41 @@
 
     .ml-card-shipping-free {
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--ml-green);
       display: flex;
       align-items: center;
       gap: 4px;
+      margin-bottom: 12px;
     }
 
-    /* Modal de Meios de Pagamento / Consultar Pedido */
+    .ml-card-btn-view {
+      width: 100%;
+      background: #F8FAFC;
+      border: 1px solid var(--ml-border);
+      color: var(--ml-blue);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+
+    .ml-card-poly:hover .ml-card-btn-view {
+      background: var(--ml-blue);
+      color: #FFFFFF;
+      border-color: var(--ml-blue);
+    }
+
+    /* Modais */
     .ml-modal-overlay {
       position: fixed;
       inset: 0;
       z-index: 200;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -927,11 +1018,11 @@
 
     .ml-modal-box {
       background: #FFFFFF;
-      border-radius: 8px;
+      border-radius: 12px;
       max-width: 580px;
       width: 100%;
       padding: 24px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
       position: relative;
       max-height: 90vh;
       overflow-y: auto;
@@ -948,11 +1039,11 @@
       color: var(--ml-text-sub);
     }
 
-    /* Rodapé Mercado Livre */
+    /* Rodapé */
     .ml-footer {
       background: #FFFFFF;
       border-top: 1px solid var(--ml-border);
-      padding: 32px 0 20px;
+      padding: 36px 0 24px;
       margin-top: auto;
       font-size: 12.5px;
       color: var(--ml-text-sub);
@@ -1000,15 +1091,15 @@
 <body>
 
   <!-- ==========================================
-       HEADER OFICIAL ESTILO MERCADO LIVRE
+       HEADER OFICIAL DLUZ GAMES (CLEAN & SLEEK)
        ========================================== -->
   <header class="ml-header">
     <div class="container">
       <div class="ml-header-top">
         <a href="/" onclick="goHome(event)" class="ml-logo">
-          <div class="ml-logo-badge">DL</div>
+          <img src="/images/logo.png" alt="DLuz Games" class="ml-logo-img" />
           <div class="ml-logo-text">
-            <span>DLUZ GAMES</span>
+            <span class="ml-logo-title">DLUZ GAMES</span>
             <span class="ml-logo-sub">Loja Oficial Mercado Pago</span>
           </div>
         </a>
@@ -1027,15 +1118,14 @@
         <div class="ml-header-promo">
           <button type="button" onclick="openLookupModal()" class="ml-btn-link">
             <span>🔑</span>
-            <span>Minhas Compras / Chaves</span>
+            <span>Minhas Compras</span>
           </button>
           <a
             id="mlHeaderWhatsappLink"
             href="https://wa.me/5563981199852?text=Ol%C3%A1%20DLuz!%20Estou%20na%20Loja%20Oficial%20e%20preciso%20de%20ajuda."
             target="_blank"
             rel="noopener"
-            class="ml-btn-link"
-            style="color: var(--whatsapp-green); font-weight: 700;"
+            class="ml-btn-link ml-btn-link-wa"
           >
             <span>💬</span>
             <span>WhatsApp DLuz</span>
@@ -1043,23 +1133,19 @@
         </div>
       </div>
 
-      <!-- Barra de Categorias e Endereço -->
+      <!-- Barra de Categorias e Cupom -->
       <div class="ml-header-nav">
         <div class="ml-nav-left">
-          <div class="ml-location-pill" onclick="openLookupModal()">
-            <span>📍</span>
-            <span>Enviar para: <strong>Brasil (Entrega Digital Imediata)</strong></span>
-          </div>
           <button type="button" onclick="goHome(event); setCategory('all')" data-cat="all" class="ml-category-btn active">Todas as Categorias</button>
-          <button type="button" onclick="goHome(event); setCategory('mobilador')" data-cat="mobilador" class="ml-category-btn">Mobilador Pro Zero Delay</button>
+          <button type="button" onclick="goHome(event); setCategory('mobilador')" data-cat="mobilador" class="ml-category-btn">Mobilador Pro</button>
           <button type="button" onclick="goHome(event); setCategory('emuladores')" data-cat="emuladores" class="ml-category-btn">Emuladores 120 FPS & GTA Coop</button>
-          <button type="button" onclick="goHome(event); setCategory('sensi')" data-cat="sensi" class="ml-category-btn">Sensi 1000Hz & FPS Boost</button>
-          <button type="button" onclick="goHome(event); setCategory('criadores')" data-cat="criadores" class="ml-category-btn">Editores com IA & Streamers</button>
+          <button type="button" onclick="goHome(event); setCategory('sensi')" data-cat="sensi" class="ml-category-btn">Sensi 1000Hz & Boost</button>
+          <button type="button" onclick="goHome(event); setCategory('criadores')" data-cat="criadores" class="ml-category-btn">Editores IA & Streamers</button>
           <button type="button" onclick="goHome(event); setCategory('vip')" data-cat="vip" class="ml-category-btn">Clube VIP</button>
         </div>
 
         <div class="ml-nav-right">
-          <span style="font-size: 12px; color: rgba(0,0,0,0.7);">🎁 Cupom: <strong>MELHOR10</strong></span>
+          <span class="ml-coupon-pill">🎁 Cupom: <strong>MELHOR10</strong> (10% OFF)</span>
         </div>
       </div>
     </div>
@@ -1069,10 +1155,10 @@
   <div class="ml-top-banner">
     <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
       <div>
-        <span style="font-weight: 700; color: #00A650;">⚡ ENVIO DIGITAL FULL:</span>
+        <span style="font-weight: 700; color: #16A34A;">⚡ ENVIO DIGITAL FULL:</span>
         <span>Receba sua Chave de Ativação Vitalícia e Download no seu <strong>WhatsApp e E-mail</strong> em 3 segundos após o pagamento!</span>
       </div>
-      <div style="font-size: 11.5px; color: rgba(0,0,0,0.6);">
+      <div style="font-size: 11.5px; color: #64748B;">
         🔒 Pagamento 100% Criptografado via <strong>Mercado Pago</strong>
       </div>
     </div>
@@ -1082,7 +1168,7 @@
        VIEW 1: PÁGINA DO PRODUTO (MERCADO LIVRE VIP)
        ========================================== -->
   <main id="mlProductView" class="container ml-product-page hidden">
-    <!-- Breadcrumb Estilo Mercado Livre -->
+    <!-- Breadcrumb -->
     <div class="ml-breadcrumb">
       <div class="ml-breadcrumb-links">
         <a href="/" onclick="goHome(event)">‹ Voltar à lista</a>
@@ -1091,7 +1177,7 @@
         <span>›</span>
         <a href="/" onclick="goHome(event)">Softwares</a>
         <span>›</span>
-        <span id="mlBcCategory" style="color: rgba(0,0,0,0.6);">Mobilador</span>
+        <span id="mlBcCategory" style="color: var(--ml-text-sub);">Mobilador</span>
       </div>
 
       <div style="display: flex; gap: 14px;">
@@ -1104,22 +1190,17 @@
 
       <!-- COLUNA 1: GALERIA E IMAGEM PRINCIPAL -->
       <div class="ml-gallery-col">
-        <div class="ml-thumbnails">
-          <div class="ml-thumb-item active" onclick="switchThumb(0)">🎮</div>
-          <div class="ml-thumb-item" onclick="switchThumb(1)">⚡</div>
-          <div class="ml-thumb-item" onclick="switchThumb(2)">🎯</div>
-          <div class="ml-thumb-item" onclick="switchThumb(3)">🛡️</div>
+        <div class="ml-thumbnails" id="mlThumbsContainer">
+          <!-- Gerado dinamicamente via JS -->
         </div>
 
         <div class="ml-main-stage">
           <div class="ml-main-badge-ribbon">ENVIO IMEDIATO ⚡</div>
-          <div id="mlStageIcon" class="ml-main-stage-icon" style="background: linear-gradient(135deg, #0071E3, #00C7BE);">
-            🎮
-          </div>
+          <img id="mlStageImg" src="" alt="Produto" class="ml-main-stage-img" onerror="this.onerror=null; this.src='/images/logo.png'; this.style.objectFit='contain'; this.style.padding='20px';" />
           <div id="mlStageTitle" class="ml-main-stage-label">
             DLuz Games • Software Oficial Licenciado
           </div>
-          <div style="font-size: 11.5px; color: #00A650; font-weight: 700; margin-top: 6px;">
+          <div style="font-size: 12px; color: #16A34A; font-weight: 700; margin-top: 6px;">
             ✓ Licença Vitalícia + Download Oficial
           </div>
         </div>
@@ -1156,10 +1237,10 @@
             <span id="mlDiscountPercent" class="ml-price-discount">37% OFF</span>
           </div>
           <div class="ml-installments">
-            em <span style="color: #00A650; font-weight: 600;">12x R$ 2,13</span> no cartão
+            em <span style="color: #16A34A; font-weight: 600;">12x no cartão</span> via Mercado Pago
           </div>
           <div class="ml-installments-pix">
-            ⚡ ou via Pix com aprovação em 3 segundos
+            ⚡ ou via Pix com aprovação imediata em 3 segundos
           </div>
           <span onclick="openPaymentMethodsModal()" class="ml-payment-methods-link">
             Ver os meios de pagamento
@@ -1179,7 +1260,7 @@
         </div>
       </div>
 
-      <!-- COLUNA 3: BUY BOX (CAIXA DE COMPRA MERCADO LIVRE) -->
+      <!-- COLUNA 3: BUY BOX (CAIXA DE COMPRA) -->
       <div class="ml-buy-box" id="mlBuyBoxAnchor">
         <div class="ml-shipping-row">
           <span class="ml-shipping-icon">⚡</span>
@@ -1199,7 +1280,7 @@
             <input type="hidden" id="mlCheckoutProdId" />
 
             <div class="ml-checkout-form-box">
-              <div style="font-size: 12px; font-weight: 700; color: #2D3277; margin-bottom: 8px;">
+              <div style="font-size: 12px; font-weight: 700; color: #0F172A; margin-bottom: 8px;">
                 Dados para Envio da Licença:
               </div>
 
@@ -1229,7 +1310,7 @@
                 <div id="mlCouponFeedback" class="hidden" style="font-size: 11.5px; margin-top: 4px; font-weight: 700;"></div>
               </div>
 
-              <div id="mlCheckoutError" class="hidden" style="color: #D32F2F; font-size: 12px; margin-bottom: 8px; font-weight: 700;"></div>
+              <div id="mlCheckoutError" class="hidden" style="color: #DC2626; font-size: 12px; margin-bottom: 8px; font-weight: 700;"></div>
 
               <button type="submit" id="mlSubmitBtn" class="ml-btn-buy" style="margin-top: 6px;">
                 Comprar agora
@@ -1245,13 +1326,13 @@
             class="ml-btn-whatsapp"
             style="margin-top: 10px;"
           >
-            <span>💬 Falar com o Vendedor no WhatsApp</span>
+            <span>💬 Falar com o DLuz no WhatsApp</span>
           </a>
         </div>
 
         <!-- ETAPA DE PAGAMENTO PIX / CARTÃO GERADO -->
         <div id="mlBuyPayStep" class="hidden" style="text-align: center;">
-          <div style="background: #E6F7EE; border-radius: 6px; padding: 8px; font-size: 12px; color: #00A650; font-weight: 700; margin-bottom: 12px;">
+          <div style="background: #F0FDF4; border-radius: 6px; padding: 8px; font-size: 12px; color: #16A34A; font-weight: 700; margin-bottom: 12px;">
             ⏳ Pedido <span id="mlPayOrderNumber">#0000</span> Gerado!
           </div>
 
@@ -1259,7 +1340,7 @@
             Pague via Pix no app do seu banco com o QR Code abaixo:
           </p>
 
-          <div style="background: #FFFFFF; padding: 10px; border: 1px solid var(--ml-border); border-radius: 6px; display: inline-block; margin-bottom: 10px;">
+          <div style="background: #FFFFFF; padding: 10px; border: 1px solid var(--ml-border); border-radius: 8px; display: inline-block; margin-bottom: 10px;">
             <img id="mlPayQrImage" src="" alt="QR Code Pix" style="width: 190px; height: 190px; display: block;" />
           </div>
 
@@ -1279,33 +1360,33 @@
           </div>
 
           <div id="mlCardOptionWrap" class="hidden" style="margin-bottom: 10px;">
-            <a id="mlCardDirectLink" href="#" target="_blank" rel="noopener" class="ml-btn-buy" style="background: #2D3277; font-size: 13px;">
+            <a id="mlCardDirectLink" href="#" target="_blank" rel="noopener" class="ml-btn-buy" style="background: #0F172A; font-size: 13px;">
               💳 Pagar com Cartão (Mercado Pago até 12x)
             </a>
           </div>
 
-          <div style="font-size: 11.5px; color: var(--ml-text-sub); background: #F8F9FA; padding: 8px; border-radius: 4px; margin-bottom: 10px;">
+          <div style="font-size: 11.5px; color: var(--ml-text-sub); background: #F8FAFC; padding: 8px; border-radius: 4px; margin-bottom: 10px;">
             ⚡ A tela atualizará sozinha assim que o Pix for aprovado!
           </div>
 
-          <button type="button" onclick="backToMlBuyForm()" class="ml-btn-link" style="width: 100%; justify-content: center; font-size: 12px;">
+          <button type="button" onclick="backToMlBuyForm()" class="ml-btn-link" style="width: 100%; justify-content: center; font-size: 12px; background: transparent; color: var(--ml-text-main); border: 1px solid var(--ml-border);">
             ← Alterar Dados da Compra
           </button>
         </div>
 
         <!-- ETAPA DE APROVAÇÃO E CHAVE -->
         <div id="mlBuySuccessStep" class="hidden" style="text-align: center;">
-          <div style="width: 48px; height: 48px; border-radius: 50%; background: #E6F7EE; color: #00A650; font-size: 24px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: #F0FDF4; color: #16A34A; font-size: 24px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
             ✓
           </div>
-          <div style="font-size: 16px; font-weight: 700; color: #00A650; margin-bottom: 4px;">
+          <div style="font-size: 16px; font-weight: 700; color: #16A34A; margin-bottom: 4px;">
             Compra Aprovada com Sucesso!
           </div>
           <p style="font-size: 12px; color: var(--ml-text-sub); margin-bottom: 14px;">
             Enviamos uma cópia para o seu WhatsApp e E-mail.
           </p>
 
-          <div id="mlSuccKeyContainer" style="background: #F8F9FA; border: 1px solid var(--ml-border); border-radius: 6px; padding: 12px; margin-bottom: 14px;">
+          <div id="mlSuccKeyContainer" style="background: #F8FAFC; border: 1px solid var(--ml-border); border-radius: 8px; padding: 12px; margin-bottom: 14px;">
             <div style="font-size: 11px; font-weight: 700; color: var(--ml-text-sub); text-transform: uppercase;">
               Sua Chave de Ativação Vitalícia:
             </div>
@@ -1323,12 +1404,12 @@
           </div>
         </div>
 
-        <!-- Informações do Vendedor (MercadoLíder Platinum) -->
+        <!-- Informações do Vendedor -->
         <div class="ml-seller-info-box">
           <div class="ml-seller-title">Informações sobre o vendedor</div>
           <div class="ml-mercadolider-pill">
             <span>🏅</span>
-            <span>MercadoLíder Platinum</span>
+            <span>MercadoLíder Platinum Oficial</span>
           </div>
           <p style="font-size: 11.5px; color: var(--ml-text-sub); margin-bottom: 6px;">
             É um dos melhores do site! Vendedor Oficial DLuz Games.
@@ -1385,7 +1466,7 @@
   </main>
 
   <!-- ==========================================
-       VIEW 2: GRADE GERAL DE PRODUTOS (ESTILO POLYCARD MERCADO LIVRE)
+       VIEW 2: GRADE GERAL DE PRODUTOS (COM IMAGENS REAIS)
        ========================================== -->
   <main id="mlCatalogView" class="container ml-catalog-view">
     <div class="ml-results-header">
@@ -1415,21 +1496,21 @@
       </p>
 
       <div style="display: flex; flex-direction: column; gap: 14px; font-size: 13.5px;">
-        <div style="background: #F8F9FA; padding: 12px; border-radius: 6px;">
-          <div style="font-weight: 700; color: #00A650; margin-bottom: 4px;">💠 Pix (Aprovação Imediata em 3 Segundos)</div>
+        <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid var(--ml-border);">
+          <div style="font-weight: 700; color: #16A34A; margin-bottom: 4px;">💠 Pix (Aprovação Imediata em 3 Segundos)</div>
           <p style="font-size: 12.5px; color: var(--ml-text-sub);">
             Pagamento instantâneo via QR Code ou Pix Copia e Cola em qualquer banco.
           </p>
         </div>
 
-        <div style="background: #F8F9FA; padding: 12px; border-radius: 6px;">
-          <div style="font-weight: 700; color: #2D3277; margin-bottom: 4px;">💳 Cartão de Crédito (Mercado Pago até 12x)</div>
+        <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid var(--ml-border);">
+          <div style="font-weight: 700; color: #0F172A; margin-bottom: 4px;">💳 Cartão de Crédito (Mercado Pago até 12x)</div>
           <p style="font-size: 12.5px; color: var(--ml-text-sub);">
             Visa, Mastercard, Elo, Hipercard, American Express com parcelamento facilitado.
           </p>
         </div>
 
-        <div style="background: #F8F9FA; padding: 12px; border-radius: 6px;">
+        <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid var(--ml-border);">
           <div style="font-weight: 700; color: var(--ml-blue); margin-bottom: 4px;">🛡️ Compra Garantida Mercado Pago</div>
           <p style="font-size: 12.5px; color: var(--ml-text-sub);">
             Seu pagamento fica 100% protegido. Você recebe sua chave vitalícia imediatamente.
@@ -1460,7 +1541,7 @@
   </div>
 
   <!-- ==========================================
-       RODAPÉ ESTILO MERCADO LIVRE
+       RODAPÉ
        ========================================== -->
   <footer class="ml-footer">
     <div class="container">
@@ -1474,7 +1555,7 @@
         <a href="/admin">Painel Administrativo</a>
       </div>
 
-      <p style="font-size: 11.5px; color: rgba(0, 0, 0, 0.45); line-height: 1.5;">
+      <p style="font-size: 11.5px; color: #64748B; line-height: 1.5;">
         Copyright © 2026 DLuz Games LTDA. Todos os direitos reservados. CNPJ e registros oficiais integrados com Mercado Pago.<br />
         Plataforma oficial de entrega imediata de softwares, mobiladores e emuladores gamers para todo o Brasil.
       </p>
@@ -1482,7 +1563,7 @@
   </footer>
 
   <!-- ==========================================
-       SCRIPT DA LOJA ESTILO MERCADO LIVRE
+       SCRIPT DA LOJA ESTILO DLUZ GAMES
        ========================================== -->
   <script>
     let ALL_PRODUCTS = [];
@@ -1505,29 +1586,6 @@
       if (topLink) topLink.href = defUrl;
     }
 
-    function getProductTheme(p) {
-      const map = {
-        gamepad: { icon: '🎮', bg: 'linear-gradient(135deg, #0071E3, #00C7BE)' },
-        film: { icon: '🎬', bg: 'linear-gradient(135deg, #5856D6, #007AFF)' },
-        users: { icon: '🚗', bg: 'linear-gradient(135deg, #FF9500, #FF3B30)' },
-        crosshair: { icon: '🎯', bg: 'linear-gradient(135deg, #FF2D55, #FF3B30)' },
-        shield: { icon: '🛡️', bg: 'linear-gradient(135deg, #FF9500, #FF5E3A)' },
-        cpu: { icon: '⚡', bg: 'linear-gradient(135deg, #AF52DE, #5856D6)' },
-        sparkles: { icon: '✨', bg: 'linear-gradient(135deg, #007AFF, #5AC8FA)' },
-        trophy: { icon: '⚽', bg: 'linear-gradient(135deg, #34C759, #30B0C7)' },
-        video: { icon: '🎙️', bg: 'linear-gradient(135deg, #FF2D55, #AF52DE)' },
-        crown: { icon: '👑', bg: 'linear-gradient(135deg, #FF9500, #FFCC00)' },
-        joystick: { icon: '🕹️', bg: 'linear-gradient(135deg, #5856D6, #AF52DE)' },
-        sliders: { icon: '⚙️', bg: 'linear-gradient(135deg, #30B0C7, #007AFF)' },
-        smartphone: { icon: '📱', bg: 'linear-gradient(135deg, #007AFF, #34C759)' },
-        flame: { icon: '🔥', bg: 'linear-gradient(135deg, #FF3B30, #FF9500)' },
-        zap: { icon: '⚡', bg: 'linear-gradient(135deg, #0071E3, #5856D6)' },
-        rocket: { icon: '🚀', bg: 'linear-gradient(135deg, #FF2D55, #FF9500)' },
-        'fast-forward': { icon: '⚡', bg: 'linear-gradient(135deg, #34C759, #0071E3)' }
-      };
-      return map[p.icon] || { icon: '🎮', bg: 'linear-gradient(135deg, #0071E3, #00C7BE)' };
-    }
-
     function renderCatalogCards() {
       const grid = document.getElementById('mlCardsGrid');
       if (!grid) return;
@@ -1547,11 +1605,11 @@
 
       if (filtered.length === 0) {
         grid.innerHTML = `
-          <div style="grid-column: 1 / -1; background: #FFFFFF; border-radius: 8px; padding: 40px; text-align: center; border: 1px solid var(--ml-border);">
-            <div style="font-size: 32px; margin-bottom: 8px;">🔍</div>
-            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Não encontramos produtos com esse nome</h3>
-            <p style="font-size: 13px; color: var(--ml-text-sub); margin-bottom: 14px;">Tente pesquisar por termos como "mobilador", "gta" ou "sensi".</p>
-            <button type="button" onclick="setCategory('all'); handleSearch('');" class="ml-btn-buy" style="width: auto; margin: 0 auto; padding: 8px 18px;">
+          <div style="grid-column: 1 / -1; background: #FFFFFF; border-radius: 12px; padding: 48px; text-align: center; border: 1px solid var(--ml-border);">
+            <div style="font-size: 36px; margin-bottom: 12px;">🔍</div>
+            <h3 style="font-size: 17px; font-weight: 700; margin-bottom: 6px;">Não encontramos softwares com esse nome</h3>
+            <p style="font-size: 13px; color: var(--ml-text-sub); margin-bottom: 16px;">Tente pesquisar por termos como "mobilador", "gta" ou "sensi".</p>
+            <button type="button" onclick="setCategory('all'); handleSearch('');" class="ml-btn-buy" style="width: auto; margin: 0 auto; padding: 10px 22px;">
               Ver todos os produtos
             </button>
           </div>
@@ -1561,20 +1619,29 @@
 
       grid.innerHTML = filtered
         .map((p) => {
-          const theme = getProductTheme(p);
           const discount =
             p.regular_price > p.price
               ? Math.round(((p.regular_price - p.price) / p.regular_price) * 100)
               : 0;
 
+          const imgUrl = p.image_url || '/images/logo.png';
+          const badgeText = p.badge || 'PRO';
+
           return `
             <div class="ml-card-poly" onclick="openProductPageById(${p.id})">
-              <div class="ml-card-thumb-wrap" style="background: ${theme.bg};">
-                <div class="ml-card-icon">${theme.icon}</div>
-                <div class="ml-full-pill">⚡ FULL</div>
+              <div class="ml-card-thumb-wrap">
+                <img 
+                  class="ml-card-img" 
+                  src="${imgUrl}" 
+                  alt="${p.name}" 
+                  loading="lazy" 
+                  onerror="this.onerror=null; this.src='/images/logo.png'; this.style.objectFit='contain'; this.style.padding='24px';"
+                />
+                <div class="ml-card-badge-top">${badgeText}</div>
+                <div class="ml-card-badge-bottom">⚡ FULL</div>
               </div>
 
-              <div>
+              <div class="ml-card-body">
                 <h3 class="ml-card-poly-title">${p.name}</h3>
 
                 <div class="ml-card-poly-price-row">
@@ -1583,12 +1650,16 @@
                 </div>
 
                 <div class="ml-card-poly-inst">
-                  em <span style="color: #00A650;">12x R$ ${(p.price / 12 * 1.15).toFixed(2).replace('.', ',')}</span>
+                  em <span style="color: #16A34A; font-weight: 600;">12x R$ ${(p.price / 12 * 1.15).toFixed(2).replace('.', ',')}</span> no cartão
                 </div>
 
                 <div class="ml-card-shipping-free">
-                  <span>⚡ Envio grátis por WhatsApp e E-mail</span>
+                  <span>⚡ Envio imediato por WhatsApp e E-mail</span>
                 </div>
+
+                <button type="button" class="ml-card-btn-view" onclick="event.stopPropagation(); openProductPageById(${p.id});">
+                  Ver detalhes e Comprar
+                </button>
               </div>
             </div>
           `;
@@ -1610,7 +1681,7 @@
     }
 
     // ==========================================
-    // ABRIR PÁGINA DO PRODUTO (MERCADO LIVRE VIP)
+    // ABRIR PÁGINA DO PRODUTO (LAYOUT VIP)
     // ==========================================
     function openProductPageById(productId, scrollToBuy = false) {
       const prod = ALL_PRODUCTS.find((item) => Number(item.id) === Number(productId));
@@ -1624,10 +1695,25 @@
         history.pushState({ id: prod.id, slug: prod.slug }, prod.name, `/produto/${prod.slug}`);
       } catch {}
 
-      const theme = getProductTheme(prod);
-      const stageIcon = document.getElementById('mlStageIcon');
-      stageIcon.style.background = theme.bg;
-      stageIcon.textContent = theme.icon;
+      // Imagem e Miniaturas Reais
+      const stageImg = document.getElementById('mlStageImg');
+      stageImg.src = prod.image_url || '/images/logo.png';
+      stageImg.alt = prod.name;
+
+      const thumbsContainer = document.getElementById('mlThumbsContainer');
+      const galleryList = [
+        { label: 'Capa Oficial', src: prod.image_url || '/images/logo.png' },
+        { label: 'Garantia DLuz', src: '/images/logo.png' }
+      ];
+
+      thumbsContainer.innerHTML = galleryList
+        .map(
+          (item, idx) => `
+          <div class="ml-thumb-item ${idx === 0 ? 'active' : ''}" onclick="switchThumb(${idx}, '${item.src}')">
+            <img src="${item.src}" alt="${item.label}" />
+          </div>`
+        )
+        .join('');
 
       document.getElementById('mlStageTitle').textContent = `${prod.name} • Licença Vitalícia Oficial`;
       document.getElementById('mlBcCategory').textContent = prod.category.toUpperCase();
@@ -1673,7 +1759,7 @@
       // Link do WhatsApp com a dúvida sobre o produto
       const buyWaBtn = document.getElementById('mlBuyWhatsappBtn');
       if (buyWaBtn) {
-        buyWaBtn.href = getWhatsappLink(`Olá DLuz! Estou no produto "${prod.name}" no Mercado Livre da DLuz e quero tirar uma dúvida.`);
+        buyWaBtn.href = getWhatsappLink(`Olá DLuz! Estou no produto "${prod.name}" na Loja Oficial e quero tirar uma dúvida.`);
       }
 
       // Preparar formulário do Buy Box
@@ -1697,6 +1783,16 @@
       }
     }
 
+    function switchThumb(idx, src) {
+      document.querySelectorAll('.ml-thumb-item').forEach((item, i) => {
+        item.classList.toggle('active', i === idx);
+      });
+      const stageImg = document.getElementById('mlStageImg');
+      if (stageImg && src) {
+        stageImg.src = src;
+      }
+    }
+
     function goHome(ev) {
       if (ev) ev.preventDefault();
       if (ORDER_POLL_TIMER) clearInterval(ORDER_POLL_TIMER);
@@ -1714,12 +1810,6 @@
       document.getElementById('mlBuyFormStep').classList.remove('hidden');
       document.getElementById('mlBuyPayStep').classList.add('hidden');
       document.getElementById('mlBuySuccessStep').classList.add('hidden');
-    }
-
-    function switchThumb(idx) {
-      document.querySelectorAll('.ml-thumb-item').forEach((item, i) => {
-        item.classList.toggle('active', i === idx);
-      });
     }
 
     function copyCurrentPageUrl(ev) {
@@ -1748,7 +1838,7 @@
 
         if (!res.ok || !data.valid) {
           APPLIED_COUPON_DATA = null;
-          fb.style.color = '#D32F2F';
+          fb.style.color = '#DC2626';
           fb.textContent = data.message || 'Cupom inválido.';
           document.getElementById('mlCurrentPrice').textContent = SELECTED_PROD.price.toFixed(2).replace('.', ',');
           return;
@@ -1759,43 +1849,56 @@
         if (data.discount_percent > 0) {
           finalPr -= (finalPr * data.discount_percent) / 100;
         } else if (data.discount_fixed > 0) {
-          finalPr -= data.discount_fixed;
+          finalPr = Math.max(0, finalPr - data.discount_fixed);
         }
-        finalPr = Math.max(1, finalPr);
 
-        fb.style.color = '#00A650';
-        fb.textContent = `✓ Cupom ${data.code} aplicado com sucesso!`;
+        fb.style.color = '#16A34A';
+        fb.textContent = `✓ Cupom ${data.code} aplicado! Economia garantida.`;
         document.getElementById('mlCurrentPrice').textContent = finalPr.toFixed(2).replace('.', ',');
-      } catch {
+      } catch (e) {
         fb.classList.remove('hidden');
-        fb.style.color = '#D32F2F';
+        fb.style.color = '#DC2626';
         fb.textContent = 'Erro ao validar cupom.';
       }
     }
 
     async function handleMlCheckout(ev) {
       ev.preventDefault();
+      if (!SELECTED_PROD) return;
+
       const btn = document.getElementById('mlSubmitBtn');
       const errBox = document.getElementById('mlCheckoutError');
       errBox.classList.add('hidden');
 
-      const payload = {
-        product_id: Number(document.getElementById('mlCheckoutProdId').value),
-        first_name: document.getElementById('mlBuyerName').value.trim(),
-        email: document.getElementById('mlBuyerEmail').value.trim(),
-        phone: document.getElementById('mlBuyerPhone').value.trim(),
-        coupon_code: APPLIED_COUPON_DATA ? APPLIED_COUPON_DATA.code : document.getElementById('mlCouponInput').value.trim()
-      };
+      const name = document.getElementById('mlBuyerName').value.trim();
+      const email = document.getElementById('mlBuyerEmail').value.trim();
+      const phone = document.getElementById('mlBuyerPhone').value.trim();
+      const coupon = APPLIED_COUPON_DATA ? APPLIED_COUPON_DATA.code : '';
+
+      if (!name || !email || !phone) {
+        errBox.textContent = 'Preencha todos os campos obrigatórios.';
+        errBox.classList.remove('hidden');
+        return;
+      }
 
       btn.disabled = true;
-      btn.innerHTML = '<span>⏳ Conectando ao Mercado Pago...</span>';
+      btn.innerHTML = 'Gerando Pagamento Seguro...';
 
       try {
+        const payload = {
+          product_id: SELECTED_PROD.id,
+          first_name: name,
+          email: email,
+          phone: phone,
+          coupon_code: coupon
+        };
+
         const res = await fetch('/api/checkout', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
+
         const data = await res.json();
 
         if (!res.ok || !data.success) {
@@ -1882,7 +1985,7 @@
           .join('');
       } else {
         dlBox.innerHTML = `
-          <div style="font-size: 12.5px; color: var(--ml-text-sub); background: #F8F9FA; padding: 10px; border-radius: 4px;">
+          <div style="font-size: 12.5px; color: var(--ml-text-sub); background: #F8FAFC; padding: 10px; border-radius: 4px;">
             Sua chave e instruções foram enviadas para o seu WhatsApp e E-mail!
           </div>
         `;
@@ -1896,7 +1999,7 @@
     }
 
     // ==========================================
-    // MODAIS (MEIOS DE PAGAMENTO & RESGATE DE CHAVE)
+    // MODAIS
     // ==========================================
     function openPaymentMethodsModal() {
       document.getElementById('mlPayMethodsModal').classList.remove('hidden');
@@ -1931,7 +2034,7 @@
 
         if (!data.orders || data.orders.length === 0) {
           box.innerHTML = `
-            <div style="font-size: 13px; color: var(--ml-text-sub); background: #F8F9FA; padding: 12px; border-radius: 4px;">
+            <div style="font-size: 13px; color: var(--ml-text-sub); background: #F8FAFC; padding: 12px; border-radius: 6px; border: 1px solid var(--ml-border);">
               Nenhum pedido encontrado para <strong>${q}</strong>. Se precisar de ajuda, fale direto no nosso <a href="${getWhatsappLink('Olá DLuz! Preciso recuperar minha chave de compra.')}" target="_blank" style="color: var(--ml-blue); font-weight: 700;">WhatsApp de Suporte</a>.
             </div>
           `;
@@ -1949,16 +2052,16 @@
               .join('');
 
             return `
-              <div style="background: #F8F9FA; border: 1px solid var(--ml-border); border-radius: 6px; padding: 12px;">
+              <div style="background: #F8FAFC; border: 1px solid var(--ml-border); border-radius: 8px; padding: 12px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
                   <strong style="font-size: 13.5px;">Pedido #${o.id} — ${o.product_name}</strong>
-                  <span style="font-size: 11px; font-weight: 700; color: ${isPaid ? '#00A650' : '#FF7733'};">
+                  <span style="font-size: 11px; font-weight: 700; color: ${isPaid ? '#16A34A' : '#EA580C'};">
                     ${isPaid ? 'APROVADO' : 'PENDENTE'}
                   </span>
                 </div>
                 ${
                   isPaid && o.license_key && o.license_key !== 'PRODUTO-LIBERADO-SEM-CHAVE'
-                    ? `<div style="background: #FFFFFF; padding: 8px 10px; border: 1px solid var(--ml-border); border-radius: 4px; display: flex; justify-content: space-between; align-items: center; margin: 6px 0;">
+                    ? `<div style="background: #FFFFFF; padding: 8px 10px; border: 1px solid var(--ml-border); border-radius: 6px; display: flex; justify-content: space-between; align-items: center; margin: 6px 0;">
                          <code style="font-size: 13px; font-weight: 700; color: var(--ml-blue);">${o.license_key}</code>
                          <button type="button" onclick="navigator.clipboard.writeText('${o.license_key}'); alert('Chave copiada!');" class="ml-btn-link" style="color: var(--ml-blue); font-weight: 700;">Copiar</button>
                        </div>`
@@ -1970,7 +2073,7 @@
           })
           .join('');
       } catch (err) {
-        box.innerHTML = `<div style="color: #D32F2F; font-size: 13px;">${err.message}</div>`;
+        box.innerHTML = `<div style="color: #DC2626; font-size: 13px;">${err.message}</div>`;
       }
     }
 

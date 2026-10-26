@@ -136,16 +136,16 @@ async function initDatabase() {
     await dbRun("INSERT INTO sqlite_sequence (name, seq) VALUES ('orders', 2999)");
   }
 
-  // Popular os produtos oficiais se ainda não existirem
+  // Popular os produtos oficiais se ainda não existirem ou atualizar image_url
   for (const p of INITIAL_PRODUCTS) {
-    const existing = await dbGet("SELECT id FROM products WHERE id = ?", [p.id]);
+    const existing = await dbGet("SELECT id, image_url FROM products WHERE id = ?", [p.id]);
     if (!existing) {
       await dbRun(
         `INSERT INTO products (
           id, name, slug, sku, category, badge, theme_color, icon,
           regular_price, sale_price, price, status, featured, license_type,
-          short_description, description, features_json, downloads_json
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          short_description, description, features_json, downloads_json, image_url
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           p.id,
           p.name,
@@ -164,9 +164,18 @@ async function initDatabase() {
           p.short_description || "",
           p.description || "",
           JSON.stringify(p.features || []),
-          JSON.stringify(p.downloads || [])
+          JSON.stringify(p.downloads || []),
+          p.image_url || ""
         ]
       );
+    } else {
+      // Sempre manter image_url sincronizado com o catalogo
+      await dbRun("UPDATE products SET image_url = ?, badge = ?, theme_color = ? WHERE id = ?", [
+        p.image_url || existing.image_url || "",
+        p.badge || "",
+        p.theme_color || "#39FF14",
+        p.id
+      ]);
     }
   }
 

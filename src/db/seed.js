@@ -6,6 +6,7 @@
 const INITIAL_PRODUCTS = [
   {
     id: 2755,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/08/dluzmobilador-pro.webp",
     name: "DLuz Mobilador Pro v3.5.1 — Zero Delay 120 FPS (Licença Vitalícia)",
     slug: "dluzmobilador-pro",
     sku: "DLUZ-MOBILADOR-PRO",
@@ -60,6 +61,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2948,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/10/screenshot_v2_theme.webp",
     name: "Dluz Film PRO v2.0 — Editor de Vídeo com Agente IA, Dublagem & Efeitos (Licença Vitalícia)",
     slug: "dluz-film-pro",
     sku: "DLUZ-FILM-PRO-V2",
@@ -104,6 +106,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2898,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/09/thumbnail_gta_cooperativo.webp",
     name: "DLuz GTA 5 Cooperativo Pro — 2 Jogadores na Campanha + F4 Native Trainer (Licença Vitalícia)",
     slug: "dluz-gta-5-cooperativo-pro-2-jogadores-na-campanha-f4-native-trainer-licenca-vitalicia",
     sku: "DLUZ-GTA5-COOP-PRO",
@@ -151,6 +154,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2862,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/08/screen.webp",
     name: "DLuz Sensi BS Pro — Otimizador de Sensibilidade 1000Hz, Auto-Capa & Macros para BlueStacks (Licença Vitalícia)",
     slug: "dluz-sensi-bs-pro",
     sku: "DLUZ-SENSI-BS-PRO",
@@ -193,6 +197,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2526,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/01/unnamed.webp",
     name: "Bypass Free Fire para Emulador PC: Jogue com 50 Players no BlueStacks e MSI!",
     slug: "bypass-free-fire-para-emulador-pc-jogue-com-50-players-no-bluestacks-e-msi",
     sku: "DLUZ-BYPASS-FF-50P",
@@ -236,6 +241,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2829,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2024/02/configure-o-emulador-bluestacks-.webp",
     name: "DLuzStacks Pro v1.0 — Emulador Mobile Zero Delay Direct3D 11 (Licença Vitalícia)",
     slug: "dluzstacks",
     sku: "DLUZ-STACKS-V1",
@@ -282,6 +288,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2920,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/04/Gemini_Generated_Image_fzp6j4fzp6j4fzp6.webp",
     name: "Gemini AI Pro — 18 Meses (5 TB Google Drive + 1.000 Créditos/Mês + Veo 3 + NotebookLM)",
     slug: "gemini-ai-pro-18-meses-5-tb-google-drive-1-000-creditos-mes-veo-3-notebooklm",
     sku: "DLUZ-GEMINI-PRO-18M",
@@ -318,6 +325,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2835,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/09/thumbnail_android_2026_16x9.webp",
     name: "Dluz Studio Sport v1.0 — Central Profissional de Transmissão Esportiva & Futebol (Licença Vitalícia)",
     slug: "dluz-studio-sport-v1-0-central-profissional-de-transmissao-esportiva-futebol-licenca-vitalicia",
     sku: "DLUZ-STUDIO-SPORT",
@@ -360,6 +368,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2833,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/10/screenshot_v2_theme.webp",
     name: "Dluz Studio Streamer v1.1 PRO — Suíte Profissional de Lives, Reacts & Multistream (Licença Vitalícia)",
     slug: "dluz-studio-streamer-v1-0-suite-profissional-de-lives-reacts-multistream-licenca-vitalicia",
     sku: "DLUZ-STUDIO-STREAMER",
@@ -401,6 +410,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2872,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/08/clube-dos-melhores-vip-banner.webp",
     name: "👑 Clube dos Melhores VIP — Acesso Total a Todos os Softwares, Emuladores & Atualizações (Passe Mensal)",
     slug: "clube-dos-melhores-vip-passe-mensal",
     sku: "DLUZ-VIP-MENSAL",
@@ -446,6 +456,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2873,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/08/clube-dos-melhores-vip-banner.webp",
     name: "🔥 Clube dos Melhores VIP — Passe Trimestral (3 Meses de Acesso Total + Bônus)",
     slug: "clube-dos-melhores-vip-passe-trimestral",
     sku: "DLUZ-VIP-TRIMESTRAL",
@@ -480,6 +491,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2874,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/08/clube-dos-melhores-vip-banner.webp",
     name: "⚡ Clube dos Melhores VIP — Passe Anual Elite (1 Ano de Acesso Ilimitado)",
     slug: "clube-dos-melhores-vip-passe-anual-elite",
     sku: "DLUZ-VIP-ANUAL",
@@ -514,6 +526,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2603,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/09/retro_nao_gamers_thumb_1789146551786.webp",
     name: "Super Retro Games — Sistema Gamer Definitivo (+100 Emuladores Plug & Play)",
     slug: "super-retro-games-o-sistema-gamer-definitivo-100-emuladores-com-jogos-automatico-de-jogos",
     sku: "DLUZ-RETRO-GAMES",
@@ -553,6 +566,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2646,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/02/correr-altomatico.webp",
     name: "DLuz Manager ADB — Painel de Otimização e Controle para Emuladores",
     slug: "dluz-manager-abd",
     sku: "DLUZ-MANAGER-ADB",
@@ -587,6 +601,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2743,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/08/dluz_mobilador_v2_16_9_1786559407764.webp",
     name: "DLuzMobi v2 — Controle seu Android pelo PC com Mouse e Teclado",
     slug: "dluzmobi-v2",
     sku: "DLUZ-MOBI-V2",
@@ -621,6 +636,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2418,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2022/02/msi-dluz-2.0-lite-para-pc-fraco-e-competitivo.webp",
     name: "MSI 5.9 PRO — Emulador Free Fire 120 FPS Otimizado (Sem Root & Seguro)",
     slug: "msi-5-9-pro-alcance-120-fps-no-free-fire-com-maxima-seguranca",
     sku: "DLUZ-MSI-59-PRO",
@@ -655,6 +671,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2373,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/08/bluestacks_update_thumbnail_16_9_1786408883646.webp",
     name: "BS DLuz 120 FPS — BlueStacks Otimizado para Free Fire",
     slug: "bs-dluz-120-fps",
     sku: "DLUZ-BS-120FPS",
@@ -689,6 +706,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2367,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/09/msi-app-player-todas-as-versoes-capa.webp",
     name: "MSI 5.21 Turbinado — Free Fire 120 FPS Nativo DLuz Games",
     slug: "msi-5-9-com-free-fire-120-fps-nativo",
     sku: "DLUZ-MSI-521-TURBO",
@@ -723,6 +741,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2649,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/02/correr-altomatico.webp",
     name: "DLuz Macro Correr Automático v5 — Corrida Fácil para Emuladores",
     slug: "dluz-macro-correr-automatico-v5",
     sku: "DLUZ-MACRO-CORRER-V5",
@@ -756,6 +775,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2437,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/09/free-fire-x86-atualizado-todas-as-versoes-capa.webp",
     name: "Toys App DLuz v4 — Sensibilidade & Raw Accel para Free Fire x86",
     slug: "toys-app-dluz-v4",
     sku: "DLUZ-TOYS-APP-V4",
@@ -789,6 +809,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 2610,
+    image_url: "https://dluzgames.com.br/wp-content/uploads/2026/08/emulador-pc-fraco-2gb-ram-guia-2026.webp",
     name: "Dluz Optimize! — Pack de Otimização Windows Gamer & FPS Boost",
     slug: "dluz-optimize",
     sku: "DLUZ-OPTIMIZE-PC",
