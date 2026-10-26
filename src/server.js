@@ -132,11 +132,27 @@ app.get("/api/health", (req, res) => {
 // API PÚBLICA DA LOJA
 // ==========================================
 
-// 1. Listar produtos publicados
+// Redirecionamento 301 de produtos descontinuados para o novo DLuz Orbix Híbrido
+app.get([
+  "/produto/dluzstacks", 
+  "/produto/dluzstacks/",
+  "/produto/toys-app-dluz-v4",
+  "/produto/toys-app-dluz-v4/",
+  "/produto/dluz-manager-abd",
+  "/produto/dluz-manager-abd/",
+  "/produto/dluz-macro-correr-automatico-v5",
+  "/produto/dluz-macro-correr-automatico-v5/",
+  "/produto/clube-dos-melhores-vip-passe-mensal",
+  "/produto/clube-dos-melhores-vip-passe-mensal/"
+], (req, res) => {
+  return res.redirect(301, "/produto/dluz-orbix-setup-leve");
+});
+
+// 1. Listar produtos publicados (DLuz Orbix sempre no topo em destaque)
 app.get("/api/products", async (req, res) => {
   try {
     const rows = await dbAll(
-      "SELECT * FROM products WHERE status = 'publish' ORDER BY featured DESC, price ASC"
+      "SELECT * FROM products WHERE status = 'publish' ORDER BY (CASE WHEN slug = 'dluz-orbix-setup-leve' THEN 0 ELSE 1 END), featured DESC, price ASC"
     );
     const mpToken = await getSetting("mp_access_token", "");
     const whatsappSupport = await getSetting("whatsapp_support", "5563981199852");

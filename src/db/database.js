@@ -136,6 +136,18 @@ async function initDatabase() {
     await dbRun("INSERT INTO sqlite_sequence (name, seq) VALUES ('orders', 2999)");
   }
 
+  // Remover produtos descontinuados da loja solicitados pelo usuário
+  const discontinuedSlugs = [
+    "dluzstacks",
+    "clube-dos-melhores-vip-passe-mensal",
+    "toys-app-dluz-v4",
+    "dluz-manager-abd",
+    "dluz-macro-correr-automatico-v5"
+  ];
+  for (const slug of discontinuedSlugs) {
+    await dbRun("DELETE FROM products WHERE slug = ?", [slug]);
+  }
+
   // Popular os produtos oficiais se ainda não existirem ou atualizar image_url
   for (const p of INITIAL_PRODUCTS) {
     const existing = await dbGet("SELECT id, image_url FROM products WHERE id = ?", [p.id]);
@@ -207,9 +219,9 @@ async function initDatabase() {
     }
   }
 
-  // Cupons iniciais
+  // Cupons iniciais (Removido MELHOR10 a pedido do usuário)
+  await dbRun("DELETE FROM coupons WHERE code = 'MELHOR10'");
   const defaultCoupons = [
-    { code: "MELHOR10", percent: 10, fixed: 0 },
     { code: "DLUZ10", percent: 10, fixed: 0 },
     { code: "VIP15", percent: 15, fixed: 0 }
   ];
