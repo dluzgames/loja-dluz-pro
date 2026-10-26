@@ -3,53 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Loja Oficial DLuz — Softwares Gamer Pro, Emuladores 120 FPS & IA Studio</title>
-  <meta name="description" content="Loja Oficial DLuz Games. Adquira o DLuz Mobilador Pro v3.5.1 Zero Delay 120 FPS, Dluz Film PRO IA, GTA 5 Cooperativo e Emuladores Otimizados com entrega automática no WhatsApp e E-mail via Mercado Pago." />
+  <title>DLuz Games — Loja Oficial | Softwares Gamer Pro, Emuladores 120 FPS & IA</title>
+  <meta name="description" content="Compre na Loja Oficial DLuz Games com garantia Mercado Pago. DLuz Mobilador Pro v3.5.1 Zero Delay 120 FPS, Dluz Film PRO IA, GTA 5 Coop e Emuladores Turbinados. Envio Imediato por WhatsApp e E-mail." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-primary: #F5F5F7;
-      --bg-secondary: #FFFFFF;
-      --bg-tertiary: #EFEFF4;
-      --bg-glass: rgba(255, 255, 255, 0.78);
-      --bg-glass-strong: rgba(255, 255, 255, 0.92);
-      --text-primary: #1D1D1F;
-      --text-secondary: #6E6E73;
-      --text-muted: #86868B;
-      --border-subtle: rgba(0, 0, 0, 0.07);
-      --border-strong: rgba(0, 0, 0, 0.13);
-      --apple-blue: #0071E3;
-      --apple-blue-hover: #0077ED;
-      --apple-green: #28CD41;
+      --ml-yellow: #FFE600;
+      --ml-yellow-dark: #F5D800;
+      --ml-blue: #3483FA;
+      --ml-blue-hover: #2968C8;
+      --ml-blue-light: #EBF3FE;
+      --ml-green: #00A650;
+      --ml-green-light: #E6F7EE;
+      --ml-green-full: #00A650;
+      --ml-orange: #FF7733;
+      --ml-gray-bg: #EDEDED;
+      --ml-card-bg: #FFFFFF;
+      --ml-text-main: rgba(0, 0, 0, 0.9);
+      --ml-text-sub: rgba(0, 0, 0, 0.55);
+      --ml-text-muted: rgba(0, 0, 0, 0.45);
+      --ml-border: #E6E6E6;
+      --ml-border-subtle: #EEEEEE;
+      --ml-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+      --ml-shadow-hover: 0 7px 16px 0 rgba(0, 0, 0, 0.12);
       --whatsapp-green: #25D366;
-      --whatsapp-dark: #128C7E;
-      --apple-orange: #FF9500;
-      --apple-red: #FF3B30;
-      --apple-purple: #AF52DE;
-      --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
-      --shadow-hover: 0 20px 44px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
-      --shadow-float: 0 16px 40px rgba(0, 0, 0, 0.14);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --radius-pill: 9999px;
-    }
-
-    html.dark-mode {
-      --bg-primary: #000000;
-      --bg-secondary: #1C1C1E;
-      --bg-tertiary: #2C2C2E;
-      --bg-glass: rgba(28, 28, 30, 0.78);
-      --bg-glass-strong: rgba(28, 28, 30, 0.94);
-      --text-primary: #F5F5F7;
-      --text-secondary: #A1A1A6;
-      --text-muted: #8E8E93;
-      --border-subtle: rgba(255, 255, 255, 0.1);
-      --border-strong: rgba(255, 255, 255, 0.18);
-      --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.45);
-      --shadow-hover: 0 24px 48px rgba(0, 0, 0, 0.65);
+      --whatsapp-hover: #20BD5A;
     }
 
     * {
@@ -57,18 +37,16 @@
       margin: 0;
       padding: 0;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.5;
+      font-family: "Proxima Nova", -apple-system, "Inter", "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--ml-gray-bg);
+      color: var(--ml-text-main);
+      line-height: 1.45;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     a {
@@ -82,9 +60,9 @@
 
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1220px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 16px;
     }
 
     .hidden {
@@ -92,930 +70,929 @@
     }
 
     /* ==========================================
-       DYNAMIC ISLAND (NOTIFICAÇÃO ESTILO IPHONE 16 PRO)
+       BARRA DE TOPO & HEADER ESTILO MERCADO LIVRE
        ========================================== */
-    .dynamic-island-wrap {
-      position: fixed;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1000;
-      pointer-events: none;
-    }
-
-    .dynamic-island {
-      background: #000000;
-      color: #FFFFFF;
-      border-radius: 999px;
-      padding: 8px 18px;
-      min-width: 220px;
-      max-width: 92vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 12.5px;
-      font-weight: 600;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      pointer-events: auto;
-      cursor: pointer;
-    }
-
-    .dynamic-island.expanded {
-      padding: 12px 24px;
-      transform: scale(1.04);
-      box-shadow: 0 18px 40px rgba(0, 113, 227, 0.25), 0 8px 20px rgba(0, 0, 0, 0.35);
-    }
-
-    .island-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #30D158;
-      box-shadow: 0 0 10px #30D158;
-      flex-shrink: 0;
-    }
-
-    /* ==========================================
-       NAVBAR TRANSLÚCIDA ESTILO APPLE STORE / IOS
-       ========================================== */
-    .apple-header {
+    .ml-header {
+      background-color: var(--ml-yellow);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
-      z-index: 90;
-      background: var(--bg-glass);
-      backdrop-filter: saturate(180%) blur(22px);
-      -webkit-backdrop-filter: saturate(180%) blur(22px);
-      border-bottom: 1px solid var(--border-subtle);
-      margin-top: 44px;
+      z-index: 100;
+      box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     }
 
-    .header-inner {
+    .ml-header-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      height: 64px;
+      gap: 20px;
+      padding: 10px 0 6px;
     }
 
-    .brand-logo {
+    .ml-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       cursor: pointer;
+      flex-shrink: 0;
     }
 
-    .brand-squircle {
-      width: 40px;
-      height: 40px;
-      border-radius: 11px;
-      background: linear-gradient(145deg, #1D1D1F 0%, #3A3A3C 100%);
+    .ml-logo-badge {
+      background: #1D1D1F;
       color: #FFFFFF;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      letter-spacing: -0.04em;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .ml-logo-text {
+      font-size: 19px;
+      font-weight: 800;
+      color: #2D3277;
+      letter-spacing: -0.03em;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .ml-logo-sub {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #00A650;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Barra de Busca estilo Mercado Livre */
+    .ml-search-wrap {
+      flex: 1;
+      max-width: 620px;
+      position: relative;
+    }
+
+    .ml-search-input {
+      width: 100%;
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      padding: 10px 48px 10px 16px;
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.9);
+      outline: none;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+      transition: border-color 0.2s ease;
+    }
+
+    .ml-search-input:focus {
+      border-color: var(--ml-blue);
+    }
+
+    .ml-search-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 44px;
+      background: transparent;
+      border: none;
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
+      color: #666666;
       font-size: 16px;
-      letter-spacing: -0.04em;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     }
 
-    html.dark-mode .brand-squircle {
-      background: linear-gradient(145deg, #0071E3 0%, #00C7BE 100%);
+    .ml-search-btn:hover {
+      background: rgba(0, 0, 0, 0.04);
     }
 
-    .brand-title {
+    .ml-header-promo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.8);
+      flex-shrink: 0;
+    }
+
+    .ml-btn-link {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.8);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+
+    .ml-btn-link:hover {
+      background: rgba(0, 0, 0, 0.05);
+      color: rgba(0, 0, 0, 0.95);
+    }
+
+    /* Sub-barra de Navegação */
+    .ml-header-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 0 10px;
+      font-size: 13.5px;
+      color: rgba(0, 0, 0, 0.7);
+    }
+
+    .ml-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      overflow-x: auto;
+    }
+
+    .ml-location-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.65);
+      cursor: pointer;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+
+    .ml-location-pill:hover {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .ml-category-btn {
+      font-size: 13.5px;
+      color: rgba(0, 0, 0, 0.75);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      font-weight: 500;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+
+    .ml-category-btn:hover, .ml-category-btn.active {
+      color: rgba(0, 0, 0, 0.95);
       font-weight: 700;
-      font-size: 17px;
-      letter-spacing: -0.025em;
-      color: var(--text-primary);
+    }
+
+    .ml-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* Banner Promocional do Topo */
+    .ml-top-banner {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--ml-border);
+      padding: 8px 0;
+      font-size: 12.5px;
+      color: rgba(0, 0, 0, 0.75);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* ==========================================
+       PÁGINA DO PRODUTO (LAYOUT MERCADO LIVRE VIP)
+       ========================================== */
+    .ml-product-page {
+      padding: 16px 0 48px;
+    }
+
+    .ml-breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--ml-blue);
+      margin-bottom: 14px;
+    }
+
+    .ml-breadcrumb-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ml-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Container Principal do Produto */
+    .ml-product-container {
+      background: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: var(--ml-shadow);
+      border: 1px solid var(--ml-border-subtle);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 0.85fr;
+      gap: 28px;
+    }
+
+    /* Coluna 1: Galeria de Fotos e Imagem Principal */
+    .ml-gallery-col {
+      display: flex;
+      gap: 14px;
+    }
+
+    .ml-thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 58px;
+      flex-shrink: 0;
+    }
+
+    .ml-thumb-item {
+      width: 54px;
+      height: 54px;
+      border-radius: 6px;
+      border: 1px solid var(--ml-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+      background: #F9F9F9;
+      transition: border-color 0.15s ease;
+    }
+
+    .ml-thumb-item:hover, .ml-thumb-item.active {
+      border: 2px solid var(--ml-blue);
+    }
+
+    .ml-main-stage {
+      flex: 1;
+      min-height: 420px;
+      border: 1px solid var(--ml-border-subtle);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 50%, #FAFAFA 0%, #FFFFFF 100%);
+      padding: 20px;
+      position: relative;
+    }
+
+    .ml-main-badge-ribbon {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--ml-green);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    .ml-main-stage-icon {
+      width: 140px;
+      height: 140px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      color: #FFFFFF;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+      margin-bottom: 20px;
+    }
+
+    .ml-main-stage-label {
+      font-size: 13px;
+      color: var(--ml-text-sub);
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* Coluna 2: Informações do Produto (Título, Avaliações, Preço, Descrição) */
+    .ml-info-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ml-condition-row {
+      font-size: 13px;
+      color: var(--ml-text-sub);
+      margin-bottom: 6px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .brand-badge {
-      font-size: 10px;
+    .ml-product-title {
+      font-size: 22px;
       font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 999px;
-      background: rgba(0, 113, 227, 0.12);
-      color: var(--apple-blue);
+      color: var(--ml-text-main);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .ml-reviews-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .ml-stars {
+      color: var(--ml-blue);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .ml-rating-num {
+      color: var(--ml-text-sub);
+    }
+
+    .ml-best-seller-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FEEFE6;
+      color: var(--ml-orange);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 3px;
+      width: fit-content;
+      margin-bottom: 14px;
       text-transform: uppercase;
       letter-spacing: 0.03em;
     }
 
-    .brand-sub {
-      font-size: 11px;
-      color: var(--text-muted);
-      display: block;
+    /* Bloco de Preço Mercado Livre */
+    .ml-price-box {
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--ml-border-subtle);
     }
 
-    .nav-links {
+    .ml-price-old {
+      font-size: 15px;
+      color: var(--ml-text-muted);
+      text-decoration: line-through;
+      margin-bottom: 2px;
+    }
+
+    .ml-price-current-row {
       display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .nav-pill {
-      padding: 7px 14px;
-      border-radius: var(--radius-pill);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .nav-pill:hover, .nav-pill.active {
-      color: var(--text-primary);
-      background: var(--bg-tertiary);
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
+      align-items: baseline;
       gap: 10px;
     }
 
-    /* Botões estilo iOS */
-    .ios-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 20px;
-      border-radius: var(--radius-pill);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      text-decoration: none;
-      white-space: nowrap;
+    .ml-price-symbol {
+      font-size: 20px;
+      font-weight: 400;
     }
 
-    .ios-btn:active {
-      transform: scale(0.97);
-    }
-
-    .ios-btn-primary {
-      background: var(--apple-blue);
-      color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(0, 113, 227, 0.28);
-    }
-
-    .ios-btn-primary:hover {
-      background: var(--apple-blue-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(0, 113, 227, 0.38);
-    }
-
-    .ios-btn-secondary {
-      background: var(--bg-tertiary);
-      color: var(--text-primary);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .ios-btn-secondary:hover {
-      background: var(--border-subtle);
-    }
-
-    .ios-btn-whatsapp {
-      background: #25D366;
-      color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
-    }
-
-    .ios-btn-whatsapp:hover {
-      background: #20BD5A;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.38);
-    }
-
-    .ios-btn-sm {
-      padding: 7px 14px;
-      font-size: 12.5px;
-    }
-
-    .ios-btn-lg {
-      padding: 14px 28px;
-      font-size: 15.5px;
-      font-weight: 700;
-    }
-
-    .theme-toggle-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--bg-tertiary);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 15px;
-      transition: all 0.2s ease;
-    }
-
-    .theme-toggle-btn:hover {
-      transform: scale(1.06);
-    }
-
-    /* ==========================================
-       HERO BENTO SHOWCASE (IPHONE 16 PRO CLEAN STYLE)
-       ========================================== */
-    .hero-section {
-      padding: 32px 0 24px;
-    }
-
-    .hero-bento {
-      background: var(--bg-secondary);
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-card);
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 36px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 13px;
-      border-radius: var(--radius-pill);
-      background: rgba(0, 113, 227, 0.1);
-      color: var(--apple-blue);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 16px;
-    }
-
-    .hero-headline {
-      font-size: clamp(28px, 4vw, 46px);
-      font-weight: 800;
-      letter-spacing: -0.035em;
-      line-height: 1.08;
-      color: var(--text-primary);
-      margin-bottom: 14px;
-    }
-
-    .hero-gradient-text {
-      background: linear-gradient(90deg, #0071E3 0%, #00C7BE 55%, #28CD41 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-lead {
-      font-size: 16px;
-      color: var(--text-secondary);
-      line-height: 1.55;
-      margin-bottom: 24px;
-      max-width: 560px;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .hero-metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      padding-top: 22px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .metric-tile {
-      background: var(--bg-primary);
-      border-radius: 16px;
-      padding: 12px 14px;
-    }
-
-    .metric-val {
-      font-size: 18px;
-      font-weight: 800;
+    .ml-price-value {
+      font-size: 36px;
+      font-weight: 400;
       letter-spacing: -0.02em;
-      color: var(--text-primary);
+      color: var(--ml-text-main);
     }
 
-    .metric-lbl {
-      font-size: 11.5px;
-      color: var(--text-muted);
-      font-weight: 500;
+    .ml-price-discount {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ml-green);
     }
 
-    /* Mockup Estilo iPhone / macOS Clean */
-    .iphone-showcase-card {
-      background: linear-gradient(145deg, #1D1D1F 0%, #000000 100%);
-      color: #FFFFFF;
-      border-radius: 32px;
-      padding: 24px;
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.2);
-      border: 4px solid #3A3A3C;
-      position: relative;
+    .ml-installments {
+      font-size: 15px;
+      color: var(--ml-text-main);
+      margin-top: 4px;
     }
 
-    .iphone-notch {
-      width: 96px;
-      height: 22px;
-      background: #000000;
-      border-radius: 99px;
-      margin: 0 auto 18px;
+    .ml-installments-pix {
+      font-size: 13.5px;
+      color: var(--ml-green);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .ml-payment-methods-link {
+      font-size: 13px;
+      color: var(--ml-blue);
+      display: inline-block;
+      margin-top: 6px;
+      cursor: pointer;
+    }
+
+    .ml-payment-methods-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Destaques do Produto */
+    .ml-highlights-box {
+      margin-bottom: 24px;
+    }
+
+    .ml-highlights-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ml-text-main);
+      margin-bottom: 10px;
+    }
+
+    .ml-highlight-item {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 10px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 9px;
+      font-size: 13.5px;
+      color: var(--ml-text-main);
     }
 
-    .iphone-notch-cam {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #1A3A6E;
-    }
-
-    .iphone-notch-led {
+    .ml-highlight-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: #30D158;
+      background: var(--ml-blue);
+      margin-top: 7px;
+      flex-shrink: 0;
     }
 
-    .iphone-app-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Descrição Completa */
+    .ml-description-box {
+      border-top: 1px solid var(--ml-border-subtle);
+      padding-top: 24px;
+      margin-top: 10px;
     }
 
-    .iphone-spec-list {
+    .ml-desc-heading {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ml-text-main);
+      margin-bottom: 14px;
+    }
+
+    .ml-desc-body {
+      font-size: 14.5px;
+      color: rgba(0, 0, 0, 0.7);
+      line-height: 1.65;
+    }
+
+    .ml-desc-body h3, .ml-desc-body h4 {
+      color: var(--ml-text-main);
+      font-weight: 700;
+      margin: 18px 0 8px;
+      font-size: 15.5px;
+    }
+
+    .ml-desc-body p {
+      margin-bottom: 10px;
+    }
+
+    .ml-desc-body ul {
+      margin-left: 18px;
+      margin-bottom: 14px;
+    }
+
+    .ml-desc-body li {
+      margin-bottom: 6px;
+    }
+
+    /* Coluna 3: Buy Box (Caixa de Compra Mercado Livre) */
+    .ml-buy-box {
+      border: 1px solid var(--ml-border);
+      border-radius: 8px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
+      gap: 16px;
+      align-self: start;
+      position: sticky;
+      top: 86px;
+      background: #FFFFFF;
+    }
+
+    .ml-shipping-row {
+      display: flex;
+      align-items: flex-start;
       gap: 10px;
     }
 
-    .iphone-spec-row {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 11px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 12.5px;
+    .ml-shipping-icon {
+      color: var(--ml-green);
+      font-size: 18px;
+      margin-top: 1px;
     }
 
-    .iphone-spec-row span:first-child {
-      color: #A1A1A6;
-    }
-
-    .iphone-spec-row strong {
-      color: #FFFFFF;
-      font-weight: 600;
-    }
-
-    /* ==========================================
-       CONTROLES DE FILTRO E BUSCA ESTILO IOS
-       ========================================== */
-    .controls-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin: 16px 0 28px;
-    }
-
-    .ios-segmented {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--bg-tertiary);
-      padding: 5px;
-      border-radius: var(--radius-pill);
-      overflow-x: auto;
-      max-width: 100%;
-    }
-
-    .seg-btn {
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-    }
-
-    .seg-btn.active {
-      background: var(--bg-secondary);
-      color: var(--text-primary);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-
-    .ios-search-box {
-      position: relative;
-      min-width: 270px;
-      flex: 1;
-      max-width: 360px;
-    }
-
-    .ios-search-input {
-      width: 100%;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-pill);
-      padding: 10px 16px 10px 38px;
-      font-size: 13.5px;
-      color: var(--text-primary);
-      outline: none;
-      box-shadow: var(--shadow-card);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .ios-search-input:focus {
-      border-color: var(--apple-blue);
-      box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
-    }
-
-    .ios-search-icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
+    .ml-shipping-title {
       font-size: 14px;
-      pointer-events: none;
+      font-weight: 700;
+      color: var(--ml-green);
     }
 
-    /* ==========================================
-       GRADE DE PRODUTOS ESTILO APP STORE / APPLE STORE
-       ========================================== */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 22px;
-      margin-bottom: 56px;
+    .ml-shipping-sub {
+      font-size: 13px;
+      color: var(--ml-text-sub);
+      line-height: 1.35;
     }
 
-    .ios-product-card {
-      background: var(--bg-secondary);
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-card);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
-      position: relative;
+    .ml-stock-badge {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ml-text-main);
+    }
+
+    /* Botões Oficiais Mercado Livre */
+    .ml-btn-buy {
+      width: 100%;
+      background-color: var(--ml-blue);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 6px;
+      padding: 13px 18px;
+      font-size: 15px;
+      font-weight: 700;
       cursor: pointer;
-    }
-
-    .ios-product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(0, 113, 227, 0.3);
-    }
-
-    .card-top-row {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
-
-    .ios-squircle-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
+      transition: background-color 0.2s ease, transform 0.1s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #FFFFFF;
-      font-size: 28px;
-      flex-shrink: 0;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.35);
-      position: relative;
+      gap: 8px;
     }
 
-    .card-badges {
+    .ml-btn-buy:hover {
+      background-color: var(--ml-blue-hover);
+    }
+
+    .ml-btn-buy:active {
+      transform: scale(0.98);
+    }
+
+    .ml-btn-whatsapp {
+      width: 100%;
+      background-color: var(--whatsapp-green);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 6px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.2s ease;
+      text-decoration: none;
+    }
+
+    .ml-btn-whatsapp:hover {
+      background-color: var(--whatsapp-hover);
+    }
+
+    /* Caixa do Vendedor (MercadoLíder Platinum) */
+    .ml-seller-info-box {
+      border-top: 1px solid var(--ml-border-subtle);
+      padding-top: 14px;
+      font-size: 13px;
+    }
+
+    .ml-seller-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ml-text-main);
+      margin-bottom: 6px;
+    }
+
+    .ml-mercadolider-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ml-green);
+      font-weight: 700;
+      font-size: 12.5px;
+      margin-bottom: 10px;
+    }
+
+    .ml-thermometer {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      height: 6px;
+      gap: 2px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .ml-therm-level {
+      background: #EFEFEF;
+    }
+
+    .ml-therm-level.lvl-1 { background: #FFF0F0; }
+    .ml-therm-level.lvl-2 { background: #FFF7EB; }
+    .ml-therm-level.lvl-3 { background: #FFFEEB; }
+    .ml-therm-level.lvl-4 { background: #EBF8F0; }
+    .ml-therm-level.lvl-5 { background: #00A650; }
+
+    .ml-seller-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      text-align: center;
+      font-size: 10.5px;
+      color: var(--ml-text-sub);
+      border-top: 1px solid var(--ml-border-subtle);
+      padding-top: 10px;
+    }
+
+    .ml-seller-metric-val {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ml-text-main);
+      margin-bottom: 2px;
+    }
+
+    /* Garantias Mercado Pago */
+    .ml-guarantees-box {
+      border-top: 1px solid var(--ml-border-subtle);
+      padding-top: 14px;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
+      gap: 12px;
+      font-size: 12.5px;
+      color: var(--ml-text-sub);
     }
 
-    .pill-badge {
-      font-size: 10.5px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
+    .ml-guarantee-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
     }
 
-    .pill-discount {
-      background: rgba(255, 59, 48, 0.12);
-      color: var(--apple-red);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 9px;
-      border-radius: var(--radius-pill);
+    .ml-guarantee-row a {
+      color: var(--ml-blue);
     }
 
-    .card-category {
-      font-size: 11px;
+    /* Formulário Embutido de Checkout Mercado Pago */
+    .ml-checkout-form-box {
+      background: #F8F9FA;
+      border: 1px solid var(--ml-border);
+      border-radius: 8px;
+      padding: 14px;
+      margin-top: 10px;
+    }
+
+    .ml-field-group {
+      margin-bottom: 10px;
+    }
+
+    .ml-field-label {
+      font-size: 11.5px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--text-muted);
+      color: var(--ml-text-main);
+      display: block;
       margin-bottom: 4px;
     }
 
-    .card-title {
-      font-size: 18.5px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.28;
-      color: var(--text-primary);
-      margin-bottom: 8px;
+    .ml-field-input {
+      width: 100%;
+      background: #FFFFFF;
+      border: 1px solid var(--ml-border);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-size: 13.5px;
+      outline: none;
+      transition: border-color 0.2s;
     }
 
-    .card-desc {
-      font-size: 13.5px;
-      color: var(--text-secondary);
-      line-height: 1.5;
+    .ml-field-input:focus {
+      border-color: var(--ml-blue);
+      box-shadow: 0 0 0 2px rgba(52, 131, 250, 0.15);
+    }
+
+    /* ==========================================
+       CATÁLOGO GERAL (GRADE ESTILO MERCADO LIVRE)
+       ========================================== */
+    .ml-catalog-view {
+      padding: 20px 0 48px;
+    }
+
+    .ml-results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 16px;
+      font-size: 14px;
+      color: var(--ml-text-sub);
+    }
+
+    .ml-results-count {
+      font-size: 14px;
+      color: var(--ml-text-main);
+      font-weight: 600;
+    }
+
+    .ml-grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .ml-card-poly {
+      background: #FFFFFF;
+      border-radius: 8px;
+      border: 1px solid var(--ml-border-subtle);
+      box-shadow: var(--ml-shadow);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .ml-card-poly:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--ml-shadow-hover);
+    }
+
+    .ml-card-thumb-wrap {
+      width: 100%;
+      height: 190px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .ml-card-icon {
+      font-size: 58px;
+      color: #FFFFFF;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+    }
+
+    .ml-full-pill {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background: #00A650;
+      color: #FFFFFF;
+      font-size: 10.5px;
+      font-weight: 800;
+      font-style: italic;
+      padding: 2px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+    }
+
+    .ml-card-poly-title {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ml-text-main);
+      line-height: 1.35;
+      margin-bottom: 8px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
-    .card-features {
-      list-style: none;
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 14px;
-      margin-bottom: 20px;
+    .ml-card-poly-price-row {
       display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .card-features li {
-      font-size: 12.5px;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
+      align-items: baseline;
       gap: 8px;
+      margin-bottom: 4px;
     }
 
-    .check-circle {
-      width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      background: rgba(40, 205, 65, 0.15);
-      color: #1FA834;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      font-weight: 800;
-      flex-shrink: 0;
+    .ml-card-poly-price {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--ml-text-main);
     }
 
-    .card-footer {
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .price-strike {
-      font-size: 12px;
-      color: var(--text-muted);
-      text-decoration: line-through;
-    }
-
-    .price-current {
-      font-size: 23px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--text-primary);
-    }
-
-    .card-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* ==========================================
-       PÁGINA DE VENDAS DEDICADA DO PRODUTO (/produto/:slug)
-       ========================================== */
-    .sales-page-view {
-      padding: 20px 0 64px;
-      animation: fadeSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .sales-subnav {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-pill);
-      padding: 10px 18px;
-      margin-bottom: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .sales-layout {
-      display: grid;
-      grid-template-columns: 1.3fr 0.9fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .sales-card {
-      background: var(--bg-secondary);
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-card);
-      padding: 32px;
-      margin-bottom: 22px;
-    }
-
-    .sales-bento-features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .sales-bento-item {
-      background: var(--bg-primary);
-      border-radius: 18px;
-      padding: 16px;
-      border: 1px solid var(--border-subtle);
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .sales-prose h2, .sales-prose h3, .sales-prose h4 {
-      color: var(--text-primary);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin: 20px 0 10px;
-    }
-
-    .sales-prose h3 { font-size: 20px; }
-    .sales-prose h4 { font-size: 16.5px; color: var(--apple-blue); }
-    .sales-prose p { color: var(--text-secondary); margin-bottom: 12px; font-size: 15px; line-height: 1.65; }
-    .sales-prose ul { list-style: none; padding: 0; margin-bottom: 16px; }
-    .sales-prose ul li {
-      position: relative;
-      padding-left: 24px;
-      margin-bottom: 8px;
-      color: var(--text-secondary);
-      font-size: 14.5px;
-    }
-    .sales-prose ul li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #1FA834;
-      font-weight: 800;
-    }
-
-    /* Coluna Direita Sticky de Checkout na Página de Vendas */
-    .checkout-sticky-panel {
-      position: sticky;
-      top: 84px;
-      background: var(--bg-secondary);
-      border-radius: var(--radius-xl);
-      border: 2px solid rgba(0, 113, 227, 0.25);
-      box-shadow: var(--shadow-hover);
-      padding: 28px;
-    }
-
-    .ios-input-group {
-      margin-bottom: 14px;
-    }
-
-    .ios-label {
-      display: block;
-      font-size: 12px;
+    .ml-card-poly-discount {
+      font-size: 13px;
       font-weight: 600;
-      color: var(--text-secondary);
-      margin-bottom: 5px;
+      color: var(--ml-green);
     }
 
-    .ios-input {
-      width: 100%;
-      background: var(--bg-primary);
-      border: 1px solid var(--border-strong);
-      border-radius: 14px;
-      padding: 12px 15px;
-      font-size: 14.5px;
-      color: var(--text-primary);
-      outline: none;
-      transition: all 0.2s ease;
+    .ml-card-poly-inst {
+      font-size: 12.5px;
+      color: var(--ml-text-sub);
+      margin-bottom: 6px;
     }
 
-    .ios-input:focus {
-      border-color: var(--apple-blue);
-      background: var(--bg-secondary);
-      box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
-    }
-
-    /* Trust / Garantias Bento */
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 18px;
-      margin-bottom: 48px;
-    }
-
-    .trust-card {
-      background: var(--bg-secondary);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      padding: 22px;
-      box-shadow: var(--shadow-card);
-    }
-
-    /* Botão Flutuante do WhatsApp Oficial do DLuz */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 22px;
-      right: 22px;
-      z-index: 95;
-      background: #25D366;
-      color: #FFFFFF;
-      border-radius: 999px;
-      padding: 12px 20px;
+    .ml-card-shipping-free {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ml-green);
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      gap: 4px;
     }
 
-    .whatsapp-float:hover {
-      transform: translateY(-3px) scale(1.02);
-      background: #1EBE5D;
-      box-shadow: 0 16px 34px rgba(37, 211, 102, 0.52);
-    }
-
-    /* Modais para Resgate de Chave e Páginas Legais */
-    .ios-modal-backdrop {
+    /* Modal de Meios de Pagamento / Consultar Pedido */
+    .ml-modal-overlay {
       position: fixed;
       inset: 0;
       z-index: 200;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      overflow-y: auto;
     }
 
-    .ios-modal-box {
-      background: var(--bg-secondary);
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-float);
-      max-width: 620px;
+    .ml-modal-box {
+      background: #FFFFFF;
+      border-radius: 8px;
+      max-width: 580px;
       width: 100%;
-      padding: 32px;
+      padding: 24px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
       position: relative;
       max-height: 90vh;
       overflow-y: auto;
     }
 
-    .ios-close-btn {
+    .ml-modal-close {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--bg-tertiary);
+      top: 18px;
+      right: 18px;
+      font-size: 20px;
+      background: transparent;
       border: none;
-      color: var(--text-secondary);
-      font-size: 16px;
-      font-weight: 700;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: var(--ml-text-sub);
     }
 
-    .apple-footer {
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border-subtle);
-      padding: 48px 0 32px;
+    /* Rodapé Mercado Livre */
+    .ml-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--ml-border);
+      padding: 32px 0 20px;
       margin-top: auto;
-      font-size: 13px;
-      color: var(--text-secondary);
+      font-size: 12.5px;
+      color: var(--ml-text-sub);
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 28px;
-      margin-bottom: 32px;
-    }
-
-    .footer-col h4 {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-    }
-
-    .footer-col ul {
-      list-style: none;
+    .ml-footer-links {
       display: flex;
-      flex-direction: column;
-      gap: 8px;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      color: var(--ml-text-main);
     }
 
-    .footer-col a:hover, .footer-col button:hover {
-      color: var(--apple-blue);
+    .ml-footer-links a:hover {
+      color: var(--ml-blue);
     }
 
-    @media (max-width: 960px) {
-      .hero-bento {
-        grid-template-columns: 1fr;
-        padding: 26px;
-      }
-      .sales-layout {
+    @media (max-width: 990px) {
+      .ml-product-container {
         grid-template-columns: 1fr;
       }
-      .checkout-sticky-panel {
+      .ml-gallery-col {
+        flex-direction: column-reverse;
+      }
+      .ml-thumbnails {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+      }
+      .ml-buy-box {
         position: static;
       }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
+      .ml-header-top {
+        flex-wrap: wrap;
       }
-      .nav-links {
-        display: none;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-metrics-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .brand-sub {
-        display: none;
+      .ml-search-wrap {
+        order: 3;
+        max-width: 100%;
+        width: 100%;
       }
     }
   </style>
@@ -1023,714 +1000,541 @@
 <body>
 
   <!-- ==========================================
-       DYNAMIC ISLAND (TOPO ESTILO IPHONE 16 PRO)
+       HEADER OFICIAL ESTILO MERCADO LIVRE
        ========================================== -->
-  <div class="dynamic-island-wrap">
-    <div id="dynamicIsland" class="dynamic-island" onclick="copyCouponTop('MELHOR10')">
-      <span class="island-dot"></span>
-      <span id="dynamicIslandText">Entrega Automática 24h no WhatsApp • Cupom 10% OFF: MELHOR10</span>
-    </div>
-  </div>
-
-  <!-- ==========================================
-       CABEÇALHO PRINCIPAL ESTILO APPLE STORE
-       ========================================== -->
-  <header class="apple-header">
-    <div class="container header-inner">
-      <a href="/" onclick="goHome(event)" class="brand-logo">
-        <div class="brand-squircle">DL</div>
-        <div>
-          <div class="brand-title">
-            <span>DLuz Store</span>
-            <span class="brand-badge">Oficial</span>
+  <header class="ml-header">
+    <div class="container">
+      <div class="ml-header-top">
+        <a href="/" onclick="goHome(event)" class="ml-logo">
+          <div class="ml-logo-badge">DL</div>
+          <div class="ml-logo-text">
+            <span>DLUZ GAMES</span>
+            <span class="ml-logo-sub">Loja Oficial Mercado Pago</span>
           </div>
-          <span class="brand-sub">Softwares Pro • Emuladores 120 FPS • IA</span>
-        </div>
-      </a>
-
-      <nav class="nav-links">
-        <button type="button" onclick="goHome(event); filterCategory('all')" class="nav-pill active" id="nav-all">Loja</button>
-        <button type="button" onclick="openSalesPageById(2755)" class="nav-pill">Mobilador Pro</button>
-        <button type="button" onclick="openSalesPageById(2948)" class="nav-pill">Dluz Film IA</button>
-        <button type="button" onclick="goHome(event); filterCategory('emuladores')" class="nav-pill">Emuladores 120 FPS</button>
-        <button type="button" onclick="openLookupModal()" class="nav-pill">🔑 Minhas Compras</button>
-      </nav>
-
-      <div class="header-actions">
-        <button type="button" onclick="openLookupModal()" class="ios-btn ios-btn-secondary ios-btn-sm">
-          <span>🔑</span>
-          <span>Resgatar Chave</span>
-        </button>
-
-        <a
-          id="headerWhatsappLink"
-          href="https://wa.me/5563981199852?text=Ol%C3%A1%20DLuz!%20Estou%20na%20Loja%20Oficial%20e%20preciso%20de%20suporte."
-          target="_blank"
-          rel="noopener"
-          class="ios-btn ios-btn-whatsapp ios-btn-sm"
-        >
-          <span>💬</span>
-          <span>Suporte WhatsApp</span>
         </a>
 
-        <button
-          type="button"
-          onclick="toggleThemeMode()"
-          class="theme-toggle-btn"
-          id="themeToggleBtn"
-          title="Alternar modo Claro / Escuro estilo iOS"
-        >
-          🌙
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- ==========================================
-       VIEW 1: VITRINE PRINCIPAL DA LOJA (/)
-       ========================================== -->
-  <main id="storeHomeView" class="container" style="flex: 1;">
-
-    <!-- Hero Bento Apple Showcase -->
-    <section class="hero-section">
-      <div class="hero-bento">
-        <div>
-          <div class="hero-eyebrow">
-            <span>✨ Lançamento Oficial v3.5.1</span>
-            <span>•</span>
-            <span>Direct3D 11 + 1000Hz</span>
-          </div>
-          <h1 class="hero-headline">
-            DLuz Mobilador Pro.<br />
-            <span class="hero-gradient-text">120 FPS. Zero Delay.</span>
-          </h1>
-          <p class="hero-lead">
-            Jogue Free Fire, Blood Strike, COD Mobile e Roblox no PC usando Teclado e Mouse com 1ms de resposta, pareamento 100% em salas Mobile e zero risco de banimento.
-          </p>
-
-          <div class="hero-cta-row">
-            <button type="button" onclick="openSalesPageById(2755, true)" class="ios-btn ios-btn-primary ios-btn-lg">
-              <span>Comprar Licença Vitalícia — R$ 21,90</span>
-            </button>
-            <button type="button" onclick="openSalesPageById(2755, false)" class="ios-btn ios-btn-secondary ios-btn-lg">
-              <span>Ver Página de Vendas ›</span>
-            </button>
-          </div>
-
-          <div class="hero-metrics-grid">
-            <div class="metric-tile">
-              <div class="metric-val">1000Hz</div>
-              <div class="metric-lbl">1ms Mouse Raw Input</div>
-            </div>
-            <div class="metric-tile">
-              <div class="metric-val">100% Safe</div>
-              <div class="metric-lbl">Salas Mobile Oficiais</div>
-            </div>
-            <div class="metric-tile">
-              <div class="metric-val">3 Segundos</div>
-              <div class="metric-lbl">Entrega no WhatsApp</div>
-            </div>
-          </div>
+        <div class="ml-search-wrap">
+          <input
+            type="text"
+            id="mlSearchInput"
+            oninput="handleSearch(this.value)"
+            placeholder="Buscar softwares, emuladores, sensis (ex: Mobilador Pro, GTA 5 Coop)..."
+            class="ml-search-input"
+          />
+          <button type="button" class="ml-search-btn" title="Buscar">🔍</button>
         </div>
 
-        <!-- iPhone / Studio Hardware Card -->
-        <div class="iphone-showcase-card" onclick="openSalesPageById(2755, false)" style="cursor: pointer;">
-          <div class="iphone-notch">
-            <span class="iphone-notch-cam"></span>
-            <span style="font-size: 9px; color: #8E8E93; font-weight: 700;">DLUZ OS</span>
-            <span class="iphone-notch-led"></span>
-          </div>
-
-          <div class="iphone-app-header">
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #0071E3, #28CD41); display: flex; align-items: center; justify-content: center; font-size: 22px;">
-                🎮
-              </div>
-              <div>
-                <div style="font-weight: 700; font-size: 15px;">DLuz Mobilador Pro</div>
-                <div style="font-size: 11.5px; color: #30D158;">● Licença Vitalícia Ativa</div>
-              </div>
-            </div>
-            <span style="background: rgba(255,255,255,0.12); padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 700;">v3.5.1</span>
-          </div>
-
-          <div class="iphone-spec-list">
-            <div class="iphone-spec-row">
-              <span>Motor de Vídeo GPU</span>
-              <strong style="color: #5AC8FA;">Direct3D 11 (H.265 HEVC)</strong>
-            </div>
-            <div class="iphone-spec-row">
-              <span>Taxa de Quadros</span>
-              <strong style="color: #30D158;">120 FPS Estáveis</strong>
-            </div>
-            <div class="iphone-spec-row">
-              <span>Sensibilidade X / Y</span>
-              <strong style="color: #FFD60A;">Independente (Subir Capa)</strong>
-            </div>
-            <div class="iphone-spec-row">
-              <span>Envio da Chave PRO</span>
-              <strong>WhatsApp + E-mail + Tela</strong>
-            </div>
-          </div>
-
-          <div style="margin-top: 16px; text-align: center; font-size: 12px; color: #A1A1A6;">
-            Toque para abrir a página completa do produto ›
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Barra de Categorias estilo Segmented Control do iOS + Busca -->
-    <section class="controls-bar" id="catalogSection">
-      <div class="ios-segmented" id="categoryTabs">
-        <button type="button" onclick="filterCategory('all')" data-cat="all" class="seg-btn active">Todos (21)</button>
-        <button type="button" onclick="filterCategory('mobilador')" data-cat="mobilador" class="seg-btn">Mobilador</button>
-        <button type="button" onclick="filterCategory('emuladores')" data-cat="emuladores" class="seg-btn">Emuladores & GTA Coop</button>
-        <button type="button" onclick="filterCategory('sensi')" data-cat="sensi" class="seg-btn">Sensi 1000Hz & FPS</button>
-        <button type="button" onclick="filterCategory('criadores')" data-cat="criadores" class="seg-btn">IA & Streamers</button>
-        <button type="button" onclick="filterCategory('vip')" data-cat="vip" class="seg-btn">Clube VIP</button>
-      </div>
-
-      <div class="ios-search-box">
-        <span class="ios-search-icon">🔍</span>
-        <input
-          type="text"
-          id="searchInput"
-          oninput="handleSearchInput(this.value)"
-          placeholder="Buscar aplicativo (ex: Mobilador, GTA 5, Sensi)..."
-          class="ios-search-input"
-        />
-      </div>
-    </section>
-
-    <!-- Grade de Produtos Estilo App Store -->
-    <section id="productsGrid" class="products-grid">
-      <!-- Renderizado dinamicamente via JS -->
-    </section>
-
-    <!-- Bento de Garantias & Suporte Direto no WhatsApp -->
-    <section class="trust-grid">
-      <div class="trust-card">
-        <div style="font-size: 26px; margin-bottom: 8px;">⚡</div>
-        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Entrega Automática em 3s</h3>
-        <p style="font-size: 13px; color: var(--text-secondary);">
-          Confirmou o Pix ou Cartão pelo Mercado Pago, sua Chave PRO aparece na tela na mesma hora e chega no seu WhatsApp e E-mail.
-        </p>
-      </div>
-      <div class="trust-card">
-        <div style="font-size: 26px; margin-bottom: 8px;">🛡️</div>
-        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Segurança Mercado Pago</h3>
-        <p style="font-size: 13px; color: var(--text-secondary);">
-          Pagamentos processados diretamente pelo Mercado Pago com criptografia SSL 256-bit e Compra Garantida.
-        </p>
-      </div>
-      <div class="trust-card">
-        <div style="font-size: 26px; margin-bottom: 8px;">💬</div>
-        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Suporte Direto no Meu WhatsApp</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 10px;">
-          Precisa de ajuda na instalação ou ativação? Fale diretamente comigo pelo WhatsApp oficial.
-        </p>
-        <a
-          id="trustWhatsappLink"
-          href="https://wa.me/5563981199852?text=Ol%C3%A1%20DLuz!%20Preciso%20de%20ajuda%20na%20Loja%20Oficial."
-          target="_blank"
-          rel="noopener"
-          style="font-size: 13px; font-weight: 700; color: var(--apple-blue);"
-        >
-          Chamar no WhatsApp agora ›
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==========================================
-       VIEW 2: PÁGINA DE VENDAS COMPLETA + CHECKOUT (/produto/:slug)
-       ========================================== -->
-  <section id="productSalesView" class="container sales-page-view hidden" style="flex: 1;">
-    <!-- Barra Superior da Página de Vendas -->
-    <div class="sales-subnav">
-      <button type="button" onclick="goHome(event)" class="ios-btn ios-btn-secondary ios-btn-sm">
-        <span>‹ Voltar para todos os produtos</span>
-      </button>
-
-      <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-        <a
-          id="salesTopWhatsappBtn"
-          href="https://wa.me/5563981199852"
-          target="_blank"
-          rel="noopener"
-          class="ios-btn ios-btn-whatsapp ios-btn-sm"
-        >
-          <span>💬 Tirar Dúvida no WhatsApp</span>
-        </a>
-        <button type="button" onclick="scrollToCheckoutPanel()" class="ios-btn ios-btn-primary ios-btn-sm">
-          <span>⚡ Ir para o Pagamento</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="sales-layout">
-      <!-- Coluna Esquerda: Apresentação Completa do Produto (Página de Vendas) -->
-      <div>
-        <div class="sales-card">
-          <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-bottom: 20px;">
-            <div id="salesAppIcon" class="ios-squircle-icon" style="width: 76px; height: 76px; font-size: 34px;">🎮</div>
-            <div style="flex: 1; min-width: 220px;">
-              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px;">
-                <span id="salesBadge" class="pill-badge" style="background: rgba(0,113,227,0.12); color: var(--apple-blue);">OFICIAL DLUZ</span>
-                <span id="salesDiscountBadge" class="pill-discount">OFERTA</span>
-              </div>
-              <h1 id="salesTitle" style="font-size: clamp(22px, 3vw, 32px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15;">
-                Nome do Produto
-              </h1>
-            </div>
-          </div>
-
-          <p id="salesShortDesc" style="font-size: 16px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 22px;"></p>
-
-          <!-- Bento de Destaques Inclusos -->
-          <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 10px;">
-            O que está incluso na sua compra
-          </h3>
-          <div id="salesFeaturesBento" class="sales-bento-features"></div>
-        </div>
-
-        <!-- Descrição Detalhada da Página de Vendas -->
-        <div class="sales-card">
-          <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 12px;">
-            Apresentação Completa & Especificações
-          </h3>
-          <div id="salesFullDescription" class="sales-prose"></div>
-        </div>
-
-        <!-- Card de Suporte Direto no WhatsApp do DLuz -->
-        <div class="sales-card" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: linear-gradient(135deg, rgba(37, 211, 102, 0.08), rgba(0, 113, 227, 0.06));">
-          <div>
-            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">Ficou com alguma dúvida antes de comprar?</h3>
-            <p style="font-size: 13.5px; color: var(--text-secondary);">
-              O suporte da loja é feito diretamente no meu WhatsApp pessoal. Clique ao lado e fale comigo agora!
-            </p>
-          </div>
+        <div class="ml-header-promo">
+          <button type="button" onclick="openLookupModal()" class="ml-btn-link">
+            <span>🔑</span>
+            <span>Minhas Compras / Chaves</span>
+          </button>
           <a
-            id="salesBottomWhatsappBtn"
-            href="https://wa.me/5563981199852"
+            id="mlHeaderWhatsappLink"
+            href="https://wa.me/5563981199852?text=Ol%C3%A1%20DLuz!%20Estou%20na%20Loja%20Oficial%20e%20preciso%20de%20ajuda."
             target="_blank"
             rel="noopener"
-            class="ios-btn ios-btn-whatsapp"
+            class="ml-btn-link"
+            style="color: var(--whatsapp-green); font-weight: 700;"
           >
-            <span>💬 Chamar no WhatsApp do DLuz</span>
+            <span>💬</span>
+            <span>WhatsApp DLuz</span>
           </a>
         </div>
       </div>
 
-      <!-- Coluna Direita: Checkout Transparente Mercado Pago (Pix & Cartão) -->
-      <div id="checkoutPanelAnchor" class="checkout-sticky-panel">
-
-        <!-- ETAPA 1: FORMULÁRIO DE COMPRA RÁPIDA -->
-        <div id="checkoutFormStep">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-            <span style="font-size: 11.5px; font-weight: 700; color: var(--apple-blue); text-transform: uppercase; letter-spacing: 0.03em;">
-              🔒 Checkout Oficial Mercado Pago
-            </span>
-            <span style="font-size: 11.5px; font-weight: 600; color: #1FA834;">● Entrega Imediata</span>
+      <!-- Barra de Categorias e Endereço -->
+      <div class="ml-header-nav">
+        <div class="ml-nav-left">
+          <div class="ml-location-pill" onclick="openLookupModal()">
+            <span>📍</span>
+            <span>Enviar para: <strong>Brasil (Entrega Digital Imediata)</strong></span>
           </div>
-
-          <div style="background: var(--bg-primary); border-radius: 18px; padding: 16px; margin-bottom: 18px; border: 1px solid var(--border-subtle);">
-            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 2px;">Resumo do seu pedido:</div>
-            <div id="chkProductName" style="font-size: 14.5px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">-</div>
-            <div style="display: flex; align-items: baseline; justify-content: space-between; border-top: 1px solid var(--border-subtle); padding-top: 10px;">
-              <div>
-                <span id="chkOldPrice" class="price-strike" style="margin-right: 6px;">R$ 0,00</span>
-                <span style="font-size: 12px; color: var(--text-secondary);">Valor à vista:</span>
-              </div>
-              <div id="chkFinalPrice" style="font-size: 28px; font-weight: 800; color: var(--apple-blue); letter-spacing: -0.03em;">
-                R$ 0,00
-              </div>
-            </div>
-          </div>
-
-          <form id="salesCheckoutForm" onsubmit="handleCheckoutSubmit(event)">
-            <input type="hidden" id="chkProductId" />
-
-            <div class="ios-input-group">
-              <label class="ios-label">Seu Nome *</label>
-              <input
-                type="text"
-                id="chkBuyerName"
-                required
-                placeholder="Digite seu nome"
-                class="ios-input"
-              />
-            </div>
-
-            <div class="ios-input-group">
-              <label class="ios-label">Seu E-mail (Para receber a Chave e o Download) *</label>
-              <input
-                type="email"
-                id="chkBuyerEmail"
-                required
-                placeholder="seuemail@gmail.com"
-                class="ios-input"
-              />
-            </div>
-
-            <div class="ios-input-group">
-              <label class="ios-label">Seu WhatsApp com DDD (Entrega Automática em 3s) *</label>
-              <input
-                type="tel"
-                id="chkBuyerPhone"
-                required
-                placeholder="(63) 99999-9999"
-                class="ios-input"
-              />
-            </div>
-
-            <!-- Cupom de Desconto -->
-            <div class="ios-input-group">
-              <label class="ios-label">Cupom de Desconto (Opcional)</label>
-              <div style="display: flex; gap: 8px;">
-                <input
-                  type="text"
-                  id="chkCouponInput"
-                  placeholder="Ex: MELHOR10"
-                  class="ios-input"
-                  style="text-transform: uppercase; font-weight: 600;"
-                />
-                <button type="button" onclick="applyCheckoutCoupon()" class="ios-btn ios-btn-secondary" style="padding: 0 16px;">
-                  Aplicar
-                </button>
-              </div>
-              <div id="chkCouponMsg" class="hidden" style="font-size: 12px; margin-top: 6px; font-weight: 600;"></div>
-            </div>
-
-            <div id="chkErrorBox" class="hidden" style="background: rgba(255,59,48,0.1); border: 1px solid rgba(255,59,48,0.3); color: var(--apple-red); padding: 12px; border-radius: 12px; font-size: 12.5px; margin-bottom: 14px; font-weight: 600;"></div>
-
-            <button type="submit" id="chkSubmitBtn" class="ios-btn ios-btn-primary ios-btn-lg" style="width: 100%; margin-top: 4px;">
-              <span>⚡ Comprar Agora • Pix ou Cartão</span>
-            </button>
-
-            <div style="margin-top: 14px; text-align: center; font-size: 11.5px; color: var(--text-muted);">
-              🔒 Pagamento 100% seguro via <strong>Mercado Pago</strong>.<br />
-              Receba no seu WhatsApp, E-mail e aqui na tela em segundos.
-            </div>
-          </form>
+          <button type="button" onclick="goHome(event); setCategory('all')" data-cat="all" class="ml-category-btn active">Todas as Categorias</button>
+          <button type="button" onclick="goHome(event); setCategory('mobilador')" data-cat="mobilador" class="ml-category-btn">Mobilador Pro Zero Delay</button>
+          <button type="button" onclick="goHome(event); setCategory('emuladores')" data-cat="emuladores" class="ml-category-btn">Emuladores 120 FPS & GTA Coop</button>
+          <button type="button" onclick="goHome(event); setCategory('sensi')" data-cat="sensi" class="ml-category-btn">Sensi 1000Hz & FPS Boost</button>
+          <button type="button" onclick="goHome(event); setCategory('criadores')" data-cat="criadores" class="ml-category-btn">Editores com IA & Streamers</button>
+          <button type="button" onclick="goHome(event); setCategory('vip')" data-cat="vip" class="ml-category-btn">Clube VIP</button>
         </div>
 
-        <!-- ETAPA 2: QR CODE PIX GERADO + LINK CARTÃO MERCADO PAGO -->
-        <div id="checkoutPayStep" class="hidden" style="text-align: center;">
-          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 99px; background: rgba(255, 149, 0, 0.14); color: #D97706; font-size: 12px; font-weight: 700; margin-bottom: 12px;">
-            <span>⏳ Aguardando confirmação... Atualiza sozinho!</span>
+        <div class="ml-nav-right">
+          <span style="font-size: 12px; color: rgba(0,0,0,0.7);">🎁 Cupom: <strong>MELHOR10</strong></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de Aviso Mercado Pago & Envio Imediato -->
+  <div class="ml-top-banner">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+      <div>
+        <span style="font-weight: 700; color: #00A650;">⚡ ENVIO DIGITAL FULL:</span>
+        <span>Receba sua Chave de Ativação Vitalícia e Download no seu <strong>WhatsApp e E-mail</strong> em 3 segundos após o pagamento!</span>
+      </div>
+      <div style="font-size: 11.5px; color: rgba(0,0,0,0.6);">
+        🔒 Pagamento 100% Criptografado via <strong>Mercado Pago</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       VIEW 1: PÁGINA DO PRODUTO (MERCADO LIVRE VIP)
+       ========================================== -->
+  <main id="mlProductView" class="container ml-product-page hidden">
+    <!-- Breadcrumb Estilo Mercado Livre -->
+    <div class="ml-breadcrumb">
+      <div class="ml-breadcrumb-links">
+        <a href="/" onclick="goHome(event)">‹ Voltar à lista</a>
+        <span>|</span>
+        <a href="/" onclick="goHome(event)">Informática</a>
+        <span>›</span>
+        <a href="/" onclick="goHome(event)">Softwares</a>
+        <span>›</span>
+        <span id="mlBcCategory" style="color: rgba(0,0,0,0.6);">Mobilador</span>
+      </div>
+
+      <div style="display: flex; gap: 14px;">
+        <a href="#" onclick="copyCurrentPageUrl(event)" style="color: var(--ml-blue); font-size: 13px;">Compartilhar</a>
+      </div>
+    </div>
+
+    <!-- Container Principal 3 Colunas -->
+    <div class="ml-product-container">
+
+      <!-- COLUNA 1: GALERIA E IMAGEM PRINCIPAL -->
+      <div class="ml-gallery-col">
+        <div class="ml-thumbnails">
+          <div class="ml-thumb-item active" onclick="switchThumb(0)">🎮</div>
+          <div class="ml-thumb-item" onclick="switchThumb(1)">⚡</div>
+          <div class="ml-thumb-item" onclick="switchThumb(2)">🎯</div>
+          <div class="ml-thumb-item" onclick="switchThumb(3)">🛡️</div>
+        </div>
+
+        <div class="ml-main-stage">
+          <div class="ml-main-badge-ribbon">ENVIO IMEDIATO ⚡</div>
+          <div id="mlStageIcon" class="ml-main-stage-icon" style="background: linear-gradient(135deg, #0071E3, #00C7BE);">
+            🎮
+          </div>
+          <div id="mlStageTitle" class="ml-main-stage-label">
+            DLuz Games • Software Oficial Licenciado
+          </div>
+          <div style="font-size: 11.5px; color: #00A650; font-weight: 700; margin-top: 6px;">
+            ✓ Licença Vitalícia + Download Oficial
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUNA 2: DETALHES, PREÇO, AVALIAÇÕES E DESCRIÇÃO -->
+      <div class="ml-info-col">
+        <div class="ml-condition-row">
+          <span>Novo</span>
+          <span>|</span>
+          <span id="mlSalesCount">+5 mil vendidos</span>
+        </div>
+
+        <h1 id="mlProdTitle" class="ml-product-title">
+          DLuz Mobilador Pro v3.5.1 — Zero Delay 120 FPS (Licença Vitalícia)
+        </h1>
+
+        <div class="ml-reviews-row">
+          <div class="ml-stars">★★★★★</div>
+          <span style="font-size: 13px; font-weight: 700; color: var(--ml-blue);">4.9</span>
+          <span class="ml-rating-num">(842 avaliações)</span>
+        </div>
+
+        <div id="mlProdBadge" class="ml-best-seller-badge">
+          🏆 MAIS VENDIDO 1º EM SOFTWARES GAMER
+        </div>
+
+        <!-- Bloco de Preço -->
+        <div class="ml-price-box">
+          <div id="mlOldPrice" class="ml-price-old">R$ 34,90</div>
+          <div class="ml-price-current-row">
+            <span class="ml-price-symbol">R$</span>
+            <span id="mlCurrentPrice" class="ml-price-value">21,90</span>
+            <span id="mlDiscountPercent" class="ml-price-discount">37% OFF</span>
+          </div>
+          <div class="ml-installments">
+            em <span style="color: #00A650; font-weight: 600;">12x R$ 2,13</span> no cartão
+          </div>
+          <div class="ml-installments-pix">
+            ⚡ ou via Pix com aprovação em 3 segundos
+          </div>
+          <span onclick="openPaymentMethodsModal()" class="ml-payment-methods-link">
+            Ver os meios de pagamento
+          </span>
+        </div>
+
+        <!-- Destaques do Produto -->
+        <div class="ml-highlights-box">
+          <div class="ml-highlights-title">O que você precisa saber sobre este produto:</div>
+          <div id="mlHighlightsList"></div>
+        </div>
+
+        <!-- Descrição Completa -->
+        <div class="ml-description-box">
+          <h2 class="ml-desc-heading">Descrição</h2>
+          <div id="mlDescriptionContent" class="ml-desc-body"></div>
+        </div>
+      </div>
+
+      <!-- COLUNA 3: BUY BOX (CAIXA DE COMPRA MERCADO LIVRE) -->
+      <div class="ml-buy-box" id="mlBuyBoxAnchor">
+        <div class="ml-shipping-row">
+          <span class="ml-shipping-icon">⚡</span>
+          <div>
+            <div class="ml-shipping-title">Envio grátis por e-mail e WhatsApp</div>
+            <div class="ml-shipping-sub">Chega hoje em 3 segundos após confirmação do pagamento</div>
+          </div>
+        </div>
+
+        <div class="ml-stock-badge">
+          Estoque disponível (Licença Vitalícia)
+        </div>
+
+        <!-- Formulário de Compra Mercado Pago Integrado -->
+        <div id="mlBuyFormStep">
+          <form id="mlCheckoutForm" onsubmit="handleMlCheckout(event)">
+            <input type="hidden" id="mlCheckoutProdId" />
+
+            <div class="ml-checkout-form-box">
+              <div style="font-size: 12px; font-weight: 700; color: #2D3277; margin-bottom: 8px;">
+                Dados para Envio da Licença:
+              </div>
+
+              <div class="ml-field-group">
+                <label class="ml-field-label">Seu Nome *</label>
+                <input type="text" id="mlBuyerName" required placeholder="Digite seu nome" class="ml-field-input" />
+              </div>
+
+              <div class="ml-field-group">
+                <label class="ml-field-label">Seu E-mail *</label>
+                <input type="email" id="mlBuyerEmail" required placeholder="seuemail@gmail.com" class="ml-field-input" />
+              </div>
+
+              <div class="ml-field-group">
+                <label class="ml-field-label">Seu WhatsApp com DDD *</label>
+                <input type="tel" id="mlBuyerPhone" required placeholder="(63) 99999-9999" class="ml-field-input" />
+              </div>
+
+              <div class="ml-field-group">
+                <label class="ml-field-label">Cupom de Desconto</label>
+                <div style="display: flex; gap: 6px;">
+                  <input type="text" id="mlCouponInput" placeholder="Ex: MELHOR10" class="ml-field-input" style="text-transform: uppercase;" />
+                  <button type="button" onclick="applyMlCoupon()" class="ml-btn-buy" style="width: auto; padding: 0 12px; font-size: 13px;">
+                    Aplicar
+                  </button>
+                </div>
+                <div id="mlCouponFeedback" class="hidden" style="font-size: 11.5px; margin-top: 4px; font-weight: 700;"></div>
+              </div>
+
+              <div id="mlCheckoutError" class="hidden" style="color: #D32F2F; font-size: 12px; margin-bottom: 8px; font-weight: 700;"></div>
+
+              <button type="submit" id="mlSubmitBtn" class="ml-btn-buy" style="margin-top: 6px;">
+                Comprar agora
+              </button>
+            </div>
+          </form>
+
+          <a
+            id="mlBuyWhatsappBtn"
+            href="https://wa.me/5563981199852"
+            target="_blank"
+            rel="noopener"
+            class="ml-btn-whatsapp"
+            style="margin-top: 10px;"
+          >
+            <span>💬 Falar com o Vendedor no WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- ETAPA DE PAGAMENTO PIX / CARTÃO GERADO -->
+        <div id="mlBuyPayStep" class="hidden" style="text-align: center;">
+          <div style="background: #E6F7EE; border-radius: 6px; padding: 8px; font-size: 12px; color: #00A650; font-weight: 700; margin-bottom: 12px;">
+            ⏳ Pedido <span id="mlPayOrderNumber">#0000</span> Gerado!
           </div>
 
-          <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 4px;">
-            Pedido <span id="payOrderNum" style="color: var(--apple-blue);">#0000</span> Gerado!
-          </h3>
-          <p style="font-size: 12.5px; color: var(--text-secondary); margin-bottom: 16px;">
-            Escaneie o QR Code Pix abaixo no app do seu banco ou copie o código Pix Copia e Cola:
+          <p style="font-size: 12px; color: var(--ml-text-sub); margin-bottom: 10px;">
+            Pague via Pix no app do seu banco com o QR Code abaixo:
           </p>
 
-          <div style="background: #FFFFFF; padding: 16px; border-radius: 22px; display: inline-block; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card); margin-bottom: 14px;">
-            <img id="payQrImg" src="" alt="QR Code Pix" style="width: 210px; height: 210px; object-fit: contain; display: block;" />
+          <div style="background: #FFFFFF; padding: 10px; border: 1px solid var(--ml-border); border-radius: 6px; display: inline-block; margin-bottom: 10px;">
+            <img id="mlPayQrImage" src="" alt="QR Code Pix" style="width: 190px; height: 190px; display: block;" />
           </div>
 
-          <div style="margin-bottom: 16px;">
-            <div style="font-size: 12px; color: var(--text-muted);">Total a pagar:</div>
-            <div id="payTotalText" style="font-size: 28px; font-weight: 800; color: var(--text-primary);">R$ 0,00</div>
+          <div style="font-size: 12px; color: var(--ml-text-sub);">Valor do pedido:</div>
+          <div id="mlPayTotalDisplay" style="font-size: 24px; font-weight: 700; color: var(--ml-text-main); margin-bottom: 12px;">
+            R$ 0,00
           </div>
 
-          <div style="text-align: left; margin-bottom: 16px;">
-            <label class="ios-label">Código Pix Copia e Cola:</label>
-            <div style="display: flex; gap: 8px;">
-              <input type="text" id="payPixCodeInput" readonly class="ios-input" style="font-family: monospace; font-size: 12px;" />
-              <button type="button" id="copyPixCodeBtn" onclick="copyPixToClipboard()" class="ios-btn ios-btn-primary">
-                📋 Copiar Pix
+          <div style="text-align: left; margin-bottom: 10px;">
+            <label class="ml-field-label">Código Pix Copia e Cola:</label>
+            <div style="display: flex; gap: 6px;">
+              <input type="text" id="mlPixStringInput" readonly class="ml-field-input" style="font-size: 11px; font-family: monospace;" />
+              <button type="button" id="mlCopyPixBtn" onclick="copyMlPix()" class="ml-btn-buy" style="width: auto; padding: 0 12px; font-size: 12px; white-space: nowrap;">
+                Copiar Pix
               </button>
             </div>
           </div>
 
-          <div id="payCardWrap" class="hidden" style="margin-bottom: 16px; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
-            <a id="payCardUrlBtn" href="#" target="_blank" rel="noopener" class="ios-btn ios-btn-secondary" style="width: 100%; font-weight: 700;">
-              <span>💳 Pagar com Cartão de Crédito (Mercado Pago até 12x)</span>
+          <div id="mlCardOptionWrap" class="hidden" style="margin-bottom: 10px;">
+            <a id="mlCardDirectLink" href="#" target="_blank" rel="noopener" class="ml-btn-buy" style="background: #2D3277; font-size: 13px;">
+              💳 Pagar com Cartão (Mercado Pago até 12x)
             </a>
           </div>
 
-          <div style="background: var(--bg-primary); border-radius: 14px; padding: 12px; font-size: 12px; color: var(--text-secondary); margin-bottom: 14px;">
-            ⚡ Assim que você pagar o Pix, esta tela liberará sua <strong>Chave de Ativação PRO</strong> e os <strong>Links de Download</strong> automaticamente!
+          <div style="font-size: 11.5px; color: var(--ml-text-sub); background: #F8F9FA; padding: 8px; border-radius: 4px; margin-bottom: 10px;">
+            ⚡ A tela atualizará sozinha assim que o Pix for aprovado!
           </div>
 
-          <div style="display: flex; justify-content: space-between; gap: 8px;">
-            <button type="button" onclick="resetCheckoutToForm()" class="ios-btn ios-btn-secondary ios-btn-sm">
-              ← Alterar Dados
-            </button>
-            <a
-              id="payWhatsappSupportBtn"
-              href="https://wa.me/5563981199852"
-              target="_blank"
-              rel="noopener"
-              class="ios-btn ios-btn-whatsapp ios-btn-sm"
-            >
-              💬 Já paguei / Suporte WhatsApp
-            </a>
-          </div>
+          <button type="button" onclick="backToMlBuyForm()" class="ml-btn-link" style="width: 100%; justify-content: center; font-size: 12px;">
+            ← Alterar Dados da Compra
+          </button>
         </div>
 
-        <!-- ETAPA 3: PAGAMENTO CONFIRMADO! ENTREGA DA CHAVE E DOWNLOAD -->
-        <div id="checkoutSuccessStep" class="hidden" style="text-align: center;">
-          <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(40, 205, 65, 0.16); color: #1FA834; font-size: 28px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+        <!-- ETAPA DE APROVAÇÃO E CHAVE -->
+        <div id="mlBuySuccessStep" class="hidden" style="text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: #E6F7EE; color: #00A650; font-size: 24px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
             ✓
           </div>
-          <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 4px;">Pagamento Aprovado! 🚀</h3>
-          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 18px;">
-            Sua chave e links também foram enviados para o seu WhatsApp e E-mail.
+          <div style="font-size: 16px; font-weight: 700; color: #00A650; margin-bottom: 4px;">
+            Compra Aprovada com Sucesso!
+          </div>
+          <p style="font-size: 12px; color: var(--ml-text-sub); margin-bottom: 14px;">
+            Enviamos uma cópia para o seu WhatsApp e E-mail.
           </p>
 
-          <div id="succKeyBox" style="background: var(--bg-primary); border: 2px solid var(--apple-blue); border-radius: 18px; padding: 16px; margin-bottom: 18px;">
-            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">
-              🔑 Sua Chave de Ativação Oficial
+          <div id="mlSuccKeyContainer" style="background: #F8F9FA; border: 1px solid var(--ml-border); border-radius: 6px; padding: 12px; margin-bottom: 14px;">
+            <div style="font-size: 11px; font-weight: 700; color: var(--ml-text-sub); text-transform: uppercase;">
+              Sua Chave de Ativação Vitalícia:
             </div>
-            <div id="succLicenseKey" style="font-family: monospace; font-size: 18px; font-weight: 800; color: var(--apple-blue); word-break: break-all; margin-bottom: 10px;">
-              DLUZ-PRO-XXXX-XXXX
+            <div id="mlSuccLicenseKey" style="font-family: monospace; font-size: 16px; font-weight: 800; color: var(--ml-blue); margin: 6px 0;">
+              DLUZ-PRO-XXXX
             </div>
-            <button type="button" onclick="copyApprovedKey()" class="ios-btn ios-btn-primary ios-btn-sm">
-              📋 Copiar Chave PRO
+            <button type="button" onclick="copyMlKey()" class="ml-btn-buy" style="font-size: 12px; padding: 6px 14px;">
+              Copiar Chave PRO
             </button>
           </div>
 
           <div style="text-align: left;">
-            <div style="font-size: 12px; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px;">
-              📦 Seus Arquivos para Download:
-            </div>
-            <div id="succDownloadsBox" style="display: flex; flex-direction: column; gap: 8px;"></div>
+            <div style="font-size: 12px; font-weight: 700; margin-bottom: 6px;">Downloads Disponíveis:</div>
+            <div id="mlSuccDownloadsList" style="display: flex; flex-direction: column; gap: 6px;"></div>
           </div>
         </div>
 
+        <!-- Informações do Vendedor (MercadoLíder Platinum) -->
+        <div class="ml-seller-info-box">
+          <div class="ml-seller-title">Informações sobre o vendedor</div>
+          <div class="ml-mercadolider-pill">
+            <span>🏅</span>
+            <span>MercadoLíder Platinum</span>
+          </div>
+          <p style="font-size: 11.5px; color: var(--ml-text-sub); margin-bottom: 6px;">
+            É um dos melhores do site! Vendedor Oficial DLuz Games.
+          </p>
+
+          <div class="ml-thermometer">
+            <div class="ml-therm-level lvl-1"></div>
+            <div class="ml-therm-level lvl-2"></div>
+            <div class="ml-therm-level lvl-3"></div>
+            <div class="ml-therm-level lvl-4"></div>
+            <div class="ml-therm-level lvl-5"></div>
+          </div>
+
+          <div class="ml-seller-metrics-grid">
+            <div>
+              <div class="ml-seller-metric-val">+5000</div>
+              <div>Vendas nos últimos 60 dias</div>
+            </div>
+            <div>
+              <div class="ml-seller-metric-val">⚡</div>
+              <div>Presta bom atendimento</div>
+            </div>
+            <div>
+              <div class="ml-seller-metric-val">⏱️</div>
+              <div>Entrega no prazo (3 seg)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garantias Mercado Pago -->
+        <div class="ml-guarantees-box">
+          <div class="ml-guarantee-row">
+            <span>🛡️</span>
+            <div>
+              <strong>Compra Garantida com o Mercado Pago:</strong> receba o produto que está esperando ou devolvemos o seu dinheiro.
+            </div>
+          </div>
+          <div class="ml-guarantee-row">
+            <span>⭐</span>
+            <div>
+              <strong>7 dias de garantia total</strong> de fábrica contra incompatibilidade.
+            </div>
+          </div>
+          <div class="ml-guarantee-row">
+            <span>💬</span>
+            <div>
+              Suporte oficial no WhatsApp: <a href="https://wa.me/5563981199852" target="_blank">+55 (63) 98119-9852</a>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
-  </section>
+  </main>
 
   <!-- ==========================================
-       MODAL: RESGATAR MINHA CHAVE / MINHAS COMPRAS
+       VIEW 2: GRADE GERAL DE PRODUTOS (ESTILO POLYCARD MERCADO LIVRE)
        ========================================== -->
-  <div id="lookupModal" class="ios-modal-backdrop hidden">
-    <div class="ios-modal-box">
-      <button type="button" onclick="closeLookupModal()" class="ios-close-btn">✕</button>
-      <div style="font-size: 12px; font-weight: 700; color: var(--apple-blue); text-transform: uppercase; margin-bottom: 4px;">
-        🔑 Central do Cliente DLuz
+  <main id="mlCatalogView" class="container ml-catalog-view">
+    <div class="ml-results-header">
+      <div>
+        <span class="ml-results-count" id="mlCatalogCount">21 resultados</span>
+        <span>em Softwares Gamers, Emuladores e Ferramentas</span>
       </div>
-      <h2 style="font-size: 24px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px;">
-        Resgatar Chave & Downloads
-      </h2>
-      <p style="font-size: 13.5px; color: var(--text-secondary); margin-bottom: 18px;">
-        Digite o seu <strong>E-mail</strong> ou <strong>WhatsApp</strong> usado na compra para acessar imediatamente suas chaves de ativação e links atualizados:
+      <div>
+        <span>Mais relevantes</span>
+      </div>
+    </div>
+
+    <div id="mlCardsGrid" class="ml-grid-cards">
+      <!-- Renderizado dinamicamente via JS -->
+    </div>
+  </main>
+
+  <!-- ==========================================
+       MODAL 1: MEIOS DE PAGAMENTO MERCADO PAGO
+       ========================================== -->
+  <div id="mlPayMethodsModal" class="ml-modal-overlay hidden">
+    <div class="ml-modal-box">
+      <button type="button" onclick="closePaymentMethodsModal()" class="ml-modal-close">✕</button>
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Meios de Pagamento Disponíveis</h3>
+      <p style="font-size: 13px; color: var(--ml-text-sub); margin-bottom: 16px;">
+        Pague com total segurança e garantia através do <strong>Mercado Pago</strong>:
       </p>
 
-      <form onsubmit="submitOrderLookup(event)" style="display: flex; gap: 10px; margin-bottom: 20px;">
-        <input
-          type="text"
-          id="lookupQueryInput"
-          required
-          placeholder="seuemail@gmail.com ou (63) 99999-9999"
-          class="ios-input"
-          style="flex: 1;"
-        />
-        <button type="submit" class="ios-btn ios-btn-primary">Buscar</button>
+      <div style="display: flex; flex-direction: column; gap: 14px; font-size: 13.5px;">
+        <div style="background: #F8F9FA; padding: 12px; border-radius: 6px;">
+          <div style="font-weight: 700; color: #00A650; margin-bottom: 4px;">💠 Pix (Aprovação Imediata em 3 Segundos)</div>
+          <p style="font-size: 12.5px; color: var(--ml-text-sub);">
+            Pagamento instantâneo via QR Code ou Pix Copia e Cola em qualquer banco.
+          </p>
+        </div>
+
+        <div style="background: #F8F9FA; padding: 12px; border-radius: 6px;">
+          <div style="font-weight: 700; color: #2D3277; margin-bottom: 4px;">💳 Cartão de Crédito (Mercado Pago até 12x)</div>
+          <p style="font-size: 12.5px; color: var(--ml-text-sub);">
+            Visa, Mastercard, Elo, Hipercard, American Express com parcelamento facilitado.
+          </p>
+        </div>
+
+        <div style="background: #F8F9FA; padding: 12px; border-radius: 6px;">
+          <div style="font-weight: 700; color: var(--ml-blue); margin-bottom: 4px;">🛡️ Compra Garantida Mercado Pago</div>
+          <p style="font-size: 12.5px; color: var(--ml-text-sub);">
+            Seu pagamento fica 100% protegido. Você recebe sua chave vitalícia imediatamente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 2: MINHAS COMPRAS / RESGATAR CHAVE
+       ========================================== -->
+  <div id="mlLookupModal" class="ml-modal-overlay hidden">
+    <div class="ml-modal-box">
+      <button type="button" onclick="closeLookupModal()" class="ml-modal-close">✕</button>
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 6px;">Resgatar Chave & Downloads</h3>
+      <p style="font-size: 13px; color: var(--ml-text-sub); margin-bottom: 16px;">
+        Digite o <strong>E-mail</strong> ou <strong>WhatsApp</strong> utilizado na compra para consultar seus pedidos:
+      </p>
+
+      <form onsubmit="handleMlOrderLookup(event)" style="display: flex; gap: 8px; margin-bottom: 16px;">
+        <input type="text" id="mlLookupQueryInput" required placeholder="seuemail@gmail.com ou (63) 99999-9999" class="ml-field-input" style="flex: 1;" />
+        <button type="submit" class="ml-btn-buy" style="width: auto; padding: 0 16px;">Buscar</button>
       </form>
 
-      <div id="lookupResults" style="display: flex; flex-direction: column; gap: 12px;"></div>
+      <div id="mlLookupResultsList" style="display: flex; flex-direction: column; gap: 10px;"></div>
     </div>
   </div>
 
   <!-- ==========================================
-       MODAL: PÁGINAS INSTITUCIONAIS (TERMOS / PRIVACIDADE / REEMBOLSO / CONTATO)
+       RODAPÉ ESTILO MERCADO LIVRE
        ========================================== -->
-  <div id="pageModal" class="ios-modal-backdrop hidden">
-    <div class="ios-modal-box" style="max-width: 720px;">
-      <button type="button" onclick="closePageModal()" class="ios-close-btn">✕</button>
-      <h2 id="pageModalTitle" style="font-size: 24px; font-weight: 800; margin-bottom: 14px;"></h2>
-      <div id="pageModalBody" class="sales-prose"></div>
-    </div>
-  </div>
-
-  <!-- ==========================================
-       BOTÃO FLUTUANTE DO WHATSAPP DO DLUZ
-       ========================================== -->
-  <a
-    id="floatingWhatsappBtn"
-    href="https://wa.me/5563981199852?text=Ol%C3%A1%20DLuz!%20Vim%20pela%20Loja%20Oficial%20e%20preciso%20de%20suporte."
-    target="_blank"
-    rel="noopener"
-    class="whatsapp-float"
-  >
-    <span style="font-size: 18px;">💬</span>
-    <span>Suporte no WhatsApp</span>
-  </a>
-
-  <!-- ==========================================
-       RODAPÉ ESTILO APPLE STORE
-       ========================================== -->
-  <footer class="apple-footer">
+  <footer class="ml-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div style="font-weight: 800; font-size: 16px; color: var(--text-primary); margin-bottom: 8px;">
-            DLuz Store Oficial
-          </div>
-          <p style="font-size: 12.5px; line-height: 1.6; margin-bottom: 10px;">
-            Desenvolvimento oficial de softwares gamers de alta performance, emuladores 120 FPS e ferramentas com Inteligência Artificial.
-          </p>
-          <div style="font-size: 12px; color: var(--text-muted);">
-            Suporte Oficial WhatsApp: <strong>+55 (63) 98119-9852</strong>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Destaques</h4>
-          <ul>
-            <li><a href="/produto/dluzmobilador-pro" onclick="openSalesPageById(2755, false, event)">DLuz Mobilador Pro v3.5.1</a></li>
-            <li><a href="/produto/dluz-film-pro" onclick="openSalesPageById(2948, false, event)">Dluz Film PRO v2.0 (IA)</a></li>
-            <li><a href="/produto/dluz-sensi-bs-pro" onclick="openSalesPageById(2862, false, event)">DLuz Sensi BS Pro 1000Hz</a></li>
-            <li><a href="/produto/dluzstacks" onclick="openSalesPageById(2829, false, event)">DLuzStacks Pro Direct3D 11</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Institucional & Legal</h4>
-          <ul>
-            <li><a href="/termos-de-servico" onclick="openPageModal(event, 'termos-de-servico')">Termos de Serviço</a></li>
-            <li><a href="/politica-de-privacidade" onclick="openPageModal(event, 'politica-de-privacidade')">Política de Privacidade (LGPD)</a></li>
-            <li><a href="/politica-de-reembolso" onclick="openPageModal(event, 'politica-de-reembolso')">Garantia e Reembolso (7 Dias)</a></li>
-            <li><a href="/contato" onclick="openPageModal(event, 'contato')">Contato & WhatsApp</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Central do Cliente</h4>
-          <ul>
-            <li><button type="button" onclick="openLookupModal()" style="background:none;border:none;cursor:pointer;color:inherit;font-size:inherit;padding:0;">🔑 Resgatar Minha Chave</button></li>
-            <li><a id="footerWhatsappLink" href="https://wa.me/5563981199852" target="_blank" rel="noopener">💬 Atendimento no WhatsApp</a></li>
-            <li><a href="https://dluzgames.com.br" target="_blank" rel="noopener">🌐 Portal DLuz Games</a></li>
-            <li><a href="/admin" style="color: var(--text-muted);">⚙️ Painel Admin</a></li>
-          </ul>
-        </div>
+      <div class="ml-footer-links">
+        <a href="/" onclick="goHome(event)">Página Inicial</a>
+        <a href="/termos-de-servico" onclick="openPage('termos-de-servico', event)">Termos e Condições</a>
+        <a href="/politica-de-privacidade" onclick="openPage('politica-de-privacidade', event)">Como cuidamos da sua privacidade</a>
+        <a href="/politica-de-reembolso" onclick="openPage('politica-de-reembolso', event)">Garantia e Reembolso</a>
+        <a href="/contato" onclick="openPage('contato', event)">Contato e Suporte</a>
+        <a href="https://wa.me/5563981199852" target="_blank" rel="noopener">WhatsApp: (63) 98119-9852</a>
+        <a href="/admin">Painel Administrativo</a>
       </div>
 
-      <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--text-muted);">
-        <div>Copyright © 2026 DLuz Games. Todos os direitos reservados.</div>
-        <div style="display: flex; gap: 14px;">
-          <span>💠 Pix Instantâneo</span>
-          <span>💳 Mercado Pago até 12x</span>
-          <span>🔒 SSL 256-Bit</span>
-        </div>
-      </div>
+      <p style="font-size: 11.5px; color: rgba(0, 0, 0, 0.45); line-height: 1.5;">
+        Copyright © 2026 DLuz Games LTDA. Todos os direitos reservados. CNPJ e registros oficiais integrados com Mercado Pago.<br />
+        Plataforma oficial de entrega imediata de softwares, mobiladores e emuladores gamers para todo o Brasil.
+      </p>
     </div>
   </footer>
 
   <!-- ==========================================
-       SCRIPT PRINCIPAL DA LOJA (NAVEGAÇÃO, PÁGINA DE VENDAS & MERCADO PAGO)
+       SCRIPT DA LOJA ESTILO MERCADO LIVRE
        ========================================== -->
   <script>
     let ALL_PRODUCTS = [];
-    let CURRENT_CATEGORY = 'all';
-    let SEARCH_QUERY = '';
-    let ACTIVE_PRODUCT = null;
-    let ACTIVE_COUPON = null;
-    let POLLING_INTERVAL = null;
-    let WHATSAPP_NUMBER = '5563981199852';
+    let CURRENT_CAT = 'all';
+    let SEARCH_TXT = '';
+    let SELECTED_PROD = null;
+    let APPLIED_COUPON_DATA = null;
+    let ORDER_POLL_TIMER = null;
+    let WHATSAPP_PHONE = '5563981199852';
 
-    // Notificação estilo Dynamic Island do iPhone
-    function notifyIsland(text) {
-      const island = document.getElementById('dynamicIsland');
-      const label = document.getElementById('dynamicIslandText');
-      if (!island || !label) return;
-      label.textContent = text;
-      island.classList.add('expanded');
-      setTimeout(() => {
-        island.classList.remove('expanded');
-      }, 2800);
+    function getWhatsappLink(message) {
+      const num = String(WHATSAPP_PHONE || '5563981199852').replace(/\D/g, '');
+      const text = encodeURIComponent(message || 'Olá DLuz! Estou na Loja Oficial e preciso de ajuda.');
+      return `https://wa.me/${num}?text=${text}`;
     }
 
-    function copyCouponTop(code) {
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(code);
-      }
-      notifyIsland(`🎁 Cupom ${code} copiado! Use no pagamento para 10% OFF.`);
+    function updateWhatsappButtons() {
+      const defUrl = getWhatsappLink('Olá DLuz! Estou na Loja Oficial e preciso de ajuda.');
+      const topLink = document.getElementById('mlHeaderWhatsappLink');
+      if (topLink) topLink.href = defUrl;
     }
 
-    function toggleThemeMode() {
-      const html = document.documentElement;
-      const isDark = html.classList.toggle('dark-mode');
-      localStorage.setItem('dluz_store_theme', isDark ? 'dark' : 'light');
-      document.getElementById('themeToggleBtn').textContent = isDark ? '☀️' : '🌙';
-      notifyIsland(isDark ? '🌙 Modo Titanium Dark ativado' : '☀️ Modo Clean Apple ativado');
-    }
-
-    // Restaurar preferência de tema salva
-    (function restoreSavedTheme() {
-      const saved = localStorage.getItem('dluz_store_theme');
-      if (saved === 'dark') {
-        document.documentElement.classList.add('dark-mode');
-        window.addEventListener('DOMContentLoaded', () => {
-          const btn = document.getElementById('themeToggleBtn');
-          if (btn) btn.textContent = '☀️';
-        });
-      }
-    })();
-
-    function getWhatsappUrl(customMessage) {
-      const cleanPhone = String(WHATSAPP_NUMBER || '5563981199852').replace(/\D/g, '');
-      const msg = encodeURIComponent(customMessage || 'Olá DLuz! Estou na Loja Oficial e preciso de suporte.');
-      return `https://wa.me/${cleanPhone}?text=${msg}`;
-    }
-
-    function updateAllWhatsappLinks() {
-      const defaultUrl = getWhatsappUrl('Olá DLuz! Estou na Loja Oficial e preciso de suporte.');
-      ['headerWhatsappLink', 'trustWhatsappLink', 'floatingWhatsappBtn', 'footerWhatsappLink'].forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) el.href = defaultUrl;
-      });
-    }
-
-    function getCategoryLabel(cat) {
+    function getProductTheme(p) {
       const map = {
-        mobilador: 'Mobilador Pro',
-        emuladores: 'Emuladores & Coop',
-        sensi: 'Sensi 1000Hz & FPS',
-        criadores: 'IA Studio & Lives',
-        vip: 'Passaporte VIP'
+        gamepad: { icon: '🎮', bg: 'linear-gradient(135deg, #0071E3, #00C7BE)' },
+        film: { icon: '🎬', bg: 'linear-gradient(135deg, #5856D6, #007AFF)' },
+        users: { icon: '🚗', bg: 'linear-gradient(135deg, #FF9500, #FF3B30)' },
+        crosshair: { icon: '🎯', bg: 'linear-gradient(135deg, #FF2D55, #FF3B30)' },
+        shield: { icon: '🛡️', bg: 'linear-gradient(135deg, #FF9500, #FF5E3A)' },
+        cpu: { icon: '⚡', bg: 'linear-gradient(135deg, #AF52DE, #5856D6)' },
+        sparkles: { icon: '✨', bg: 'linear-gradient(135deg, #007AFF, #5AC8FA)' },
+        trophy: { icon: '⚽', bg: 'linear-gradient(135deg, #34C759, #30B0C7)' },
+        video: { icon: '🎙️', bg: 'linear-gradient(135deg, #FF2D55, #AF52DE)' },
+        crown: { icon: '👑', bg: 'linear-gradient(135deg, #FF9500, #FFCC00)' },
+        joystick: { icon: '🕹️', bg: 'linear-gradient(135deg, #5856D6, #AF52DE)' },
+        sliders: { icon: '⚙️', bg: 'linear-gradient(135deg, #30B0C7, #007AFF)' },
+        smartphone: { icon: '📱', bg: 'linear-gradient(135deg, #007AFF, #34C759)' },
+        flame: { icon: '🔥', bg: 'linear-gradient(135deg, #FF3B30, #FF9500)' },
+        zap: { icon: '⚡', bg: 'linear-gradient(135deg, #0071E3, #5856D6)' },
+        rocket: { icon: '🚀', bg: 'linear-gradient(135deg, #FF2D55, #FF9500)' },
+        'fast-forward': { icon: '⚡', bg: 'linear-gradient(135deg, #34C759, #0071E3)' }
       };
-      return map[cat] || 'Software Oficial';
+      return map[p.icon] || { icon: '🎮', bg: 'linear-gradient(135deg, #0071E3, #00C7BE)' };
     }
 
-    function getProductIconGradient(p) {
-      const map = {
-        gamepad: { emoji: '🎮', bg: 'linear-gradient(135deg, #0071E3 0%, #00C7BE 100%)' },
-        film: { emoji: '🎬', bg: 'linear-gradient(135deg, #5856D6 0%, #007AFF 100%)' },
-        users: { emoji: '🚗', bg: 'linear-gradient(135deg, #FF9500 0%, #FF3B30 100%)' },
-        crosshair: { emoji: '🎯', bg: 'linear-gradient(135deg, #FF2D55 0%, #FF3B30 100%)' },
-        shield: { emoji: '🛡️', bg: 'linear-gradient(135deg, #FF9500 0%, #FF5E3A 100%)' },
-        cpu: { emoji: '⚡', bg: 'linear-gradient(135deg, #AF52DE 0%, #5856D6 100%)' },
-        sparkles: { emoji: '✨', bg: 'linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%)' },
-        trophy: { emoji: '⚽', bg: 'linear-gradient(135deg, #34C759 0%, #30B0C7 100%)' },
-        video: { emoji: '🎙️', bg: 'linear-gradient(135deg, #FF2D55 0%, #AF52DE 100%)' },
-        crown: { emoji: '👑', bg: 'linear-gradient(135deg, #FF9500 0%, #FFCC00 100%)' },
-        joystick: { emoji: '🕹️', bg: 'linear-gradient(135deg, #5856D6 0%, #AF52DE 100%)' },
-        sliders: { emoji: '⚙️', bg: 'linear-gradient(135deg, #30B0C7 0%, #007AFF 100%)' },
-        smartphone: { emoji: '📱', bg: 'linear-gradient(135deg, #007AFF 0%, #34C759 100%)' },
-        flame: { emoji: '🔥', bg: 'linear-gradient(135deg, #FF3B30 0%, #FF9500 100%)' },
-        zap: { emoji: '⚡', bg: 'linear-gradient(135deg, #0071E3 0%, #5856D6 100%)' },
-        rocket: { emoji: '🚀', bg: 'linear-gradient(135deg, #FF2D55 0%, #FF9500 100%)' },
-        'fast-forward': { emoji: '⚡', bg: 'linear-gradient(135deg, #34C759 0%, #0071E3 100%)' }
-      };
-      return map[p.icon] || { emoji: '🎮', bg: 'linear-gradient(135deg, #0071E3 0%, #00C7BE 100%)' };
-    }
-
-    function renderCatalogGrid() {
-      const grid = document.getElementById('productsGrid');
+    function renderCatalogCards() {
+      const grid = document.getElementById('mlCardsGrid');
       if (!grid) return;
 
       const filtered = ALL_PRODUCTS.filter((p) => {
-        const matchCat = CURRENT_CATEGORY === 'all' || p.category === CURRENT_CATEGORY;
-        const q = SEARCH_QUERY.toLowerCase();
+        const matchCat = CURRENT_CAT === 'all' || p.category === CURRENT_CAT;
+        const q = SEARCH_TXT.toLowerCase();
         const matchSearch =
           !q ||
           p.name.toLowerCase().includes(q) ||
@@ -1739,14 +1543,16 @@
         return matchCat && matchSearch;
       });
 
+      document.getElementById('mlCatalogCount').textContent = `${filtered.length} resultados`;
+
       if (filtered.length === 0) {
         grid.innerHTML = `
-          <div style="grid-column: 1 / -1; background: var(--bg-secondary); border-radius: 28px; padding: 48px 24px; text-align: center; border: 1px solid var(--border-subtle);">
-            <div style="font-size: 36px; margin-bottom: 10px;">🔍</div>
-            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 6px;">Nenhum aplicativo encontrado</h3>
-            <p style="font-size: 13.5px; color: var(--text-secondary); margin-bottom: 16px;">Tente buscar por outro termo ou exibir todas as categorias.</p>
-            <button type="button" onclick="filterCategory('all'); handleSearchInput('');" class="ios-btn ios-btn-primary">
-              Mostrar Todos os Produtos
+          <div style="grid-column: 1 / -1; background: #FFFFFF; border-radius: 8px; padding: 40px; text-align: center; border: 1px solid var(--ml-border);">
+            <div style="font-size: 32px; margin-bottom: 8px;">🔍</div>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Não encontramos produtos com esse nome</h3>
+            <p style="font-size: 13px; color: var(--ml-text-sub); margin-bottom: 14px;">Tente pesquisar por termos como "mobilador", "gta" ou "sensi".</p>
+            <button type="button" onclick="setCategory('all'); handleSearch('');" class="ml-btn-buy" style="width: auto; margin: 0 auto; padding: 8px 18px;">
+              Ver todos os produtos
             </button>
           </div>
         `;
@@ -1755,215 +1561,180 @@
 
       grid.innerHTML = filtered
         .map((p) => {
-          const iconData = getProductIconGradient(p);
+          const theme = getProductTheme(p);
           const discount =
             p.regular_price > p.price
               ? Math.round(((p.regular_price - p.price) / p.regular_price) * 100)
               : 0;
 
-          const featuresList = (p.features || [])
-            .slice(0, 3)
-            .map(
-              (f) => `
-              <li>
-                <span class="check-circle">✓</span>
-                <span>${f}</span>
-              </li>`
-            )
-            .join('');
-
           return `
-            <article class="ios-product-card" onclick="openSalesPageById(${p.id}, false, event)">
+            <div class="ml-card-poly" onclick="openProductPageById(${p.id})">
+              <div class="ml-card-thumb-wrap" style="background: ${theme.bg};">
+                <div class="ml-card-icon">${theme.icon}</div>
+                <div class="ml-full-pill">⚡ FULL</div>
+              </div>
+
               <div>
-                <div class="card-top-row">
-                  <div class="ios-squircle-icon" style="background: ${iconData.bg};">
-                    ${iconData.emoji}
-                  </div>
-                  <div class="card-badges">
-                    <span class="pill-badge" style="background: rgba(0, 113, 227, 0.1); color: var(--apple-blue);">
-                      ${p.badge || 'OFICIAL DLUZ'}
-                    </span>
-                    ${discount > 0 ? `<span class="pill-discount">-${discount}% OFF</span>` : ''}
-                  </div>
+                <h3 class="ml-card-poly-title">${p.name}</h3>
+
+                <div class="ml-card-poly-price-row">
+                  <span class="ml-card-poly-price">R$ ${p.price.toFixed(2).replace('.', ',')}</span>
+                  ${discount > 0 ? `<span class="ml-card-poly-discount">${discount}% OFF</span>` : ''}
                 </div>
 
-                <div class="card-category">${getCategoryLabel(p.category)}</div>
-                <h3 class="card-title">${p.name}</h3>
-                <p class="card-desc">${p.short_description || ''}</p>
-
-                <ul class="card-features">
-                  ${featuresList}
-                </ul>
-              </div>
-
-              <div class="card-footer">
-                <div>
-                  ${
-                    p.regular_price > p.price
-                      ? `<div class="price-strike">De R$ ${p.regular_price.toFixed(2).replace('.', ',')}</div>`
-                      : `<div style="font-size: 11px; color: var(--text-muted);">Licença Oficial</div>`
-                  }
-                  <div class="price-current">R$ ${p.price.toFixed(2).replace('.', ',')}</div>
+                <div class="ml-card-poly-inst">
+                  em <span style="color: #00A650;">12x R$ ${(p.price / 12 * 1.15).toFixed(2).replace('.', ',')}</span>
                 </div>
 
-                <div class="card-actions">
-                  <button
-                    type="button"
-                    onclick="event.stopPropagation(); openSalesPageById(${p.id}, false)"
-                    class="ios-btn ios-btn-secondary ios-btn-sm"
-                  >
-                    Detalhes
-                  </button>
-                  <button
-                    type="button"
-                    onclick="event.stopPropagation(); openSalesPageById(${p.id}, true)"
-                    class="ios-btn ios-btn-primary ios-btn-sm"
-                  >
-                    Comprar
-                  </button>
+                <div class="ml-card-shipping-free">
+                  <span>⚡ Envio grátis por WhatsApp e E-mail</span>
                 </div>
               </div>
-            </article>
+            </div>
           `;
         })
         .join('');
     }
 
-    function filterCategory(cat) {
-      CURRENT_CATEGORY = cat;
-      document.querySelectorAll('.seg-btn').forEach((btn) => {
+    function setCategory(cat) {
+      CURRENT_CAT = cat;
+      document.querySelectorAll('.ml-category-btn').forEach((btn) => {
         btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
       });
-      renderCatalogGrid();
+      renderCatalogCards();
     }
 
-    function handleSearchInput(val) {
-      SEARCH_QUERY = String(val || '').trim();
-      renderCatalogGrid();
+    function handleSearch(val) {
+      SEARCH_TXT = String(val || '').trim();
+      renderCatalogCards();
     }
 
     // ==========================================
-    // NAVEGAÇÃO PARA A PÁGINA DE VENDAS COMPLETA (/produto/:slug)
+    // ABRIR PÁGINA DO PRODUTO (MERCADO LIVRE VIP)
     // ==========================================
-    function openSalesPageById(productId, scrollToCheckout = false, ev = null) {
-      if (ev) ev.preventDefault();
-      const product = ALL_PRODUCTS.find((item) => Number(item.id) === Number(productId));
-      if (!product) return;
+    function openProductPageById(productId, scrollToBuy = false) {
+      const prod = ALL_PRODUCTS.find((item) => Number(item.id) === Number(productId));
+      if (!prod) return;
 
-      ACTIVE_PRODUCT = product;
-      ACTIVE_COUPON = null;
-      if (POLLING_INTERVAL) clearInterval(POLLING_INTERVAL);
+      SELECTED_PROD = prod;
+      APPLIED_COUPON_DATA = null;
+      if (ORDER_POLL_TIMER) clearInterval(ORDER_POLL_TIMER);
 
-      // Atualizar URL real no navegador
       try {
-        history.pushState({ productId: product.id, slug: product.slug }, product.name, `/produto/${product.slug}`);
+        history.pushState({ id: prod.id, slug: prod.slug }, prod.name, `/produto/${prod.slug}`);
       } catch {}
 
-      // Preencher dados da Página de Vendas
-      const iconData = getProductIconGradient(product);
-      const appIcon = document.getElementById('salesAppIcon');
-      appIcon.style.background = iconData.bg;
-      appIcon.textContent = iconData.emoji;
+      const theme = getProductTheme(prod);
+      const stageIcon = document.getElementById('mlStageIcon');
+      stageIcon.style.background = theme.bg;
+      stageIcon.textContent = theme.icon;
 
-      document.getElementById('salesBadge').textContent = product.badge || 'OFICIAL DLUZ';
+      document.getElementById('mlStageTitle').textContent = `${prod.name} • Licença Vitalícia Oficial`;
+      document.getElementById('mlBcCategory').textContent = prod.category.toUpperCase();
+
+      document.getElementById('mlProdTitle').textContent = prod.name;
+      document.getElementById('mlProdBadge').textContent = `🏆 ${prod.badge || 'MAIS VENDIDO DA CATEGORIA'}`;
+
       const discount =
-        product.regular_price > product.price
-          ? Math.round(((product.regular_price - product.price) / product.regular_price) * 100)
+        prod.regular_price > prod.price
+          ? Math.round(((prod.regular_price - prod.price) / prod.regular_price) * 100)
           : 0;
-      const discEl = document.getElementById('salesDiscountBadge');
+
+      const oldPrEl = document.getElementById('mlOldPrice');
+      const discEl = document.getElementById('mlDiscountPercent');
       if (discount > 0) {
-        discEl.textContent = `ECONOMIZE ${discount}%`;
+        oldPrEl.textContent = `R$ ${prod.regular_price.toFixed(2).replace('.', ',')}`;
+        oldPrEl.classList.remove('hidden');
+        discEl.textContent = `${discount}% OFF`;
         discEl.classList.remove('hidden');
       } else {
+        oldPrEl.classList.add('hidden');
         discEl.classList.add('hidden');
       }
 
-      document.getElementById('salesTitle').textContent = product.name;
-      document.getElementById('salesShortDesc').textContent = product.short_description || '';
+      document.getElementById('mlCurrentPrice').textContent = prod.price.toFixed(2).replace('.', ',');
 
-      // Bento de Features
-      const featuresBento = document.getElementById('salesFeaturesBento');
-      featuresBento.innerHTML = (product.features || [])
+      // Lista de Destaques
+      const hlBox = document.getElementById('mlHighlightsList');
+      hlBox.innerHTML = (prod.features || [])
         .map(
           (f) => `
-          <div class="sales-bento-item">
-            <span class="check-circle" style="margin-top: 2px;">✓</span>
-            <span style="font-size: 13.5px; font-weight: 600; color: var(--text-primary);">${f}</span>
+          <div class="ml-highlight-item">
+            <span class="ml-highlight-dot"></span>
+            <span>${f}</span>
           </div>`
         )
         .join('');
 
-      document.getElementById('salesFullDescription').innerHTML =
-        product.description || `<p>${product.short_description || ''}</p>`;
+      // Descrição completa
+      document.getElementById('mlDescriptionContent').innerHTML =
+        prod.description || `<p>${prod.short_description || ''}</p>`;
 
-      // Links do WhatsApp contextualizados com o nome do produto
-      const waQuestionUrl = getWhatsappUrl(
-        `Olá DLuz! Estou na página de vendas do produto "${product.name}" e gostaria de tirar uma dúvida.`
-      );
-      document.getElementById('salesTopWhatsappBtn').href = waQuestionUrl;
-      document.getElementById('salesBottomWhatsappBtn').href = waQuestionUrl;
-      document.getElementById('payWhatsappSupportBtn').href = getWhatsappUrl(
-        `Olá DLuz! Acabei de gerar um pedido para o produto "${product.name}" na Loja Oficial.`
-      );
+      // Link do WhatsApp com a dúvida sobre o produto
+      const buyWaBtn = document.getElementById('mlBuyWhatsappBtn');
+      if (buyWaBtn) {
+        buyWaBtn.href = getWhatsappLink(`Olá DLuz! Estou no produto "${prod.name}" no Mercado Livre da DLuz e quero tirar uma dúvida.`);
+      }
 
-      // Preencher Painel de Checkout na Direita
-      resetCheckoutToForm();
-      document.getElementById('chkProductId').value = product.id;
-      document.getElementById('chkProductName').textContent = product.name;
-      document.getElementById('chkOldPrice').textContent = `R$ ${product.regular_price.toFixed(2).replace('.', ',')}`;
-      document.getElementById('chkFinalPrice').textContent = `R$ ${product.price.toFixed(2).replace('.', ',')}`;
-      document.getElementById('chkCouponInput').value = '';
-      document.getElementById('chkCouponMsg').classList.add('hidden');
+      // Preparar formulário do Buy Box
+      backToMlBuyForm();
+      document.getElementById('mlCheckoutProdId').value = prod.id;
+      document.getElementById('mlCouponInput').value = '';
+      document.getElementById('mlCouponFeedback').classList.add('hidden');
+      document.getElementById('mlCheckoutError').classList.add('hidden');
 
-      // Alternar Visibilidade: esconder Home e exibir Página de Vendas
-      document.getElementById('storeHomeView').classList.add('hidden');
-      document.getElementById('productSalesView').classList.remove('hidden');
+      // Alternar Views: Oculta catálogo e exibe página VIP do Mercado Livre
+      document.getElementById('mlCatalogView').classList.add('hidden');
+      document.getElementById('mlProductView').classList.remove('hidden');
 
-      if (scrollToCheckout) {
+      if (scrollToBuy) {
         setTimeout(() => {
-          scrollToCheckoutPanel();
+          const buyBox = document.getElementById('mlBuyBoxAnchor');
+          if (buyBox) buyBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 80);
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
-    function scrollToCheckoutPanel() {
-      const panel = document.getElementById('checkoutPanelAnchor');
-      if (panel) {
-        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        const nameInput = document.getElementById('chkBuyerName');
-        if (nameInput) setTimeout(() => nameInput.focus(), 350);
-      }
-    }
-
     function goHome(ev) {
       if (ev) ev.preventDefault();
-      if (POLLING_INTERVAL) clearInterval(POLLING_INTERVAL);
-      document.getElementById('productSalesView').classList.add('hidden');
-      document.getElementById('storeHomeView').classList.remove('hidden');
+      if (ORDER_POLL_TIMER) clearInterval(ORDER_POLL_TIMER);
+      document.getElementById('mlProductView').classList.add('hidden');
+      document.getElementById('mlCatalogView').classList.remove('hidden');
+      closePaymentMethodsModal();
       closeLookupModal();
-      closePageModal();
       try {
-        history.pushState({}, 'Loja Oficial DLuz', '/');
+        history.pushState({}, 'DLuz Games — Loja Oficial', '/');
       } catch {}
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function resetCheckoutToForm() {
-      document.getElementById('checkoutFormStep').classList.remove('hidden');
-      document.getElementById('checkoutPayStep').classList.add('hidden');
-      document.getElementById('checkoutSuccessStep').classList.add('hidden');
-      document.getElementById('chkErrorBox').classList.add('hidden');
+    function backToMlBuyForm() {
+      document.getElementById('mlBuyFormStep').classList.remove('hidden');
+      document.getElementById('mlBuyPayStep').classList.add('hidden');
+      document.getElementById('mlBuySuccessStep').classList.add('hidden');
+    }
+
+    function switchThumb(idx) {
+      document.querySelectorAll('.ml-thumb-item').forEach((item, i) => {
+        item.classList.toggle('active', i === idx);
+      });
+    }
+
+    function copyCurrentPageUrl(ev) {
+      if (ev) ev.preventDefault();
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link do produto copiado!');
     }
 
     // ==========================================
-    // CUPOM E FINALIZAÇÃO DE COMPRA MERCADO PAGO
+    // CHECKOUT MERCADO PAGO NO BUY BOX
     // ==========================================
-    async function applyCheckoutCoupon() {
-      if (!ACTIVE_PRODUCT) return;
-      const code = document.getElementById('chkCouponInput').value.trim().toUpperCase();
-      const msgEl = document.getElementById('chkCouponMsg');
+    async function applyMlCoupon() {
+      if (!SELECTED_PROD) return;
+      const code = document.getElementById('mlCouponInput').value.trim().toUpperCase();
+      const fb = document.getElementById('mlCouponFeedback');
       if (!code) return;
 
       try {
@@ -1973,52 +1744,51 @@
           body: JSON.stringify({ code })
         });
         const data = await res.json();
-        msgEl.classList.remove('hidden');
+        fb.classList.remove('hidden');
 
         if (!res.ok || !data.valid) {
-          ACTIVE_COUPON = null;
-          msgEl.style.color = 'var(--apple-red)';
-          msgEl.textContent = data.message || 'Cupom inválido ou expirado.';
-          document.getElementById('chkFinalPrice').textContent = `R$ ${ACTIVE_PRODUCT.price.toFixed(2).replace('.', ',')}`;
+          APPLIED_COUPON_DATA = null;
+          fb.style.color = '#D32F2F';
+          fb.textContent = data.message || 'Cupom inválido.';
+          document.getElementById('mlCurrentPrice').textContent = SELECTED_PROD.price.toFixed(2).replace('.', ',');
           return;
         }
 
-        ACTIVE_COUPON = data;
-        let finalPrice = ACTIVE_PRODUCT.price;
+        APPLIED_COUPON_DATA = data;
+        let finalPr = SELECTED_PROD.price;
         if (data.discount_percent > 0) {
-          finalPrice -= (finalPrice * data.discount_percent) / 100;
+          finalPr -= (finalPr * data.discount_percent) / 100;
         } else if (data.discount_fixed > 0) {
-          finalPrice -= data.discount_fixed;
+          finalPr -= data.discount_fixed;
         }
-        finalPrice = Math.max(1, finalPrice);
+        finalPr = Math.max(1, finalPr);
 
-        msgEl.style.color = '#1FA834';
-        msgEl.textContent = `✓ Cupom ${data.code} aplicado! Desconto ativado.`;
-        document.getElementById('chkFinalPrice').textContent = `R$ ${finalPrice.toFixed(2).replace('.', ',')}`;
-        notifyIsland(`🎉 Cupom ${data.code} aplicado com sucesso!`);
+        fb.style.color = '#00A650';
+        fb.textContent = `✓ Cupom ${data.code} aplicado com sucesso!`;
+        document.getElementById('mlCurrentPrice').textContent = finalPr.toFixed(2).replace('.', ',');
       } catch {
-        msgEl.classList.remove('hidden');
-        msgEl.style.color = 'var(--apple-red)';
-        msgEl.textContent = 'Não foi possível validar o cupom.';
+        fb.classList.remove('hidden');
+        fb.style.color = '#D32F2F';
+        fb.textContent = 'Erro ao validar cupom.';
       }
     }
 
-    async function handleCheckoutSubmit(ev) {
+    async function handleMlCheckout(ev) {
       ev.preventDefault();
-      const btn = document.getElementById('chkSubmitBtn');
-      const errBox = document.getElementById('chkErrorBox');
+      const btn = document.getElementById('mlSubmitBtn');
+      const errBox = document.getElementById('mlCheckoutError');
       errBox.classList.add('hidden');
 
       const payload = {
-        product_id: Number(document.getElementById('chkProductId').value),
-        first_name: document.getElementById('chkBuyerName').value.trim(),
-        email: document.getElementById('chkBuyerEmail').value.trim(),
-        phone: document.getElementById('chkBuyerPhone').value.trim(),
-        coupon_code: ACTIVE_COUPON ? ACTIVE_COUPON.code : document.getElementById('chkCouponInput').value.trim()
+        product_id: Number(document.getElementById('mlCheckoutProdId').value),
+        first_name: document.getElementById('mlBuyerName').value.trim(),
+        email: document.getElementById('mlBuyerEmail').value.trim(),
+        phone: document.getElementById('mlBuyerPhone').value.trim(),
+        coupon_code: APPLIED_COUPON_DATA ? APPLIED_COUPON_DATA.code : document.getElementById('mlCouponInput').value.trim()
       };
 
       btn.disabled = true;
-      btn.innerHTML = '<span>⏳ Gerando Pix & Checkout Mercado Pago...</span>';
+      btn.innerHTML = '<span>⏳ Conectando ao Mercado Pago...</span>';
 
       try {
         const res = await fetch('/api/checkout', {
@@ -2029,87 +1799,82 @@
         const data = await res.json();
 
         if (!res.ok || !data.success) {
-          throw new Error(data.error || 'Erro ao gerar pagamento.');
+          throw new Error(data.error || 'Erro ao processar compra.');
         }
 
         const order = data.order;
-        document.getElementById('checkoutFormStep').classList.add('hidden');
-        document.getElementById('checkoutPayStep').classList.remove('hidden');
+        document.getElementById('mlBuyFormStep').classList.add('hidden');
+        document.getElementById('mlBuyPayStep').classList.remove('hidden');
 
-        document.getElementById('payOrderNum').textContent = `#${order.id}`;
-        document.getElementById('payTotalText').textContent = `R$ ${Number(order.total).toFixed(2).replace('.', ',')}`;
-        document.getElementById('payQrImg').src = order.pix_qr_base64;
-        document.getElementById('payPixCodeInput').value = order.pix_qr_code;
+        document.getElementById('mlPayOrderNumber').textContent = `#${order.id}`;
+        document.getElementById('mlPayTotalDisplay').textContent = `R$ ${Number(order.total).toFixed(2).replace('.', ',')}`;
+        document.getElementById('mlPayQrImage').src = order.pix_qr_base64;
+        document.getElementById('mlPixStringInput').value = order.pix_qr_code;
 
-        const cardWrap = document.getElementById('payCardWrap');
-        const cardBtn = document.getElementById('payCardUrlBtn');
+        const cardWrap = document.getElementById('mlCardOptionWrap');
+        const cardLink = document.getElementById('mlCardDirectLink');
         if (order.checkout_url) {
-          cardBtn.href = order.checkout_url;
+          cardLink.href = order.checkout_url;
           cardWrap.classList.remove('hidden');
         } else {
           cardWrap.classList.add('hidden');
         }
 
-        notifyIsland(`⚡ Pedido #${order.id} gerado! Escaneie o QR Code Pix.`);
-        startOrderStatusPolling(order.order_key);
+        startMlOrderPolling(order.order_key);
       } catch (err) {
         errBox.textContent = err.message;
         errBox.classList.remove('hidden');
       } finally {
         btn.disabled = false;
-        btn.innerHTML = '<span>⚡ Comprar Agora • Pix ou Cartão</span>';
+        btn.innerHTML = 'Comprar agora';
       }
     }
 
-    function copyPixToClipboard() {
-      const input = document.getElementById('payPixCodeInput');
-      if (!input) return;
+    function copyMlPix() {
+      const input = document.getElementById('mlPixStringInput');
       navigator.clipboard.writeText(input.value);
-      const btn = document.getElementById('copyPixCodeBtn');
+      const btn = document.getElementById('mlCopyPixBtn');
       btn.textContent = '✓ Copiado!';
-      notifyIsland('📋 Código Pix Copia e Cola copiado!');
-      setTimeout(() => {
-        btn.textContent = '📋 Copiar Pix';
-      }, 2500);
+      setTimeout(() => (btn.textContent = 'Copiar Pix'), 2500);
+      alert('Código Pix Copia e Cola copiado! Abra o aplicativo do seu banco para pagar.');
     }
 
-    function startOrderStatusPolling(orderKey) {
-      if (POLLING_INTERVAL) clearInterval(POLLING_INTERVAL);
-      POLLING_INTERVAL = setInterval(async () => {
+    function startMlOrderPolling(orderKey) {
+      if (ORDER_POLL_TIMER) clearInterval(ORDER_POLL_TIMER);
+      ORDER_POLL_TIMER = setInterval(async () => {
         try {
           const res = await fetch(`/api/orders/status/${orderKey}`);
           if (!res.ok) return;
           const data = await res.json();
           if (data.status === 'completed') {
-            clearInterval(POLLING_INTERVAL);
-            renderApprovedOrderStep(data);
+            clearInterval(ORDER_POLL_TIMER);
+            renderMlApprovedOrder(data);
           }
         } catch {}
       }, 3000);
     }
 
-    function renderApprovedOrderStep(orderData) {
-      document.getElementById('checkoutFormStep').classList.add('hidden');
-      document.getElementById('checkoutPayStep').classList.add('hidden');
-      document.getElementById('checkoutSuccessStep').classList.remove('hidden');
-      notifyIsland('🎉 Pagamento confirmado! Sua Chave PRO está liberada!');
+    function renderMlApprovedOrder(orderData) {
+      document.getElementById('mlBuyFormStep').classList.add('hidden');
+      document.getElementById('mlBuyPayStep').classList.add('hidden');
+      document.getElementById('mlBuySuccessStep').classList.remove('hidden');
 
-      const keyBox = document.getElementById('succKeyBox');
-      const keyText = document.getElementById('succLicenseKey');
+      const keyBox = document.getElementById('mlSuccKeyContainer');
+      const keyEl = document.getElementById('mlSuccLicenseKey');
       if (orderData.license_key && orderData.license_key !== 'PRODUTO-LIBERADO-SEM-CHAVE') {
         keyBox.classList.remove('hidden');
-        keyText.textContent = orderData.license_key;
+        keyEl.textContent = orderData.license_key;
       } else {
         keyBox.classList.add('hidden');
       }
 
-      const dlBox = document.getElementById('succDownloadsBox');
+      const dlBox = document.getElementById('mlSuccDownloadsList');
       const dls = orderData.downloads || [];
       if (dls.length > 0) {
         dlBox.innerHTML = dls
           .map(
             (d) => `
-            <a href="${d.file}" target="_blank" rel="noopener" class="ios-btn ios-btn-primary" style="width: 100%; justify-content: space-between;">
+            <a href="${d.file}" target="_blank" rel="noopener" class="ml-btn-buy" style="font-size: 13px; padding: 10px 14px; text-align: left; justify-content: space-between;">
               <span>📥 ${d.name}</span>
               <span>Baixar ›</span>
             </a>`
@@ -2117,35 +1882,43 @@
           .join('');
       } else {
         dlBox.innerHTML = `
-          <div style="padding: 12px; border-radius: 12px; background: var(--bg-primary); font-size: 12.5px; color: var(--text-secondary);">
-            Os dados de acesso foram enviados diretamente para o seu WhatsApp e E-mail!
+          <div style="font-size: 12.5px; color: var(--ml-text-sub); background: #F8F9FA; padding: 10px; border-radius: 4px;">
+            Sua chave e instruções foram enviadas para o seu WhatsApp e E-mail!
           </div>
         `;
       }
     }
 
-    function copyApprovedKey() {
-      const key = document.getElementById('succLicenseKey').textContent.trim();
+    function copyMlKey() {
+      const key = document.getElementById('mlSuccLicenseKey').textContent.trim();
       navigator.clipboard.writeText(key);
-      notifyIsland('🔑 Chave PRO copiada com sucesso!');
+      alert('Chave PRO copiada para a área de transferência!');
     }
 
     // ==========================================
-    // MODAL DE RESGATE DE CHAVE & PEDIDOS
+    // MODAIS (MEIOS DE PAGAMENTO & RESGATE DE CHAVE)
     // ==========================================
+    function openPaymentMethodsModal() {
+      document.getElementById('mlPayMethodsModal').classList.remove('hidden');
+    }
+
+    function closePaymentMethodsModal() {
+      document.getElementById('mlPayMethodsModal').classList.add('hidden');
+    }
+
     function openLookupModal() {
-      document.getElementById('lookupModal').classList.remove('hidden');
+      document.getElementById('mlLookupModal').classList.remove('hidden');
     }
 
     function closeLookupModal() {
-      document.getElementById('lookupModal').classList.add('hidden');
+      document.getElementById('mlLookupModal').classList.add('hidden');
     }
 
-    async function submitOrderLookup(ev) {
+    async function handleMlOrderLookup(ev) {
       ev.preventDefault();
-      const q = document.getElementById('lookupQueryInput').value.trim();
-      const box = document.getElementById('lookupResults');
-      box.innerHTML = '<div style="font-size: 13px; color: var(--text-muted);">Buscando seus pedidos...</div>';
+      const q = document.getElementById('mlLookupQueryInput').value.trim();
+      const box = document.getElementById('mlLookupResultsList');
+      box.innerHTML = '<div style="font-size: 13px; color: var(--ml-text-sub);">Buscando pedidos...</div>';
 
       try {
         const res = await fetch('/api/orders/lookup', {
@@ -2154,12 +1927,12 @@
           body: JSON.stringify({ query: q })
         });
         const data = await res.json();
-        if (!res.ok) throw new Error(data.error || 'Erro ao consultar');
+        if (!res.ok) throw new Error(data.error || 'Erro na consulta');
 
         if (!data.orders || data.orders.length === 0) {
           box.innerHTML = `
-            <div style="padding: 16px; border-radius: 16px; background: var(--bg-primary); font-size: 13px; color: var(--text-secondary);">
-              Nenhum pedido encontrado para <strong>${q}</strong>. Caso precise de ajuda, chame no nosso <a href="${getWhatsappUrl('Olá DLuz! Preciso recuperar minha chave de ativação.')}" target="_blank" style="color: var(--apple-blue); font-weight: 700;">WhatsApp de Suporte</a>.
+            <div style="font-size: 13px; color: var(--ml-text-sub); background: #F8F9FA; padding: 12px; border-radius: 4px;">
+              Nenhum pedido encontrado para <strong>${q}</strong>. Se precisar de ajuda, fale direto no nosso <a href="${getWhatsappLink('Olá DLuz! Preciso recuperar minha chave de compra.')}" target="_blank" style="color: var(--ml-blue); font-weight: 700;">WhatsApp de Suporte</a>.
             </div>
           `;
           return;
@@ -2171,23 +1944,23 @@
             const dls = (o.downloads || [])
               .map(
                 (d) =>
-                  `<a href="${d.file}" target="_blank" class="ios-btn ios-btn-primary ios-btn-sm" style="margin-top: 8px; margin-right: 6px;">📥 ${d.name}</a>`
+                  `<a href="${d.file}" target="_blank" class="ml-btn-buy" style="margin-top: 6px; font-size: 12px; padding: 6px 12px; width: auto; display: inline-block;">📥 ${d.name}</a>`
               )
               .join('');
 
             return `
-              <div style="padding: 16px; border-radius: 18px; background: var(--bg-primary); border: 1px solid var(--border-subtle);">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-                  <strong style="font-size: 14px;">Pedido #${o.id} — ${o.product_name}</strong>
-                  <span class="pill-badge" style="background: ${isPaid ? 'rgba(40,205,65,0.15)' : 'rgba(255,149,0,0.15)'}; color: ${isPaid ? '#1FA834' : '#D97706'};">
-                    ${isPaid ? 'Aprovado' : 'Pendente'}
+              <div style="background: #F8F9FA; border: 1px solid var(--ml-border); border-radius: 6px; padding: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <strong style="font-size: 13.5px;">Pedido #${o.id} — ${o.product_name}</strong>
+                  <span style="font-size: 11px; font-weight: 700; color: ${isPaid ? '#00A650' : '#FF7733'};">
+                    ${isPaid ? 'APROVADO' : 'PENDENTE'}
                   </span>
                 </div>
                 ${
                   isPaid && o.license_key && o.license_key !== 'PRODUTO-LIBERADO-SEM-CHAVE'
-                    ? `<div style="display: flex; align-items: center; justify-content: space-between; background: var(--bg-secondary); padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border-subtle);">
-                         <code style="font-weight: 800; color: var(--apple-blue); font-size: 13px;">${o.license_key}</code>
-                         <button type="button" onclick="navigator.clipboard.writeText('${o.license_key}'); notifyIsland('🔑 Chave copiada!');" class="ios-btn ios-btn-secondary ios-btn-sm">Copiar</button>
+                    ? `<div style="background: #FFFFFF; padding: 8px 10px; border: 1px solid var(--ml-border); border-radius: 4px; display: flex; justify-content: space-between; align-items: center; margin: 6px 0;">
+                         <code style="font-size: 13px; font-weight: 700; color: var(--ml-blue);">${o.license_key}</code>
+                         <button type="button" onclick="navigator.clipboard.writeText('${o.license_key}'); alert('Chave copiada!');" class="ml-btn-link" style="color: var(--ml-blue); font-weight: 700;">Copiar</button>
                        </div>`
                     : ''
                 }
@@ -2197,98 +1970,71 @@
           })
           .join('');
       } catch (err) {
-        box.innerHTML = `<div style="color: var(--apple-red); font-size: 13px;">${err.message}</div>`;
+        box.innerHTML = `<div style="color: #D32F2F; font-size: 13px;">${err.message}</div>`;
       }
     }
 
-    // ==========================================
-    // PÁGINAS INSTITUCIONAIS
-    // ==========================================
-    async function openPageModal(ev, slug) {
+    function openPage(slug, ev) {
       if (ev) ev.preventDefault();
-      try {
-        const cleanSlug = String(slug || '').replace(/-2$/, '');
-        const res = await fetch(`/api/pages/${cleanSlug}`);
-        if (!res.ok) return;
-        const page = await res.json();
-        document.getElementById('pageModalTitle').textContent = page.title;
-        document.getElementById('pageModalBody').innerHTML = page.content;
-        document.getElementById('pageModal').classList.remove('hidden');
-      } catch {}
+      fetch(`/api/pages/${slug}`)
+        .then((r) => r.json())
+        .then((p) => {
+          alert(`${p.title}\n\n${p.content.replace(/<[^>]+>/g, '').slice(0, 500)}...`);
+        })
+        .catch(() => {});
     }
 
-    function closePageModal() {
-      document.getElementById('pageModal').classList.add('hidden');
-    }
-
-    // Suporte ao botão Voltar do navegador
+    // Navegação popstate (Voltar / Avançar)
     window.addEventListener('popstate', () => {
-      handleRouteOnLoad();
+      handleRoute();
     });
 
-    function handleRouteOnLoad() {
+    function handleRoute() {
       const params = new URLSearchParams(window.location.search);
-      const addToCartId = params.get('add-to-cart');
-      if (addToCartId && /^\d+$/.test(addToCartId)) {
-        openSalesPageById(Number(addToCartId), true);
+      const addId = params.get('add-to-cart');
+      if (addId && /^\d+$/.test(addId)) {
+        openProductPageById(Number(addId), true);
         return;
       }
 
-      const pathName = window.location.pathname.replace(/\/$/, '');
-      if (!pathName || pathName === '') {
-        document.getElementById('productSalesView').classList.add('hidden');
-        document.getElementById('storeHomeView').classList.remove('hidden');
-        return;
-      }
-
-      if (pathName.startsWith('/produto/')) {
-        const slug = decodeURIComponent(pathName.replace('/produto/', ''));
+      const pName = window.location.pathname.replace(/\/$/, '');
+      if (pName.startsWith('/produto/')) {
+        const slug = decodeURIComponent(pName.replace('/produto/', ''));
         const found = ALL_PRODUCTS.find(
           (p) => p.slug === slug || p.slug.includes(slug) || slug.includes(p.slug)
         );
         if (found) {
-          openSalesPageById(found.id, false);
+          openProductPageById(found.id, false);
           return;
         }
       }
 
-      if (pathName === '/consultar-pedido' || pathName === '/minha-conta') {
+      if (pName === '/consultar-pedido' || pName === '/minha-conta') {
         openLookupModal();
         return;
       }
 
-      const instPages = [
-        'termos-de-servico',
-        'termos-de-servico-2',
-        'politica-de-privacidade',
-        'politica-de-privacidade-2',
-        'politica-de-reembolso',
-        'contato',
-        'contato-2'
-      ];
-      const cleanPath = pathName.replace(/^\//, '');
-      if (instPages.includes(cleanPath)) {
-        openPageModal(null, cleanPath);
-      }
+      document.getElementById('mlProductView').classList.add('hidden');
+      document.getElementById('mlCatalogView').classList.remove('hidden');
     }
 
-    async function initStore() {
+    async function initMlStore() {
       try {
         const res = await fetch('/api/products');
         const data = await res.json();
         ALL_PRODUCTS = data.products || [];
         if (data.whatsapp_support) {
-          WHATSAPP_NUMBER = data.whatsapp_support;
+          WHATSAPP_PHONE = data.whatsapp_support;
         }
-        updateAllWhatsappLinks();
-        renderCatalogGrid();
-        handleRouteOnLoad();
+        updateWhatsappButtons();
+        renderCatalogCards();
+        handleRoute();
       } catch (err) {
         console.error('Erro ao inicializar loja:', err);
       }
     }
 
-    window.addEventListener('DOMContentLoaded', initStore);
+    window.addEventListener('DOMContentLoaded', initMlStore);
   </script>
 </body>
 </html>
