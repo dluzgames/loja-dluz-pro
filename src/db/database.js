@@ -169,13 +169,30 @@ async function initDatabase() {
         ]
       );
     } else {
-      // Sempre manter image_url sincronizado com o catalogo
-      await dbRun("UPDATE products SET image_url = ?, badge = ?, theme_color = ? WHERE id = ?", [
-        p.image_url || existing.image_url || "",
-        p.badge || "",
-        p.theme_color || "#39FF14",
-        p.id
-      ]);
+      // Sempre manter dados essenciais sincronizados com o catalogo
+      await dbRun(
+        `UPDATE products SET 
+          name = ?,
+          short_description = ?,
+          description = ?,
+          image_url = ?,
+          badge = ?,
+          theme_color = ?,
+          features_json = ?,
+          downloads_json = ?
+        WHERE id = ?`,
+        [
+          p.name,
+          p.short_description || "",
+          p.description || "",
+          p.image_url || existing.image_url || "",
+          p.badge || "",
+          p.theme_color || "#39FF14",
+          JSON.stringify(p.features || []),
+          JSON.stringify(p.downloads || []),
+          p.id
+        ]
+      );
     }
   }
 

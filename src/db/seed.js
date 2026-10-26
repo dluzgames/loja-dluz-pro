@@ -7,11 +7,11 @@ const INITIAL_PRODUCTS = [
   {
     id: 2950,
     image_url: "/images/products/dluz-orbix.jpg",
-    name: "DLuz Orbix Setup Leve — Mobilador 120 FPS Híbrido & Emulador Orbion (Licença Vitalícia)",
+    name: "DLuz Orbix Setup Leve — Mobilador e Emulador com Android 17 (120 FPS Cravado • Licença Vitalícia)",
     slug: "dluz-orbix-setup-leve",
     sku: "DLUZ-ORBIX-SETUP",
     category: "mobilador",
-    badge: "⚡ NOVO • 120 FPS CRAVADO",
+    badge: "⚡ ANDROID 17 • MOBILADOR & EMULADOR",
     theme_color: "#0284C7",
     icon: "gamepad",
     regular_price: 39.90,
