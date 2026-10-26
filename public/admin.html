@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Admin — Loja Oficial DLuz Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] },
+          colors: { neon: '#39FF14', gold: '#FFD700', obsidian: '#07090E' }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-obsidian text-slate-100 min-h-screen font-sans">
+
+  <!-- TELA DE LOGIN ADMIN -->
+  <div id="loginScreen" class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-slate-900/90 border border-white/15 rounded-3xl max-w-md w-full p-8 shadow-2xl">
+      <div class="text-center mb-6">
+        <div class="w-14 h-14 rounded-2xl bg-neon/15 border border-neon/40 flex items-center justify-center mx-auto mb-3 font-display font-extrabold text-2xl text-neon">
+          DL
+        </div>
+        <h1 class="font-display font-extrabold text-2xl text-white">Painel Admin — Loja DLuz</h1>
+        <p class="text-xs text-slate-400 mt-1">Acesso restrito com proteção criptográfica HMAC</p>
+      </div>
+
+      <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-300 mb-1">E-mail Administrador</label>
+          <input
+            type="email"
+            id="loginEmail"
+            value="efovideos@gmail.com"
+            required
+            class="w-full bg-slate-950 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm text-white outline-none"
+          />
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Senha de Segurança</label>
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="••••••••••••"
+            required
+            class="w-full bg-slate-950 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm text-white outline-none"
+          />
+        </div>
+        <div id="loginError" class="hidden text-xs text-red-400 bg-red-500/15 border border-red-500/30 p-3 rounded-xl"></div>
+        <button type="submit" class="w-full bg-neon hover:brightness-110 text-black font-extrabold py-3.5 rounded-xl text-sm transition">
+          🔒 Entrar no Painel
+        </button>
+      </form>
+      <div class="mt-6 text-center">
+        <a href="/" class="text-xs text-slate-400 hover:text-neon">← Voltar para a Loja Pública</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD PRINCIPAL -->
+  <div id="dashboardScreen" class="hidden min-h-screen flex flex-col">
+    <header class="bg-slate-900/90 border-b border-white/10 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-neon/20 border border-neon/50 flex items-center justify-center font-display font-extrabold text-neon">DL</div>
+        <div>
+          <h1 class="font-display font-extrabold text-lg text-white">Central Administrativa — Loja DLuz Games</h1>
+          <p class="text-xs text-slate-400">Gerenciamento de Produtos, Pedidos, Licenças WhatsApp & Mercado Pago</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/" target="_blank" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white">
+          🌐 Ver Loja
+        </a>
+        <button onclick="loadDashboard()" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-neon">
+          🔄 Atualizar Dados
+        </button>
+        <button onclick="logoutAdmin()" class="px-3.5 py-2 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-xs font-semibold text-red-300">
+          Sair
+        </button>
+      </div>
+    </header>
+
+    <main class="max-w-7xl w-full mx-auto p-6 space-y-6 flex-1">
+      <!-- Cards de Métricas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-5">
+          <div class="text-xs text-slate-400 uppercase font-bold">Receita Aprovada</div>
+          <div id="metricRevenue" class="font-display font-extrabold text-2xl text-neon mt-1">R$ 0,00</div>
+        </div>
+        <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-5">
+          <div class="text-xs text-slate-400 uppercase font-bold">Pedidos Concluídos</div>
+          <div id="metricCompleted" class="font-display font-extrabold text-2xl text-white mt-1">0</div>
+        </div>
+        <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-5">
+          <div class="text-xs text-slate-400 uppercase font-bold">Catálogo Ativo</div>
+          <div id="metricProducts" class="font-display font-extrabold text-2xl text-gold mt-1">0 produtos</div>
+        </div>
+        <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-5">
+          <div class="text-xs text-slate-400 uppercase font-bold">Status Mercado Pago</div>
+          <div id="metricMpStatus" class="font-display font-bold text-sm mt-2">-</div>
+        </div>
+      </div>
+
+      <!-- Abas de Navegação -->
+      <div class="flex gap-2 border-b border-white/10 pb-3 overflow-x-auto">
+        <button onclick="switchTab('orders')" id="tabBtn-orders" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-neon text-black">
+          📦 Pedidos & Reenvio WhatsApp
+        </button>
+        <button onclick="switchTab('products')" id="tabBtn-products" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800">
+          🛒 Produtos & Preços (21)
+        </button>
+        <button onclick="switchTab('settings')" id="tabBtn-settings" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800">
+          💳 Provedor Mercado Pago & Segurança
+        </button>
+      </div>
+
+      <!-- ABA 1: PEDIDOS -->
+      <section id="tabContent-orders" class="space-y-4">
+        <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-5 overflow-x-auto">
+          <h2 class="font-display font-bold text-lg text-white mb-4">Últimos Pedidos & Entregas Automáticas</h2>
+          <table class="w-full text-left text-xs sm:text-sm border-collapse">
+            <thead>
+              <tr class="border-b border-white/10 text-slate-400 uppercase text-[11px]">
+                <th class="py-3 px-2">ID</th>
+                <th class="py-3 px-2">Cliente</th>
+                <th class="py-3 px-2">WhatsApp / E-mail</th>
+                <th class="py-3 px-2">Produto</th>
+                <th class="py-3 px-2">Valor</th>
+                <th class="py-3 px-2">Status / Chave PRO</th>
+                <th class="py-3 px-2 text-right">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="adminOrdersTable" class="divide-y divide-white/5"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ABA 2: PRODUTOS -->
+      <section id="tabContent-products" class="hidden space-y-4">
+        <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-5 overflow-x-auto">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-display font-bold text-lg text-white">Gerenciar Mercadorias da Loja</h2>
+          </div>
+          <table class="w-full text-left text-xs sm:text-sm border-collapse">
+            <thead>
+              <tr class="border-b border-white/10 text-slate-400 uppercase text-[11px]">
+                <th class="py-3 px-2">ID</th>
+                <th class="py-3 px-2">Produto</th>
+                <th class="py-3 px-2">Categoria</th>
+                <th class="py-3 px-2">Preço De (R$)</th>
+                <th class="py-3 px-2">Preço Por (R$)</th>
+                <th class="py-3 px-2 text-right">Salvar</th>
+              </tr>
+            </thead>
+            <tbody id="adminProductsTable" class="divide-y divide-white/5"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ABA 3: CONFIGURAÇÕES MERCADO PAGO & SEGURANÇA -->
+      <section id="tabContent-settings" class="hidden space-y-6">
+        <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-6 max-w-3xl space-y-5">
+          <div>
+            <h2 class="font-display font-bold text-xl text-white">💳 Integração Oficial Mercado Pago</h2>
+            <p class="text-xs text-slate-400 mt-1">
+              Insira suas credenciais de produção do Mercado Pago (<a href="https://www.mercadopago.com.br/developers/panel/app" target="_blank" class="text-neon underline">Painel Developers Mercado Pago</a>) para ativar o Pix Transparente com Webhook automático e o Checkout Pro de Cartão.
+            </p>
+          </div>
+
+          <form onsubmit="saveAdminSettings(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Mercado Pago Access Token (Produção - APP_USR-...)</label>
+              <input
+                type="password"
+                id="setMpAccessToken"
+                placeholder="APP_USR-0000000000000000-000000-..."
+                class="w-full bg-slate-950 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm font-mono text-white outline-none"
+              />
+              <p class="text-[11px] text-slate-500 mt-1" id="currentMpTokenMask"></p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Mercado Pago Public Key</label>
+                <input
+                  type="text"
+                  id="setMpPublicKey"
+                  placeholder="APP_USR-..."
+                  class="w-full bg-slate-950 border border-slate-700 focus:border-neon rounded-xl px-4 py-2.5 text-sm font-mono text-white outline-none"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Assinatura Secreta Webhook (Opcional)</label>
+                <input
+                  type="password"
+                  id="setMpWebhookSecret"
+                  placeholder="Chave secreta HMAC do Webhook"
+                  class="w-full bg-slate-950 border border-slate-700 focus:border-neon rounded-xl px-4 py-2.5 text-sm font-mono text-white outline-none"
+                />
+              </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-4">
+              <h3 class="font-display font-bold text-sm text-gold mb-3"> contingência Pix & Servidor de Licenças</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Chave Pix Reserva (EMV BRCode)</label>
+                  <input
+                    type="text"
+                    id="setPixFallbackKey"
+                    class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white outline-none"
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Nova Senha do Painel Admin (Opcional)</label>
+                  <input
+                    type="password"
+                    id="setNewAdminPassword"
+                    placeholder="Deixe em branco para manter a atual"
+                    class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white outline-none"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button type="submit" class="bg-neon text-black font-extrabold px-6 py-3 rounded-xl text-sm">
+                💾 Salvar Configurações
+              </button>
+              <button type="button" onclick="testMpConnection()" class="bg-slate-800 hover:bg-slate-700 border border-white/15 text-white font-semibold px-5 py-3 rounded-xl text-sm">
+                🔌 Testar Conexão Mercado Pago
+              </button>
+            </div>
+            <div id="settingsFeedback" class="text-xs font-semibold mt-2"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    let ADMIN_DATA = null;
+
+    async function handleAdminLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      const errEl = document.getElementById('loginError');
+      errEl.classList.add('hidden');
+
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Erro no login');
+        localStorage.setItem('dluz_admin_token', data.token);
+        await loadDashboard();
+      } catch (err) {
+        errEl.textContent = err.message;
+        errEl.classList.remove('hidden');
+      }
+    }
+
+    function getAuthHeaders() {
+      const t = localStorage.getItem('dluz_admin_token') || '';
+      return {
+        'Content-Type': 'application/json',
+        ...(t ? { Authorization: `Bearer ${t}` } : {})
+      };
+    }
+
+    async function loadDashboard() {
+      try {
+        const res = await fetch('/api/admin/dashboard', { headers: getAuthHeaders() });
+        if (res.status === 401) {
+          document.getElementById('loginScreen').classList.remove('hidden');
+          document.getElementById('dashboardScreen').classList.add('hidden');
+          return;
+        }
+        const data = await res.json();
+        ADMIN_DATA = data;
+
+        document.getElementById('loginScreen').classList.add('hidden');
+        document.getElementById('dashboardScreen').classList.remove('hidden');
+
+        document.getElementById('metricRevenue').textContent = `R$ ${Number(data.metrics.total_revenue).toFixed(2).replace('.', ',')}`;
+        document.getElementById('metricCompleted').textContent = `${data.metrics.completed_orders} / ${data.metrics.total_orders}`;
+        document.getElementById('metricProducts').textContent = `${data.metrics.total_products} produtos`;
+        document.getElementById('metricMpStatus').innerHTML = data.metrics.mp_configured
+          ? '<span class="text-neon">● API Mercado Pago Ativa</span>'
+          : '<span class="text-amber-400">● Pix EMV Ativo (Falta Token MP)</span>';
+
+        renderAdminOrders(data.orders || []);
+        renderAdminProducts(data.products || []);
+
+        const s = data.settings || {};
+        document.getElementById('currentMpTokenMask').textContent = s.mp_access_token_masked
+          ? `Token atual salvo: ${s.mp_access_token_masked}`
+          : 'Nenhum Access Token salvo ainda.';
+        document.getElementById('setMpPublicKey').value = s.mp_public_key || '';
+        document.getElementById('setPixFallbackKey').value = s.pix_fallback_key || 'duilioluzefo@gmail.com';
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function renderAdminOrders(orders) {
+      const tbody = document.getElementById('adminOrdersTable');
+      if (orders.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="py-6 text-center text-slate-400">Nenhum pedido registrado ainda.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = orders
+        .map((o) => {
+          const isCompleted = o.status === 'completed';
+          return `
+            <tr class="hover:bg-white/5">
+              <td class="py-3 px-2 font-mono font-bold text-white">#${o.id}</td>
+              <td class="py-3 px-2 font-semibold">${o.first_name} ${o.last_name || ''}</td>
+              <td class="py-3 px-2 text-xs text-slate-300">
+                <div>📱 ${o.phone}</div>
+                <div class="text-slate-500">✉️ ${o.email}</div>
+              </td>
+              <td class="py-3 px-2 text-xs max-w-xs truncate">${o.items?.[0]?.name || '-'}</td>
+              <td class="py-3 px-2 font-bold text-neon">R$ ${Number(o.total).toFixed(2).replace('.', ',')}</td>
+              <td class="py-3 px-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase ${
+                  isCompleted ? 'bg-neon/20 text-neon' : o.status === 'cancelled' ? 'bg-red-500/20 text-red-400' : 'bg-amber-500/20 text-amber-300'
+                }">${o.status}</span>
+                ${o.license_key ? `<div class="font-mono text-[11px] text-gold mt-1">${o.license_key}</div>` : ''}
+              </td>
+              <td class="py-3 px-2 text-right space-x-1 whitespace-nowrap">
+                <button
+                  onclick="approveOrResendOrder(${o.id})"
+                  class="px-3 py-1.5 rounded-lg bg-neon text-black font-bold text-xs hover:brightness-110"
+                >
+                  ${isCompleted ? '📲 Reenviar WhatsApp' : '✅ Aprovar & Enviar Key'}
+                </button>
+                ${
+                  o.status !== 'cancelled'
+                    ? `<button onclick="cancelOrder(${o.id})" class="px-2.5 py-1.5 rounded-lg bg-red-500/20 text-red-300 text-xs hover:bg-red-500/30">Cancelar</button>`
+                    : ''
+                }
+              </td>
+            </tr>
+          `;
+        })
+        .join('');
+    }
+
+    function renderAdminProducts(products) {
+      const tbody = document.getElementById('adminProductsTable');
+      tbody.innerHTML = products
+        .map(
+          (p) => `
+          <tr class="hover:bg-white/5">
+            <td class="py-3 px-2 font-mono text-slate-400">#${p.id}</td>
+            <td class="py-3 px-2">
+              <input id="prodName-${p.id}" type="text" value="${p.name.replace(/"/g, '&quot;')}"
+                     class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white" />
+            </td>
+            <td class="py-3 px-2 text-xs text-slate-400">${p.category}</td>
+            <td class="py-3 px-2 w-28">
+              <input id="prodReg-${p.id}" type="number" step="0.01" value="${p.regular_price}"
+                     class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-white" />
+            </td>
+            <td class="py-3 px-2 w-28">
+              <input id="prodSale-${p.id}" type="number" step="0.01" value="${p.sale_price}"
+                     class="w-full bg-slate-950 border border-neon/50 rounded-lg px-2.5 py-1.5 text-xs font-bold text-neon" />
+            </td>
+            <td class="py-3 px-2 text-right">
+              <button onclick="saveProductQuick(${p.id})" class="px-3 py-1.5 rounded-lg bg-neon text-black font-bold text-xs">
+                Salvar
+              </button>
+            </td>
+          </tr>
+        `
+        )
+        .join('');
+    }
+
+    async function saveProductQuick(id) {
+      const name = document.getElementById(`prodName-${id}`).value.trim();
+      const regular_price = parseFloat(document.getElementById(`prodReg-${id}`).value);
+      const sale_price = parseFloat(document.getElementById(`prodSale-${id}`).value);
+
+      const res = await fetch(`/api/admin/products/${id}`, {
+        method: 'PUT',
+        headers: getAuthHeaders(),
+        body: JSON.stringify({ name, regular_price, sale_price })
+      });
+      if (res.ok) {
+        alert(`✅ Produto #${id} atualizado com sucesso!`);
+        loadDashboard();
+      }
+    }
+
+    async function approveOrResendOrder(id) {
+      const res = await fetch(`/api/admin/orders/${id}/approve`, {
+        method: 'POST',
+        headers: getAuthHeaders()
+      });
+      const data = await res.json();
+      if (res.ok) {
+        alert(`✅ ${data.message}`);
+        loadDashboard();
+      } else {
+        alert(`❌ Erro: ${data.error}`);
+      }
+    }
+
+    async function cancelOrder(id) {
+      if (!confirm(`Tem certeza que deseja cancelar o Pedido #${id} e revogar a chave?`)) return;
+      const res = await fetch(`/api/admin/orders/${id}/cancel`, {
+        method: 'POST',
+        headers: getAuthHeaders()
+      });
+      const data = await res.json();
+      alert(data.message || 'Pedido cancelado');
+      loadDashboard();
+    }
+
+    async function saveAdminSettings(e) {
+      e.preventDefault();
+      const fb = document.getElementById('settingsFeedback');
+      const payload = {
+        mp_Public_key: document.getElementById('setMpPublicKey').value.trim(),
+        mp_public_key: document.getElementById('setMpPublicKey').value.trim(),
+        pix_fallback_key: document.getElementById('setPixFallbackKey').value.trim()
+      };
+
+      const tokenVal = document.getElementById('setMpAccessToken').value.trim();
+      if (tokenVal) payload.mp_access_token = tokenVal;
+
+      const secVal = document.getElementById('setMpWebhookSecret').value.trim();
+      if (secVal) payload.mp_webhook_secret = secVal;
+
+      const newPass = document.getElementById('setNewAdminPassword').value;
+      if (newPass) payload.new_admin_password = newPass;
+
+      const res = await fetch('/api/admin/settings', {
+        method: 'PUT',
+        headers: getAuthHeaders(),
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      fb.className = 'text-xs font-semibold text-neon mt-2';
+      fb.textContent = data.message || 'Configurações salvas!';
+      document.getElementById('setMpAccessToken').value = '';
+      loadDashboard();
+    }
+
+    async function testMpConnection() {
+      const fb = document.getElementById('settingsFeedback');
+      fb.className = 'text-xs font-semibold text-slate-300 mt-2';
+      fb.textContent = 'Testando conexão com a API do Mercado Pago...';
+
+      const customToken = document.getElementById('setMpAccessToken').value.trim();
+      const res = await fetch('/api/admin/mercadopago/test', {
+        method: 'POST',
+        headers: getAuthHeaders(),
+        body: JSON.stringify({ mp_access_token: customToken || undefined })
+      });
+      const data = await res.json();
+      if (data.ok) {
+        fb.className = 'text-xs font-semibold text-neon mt-2';
+        fb.textContent = `✅ Conectado ao Mercado Pago! Conta: ${data.nickname} (${data.email}) [ID: ${data.user_id}]`;
+      } else {
+        fb.className = 'text-xs font-semibold text-amber-400 mt-2';
+        fb.textContent = `⚠️ ${data.message || 'Token inválido ou ainda não preenchido.'}`;
+      }
+    }
+
+    function switchTab(tab) {
+      ['orders', 'products', 'settings'].forEach((t) => {
+        document.getElementById(`tabContent-${t}`).classList.toggle('hidden', t !== tab);
+        document.getElementById(`tabBtn-${t}`).className =
+          t === tab
+            ? 'px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-neon text-black'
+            : 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800';
+      });
+    }
+
+    async function logoutAdmin() {
+      localStorage.removeItem('dluz_admin_token');
+      await fetch('/api/admin/logout', { method: 'POST' });
+      location.reload();
+    }
+
+    window.addEventListener('DOMContentLoaded', loadDashboard);
+  </script>
+</body>
+</html>

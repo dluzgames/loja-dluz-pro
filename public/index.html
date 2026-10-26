@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja Oficial DLuz Games — Mobilador Pro, Emuladores 120 FPS & Softwares com IA</title>
+  <meta name="description" content="Loja Oficial DLuz Games. Adquira o DLuz Mobilador Pro v3.5.1 Zero Delay 120 FPS, Dluz Film PRO IA, GTA 5 Cooperativo, Sensi BS 1000Hz e Emuladores Turbinados com entrega imediata no WhatsApp e E-mail via Mercado Pago." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            neon: '#39FF14',
+            gold: '#FFD700',
+            obsidian: '#07090E',
+            panel: '#0F1420',
+            panelBorder: '#1E293B'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #07090E;
+      color: #F8FAFC;
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(57, 255, 20, 0.08), transparent 35%),
+        radial-gradient(circle at 85% 15%, rgba(255, 215, 0, 0.07), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(0, 229, 255, 0.05), transparent 40%);
+      background-attachment: fixed;
+    }
+    .glass-card {
+      background: rgba(15, 20, 32, 0.82);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(57, 255, 20, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(57, 255, 20, 0.15);
+    }
+    .btn-neon {
+      background: linear-gradient(135deg, #39FF14 0%, #16A34A 100%);
+      color: #04070B;
+      font-weight: 800;
+      box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+      transition: all 0.2s ease;
+    }
+    .btn-neon:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+      box-shadow: 0 0 30px rgba(57, 255, 20, 0.55);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%);
+      color: #04070B;
+      font-weight: 800;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
+      transition: all 0.2s ease;
+    }
+    .btn-gold:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+    .prose-dluz h2, .prose-dluz h3, .prose-dluz h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .prose-dluz h3 { font-size: 1.25rem; color: #FFD700; }
+    .prose-dluz h4 { font-size: 1.05rem; color: #39FF14; }
+    .prose-dluz p { color: #CBD5E1; line-height: 1.65; margin-bottom: 0.75rem; }
+    .prose-dluz ul { list-style: none; padding-left: 0; margin-bottom: 1rem; }
+    .prose-dluz ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #E2E8F0;
+    }
+    .prose-dluz ul li::before {
+      content: "⚡";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #07090E; }
+    ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #39FF14; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-neon selection:text-black">
+
+  <!-- Barra de Topo Promocional & Segurança -->
+  <div class="bg-gradient-to-r from-emerald-950/90 via-slate-900 to-amber-950/90 border-b border-white/10 text-xs sm:text-sm py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2 mx-auto sm:mx-0">
+        <span class="inline-block w-2 h-2 rounded-full bg-neon animate-pulse"></span>
+        <span class="font-medium text-slate-200">
+          <strong class="text-neon">ENTREGA AUTOMÁTICA 24H:</strong> Receba sua Chave PRO + Download no <strong>WhatsApp e E-mail</strong> em 3 segundos!
+        </span>
+      </div>
+      <div class="hidden md:flex items-center gap-4 text-xs text-slate-300">
+        <span>🔒 Pagamento Seguro <strong>Mercado Pago</strong></span>
+        <span>•</span>
+        <span>🎁 Cupom 10% OFF: <button onclick="copyCouponTop('MELHOR10')" class="font-mono font-bold text-gold underline hover:text-white" title="Clique para copiar">MELHOR10</button></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cabeçalho Principal -->
+  <header class="sticky top-0 z-40 bg-obsidian/85 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <a href="/" onclick="navigateHome(event)" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-neon/20 to-emerald-600/20 border border-neon/50 flex items-center justify-center shadow-lg shadow-neon/10 group-hover:scale-105 transition">
+          <span class="font-display font-extrabold text-xl text-neon tracking-tighter">DL</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-white">LOJA <span class="text-neon">DLUZ</span></span>
+            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-neon/15 text-neon border border-neon/30">Oficial</span>
+          </div>
+          <p class="text-[11px] text-slate-400 hidden sm:block">Softwares Gamer PRO • Emuladores 120 FPS • IA Studio</p>
+        </div>
+      </a>
+
+      <!-- Busca Rápida Desktop -->
+      <div class="hidden lg:flex flex-1 max-w-md mx-4">
+        <div class="relative w-full">
+          <input
+            id="searchInput"
+            type="text"
+            oninput="handleSearch(this.value)"
+            placeholder="Buscar software (ex: Mobilador, GTA 5, Sensi, Bypass, Film IA)..."
+            class="w-full bg-slate-900/90 border border-slate-700/80 focus:border-neon rounded-xl pl-10 pr-4 py-2 text-sm text-white placeholder-slate-400 outline-none transition"
+          />
+          <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Ações do Topo -->
+      <div class="flex items-center gap-2.5">
+        <button
+          onclick="openLookupModal()"
+          class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-600/60 text-xs sm:text-sm font-semibold text-white transition"
+        >
+          <span>🔑</span>
+          <span>Resgatar Minha Chave</span>
+        </button>
+        <a
+          href="https://discord.gg/r2tUSVnkn2"
+          target="_blank"
+          rel="noopener"
+          class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/40 text-xs sm:text-sm font-semibold text-indigo-300 transition"
+        >
+          <span>💬</span>
+          <span>Suporte VIP</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Hero Banner Destaque (DLuz Mobilador Pro v3.5.1) -->
+    <section id="heroSection" class="mb-10 relative rounded-3xl overflow-hidden border border-neon/30 bg-gradient-to-br from-slate-900 via-[#0B1320] to-emerald-950/60 p-6 sm:p-10 shadow-2xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon/15 border border-neon/40 text-neon text-xs font-bold uppercase tracking-wider">
+            <span>⚡ Lançamento Oficial v3.5.1</span>
+            <span>•</span>
+            <span>Scrcpy v5.0.1 + Direct3D 11</span>
+          </div>
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white leading-tight">
+            Jogue no PC a <span class="text-neon">120 FPS</span> com <span class="text-gold">Zero Delay</span> e 0% Risco de Ban!
+          </h1>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Transforme qualquer PC ou notebook fraco em uma máquina competitiva. O <strong>DLuz Mobilador Pro v3.5.1</strong> espelha seu Android via GPU Direct3D 11 com resposta de <strong>1000Hz (1ms)</strong> no mouse e teclado, caindo em salas 100% Mobile!
+          </p>
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button
+              onclick="openCheckoutById(2755)"
+              class="btn-neon px-6 py-3.5 rounded-xl text-sm sm:text-base flex items-center gap-2"
+            >
+              <span>⚡ Comprar Licença Vitalícia — R$ 21,90</span>
+            </button>
+            <button
+              onclick="openProductModal(2755)"
+              class="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-sm font-semibold text-white transition"
+            >
+              Ver Detalhes & Requisitos
+            </button>
+          </div>
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-lg text-xs sm:text-sm">
+            <div>
+              <div class="font-display font-bold text-lg sm:text-xl text-neon">1000Hz</div>
+              <div class="text-slate-400">1ms Raw Input</div>
+            </div>
+            <div>
+              <div class="font-display font-bold text-lg sm:text-xl text-gold">100% Safe</div>
+              <div class="text-slate-400">Salas Mobile</div>
+            </div>
+            <div>
+              <div class="font-display font-bold text-lg sm:text-xl text-sky-400">Vitalício</div>
+              <div class="text-slate-400">Sem Mensalidade</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Visual Interativo no Hero -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl bg-obsidian/90 border border-white/15 p-5 shadow-2xl relative">
+            <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                <span class="w-3 h-3 rounded-full bg-neon"></span>
+                <span class="text-xs font-mono text-slate-400 ml-2">DLuzMobiladorPlus_v3.5.1.exe</span>
+              </div>
+              <span class="px-2 py-0.5 text-[10px] font-bold bg-neon/20 text-neon rounded">PRO ATIVO</span>
+            </div>
+            <div class="space-y-3 text-xs font-mono">
+              <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+                <span class="text-slate-400">Motor de Vídeo:</span>
+                <span class="text-neon font-bold">Direct3D 11 (H.265 HEVC)</span>
+              </div>
+              <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+                <span class="text-slate-400">Taxa de Quadros:</span>
+                <span class="text-gold font-bold">120 FPS Cravados (0 Buffer)</span>
+              </div>
+              <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+                <span class="text-slate-400">Polling Rate Mouse:</span>
+                <span class="text-sky-400 font-bold">1000Hz (Linear Spline 12pt)</span>
+              </div>
+              <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+                <span class="text-slate-400">Entrega da Chave:</span>
+                <span class="text-emerald-400 font-bold">WhatsApp + E-mail + Tela</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Barra de Categorias e Busca Mobile -->
+    <section class="mb-8 space-y-4">
+      <div class="flex lg:hidden">
+        <input
+          type="text"
+          oninput="handleSearch(this.value)"
+          placeholder="Buscar software ou emulador..."
+          class="w-full bg-slate-900 border border-slate-700 focus:border-neon rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none"
+        />
+      </div>
+
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 w-full sm:w-auto" id="categoryFilters">
+          <button onclick="setCategory('all')" data-cat="all" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-neon text-black whitespace-nowrap transition">
+            🔥 Todos os Produtos
+          </button>
+          <button onclick="setCategory('mobilador')" data-cat="mobilador" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition">
+            🎮 Mobilador Zero Delay
+          </button>
+          <button onclick="setCategory('emuladores')" data-cat="emuladores" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition">
+            🚀 Emuladores 120 FPS & GTA Coop
+          </button>
+          <button onclick="setCategory('sensi')" data-cat="sensi" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition">
+            🎯 Sensi 1000Hz & Otimização
+          </button>
+          <button onclick="setCategory('criadores')" data-cat="criadores" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition">
+            🤖 Editores IA & Streamers
+          </button>
+          <button onclick="setCategory('vip')" data-cat="vip" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition">
+            👑 Clube dos Melhores VIP
+          </button>
+        </div>
+
+        <div class="text-xs text-slate-400 font-medium" id="productsCountLabel">
+          Carregando catálogo oficial...
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Produtos -->
+    <section id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+      <!-- Renderizado dinamicamente via JS -->
+    </section>
+
+    <!-- Garantias e Segurança Máxima -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+      <div class="glass-card rounded-2xl p-5">
+        <div class="text-2xl mb-2">⚡</div>
+        <h3 class="font-display font-bold text-white text-base mb-1">Liberação em 3 Segundos</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Pagou no Pix ou Cartão pelo Mercado Pago, a chave vitalícia aparece na sua tela e chega no seu WhatsApp e E-mail na mesma hora.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-5">
+        <div class="text-2xl mb-2">🛡️</div>
+        <h3 class="font-display font-bold text-white text-base mb-1">Segurança Máxima Mercado Pago</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Ambiente criptografado ponta a ponta com validação oficial do Mercado Pago e Compra Garantida.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-5">
+        <div class="text-2xl mb-2">🔄</div>
+        <h3 class="font-display font-bold text-white text-base mb-1">Auto-Update Oficial</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Nossos aplicativos contam com atualizador integrado conectado ao GitHub Oficial da DLuz Games.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-5">
+        <div class="text-2xl mb-2">💬</div>
+        <h3 class="font-display font-bold text-white text-base mb-1">Suporte VIP Humanizado</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Dúvidas na instalação? Nossa equipe e a assistente Frya atendem você diretamente no WhatsApp e Discord.</p>
+      </div>
+    </section>
+
+    <!-- Perguntas Frequentes (FAQ) -->
+    <section class="max-w-4xl mx-auto mb-12">
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-center text-white mb-6">
+        Perguntas Frequentes <span class="text-neon">(FAQ)</span>
+      </h2>
+      <div class="space-y-3">
+        <details class="glass-card rounded-2xl p-5 group cursor-pointer">
+          <summary class="font-display font-bold text-white flex justify-between items-center list-none">
+            <span>1. Como eu recebo a minha Chave de Ativação e o Download após pagar?</span>
+            <span class="text-neon group-open:rotate-180 transition">▼</span>
+          </summary>
+          <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+            A entrega é <strong>100% imediata e automática</strong>! Assim que você escaneia o QR Code Pix do Mercado Pago, a própria tela da loja atualiza sozinha exibindo sua <strong>Chave PRO Vitalícia</strong> e os botões de download. Além disso, enviamos uma cópia completa no seu <strong>WhatsApp</strong> e no seu <strong>E-mail</strong>.
+          </p>
+        </details>
+        <details class="glass-card rounded-2xl p-5 group cursor-pointer">
+          <summary class="font-display font-bold text-white flex justify-between items-center list-none">
+            <span>2. O DLuz Mobilador Pro dá ban no Free Fire ou outros jogos?</span>
+            <span class="text-neon group-open:rotate-180 transition">▼</span>
+          </summary>
+          <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+            <strong>Zero risco de ban!</strong> Diferente de APKs modificados ou clonadores, o DLuz Mobilador Pro utiliza a tecnologia oficial de depuração Android (Scrcpy v5.0.1) rodando diretamente no PC. Você joga no aplicativo original da Play Store e cai em partidas 100% Mobile.
+          </p>
+        </details>
+        <details class="glass-card rounded-2xl p-5 group cursor-pointer">
+          <summary class="font-display font-bold text-white flex justify-between items-center list-none">
+            <span>3. Formatei meu PC ou perdi o link de download. Como recupero minha chave?</span>
+            <span class="text-neon group-open:rotate-180 transition">▼</span>
+          </summary>
+          <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+            Basta clicar no botão <strong>"🔑 Resgatar Minha Chave"</strong> no topo desta loja e digitar seu e-mail ou WhatsApp usado na compra. Todos os seus pedidos aprovados, chaves e links atualizados aparecerão na hora!
+          </p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Institucional e Compliance -->
+  <footer class="bg-obsidian border-t border-white/10 py-10 px-4 sm:px-6 text-xs sm:text-sm text-slate-400">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div class="space-y-3">
+        <div class="font-display font-extrabold text-lg text-white">LOJA <span class="text-neon">DLUZ GAMES</span></div>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Desenvolvimento oficial de softwares gamers de alta performance, emuladores otimizados e ferramentas de inteligência artificial para criadores.
+        </p>
+        <div class="text-xs text-slate-500">
+          Pagamentos processados com segurança máxima via <strong>Mercado Pago</strong>.
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white mb-3">Produtos em Destaque</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/produto/dluzmobilador-pro" onclick="openProductBySlug(event, 'dluzmobilador-pro')" class="hover:text-neon transition">DLuz Mobilador Pro v3.5.1</a></li>
+          <li><a href="/produto/dluz-film-pro" onclick="openProductBySlug(event, 'dluz-film-pro')" class="hover:text-neon transition">Dluz Film PRO v2.0 (Editor IA)</a></li>
+          <li><a href="/produto/dluz-sensi-bs-pro" onclick="openProductBySlug(event, 'dluz-sensi-bs-pro')" class="hover:text-neon transition">DLuz Sensi BS Pro 1000Hz</a></li>
+          <li><a href="/produto/dluzstacks" onclick="openProductBySlug(event, 'dluzstacks')" class="hover:text-neon transition">DLuzStacks Pro Direct3D 11</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white mb-3">Institucional & Legal</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/termos-de-servico" onclick="openPageModal(event, 'termos-de-servico')" class="hover:text-neon transition">Termos de Serviço</a></li>
+          <li><a href="/politica-de-privacidade" onclick="openPageModal(event, 'politica-de-privacidade')" class="hover:text-neon transition">Política de Privacidade (LGPD)</a></li>
+          <li><a href="/politica-de-reembolso" onclick="openPageModal(event, 'politica-de-reembolso')" class="hover:text-neon transition">Política de Reembolso (7 Dias)</a></li>
+          <li><a href="/contato" onclick="openPageModal(event, 'contato')" class="hover:text-neon transition">Contato e Suporte Oficial</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white mb-3">Área do Cliente</h4>
+        <ul class="space-y-2 text-xs">
+          <li><button onclick="openLookupModal()" class="hover:text-neon transition">🔑 Resgatar Minha Chave / Downloads</button></li>
+          <li><a href="https://dluzgames.com.br" target="_blank" rel="noopener" class="hover:text-neon transition">🌐 Portal DLuz Games</a></li>
+          <li><a href="https://dluz.com.br" target="_blank" rel="noopener" class="hover:text-neon transition">📰 Portal DLuz News</a></li>
+          <li><a href="/admin" class="text-slate-600 hover:text-slate-400 transition">⚙️ Painel Administrativo</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div>© 2026 DLuz Games. Todos os direitos reservados.</div>
+      <div class="flex items-center gap-3">
+        <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 text-slate-300">💠 Pix Instantâneo</span>
+        <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 text-slate-300">💳 Mercado Pago até 12x</span>
+        <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 text-neon">🔒 SSL 256-Bit</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       MODAL 1: DETALHES DO PRODUTO (/produto/:slug)
+       ========================================== -->
+  <div id="productModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
+    <div class="bg-[#0B0F19] border border-white/15 rounded-3xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl my-auto max-h-[92vh] overflow-y-auto">
+      <button onclick="closeProductModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold">✕</button>
+      <div id="productModalContent"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 2: CHECKOUT 1-STEP MERCADO PAGO PIX & CARTÃO
+       ========================================== -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
+    <div class="bg-[#0B0F19] border border-neon/40 rounded-3xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl my-auto max-h-[94vh] overflow-y-auto">
+      <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold">✕</button>
+
+      <!-- Etapa 1: Dados do Comprador -->
+      <div id="checkoutStepForm">
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neon mb-2">
+          <span>🔒 Checkout Seguro Mercado Pago</span>
+          <span>•</span>
+          <span>Liberação Imediata</span>
+        </div>
+        <h2 class="font-display font-extrabold text-xl sm:text-2xl text-white mb-4" id="checkoutProductTitle">
+          Finalizar Pedido
+        </h2>
+
+        <!-- Resumo do Produto -->
+        <div class="p-4 rounded-2xl bg-slate-900/90 border border-white/10 mb-5 flex items-center justify-between gap-4">
+          <div>
+            <div class="text-xs text-slate-400">Produto selecionado:</div>
+            <div class="font-bold text-sm text-white" id="checkoutSummaryName">-</div>
+            <div class="text-[11px] text-emerald-400 mt-0.5">✓ Entrega no WhatsApp + E-mail + Na Tela</div>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-slate-500 line-through" id="checkoutRegularPrice">R$ 0,00</div>
+            <div class="font-display font-extrabold text-2xl text-neon" id="checkoutFinalPrice">R$ 0,00</div>
+          </div>
+        </div>
+
+        <form id="checkoutForm" onsubmit="submitCheckout(event)" class="space-y-4">
+          <input type="hidden" id="checkoutProductId" />
+
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Seu Nome *</label>
+            <input
+              type="text"
+              id="buyerName"
+              required
+              placeholder="Ex: Lucas Silva"
+              class="w-full bg-slate-900 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm text-white outline-none"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-300 mb-1">E-mail (Para receber a Chave) *</label>
+              <input
+                type="email"
+                id="buyerEmail"
+                required
+                placeholder="seuemail@gmail.com"
+                class="w-full bg-slate-900 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm text-white outline-none"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-300 mb-1">WhatsApp com DDD (Entrega Instantânea) *</label>
+              <input
+                type="tel"
+                id="buyerPhone"
+                required
+                placeholder="(11) 99999-9999"
+                class="w-full bg-slate-900 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm text-white outline-none"
+              />
+            </div>
+          </div>
+
+          <!-- Cupom de Desconto -->
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Cupom de Desconto (Opcional)</label>
+            <div class="flex gap-2">
+              <input
+                type="text"
+                id="buyerCoupon"
+                placeholder="Ex: MELHOR10"
+                class="flex-1 bg-slate-900 border border-slate-700 focus:border-gold rounded-xl px-4 py-2.5 text-sm text-white uppercase font-mono outline-none"
+              />
+              <button
+                type="button"
+                onclick="applyCouponCode()"
+                class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-white/15 text-xs font-bold text-gold transition"
+              >
+                Aplicar Cupom
+              </button>
+            </div>
+            <div id="couponFeedback" class="text-xs mt-1 hidden"></div>
+          </div>
+
+          <div id="checkoutErrorMsg" class="hidden p-3 rounded-xl bg-red-500/20 border border-red-500/40 text-xs text-red-300"></div>
+
+          <button
+            type="submit"
+            id="checkoutSubmitBtn"
+            class="w-full btn-neon py-4 rounded-xl text-base flex items-center justify-center gap-2"
+          >
+            <span>⚡ Gerar Pix Instantâneo / Pagar com Mercado Pago</span>
+          </button>
+
+          <p class="text-[11px] text-center text-slate-400">
+            🔒 Ambiente protegido por criptografia SSL 256-bit. Liberação automática 24 horas por dia, 7 dias por semana.
+          </p>
+        </form>
+      </div>
+
+      <!-- Etapa 2: QR Code Pix Gerado & Opção Cartão -->
+      <div id="checkoutStepPayment" class="hidden space-y-5 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 text-xs font-bold">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+          <span>Aguardando pagamento... A tela atualizará sozinha!</span>
+        </div>
+
+        <div>
+          <h3 class="font-display font-extrabold text-xl text-white">Pedido <span id="payOrderId" class="text-neon">#0000</span> Gerado!</h3>
+          <p class="text-xs text-slate-400 mt-1">Escaneie o QR Code abaixo no aplicativo do seu banco ou copie o código Pix Copia e Cola:</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl inline-block mx-auto shadow-xl">
+          <img id="payQrImage" src="" alt="QR Code Pix Mercado Pago" class="w-56 h-56 object-contain mx-auto" />
+        </div>
+
+        <div class="text-center">
+          <div class="text-xs text-slate-400">Valor exato a pagar:</div>
+          <div class="font-display font-extrabold text-3xl text-neon" id="payAmountDisplay">R$ 0,00</div>
+        </div>
+
+        <!-- Pix Copia e Cola -->
+        <div class="space-y-2 text-left">
+          <label class="block text-xs font-bold uppercase text-slate-300">Código Pix Copia e Cola:</label>
+          <div class="flex gap-2">
+            <input
+              type="text"
+              id="payPixCopyInput"
+              readonly
+              class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-xs font-mono text-slate-300 outline-none"
+            />
+            <button
+              type="button"
+              onclick="copyPixCode()"
+              id="copyPixBtn"
+              class="btn-neon px-4 py-2.5 rounded-xl text-xs whitespace-nowrap"
+            >
+              📋 Copiar Pix
+            </button>
+          </div>
+        </div>
+
+        <!-- Botão Cartão de Crédito / Checkout Pro Mercado Pago -->
+        <div id="payCardContainer" class="hidden pt-2 border-t border-white/10">
+          <a
+            id="payCardLink"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            class="w-full btn-gold py-3 rounded-xl text-sm flex items-center justify-center gap-2"
+          >
+            <span>💳 Pagar com Cartão de Crédito / Saldo Mercado Pago (até 12x)</span>
+          </a>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-900/90 border border-white/10 text-xs text-slate-300 leading-relaxed">
+          ⚡ <strong>Assim que você confirmar o Pix no celular</strong>, sua Chave de Ativação PRO e o botão de Download aparecerão automaticamente nesta tela e no seu WhatsApp!
+        </div>
+      </div>
+
+      <!-- Etapa 3: Pagamento Aprovado! Entrega da Chave + Download -->
+      <div id="checkoutStepSuccess" class="hidden space-y-5 text-center">
+        <div class="w-16 h-16 rounded-full bg-neon/20 border-2 border-neon text-neon flex items-center justify-center text-3xl mx-auto">
+          ✓
+        </div>
+        <div>
+          <span class="px-3 py-1 rounded-full bg-neon/20 text-neon text-xs font-bold uppercase">Pagamento Confirmado!</span>
+          <h3 class="font-display font-extrabold text-2xl text-white mt-2">Seu Acesso Está Liberado! 🚀</h3>
+          <p class="text-xs text-slate-300 mt-1">Também enviamos uma cópia para o seu WhatsApp e E-mail.</p>
+        </div>
+
+        <!-- Bloco da Chave PRO -->
+        <div id="successKeyContainer" class="p-4 rounded-2xl bg-slate-900 border-2 border-neon/60 space-y-2">
+          <div class="text-xs font-bold uppercase text-gold">🔑 Sua Chave de Ativação Oficial:</div>
+          <div class="font-mono font-extrabold text-lg sm:text-xl text-neon tracking-wider break-all" id="successLicenseKey">
+            DLUZ-PRO-XXXX-XXXX
+          </div>
+          <button
+            type="button"
+            onclick="copyLicenseKey()"
+            class="px-4 py-1.5 rounded-lg bg-neon/20 hover:bg-neon/30 text-neon text-xs font-bold transition"
+          >
+            📋 Copiar Chave PRO
+          </button>
+        </div>
+
+        <!-- Botões de Download -->
+        <div class="space-y-2 text-left">
+          <div class="text-xs font-bold uppercase text-slate-300">📦 Links Oficiais para Download:</div>
+          <div id="successDownloadsList" class="space-y-2"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 3: RESGATAR MINHA CHAVE / CONSULTAR PEDIDO
+       ========================================== -->
+  <div id="lookupModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
+    <div class="bg-[#0B0F19] border border-white/15 rounded-3xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl my-auto">
+      <button onclick="closeLookupModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold">✕</button>
+      <div class="text-xs font-bold uppercase text-neon mb-1">🔑 Central do Cliente DLuz</div>
+      <h2 class="font-display font-extrabold text-2xl text-white mb-2">Resgatar Chave & Downloads</h2>
+      <p class="text-xs sm:text-sm text-slate-400 mb-5">
+        Digite o <strong>E-mail</strong> ou o <strong>WhatsApp</strong> utilizado na compra para visualizar suas chaves de ativação e baixar a versão mais recente dos aplicativos:
+      </p>
+      <form onsubmit="submitOrderLookup(event)" class="flex gap-2 mb-6">
+        <input
+          type="text"
+          id="lookupQueryInput"
+          required
+          placeholder="seuemail@gmail.com ou (11) 99999-9999"
+          class="flex-1 bg-slate-900 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm text-white outline-none"
+        />
+        <button type="submit" class="btn-neon px-5 py-3 rounded-xl text-sm whitespace-nowrap">
+          Buscar
+        </button>
+      </form>
+      <div id="lookupResults" class="space-y-3 max-h-80 overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 4: PÁGINAS INSTITUCIONAIS (TERMOS / PRIVACIDADE / REEMBOLSO / CONTATO)
+       ========================================== -->
+  <div id="pageModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
+    <div class="bg-[#0B0F19] border border-white/15 rounded-3xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl my-auto max-h-[90vh] overflow-y-auto">
+      <button onclick="closePageModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold">✕</button>
+      <h2 id="pageModalTitle" class="font-display font-extrabold text-2xl text-white mb-4"></h2>
+      <div id="pageModalBody" class="prose-dluz text-sm"></div>
+    </div>
+  </div>
+
+  <!-- Toast de Notificação -->
+  <div id="toastNotice" class="fixed bottom-5 right-5 z-50 hidden px-4 py-3 rounded-xl bg-neon text-black font-bold text-xs sm:text-sm shadow-2xl"></div>
+
+  <script>
+    let ALL_PRODUCTS = [];
+    let CURRENT_CATEGORY = 'all';
+    let SEARCH_QUERY = '';
+    let SELECTED_PRODUCT = null;
+    let APPLIED_COUPON = null;
+    let POLLING_TIMER = null;
+
+    function showToast(msg) {
+      const el = document.getElementById('toastNotice');
+      el.textContent = msg;
+      el.classList.remove('hidden');
+      setTimeout(() => el.classList.add('hidden'), 3200);
+    }
+
+    function copyCouponTop(code) {
+      navigator.clipboard.writeText(code);
+      showToast(`🎁 Cupom ${code} copiado! Use no checkout para ganhar 10% OFF!`);
+    }
+
+    function getCategoryLabel(cat) {
+      const map = {
+        mobilador: 'Mobilador Zero Delay',
+        emuladores: 'Emuladores & Coop',
+        sensi: 'Sensi & Otimização',
+        criadores: 'Editores IA & Studio',
+        vip: 'Clube VIP'
+      };
+      return map[cat] || 'Software Gamer';
+    }
+
+    // Gera arte de capa gamer SVG dinâmica de alto CTR para cada produto
+    function renderProductCoverSvg(p) {
+      const color = p.theme_color || '#39FF14';
+      const iconMap = {
+        gamepad: '🎮',
+        film: '🎬',
+        users: '🚗💥',
+        crosshair: '🎯',
+        shield: '🛡️',
+        cpu: '🚀',
+        sparkles: '✨',
+        trophy: '⚽',
+        video: '🎙️',
+        crown: '👑',
+        joystick: '🕹️',
+        sliders: '⚙️',
+        smartphone: '📱',
+        flame: '🔥',
+        zap: '⚡',
+        rocket: '🚀',
+        'fast-forward': '⚡'
+      };
+      const emoji = iconMap[p.icon] || '🎮';
+      const discount = p.regular_price > p.price
+        ? Math.round(((p.regular_price - p.price) / p.regular_price) * 100)
+        : 0;
+
+      return `
+        <div class="relative h-44 w-full overflow-hidden rounded-2xl border border-white/10 p-4 flex flex-col justify-between"
+             style="background: radial-gradient(circle at 80% 20%, ${color}33, transparent 55%), linear-gradient(135deg, #090D16 0%, #111827 100%);">
+          <div class="flex items-center justify-between gap-2 z-10">
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider border"
+                  style="background: ${color}1F; color: ${color}; border-color: ${color}55;">
+              ${p.badge || 'OFICIAL DLUZ'}
+            </span>
+            ${discount > 0 ? `<span class="px-2 py-0.5 rounded-lg bg-red-500/90 text-white text-[11px] font-extrabold">-${discount}% OFF</span>` : ''}
+          </div>
+
+          <div class="flex items-center justify-between gap-3 z-10 my-auto">
+            <div class="text-4xl sm:text-5xl select-none filter drop-shadow-lg">${emoji}</div>
+            <div class="text-right">
+              <div class="text-[10px] font-mono uppercase tracking-widest text-slate-400">${getCategoryLabel(p.category)}</div>
+              <div class="font-display font-extrabold text-sm sm:text-base text-white line-clamp-1">${p.sku || 'DLUZ-PRO'}</div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-[11px] text-slate-300 z-10 pt-2 border-t border-white/10">
+            <span>⚡ Entrega Instantânea</span>
+            <span class="font-semibold" style="color: ${color};">${p.license_type === 'licensed' ? '🔑 Chave PRO Inclusa' : '📥 Download Direto'}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      const filtered = ALL_PRODUCTS.filter((p) => {
+        const matchCat = CURRENT_CATEGORY === 'all' || p.category === CURRENT_CATEGORY;
+        const q = SEARCH_QUERY.toLowerCase();
+        const matchSearch =
+          !q ||
+          p.name.toLowerCase().includes(q) ||
+          (p.short_description || '').toLowerCase().includes(q) ||
+          (p.sku || '').toLowerCase().includes(q);
+        return matchCat && matchSearch;
+      });
+
+      document.getElementById('productsCountLabel').textContent =
+        `Exibindo ${filtered.length} de ${ALL_PRODUCTS.length} produtos oficiais`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full glass-card rounded-3xl p-10 text-center">
+            <div class="text-3xl mb-2">🔍</div>
+            <h3 class="font-display font-bold text-lg text-white">Nenhum produto encontrado para essa busca</h3>
+            <p class="text-xs text-slate-400 mt-1">Tente limpar o filtro ou buscar por outro termo.</p>
+            <button onclick="setCategory('all'); handleSearch('');" class="mt-4 btn-neon px-4 py-2 rounded-xl text-xs">Ver Todos os Produtos</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered
+        .map((p) => {
+          const featuresHtml = (p.features || [])
+            .slice(0, 4)
+            .map(
+              (f) => `
+              <li class="flex items-start gap-2 text-xs text-slate-300">
+                <span class="text-neon font-bold mt-0.5">✓</span>
+                <span>${f}</span>
+              </li>`
+            )
+            .join('');
+
+          return `
+            <article class="glass-card rounded-3xl p-5 flex flex-col justify-between">
+              <div>
+                ${renderProductCoverSvg(p)}
+
+                <h3 class="font-display font-bold text-lg text-white mt-4 leading-snug hover:text-neon transition cursor-pointer"
+                    onclick="openProductModal(${p.id})">
+                  ${p.name}
+                </h3>
+
+                <p class="text-xs text-slate-400 mt-2 line-clamp-2 leading-relaxed">
+                  ${p.short_description || ''}
+                </p>
+
+                <ul class="mt-4 space-y-1.5 border-t border-white/10 pt-3">
+                  ${featuresHtml}
+                </ul>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-white/10">
+                <div class="flex items-end justify-between mb-3">
+                  <div>
+                    ${
+                      p.regular_price > p.price
+                        ? `<div class="text-xs text-slate-500 line-through">De R$ ${p.regular_price.toFixed(2).replace('.', ',')}</div>`
+                        : `<div class="text-xs text-slate-500">Preço Oficial</div>`
+                    }
+                    <div class="font-display font-extrabold text-2xl text-neon">
+                      R$ ${p.price.toFixed(2).replace('.', ',')}
+                    </div>
+                  </div>
+                  <span class="text-[11px] text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-1 rounded-lg">
+                    Pix ou Cartão
+                  </span>
+                </div>
+
+                <div class="grid grid-cols-12 gap-2">
+                  <button
+                    onclick="openCheckoutById(${p.id})"
+                    class="col-span-8 btn-neon py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-1.5"
+                  >
+                    <span>⚡ Comprar Agora</span>
+                  </button>
+                  <button
+                    onclick="openProductModal(${p.id})"
+                    class="col-span-4 py-3 px-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-xs font-semibold text-white transition"
+                  >
+                    Detalhes
+                  </button>
+                </div>
+              </div>
+            </article>
+          `;
+        })
+        .join('');
+    }
+
+    function setCategory(cat) {
+      CURRENT_CATEGORY = cat;
+      document.querySelectorAll('.cat-btn').forEach((btn) => {
+        if (btn.dataset.cat === cat) {
+          btn.className = 'cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-neon text-black whitespace-nowrap transition';
+        } else {
+          btn.className = 'cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition';
+        }
+      });
+      renderProducts();
+    }
+
+    function handleSearch(val) {
+      SEARCH_QUERY = val.trim();
+      renderProducts();
+    }
+
+    function openProductModal(productId) {
+      const p = ALL_PRODUCTS.find((item) => Number(item.id) === Number(productId));
+      if (!p) return;
+
+      history.pushState({ productSlug: p.slug }, p.name, `/produto/${p.slug}`);
+
+      const modal = document.getElementById('productModal');
+      const content = document.getElementById('productModalContent');
+
+      const featuresList = (p.features || [])
+        .map((f) => `<li class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="text-neon font-bold">✓</span> ${f}</li>`)
+        .join('');
+
+      content.innerHTML = `
+        <div class="space-y-5">
+          ${renderProductCoverSvg(p)}
+          <div>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white">${p.name}</h2>
+            <p class="text-sm text-slate-300 mt-2">${p.short_description || ''}</p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-900/90 border border-neon/30 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="text-xs text-slate-400 line-through">De R$ ${p.regular_price.toFixed(2).replace('.', ',')}</div>
+              <div class="font-display font-extrabold text-3xl text-neon">Por R$ ${p.price.toFixed(2).replace('.', ',')}</div>
+              <div class="text-xs text-emerald-400 mt-0.5">⚡ Liberação Imediata no WhatsApp, E-mail e na Tela</div>
+            </div>
+            <button
+              onclick="closeProductModal(); openCheckoutById(${p.id});"
+              class="btn-neon px-6 py-4 rounded-xl text-sm sm:text-base"
+            >
+              ⚡ Comprar Agora com Pix / Cartão
+            </button>
+          </div>
+
+          ${
+            featuresList
+              ? `<div class="p-4 rounded-2xl bg-slate-900/60 border border-white/10">
+                   <h4 class="font-display font-bold text-sm uppercase text-gold mb-2">Destaques Inclusos:</h4>
+                   <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">${featuresList}</ul>
+                 </div>`
+              : ''
+          }
+
+          <div class="prose-dluz text-sm border-t border-white/10 pt-4">
+            ${p.description || ''}
+          </div>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeProductModal() {
+      document.getElementById('productModal').classList.add('hidden');
+    }
+
+    function openProductBySlug(e, slug) {
+      if (e) e.preventDefault();
+      const p = ALL_PRODUCTS.find((item) => item.slug === slug || item.slug.includes(slug));
+      if (p) openProductModal(p.id);
+    }
+
+    // ==========================================
+    // FLUXO DE CHECKOUT 1-STEP MERCADO PAGO
+    // ==========================================
+    function openCheckoutById(productId) {
+      const p = ALL_PRODUCTS.find((item) => Number(item.id) === Number(productId));
+      if (!p) return;
+
+      SELECTED_PRODUCT = p;
+      APPLIED_COUPON = null;
+      if (POLLING_TIMER) clearInterval(POLLING_TIMER);
+
+      document.getElementById('checkoutStepForm').classList.remove('hidden');
+      document.getElementById('checkoutStepPayment').classList.add('hidden');
+      document.getElementById('checkoutStepSuccess').classList.add('hidden');
+      document.getElementById('checkoutErrorMsg').classList.add('hidden');
+      document.getElementById('couponFeedback').classList.add('hidden');
+      document.getElementById('buyerCoupon').value = '';
+
+      document.getElementById('checkoutProductId').value = p.id;
+      document.getElementById('checkoutSummaryName').textContent = p.name;
+      document.getElementById('checkoutRegularPrice').textContent = `R$ ${p.regular_price.toFixed(2).replace('.', ',')}`;
+      document.getElementById('checkoutFinalPrice').textContent = `R$ ${p.price.toFixed(2).replace('.', ',')}`;
+
+      document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      if (POLLING_TIMER) clearInterval(POLLING_TIMER);
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    async function applyCouponCode() {
+      if (!SELECTED_PRODUCT) return;
+      const code = document.getElementById('buyerCoupon').value.trim().toUpperCase();
+      const fb = document.getElementById('couponFeedback');
+      if (!code) return;
+
+      try {
+        const res = await fetch('/api/coupons/validate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code })
+        });
+        const data = await res.json();
+        fb.classList.remove('hidden');
+
+        if (!res.ok || !data.valid) {
+          APPLIED_COUPON = null;
+          fb.className = 'text-xs mt-1 text-red-400';
+          fb.textContent = data.message || 'Cupom inválido.';
+          document.getElementById('checkoutFinalPrice').textContent = `R$ ${SELECTED_PRODUCT.price.toFixed(2).replace('.', ',')}`;
+          return;
+        }
+
+        APPLIED_COUPON = data;
+        let finalVal = SELECTED_PRODUCT.price;
+        if (data.discount_percent > 0) {
+          finalVal = finalVal - (finalVal * data.discount_percent) / 100;
+        } else if (data.discount_fixed > 0) {
+          finalVal = finalVal - data.discount_fixed;
+        }
+        finalVal = Math.max(1, finalVal);
+
+        fb.className = 'text-xs mt-1 text-neon font-semibold';
+        fb.textContent = `✓ Cupom ${data.code} aplicado com sucesso!`;
+        document.getElementById('checkoutFinalPrice').textContent = `R$ ${finalVal.toFixed(2).replace('.', ',')}`;
+      } catch (err) {
+        fb.classList.remove('hidden');
+        fb.className = 'text-xs mt-1 text-red-400';
+        fb.textContent = 'Erro ao validar cupom.';
+      }
+    }
+
+    async function submitCheckout(e) {
+      e.preventDefault();
+      const btn = document.getElementById('checkoutSubmitBtn');
+      const errBox = document.getElementById('checkoutErrorMsg');
+      errBox.classList.add('hidden');
+
+      const payload = {
+        product_id: Number(document.getElementById('checkoutProductId').value),
+        first_name: document.getElementById('buyerName').value.trim(),
+        email: document.getElementById('buyerEmail').value.trim(),
+        phone: document.getElementById('buyerPhone').value.trim(),
+        coupon_code: APPLIED_COUPON ? APPLIED_COUPON.code : document.getElementById('buyerCoupon').value.trim()
+      };
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>⏳ Gerando Pagamento Seguro no Mercado Pago...</span>';
+
+      try {
+        const res = await fetch('/api/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.success) {
+          throw new Error(data.error || 'Falha ao iniciar checkout.');
+        }
+
+        const order = data.order;
+        document.getElementById('checkoutStepForm').classList.add('hidden');
+        document.getElementById('checkoutStepPayment').classList.remove('hidden');
+
+        document.getElementById('payOrderId').textContent = `#${order.id}`;
+        document.getElementById('payAmountDisplay').textContent = `R$ ${Number(order.total).toFixed(2).replace('.', ',')}`;
+        document.getElementById('payQrImage').src = order.pix_qr_base64;
+        document.getElementById('payPixCopyInput').value = order.pix_qr_code;
+
+        const cardContainer = document.getElementById('payCardContainer');
+        const cardLink = document.getElementById('payCardLink');
+        if (order.checkout_url) {
+          cardLink.href = order.checkout_url;
+          cardContainer.classList.remove('hidden');
+        } else {
+          cardContainer.classList.add('hidden');
+        }
+
+        startOrderPolling(order.order_key);
+      } catch (err) {
+        errBox.textContent = err.message;
+        errBox.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>⚡ Gerar Pix Instantâneo / Pagar com Mercado Pago</span>';
+      }
+    }
+
+    function copyPixCode() {
+      const input = document.getElementById('payPixCopyInput');
+      navigator.clipboard.writeText(input.value);
+      const btn = document.getElementById('copyPixBtn');
+      btn.textContent = '✓ Copiado!';
+      showToast('📋 Código Pix Copia e Cola copiado! Cole no app do seu banco.');
+      setTimeout(() => (btn.textContent = '📋 Copiar Pix'), 2500);
+    }
+
+    function startOrderPolling(orderKey) {
+      if (POLLING_TIMER) clearInterval(POLLING_TIMER);
+      POLLING_TIMER = setInterval(async () => {
+        try {
+          const res = await fetch(`/api/orders/status/${orderKey}`);
+          if (!res.ok) return;
+          const data = await res.json();
+          if (data.status === 'completed') {
+            clearInterval(POLLING_TIMER);
+            showApprovedOrderScreen(data);
+          }
+        } catch {}
+      }, 3000);
+    }
+
+    function showApprovedOrderScreen(orderData) {
+      document.getElementById('checkoutStepForm').classList.add('hidden');
+      document.getElementById('checkoutStepPayment').classList.add('hidden');
+      document.getElementById('checkoutStepSuccess').classList.remove('hidden');
+
+      const keyContainer = document.getElementById('successKeyContainer');
+      const keyEl = document.getElementById('successLicenseKey');
+      if (orderData.license_key && orderData.license_key !== 'PRODUTO-LIBERADO-SEM-CHAVE') {
+        keyContainer.classList.remove('hidden');
+        keyEl.textContent = orderData.license_key;
+      } else {
+        keyContainer.classList.add('hidden');
+      }
+
+      const dlContainer = document.getElementById('successDownloadsList');
+      const dls = orderData.downloads || [];
+      if (dls.length > 0) {
+        dlContainer.innerHTML = dls
+          .map(
+            (d) => `
+            <a href="${d.file}" target="_blank" rel="noopener"
+               class="w-full btn-neon py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-between">
+              <span>📥 ${d.name}</span>
+              <span>Baixar Agora →</span>
+            </a>`
+          )
+          .join('');
+      } else {
+        dlContainer.innerHTML = `
+          <div class="p-3 rounded-xl bg-slate-900 border border-white/10 text-xs text-slate-300">
+            As instruções completas e o acesso foram enviados para o seu WhatsApp e E-mail!
+          </div>
+        `;
+      }
+    }
+
+    function copyLicenseKey() {
+      const k = document.getElementById('successLicenseKey').textContent.trim();
+      navigator.clipboard.writeText(k);
+      showToast('🔑 Chave PRO copiada para a área de transferência!');
+    }
+
+    // ==========================================
+    // PORTAL DE RESGATE DE CHAVES & DOWNLOADS
+    // ==========================================
+    function openLookupModal() {
+      document.getElementById('lookupModal').classList.remove('hidden');
+    }
+
+    function closeLookupModal() {
+      document.getElementById('lookupModal').classList.add('hidden');
+    }
+
+    async function submitOrderLookup(e) {
+      e.preventDefault();
+      const q = document.getElementById('lookupQueryInput').value.trim();
+      const box = document.getElementById('lookupResults');
+      box.innerHTML = '<div class="text-xs text-slate-400">Buscando seus pedidos...</div>';
+
+      try {
+        const res = await fetch('/api/orders/lookup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: q })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Erro na busca');
+
+        if (!data.orders || data.orders.length === 0) {
+          box.innerHTML = `
+            <div class="p-4 rounded-2xl bg-slate-900 border border-white/10 text-xs text-slate-300">
+              Nenhum pedido encontrado para <strong>${q}</strong>. Verifique se digitou o mesmo e-mail ou telefone da compra.
+            </div>
+          `;
+          return;
+        }
+
+        box.innerHTML = data.orders
+          .map((o) => {
+            const isPaid = o.status === 'completed';
+            const dls = (o.downloads || [])
+              .map(
+                (d) =>
+                  `<a href="${d.file}" target="_blank" class="inline-block mt-2 mr-2 px-3 py-1.5 rounded-lg bg-neon text-black font-bold text-xs">📥 ${d.name}</a>`
+              )
+              .join('');
+
+            return `
+              <div class="p-4 rounded-2xl bg-slate-900 border ${isPaid ? 'border-neon/40' : 'border-white/10'} space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-display font-bold text-white text-sm">Pedido #${o.id} — ${o.product_name}</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase ${
+                    isPaid ? 'bg-neon/20 text-neon' : 'bg-amber-500/20 text-amber-300'
+                  }">${isPaid ? 'Aprovado' : 'Aguardando Pagamento'}</span>
+                </div>
+                ${
+                  isPaid && o.license_key && o.license_key !== 'PRODUTO-LIBERADO-SEM-CHAVE'
+                    ? `<div class="p-2.5 rounded-xl bg-black/50 border border-white/10 flex items-center justify-between">
+                         <code class="text-xs text-neon font-bold">${o.license_key}</code>
+                         <button onclick="navigator.clipboard.writeText('${o.license_key}'); showToast('Chave copiada!');" class="text-[11px] text-gold font-bold underline">Copiar</button>
+                       </div>`
+                    : ''
+                }
+                <div>${dls}</div>
+              </div>
+            `;
+          })
+          .join('');
+      } catch (err) {
+        box.innerHTML = `<div class="text-xs text-red-400">${err.message}</div>`;
+      }
+    }
+
+    // ==========================================
+    // PÁGINAS INSTITUCIONAIS
+    // ==========================================
+    async function openPageModal(e, slug) {
+      if (e) e.preventDefault();
+      try {
+        const cleanSlug = slug.replace(/-2$/, '');
+        const res = await fetch(`/api/pages/${cleanSlug}`);
+        if (!res.ok) return;
+        const page = await res.json();
+        document.getElementById('pageModalTitle').textContent = page.title;
+        document.getElementById('pageModalBody').innerHTML = page.content;
+        document.getElementById('pageModal').classList.remove('hidden');
+      } catch {}
+    }
+
+    function closePageModal() {
+      document.getElementById('pageModal').classList.add('hidden');
+    }
+
+    function navigateHome(e) {
+      if (e) e.preventDefault();
+      closeProductModal();
+      closeCheckoutModal();
+      closeLookupModal();
+      closePageModal();
+      history.pushState({}, 'Loja Oficial DLuz Games', '/');
+    }
+
+    // ==========================================
+    // INICIALIZAÇÃO E ROTEAMENTO DE LINKS ANTIGOS
+    // ==========================================
+    async function initStore() {
+      try {
+        const res = await fetch('/api/products');
+        const data = await res.json();
+        ALL_PRODUCTS = data.products || [];
+        renderProducts();
+
+        // Verificar parâmetros e rotas legadas do WooCommerce:
+        // 1. ?add-to-cart=2755
+        const params = new URLSearchParams(window.location.search);
+        const addToCartId = params.get('add-to-cart');
+        if (addToCartId && /^\d+$/.test(addToCartId)) {
+          openCheckoutById(Number(addToCartId));
+          return;
+        }
+
+        const pathName = window.location.pathname.replace(/\/$/, '');
+
+        // 2. /produto/<slug>
+        if (pathName.startsWith('/produto/')) {
+          const slug = decodeURIComponent(pathName.replace('/produto/', ''));
+          const found = ALL_PRODUCTS.find(
+            (p) => p.slug === slug || p.slug.includes(slug) || slug.includes(p.slug)
+          );
+          if (found) openProductModal(found.id);
+        }
+
+        // 3. /consultar-pedido ou /minha-conta
+        if (pathName === '/consultar-pedido' || pathName === '/minha-conta') {
+          openLookupModal();
+        }
+
+        // 4. Páginas institucionais diretas
+        const instPages = [
+          'termos-de-servico',
+          'termos-de-servico-2',
+          'politica-de-privacidade',
+          'politica-de-privacidade-2',
+          'politica-de-reembolso',
+          'contato',
+          'contato-2'
+        ];
+        const cleanPath = pathName.replace(/^\//, '');
+        if (instPages.includes(cleanPath)) {
+          openPageModal(null, cleanPath);
+        }
+      } catch (err) {
+        console.error('Erro ao carregar loja:', err);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', initStore);
+  </script>
+</body>
+</html>

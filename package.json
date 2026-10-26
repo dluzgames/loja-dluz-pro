@@ -1,0 +1,21 @@
+{
+  "name": "loja-dluz-pro",
+  "version": "3.0.0",
+  "description": "Loja Oficial DLuz Games — E-Commerce Gamer de Alta Segurança com Mercado Pago, Entrega Automática de Licenças PRO e Retrocompatibilidade WooCommerce",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "qrcode": "^1.5.4"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
