@@ -876,9 +876,10 @@ const INITIAL_PAGES = [
     alt_slug: "contato-2",
     title: "Central de Contato e Suporte Oficial",
     content: `
-      <h2>Fale com a Equipe DLuz Games</h2>
-      <p>Precisa de ajuda para instalar, ativar sua chave PRO ou tirar dúvidas antes de comprar? Nosso atendimento está pronto para te ajudar:</p>
+      <h2>Fale Diretamente com o DLuz no WhatsApp</h2>
+      <p>Precisa de ajuda para instalar, ativar sua chave PRO ou tirar dúvidas antes de comprar? Nosso atendimento oficial é feito diretamente pelo WhatsApp:</p>
       <ul>
+        <li><strong>📲 WhatsApp Oficial de Suporte:</strong> <a href="https://wa.me/5563981199852?text=Ol%C3%A1%20DLuz!%20Preciso%20de%20suporte%20na%20Loja%20Oficial." target="_blank" rel="noopener">+55 (63) 98119-9852 (Clique para abrir no WhatsApp)</a></li>
         <li><strong>💬 Comunidade & Suporte Discord VIP:</strong> <a href="https://discord.gg/r2tUSVnkn2" target="_blank" rel="noopener">https://discord.gg/r2tUSVnkn2</a></li>
         <li><strong>🌐 Portal Oficial de Tutoriais:</strong> <a href="https://dluzgames.com.br" target="_blank" rel="noopener">https://dluzgames.com.br</a></li>
         <li><strong>📧 E-mail de Atendimento:</strong> <code>efovideos@gmail.com</code></li>

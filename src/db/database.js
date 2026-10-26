@@ -207,14 +207,20 @@ async function initDatabase() {
     license_server_url: "https://lf7k749dplzo1qaa2au0izl1.dluz.com.br/api/webhook/woocommerce",
     evolution_api_url: "https://evolution.dluz.com.br/message/sendText/frya",
     evolution_api_key: "bvNSCH2VoX8ByDb000mJjMiKmmFJEkFj",
-    whatsapp_support: "5563992000000",
+    whatsapp_support: "5563981199852",
     discord_invite: "https://discord.gg/r2tUSVnkn2",
     admin_user: "efovideos@gmail.com",
-    admin_password_hash: hashPassword(process.env.ADMIN_PASSWORD || "Dluz@Store2026")
+    admin_password_hash: hashPassword(process.env.ADMIN_PASSWORD || "dluz_admin_master_2026_pro")
   };
 
   for (const [k, v] of Object.entries(defaultSettings)) {
     await dbRun("INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)", [k, String(v)]);
+  }
+
+  // Garantir que o número oficial do WhatsApp do DLuz esteja atualizado
+  const currentWa = await getSetting("whatsapp_support", "");
+  if (!currentWa || currentWa === "5563992000000") {
+    await setSetting("whatsapp_support", "5563981199852");
   }
 }
 

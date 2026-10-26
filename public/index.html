@@ -1,762 +1,1733 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loja Oficial DLuz Games — Mobilador Pro, Emuladores 120 FPS & Softwares com IA</title>
-  <meta name="description" content="Loja Oficial DLuz Games. Adquira o DLuz Mobilador Pro v3.5.1 Zero Delay 120 FPS, Dluz Film PRO IA, GTA 5 Cooperativo, Sensi BS 1000Hz e Emuladores Turbinados com entrega imediata no WhatsApp e E-mail via Mercado Pago." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Loja Oficial DLuz — Softwares Gamer Pro, Emuladores 120 FPS & IA Studio</title>
+  <meta name="description" content="Loja Oficial DLuz Games. Adquira o DLuz Mobilador Pro v3.5.1 Zero Delay 120 FPS, Dluz Film PRO IA, GTA 5 Cooperativo e Emuladores Otimizados com entrega automática no WhatsApp e E-mail via Mercado Pago." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
-          },
-          colors: {
-            neon: '#39FF14',
-            gold: '#FFD700',
-            obsidian: '#07090E',
-            panel: '#0F1420',
-            panelBorder: '#1E293B'
-          }
-        }
-      }
-    };
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg-primary: #F5F5F7;
+      --bg-secondary: #FFFFFF;
+      --bg-tertiary: #EFEFF4;
+      --bg-glass: rgba(255, 255, 255, 0.78);
+      --bg-glass-strong: rgba(255, 255, 255, 0.92);
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --text-muted: #86868B;
+      --border-subtle: rgba(0, 0, 0, 0.07);
+      --border-strong: rgba(0, 0, 0, 0.13);
+      --apple-blue: #0071E3;
+      --apple-blue-hover: #0077ED;
+      --apple-green: #28CD41;
+      --whatsapp-green: #25D366;
+      --whatsapp-dark: #128C7E;
+      --apple-orange: #FF9500;
+      --apple-red: #FF3B30;
+      --apple-purple: #AF52DE;
+      --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+      --shadow-hover: 0 20px 44px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-float: 0 16px 40px rgba(0, 0, 0, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-pill: 9999px;
+    }
+
+    html.dark-mode {
+      --bg-primary: #000000;
+      --bg-secondary: #1C1C1E;
+      --bg-tertiary: #2C2C2E;
+      --bg-glass: rgba(28, 28, 30, 0.78);
+      --bg-glass-strong: rgba(28, 28, 30, 0.94);
+      --text-primary: #F5F5F7;
+      --text-secondary: #A1A1A6;
+      --text-muted: #8E8E93;
+      --border-subtle: rgba(255, 255, 255, 0.1);
+      --border-strong: rgba(255, 255, 255, 0.18);
+      --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.45);
+      --shadow-hover: 0 24px 48px rgba(0, 0, 0, 0.65);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
     body {
-      background-color: #07090E;
-      color: #F8FAFC;
-      background-image:
-        radial-gradient(circle at 15% 10%, rgba(57, 255, 20, 0.08), transparent 35%),
-        radial-gradient(circle at 85% 15%, rgba(255, 215, 0, 0.07), transparent 35%),
-        radial-gradient(circle at 50% 80%, rgba(0, 229, 255, 0.05), transparent 40%);
-      background-attachment: fixed;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.25s ease, color 0.25s ease;
     }
-    .glass-card {
-      background: rgba(15, 20, 32, 0.82);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .glass-card:hover {
-      border-color: rgba(57, 255, 20, 0.45);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(57, 255, 20, 0.15);
+
+    button, input, select, textarea {
+      font-family: inherit;
     }
-    .btn-neon {
-      background: linear-gradient(135deg, #39FF14 0%, #16A34A 100%);
-      color: #04070B;
-      font-weight: 800;
-      box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
-      transition: all 0.2s ease;
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    .btn-neon:hover {
-      filter: brightness(1.1);
-      transform: translateY(-1px);
-      box-shadow: 0 0 30px rgba(57, 255, 20, 0.55);
+
+    .hidden {
+      display: none !important;
     }
-    .btn-gold {
-      background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%);
-      color: #04070B;
-      font-weight: 800;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
-      transition: all 0.2s ease;
+
+    /* ==========================================
+       DYNAMIC ISLAND (NOTIFICAÇÃO ESTILO IPHONE 16 PRO)
+       ========================================== */
+    .dynamic-island-wrap {
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      pointer-events: none;
     }
-    .btn-gold:hover {
-      filter: brightness(1.08);
-      transform: translateY(-1px);
-    }
-    .prose-dluz h2, .prose-dluz h3, .prose-dluz h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
+
+    .dynamic-island {
+      background: #000000;
       color: #FFFFFF;
-      margin-top: 1.25rem;
-      margin-bottom: 0.5rem;
+      border-radius: 999px;
+      padding: 8px 18px;
+      min-width: 220px;
+      max-width: 92vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 12.5px;
+      font-weight: 600;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+      cursor: pointer;
     }
-    .prose-dluz h3 { font-size: 1.25rem; color: #FFD700; }
-    .prose-dluz h4 { font-size: 1.05rem; color: #39FF14; }
-    .prose-dluz p { color: #CBD5E1; line-height: 1.65; margin-bottom: 0.75rem; }
-    .prose-dluz ul { list-style: none; padding-left: 0; margin-bottom: 1rem; }
-    .prose-dluz ul li {
+
+    .dynamic-island.expanded {
+      padding: 12px 24px;
+      transform: scale(1.04);
+      box-shadow: 0 18px 40px rgba(0, 113, 227, 0.25), 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .island-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #30D158;
+      box-shadow: 0 0 10px #30D158;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================
+       NAVBAR TRANSLÚCIDA ESTILO APPLE STORE / IOS
+       ========================================== */
+    .apple-header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: var(--bg-glass);
+      backdrop-filter: saturate(180%) blur(22px);
+      -webkit-backdrop-filter: saturate(180%) blur(22px);
+      border-bottom: 1px solid var(--border-subtle);
+      margin-top: 44px;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      height: 64px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .brand-squircle {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      background: linear-gradient(145deg, #1D1D1F 0%, #3A3A3C 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -0.04em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    html.dark-mode .brand-squircle {
+      background: linear-gradient(145deg, #0071E3 0%, #00C7BE 100%);
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(0, 113, 227, 0.12);
+      color: var(--apple-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-pill {
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover, .nav-pill.active {
+      color: var(--text-primary);
+      background: var(--bg-tertiary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Botões estilo iOS */
+    .ios-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .ios-btn:active {
+      transform: scale(0.97);
+    }
+
+    .ios-btn-primary {
+      background: var(--apple-blue);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(0, 113, 227, 0.28);
+    }
+
+    .ios-btn-primary:hover {
+      background: var(--apple-blue-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0, 113, 227, 0.38);
+    }
+
+    .ios-btn-secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .ios-btn-secondary:hover {
+      background: var(--border-subtle);
+    }
+
+    .ios-btn-whatsapp {
+      background: #25D366;
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
+    }
+
+    .ios-btn-whatsapp:hover {
+      background: #20BD5A;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.38);
+    }
+
+    .ios-btn-sm {
+      padding: 7px 14px;
+      font-size: 12.5px;
+    }
+
+    .ios-btn-lg {
+      padding: 14px 28px;
+      font-size: 15.5px;
+      font-weight: 700;
+    }
+
+    .theme-toggle-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle-btn:hover {
+      transform: scale(1.06);
+    }
+
+    /* ==========================================
+       HERO BENTO SHOWCASE (IPHONE 16 PRO CLEAN STYLE)
+       ========================================== */
+    .hero-section {
+      padding: 32px 0 24px;
+    }
+
+    .hero-bento {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 36px;
+      align-items: center;
       position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #E2E8F0;
+      overflow: hidden;
     }
-    .prose-dluz ul li::before {
-      content: "⚡";
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 13px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 113, 227, 0.1);
+      color: var(--apple-blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .hero-headline {
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+
+    .hero-gradient-text {
+      background: linear-gradient(90deg, #0071E3 0%, #00C7BE 55%, #28CD41 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-lead {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 24px;
+      max-width: 560px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .hero-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .metric-tile {
+      background: var(--bg-primary);
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+
+    .metric-val {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .metric-lbl {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Mockup Estilo iPhone / macOS Clean */
+    .iphone-showcase-card {
+      background: linear-gradient(145deg, #1D1D1F 0%, #000000 100%);
+      color: #FFFFFF;
+      border-radius: 32px;
+      padding: 24px;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      border: 4px solid #3A3A3C;
+      position: relative;
+    }
+
+    .iphone-notch {
+      width: 96px;
+      height: 22px;
+      background: #000000;
+      border-radius: 99px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .iphone-notch-cam {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #1A3A6E;
+    }
+
+    .iphone-notch-led {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #30D158;
+    }
+
+    .iphone-app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .iphone-spec-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .iphone-spec-row {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 11px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+    }
+
+    .iphone-spec-row span:first-child {
+      color: #A1A1A6;
+    }
+
+    .iphone-spec-row strong {
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       CONTROLES DE FILTRO E BUSCA ESTILO IOS
+       ========================================== */
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 16px 0 28px;
+    }
+
+    .ios-segmented {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-tertiary);
+      padding: 5px;
+      border-radius: var(--radius-pill);
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    .seg-btn {
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .seg-btn.active {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .ios-search-box {
+      position: relative;
+      min-width: 270px;
+      flex: 1;
+      max-width: 360px;
+    }
+
+    .ios-search-input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      padding: 10px 16px 10px 38px;
+      font-size: 13.5px;
+      color: var(--text-primary);
+      outline: none;
+      box-shadow: var(--shadow-card);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ios-search-input:focus {
+      border-color: var(--apple-blue);
+      box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+    }
+
+    .ios-search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    /* ==========================================
+       GRADE DE PRODUTOS ESTILO APP STORE / APPLE STORE
+       ========================================== */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 22px;
+      margin-bottom: 56px;
+    }
+
+    .ios-product-card {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .ios-product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(0, 113, 227, 0.3);
+    }
+
+    .card-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .ios-squircle-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 28px;
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      position: relative;
+    }
+
+    .card-badges {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .pill-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .pill-discount {
+      background: rgba(255, 59, 48, 0.12);
+      color: var(--apple-red);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+    }
+
+    .card-category {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 18.5px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.28;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-features {
+      list-style: none;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 14px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .card-features li {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .check-circle {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: rgba(40, 205, 65, 0.15);
+      color: #1FA834;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .card-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .price-strike {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .price-current {
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==========================================
+       PÁGINA DE VENDAS DEDICADA DO PRODUTO (/produto/:slug)
+       ========================================== */
+    .sales-page-view {
+      padding: 20px 0 64px;
+      animation: fadeSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sales-subnav {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      padding: 10px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .sales-layout {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .sales-card {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+      padding: 32px;
+      margin-bottom: 22px;
+    }
+
+    .sales-bento-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .sales-bento-item {
+      background: var(--bg-primary);
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .sales-prose h2, .sales-prose h3, .sales-prose h4 {
+      color: var(--text-primary);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 20px 0 10px;
+    }
+
+    .sales-prose h3 { font-size: 20px; }
+    .sales-prose h4 { font-size: 16.5px; color: var(--apple-blue); }
+    .sales-prose p { color: var(--text-secondary); margin-bottom: 12px; font-size: 15px; line-height: 1.65; }
+    .sales-prose ul { list-style: none; padding: 0; margin-bottom: 16px; }
+    .sales-prose ul li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+      font-size: 14.5px;
+    }
+    .sales-prose ul li::before {
+      content: "✓";
       position: absolute;
       left: 0;
       top: 0;
+      color: #1FA834;
+      font-weight: 800;
     }
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #07090E; }
-    ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #39FF14; }
+
+    /* Coluna Direita Sticky de Checkout na Página de Vendas */
+    .checkout-sticky-panel {
+      position: sticky;
+      top: 84px;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      border: 2px solid rgba(0, 113, 227, 0.25);
+      box-shadow: var(--shadow-hover);
+      padding: 28px;
+    }
+
+    .ios-input-group {
+      margin-bottom: 14px;
+    }
+
+    .ios-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 5px;
+    }
+
+    .ios-input {
+      width: 100%;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-strong);
+      border-radius: 14px;
+      padding: 12px 15px;
+      font-size: 14.5px;
+      color: var(--text-primary);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .ios-input:focus {
+      border-color: var(--apple-blue);
+      background: var(--bg-secondary);
+      box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+    }
+
+    /* Trust / Garantias Bento */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin-bottom: 48px;
+    }
+
+    .trust-card {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 22px;
+      box-shadow: var(--shadow-card);
+    }
+
+    /* Botão Flutuante do WhatsApp Oficial do DLuz */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 95;
+      background: #25D366;
+      color: #FFFFFF;
+      border-radius: 999px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.02);
+      background: #1EBE5D;
+      box-shadow: 0 16px 34px rgba(37, 211, 102, 0.52);
+    }
+
+    /* Modais para Resgate de Chave e Páginas Legais */
+    .ios-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .ios-modal-box {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-float);
+      max-width: 620px;
+      width: 100%;
+      padding: 32px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .ios-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--bg-tertiary);
+      border: none;
+      color: var(--text-secondary);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .apple-footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      padding: 48px 0 32px;
+      margin-top: auto;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-col a:hover, .footer-col button:hover {
+      color: var(--apple-blue);
+    }
+
+    @media (max-width: 960px) {
+      .hero-bento {
+        grid-template-columns: 1fr;
+        padding: 26px;
+      }
+      .sales-layout {
+        grid-template-columns: 1fr;
+      }
+      .checkout-sticky-panel {
+        position: static;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-metrics-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .brand-sub {
+        display: none;
+      }
+    }
   </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-neon selection:text-black">
+<body>
 
-  <!-- Barra de Topo Promocional & Segurança -->
-  <div class="bg-gradient-to-r from-emerald-950/90 via-slate-900 to-amber-950/90 border-b border-white/10 text-xs sm:text-sm py-2 px-4">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-center sm:text-left">
-      <div class="flex items-center gap-2 mx-auto sm:mx-0">
-        <span class="inline-block w-2 h-2 rounded-full bg-neon animate-pulse"></span>
-        <span class="font-medium text-slate-200">
-          <strong class="text-neon">ENTREGA AUTOMÁTICA 24H:</strong> Receba sua Chave PRO + Download no <strong>WhatsApp e E-mail</strong> em 3 segundos!
-        </span>
-      </div>
-      <div class="hidden md:flex items-center gap-4 text-xs text-slate-300">
-        <span>🔒 Pagamento Seguro <strong>Mercado Pago</strong></span>
-        <span>•</span>
-        <span>🎁 Cupom 10% OFF: <button onclick="copyCouponTop('MELHOR10')" class="font-mono font-bold text-gold underline hover:text-white" title="Clique para copiar">MELHOR10</button></span>
-      </div>
+  <!-- ==========================================
+       DYNAMIC ISLAND (TOPO ESTILO IPHONE 16 PRO)
+       ========================================== -->
+  <div class="dynamic-island-wrap">
+    <div id="dynamicIsland" class="dynamic-island" onclick="copyCouponTop('MELHOR10')">
+      <span class="island-dot"></span>
+      <span id="dynamicIslandText">Entrega Automática 24h no WhatsApp • Cupom 10% OFF: MELHOR10</span>
     </div>
   </div>
 
-  <!-- Cabeçalho Principal -->
-  <header class="sticky top-0 z-40 bg-obsidian/85 backdrop-blur-xl border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
-      <a href="/" onclick="navigateHome(event)" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-neon/20 to-emerald-600/20 border border-neon/50 flex items-center justify-center shadow-lg shadow-neon/10 group-hover:scale-105 transition">
-          <span class="font-display font-extrabold text-xl text-neon tracking-tighter">DL</span>
-        </div>
+  <!-- ==========================================
+       CABEÇALHO PRINCIPAL ESTILO APPLE STORE
+       ========================================== -->
+  <header class="apple-header">
+    <div class="container header-inner">
+      <a href="/" onclick="goHome(event)" class="brand-logo">
+        <div class="brand-squircle">DL</div>
         <div>
-          <div class="flex items-center gap-2">
-            <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-white">LOJA <span class="text-neon">DLUZ</span></span>
-            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-neon/15 text-neon border border-neon/30">Oficial</span>
+          <div class="brand-title">
+            <span>DLuz Store</span>
+            <span class="brand-badge">Oficial</span>
           </div>
-          <p class="text-[11px] text-slate-400 hidden sm:block">Softwares Gamer PRO • Emuladores 120 FPS • IA Studio</p>
+          <span class="brand-sub">Softwares Pro • Emuladores 120 FPS • IA</span>
         </div>
       </a>
 
-      <!-- Busca Rápida Desktop -->
-      <div class="hidden lg:flex flex-1 max-w-md mx-4">
-        <div class="relative w-full">
-          <input
-            id="searchInput"
-            type="text"
-            oninput="handleSearch(this.value)"
-            placeholder="Buscar software (ex: Mobilador, GTA 5, Sensi, Bypass, Film IA)..."
-            class="w-full bg-slate-900/90 border border-slate-700/80 focus:border-neon rounded-xl pl-10 pr-4 py-2 text-sm text-white placeholder-slate-400 outline-none transition"
-          />
-          <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
-        </div>
-      </div>
+      <nav class="nav-links">
+        <button type="button" onclick="goHome(event); filterCategory('all')" class="nav-pill active" id="nav-all">Loja</button>
+        <button type="button" onclick="openSalesPageById(2755)" class="nav-pill">Mobilador Pro</button>
+        <button type="button" onclick="openSalesPageById(2948)" class="nav-pill">Dluz Film IA</button>
+        <button type="button" onclick="goHome(event); filterCategory('emuladores')" class="nav-pill">Emuladores 120 FPS</button>
+        <button type="button" onclick="openLookupModal()" class="nav-pill">🔑 Minhas Compras</button>
+      </nav>
 
-      <!-- Ações do Topo -->
-      <div class="flex items-center gap-2.5">
-        <button
-          onclick="openLookupModal()"
-          class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-600/60 text-xs sm:text-sm font-semibold text-white transition"
-        >
+      <div class="header-actions">
+        <button type="button" onclick="openLookupModal()" class="ios-btn ios-btn-secondary ios-btn-sm">
           <span>🔑</span>
-          <span>Resgatar Minha Chave</span>
+          <span>Resgatar Chave</span>
         </button>
+
         <a
-          href="https://discord.gg/r2tUSVnkn2"
+          id="headerWhatsappLink"
+          href="https://wa.me/5563981199852?text=Ol%C3%A1%20DLuz!%20Estou%20na%20Loja%20Oficial%20e%20preciso%20de%20suporte."
           target="_blank"
           rel="noopener"
-          class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/40 text-xs sm:text-sm font-semibold text-indigo-300 transition"
+          class="ios-btn ios-btn-whatsapp ios-btn-sm"
         >
           <span>💬</span>
-          <span>Suporte VIP</span>
+          <span>Suporte WhatsApp</span>
         </a>
+
+        <button
+          type="button"
+          onclick="toggleThemeMode()"
+          class="theme-toggle-btn"
+          id="themeToggleBtn"
+          title="Alternar modo Claro / Escuro estilo iOS"
+        >
+          🌙
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Conteúdo Principal -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10">
+  <!-- ==========================================
+       VIEW 1: VITRINE PRINCIPAL DA LOJA (/)
+       ========================================== -->
+  <main id="storeHomeView" class="container" style="flex: 1;">
 
-    <!-- Hero Banner Destaque (DLuz Mobilador Pro v3.5.1) -->
-    <section id="heroSection" class="mb-10 relative rounded-3xl overflow-hidden border border-neon/30 bg-gradient-to-br from-slate-900 via-[#0B1320] to-emerald-950/60 p-6 sm:p-10 shadow-2xl">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-7 space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon/15 border border-neon/40 text-neon text-xs font-bold uppercase tracking-wider">
-            <span>⚡ Lançamento Oficial v3.5.1</span>
+    <!-- Hero Bento Apple Showcase -->
+    <section class="hero-section">
+      <div class="hero-bento">
+        <div>
+          <div class="hero-eyebrow">
+            <span>✨ Lançamento Oficial v3.5.1</span>
             <span>•</span>
-            <span>Scrcpy v5.0.1 + Direct3D 11</span>
+            <span>Direct3D 11 + 1000Hz</span>
           </div>
-          <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white leading-tight">
-            Jogue no PC a <span class="text-neon">120 FPS</span> com <span class="text-gold">Zero Delay</span> e 0% Risco de Ban!
+          <h1 class="hero-headline">
+            DLuz Mobilador Pro.<br />
+            <span class="hero-gradient-text">120 FPS. Zero Delay.</span>
           </h1>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-            Transforme qualquer PC ou notebook fraco em uma máquina competitiva. O <strong>DLuz Mobilador Pro v3.5.1</strong> espelha seu Android via GPU Direct3D 11 com resposta de <strong>1000Hz (1ms)</strong> no mouse e teclado, caindo em salas 100% Mobile!
+          <p class="hero-lead">
+            Jogue Free Fire, Blood Strike, COD Mobile e Roblox no PC usando Teclado e Mouse com 1ms de resposta, pareamento 100% em salas Mobile e zero risco de banimento.
           </p>
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <button
-              onclick="openCheckoutById(2755)"
-              class="btn-neon px-6 py-3.5 rounded-xl text-sm sm:text-base flex items-center gap-2"
-            >
-              <span>⚡ Comprar Licença Vitalícia — R$ 21,90</span>
+
+          <div class="hero-cta-row">
+            <button type="button" onclick="openSalesPageById(2755, true)" class="ios-btn ios-btn-primary ios-btn-lg">
+              <span>Comprar Licença Vitalícia — R$ 21,90</span>
             </button>
-            <button
-              onclick="openProductModal(2755)"
-              class="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-sm font-semibold text-white transition"
-            >
-              Ver Detalhes & Requisitos
+            <button type="button" onclick="openSalesPageById(2755, false)" class="ios-btn ios-btn-secondary ios-btn-lg">
+              <span>Ver Página de Vendas ›</span>
             </button>
           </div>
-          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-lg text-xs sm:text-sm">
-            <div>
-              <div class="font-display font-bold text-lg sm:text-xl text-neon">1000Hz</div>
-              <div class="text-slate-400">1ms Raw Input</div>
+
+          <div class="hero-metrics-grid">
+            <div class="metric-tile">
+              <div class="metric-val">1000Hz</div>
+              <div class="metric-lbl">1ms Mouse Raw Input</div>
             </div>
-            <div>
-              <div class="font-display font-bold text-lg sm:text-xl text-gold">100% Safe</div>
-              <div class="text-slate-400">Salas Mobile</div>
+            <div class="metric-tile">
+              <div class="metric-val">100% Safe</div>
+              <div class="metric-lbl">Salas Mobile Oficiais</div>
             </div>
-            <div>
-              <div class="font-display font-bold text-lg sm:text-xl text-sky-400">Vitalício</div>
-              <div class="text-slate-400">Sem Mensalidade</div>
+            <div class="metric-tile">
+              <div class="metric-val">3 Segundos</div>
+              <div class="metric-lbl">Entrega no WhatsApp</div>
             </div>
           </div>
         </div>
 
-        <!-- Card Visual Interativo no Hero -->
-        <div class="lg:col-span-5">
-          <div class="rounded-2xl bg-obsidian/90 border border-white/15 p-5 shadow-2xl relative">
-            <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
-              <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
-                <span class="w-3 h-3 rounded-full bg-neon"></span>
-                <span class="text-xs font-mono text-slate-400 ml-2">DLuzMobiladorPlus_v3.5.1.exe</span>
+        <!-- iPhone / Studio Hardware Card -->
+        <div class="iphone-showcase-card" onclick="openSalesPageById(2755, false)" style="cursor: pointer;">
+          <div class="iphone-notch">
+            <span class="iphone-notch-cam"></span>
+            <span style="font-size: 9px; color: #8E8E93; font-weight: 700;">DLUZ OS</span>
+            <span class="iphone-notch-led"></span>
+          </div>
+
+          <div class="iphone-app-header">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #0071E3, #28CD41); display: flex; align-items: center; justify-content: center; font-size: 22px;">
+                🎮
               </div>
-              <span class="px-2 py-0.5 text-[10px] font-bold bg-neon/20 text-neon rounded">PRO ATIVO</span>
-            </div>
-            <div class="space-y-3 text-xs font-mono">
-              <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
-                <span class="text-slate-400">Motor de Vídeo:</span>
-                <span class="text-neon font-bold">Direct3D 11 (H.265 HEVC)</span>
-              </div>
-              <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
-                <span class="text-slate-400">Taxa de Quadros:</span>
-                <span class="text-gold font-bold">120 FPS Cravados (0 Buffer)</span>
-              </div>
-              <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
-                <span class="text-slate-400">Polling Rate Mouse:</span>
-                <span class="text-sky-400 font-bold">1000Hz (Linear Spline 12pt)</span>
-              </div>
-              <div class="flex justify-between items-center p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
-                <span class="text-slate-400">Entrega da Chave:</span>
-                <span class="text-emerald-400 font-bold">WhatsApp + E-mail + Tela</span>
+              <div>
+                <div style="font-weight: 700; font-size: 15px;">DLuz Mobilador Pro</div>
+                <div style="font-size: 11.5px; color: #30D158;">● Licença Vitalícia Ativa</div>
               </div>
             </div>
+            <span style="background: rgba(255,255,255,0.12); padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 700;">v3.5.1</span>
+          </div>
+
+          <div class="iphone-spec-list">
+            <div class="iphone-spec-row">
+              <span>Motor de Vídeo GPU</span>
+              <strong style="color: #5AC8FA;">Direct3D 11 (H.265 HEVC)</strong>
+            </div>
+            <div class="iphone-spec-row">
+              <span>Taxa de Quadros</span>
+              <strong style="color: #30D158;">120 FPS Estáveis</strong>
+            </div>
+            <div class="iphone-spec-row">
+              <span>Sensibilidade X / Y</span>
+              <strong style="color: #FFD60A;">Independente (Subir Capa)</strong>
+            </div>
+            <div class="iphone-spec-row">
+              <span>Envio da Chave PRO</span>
+              <strong>WhatsApp + E-mail + Tela</strong>
+            </div>
+          </div>
+
+          <div style="margin-top: 16px; text-align: center; font-size: 12px; color: #A1A1A6;">
+            Toque para abrir a página completa do produto ›
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Barra de Categorias e Busca Mobile -->
-    <section class="mb-8 space-y-4">
-      <div class="flex lg:hidden">
+    <!-- Barra de Categorias estilo Segmented Control do iOS + Busca -->
+    <section class="controls-bar" id="catalogSection">
+      <div class="ios-segmented" id="categoryTabs">
+        <button type="button" onclick="filterCategory('all')" data-cat="all" class="seg-btn active">Todos (21)</button>
+        <button type="button" onclick="filterCategory('mobilador')" data-cat="mobilador" class="seg-btn">Mobilador</button>
+        <button type="button" onclick="filterCategory('emuladores')" data-cat="emuladores" class="seg-btn">Emuladores & GTA Coop</button>
+        <button type="button" onclick="filterCategory('sensi')" data-cat="sensi" class="seg-btn">Sensi 1000Hz & FPS</button>
+        <button type="button" onclick="filterCategory('criadores')" data-cat="criadores" class="seg-btn">IA & Streamers</button>
+        <button type="button" onclick="filterCategory('vip')" data-cat="vip" class="seg-btn">Clube VIP</button>
+      </div>
+
+      <div class="ios-search-box">
+        <span class="ios-search-icon">🔍</span>
         <input
           type="text"
-          oninput="handleSearch(this.value)"
-          placeholder="Buscar software ou emulador..."
-          class="w-full bg-slate-900 border border-slate-700 focus:border-neon rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none"
+          id="searchInput"
+          oninput="handleSearchInput(this.value)"
+          placeholder="Buscar aplicativo (ex: Mobilador, GTA 5, Sensi)..."
+          class="ios-search-input"
         />
-      </div>
-
-      <div class="flex items-center justify-between flex-wrap gap-3">
-        <div class="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 w-full sm:w-auto" id="categoryFilters">
-          <button onclick="setCategory('all')" data-cat="all" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-neon text-black whitespace-nowrap transition">
-            🔥 Todos os Produtos
-          </button>
-          <button onclick="setCategory('mobilador')" data-cat="mobilador" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition">
-            🎮 Mobilador Zero Delay
-          </button>
-          <button onclick="setCategory('emuladores')" data-cat="emuladores" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition">
-            🚀 Emuladores 120 FPS & GTA Coop
-          </button>
-          <button onclick="setCategory('sensi')" data-cat="sensi" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition">
-            🎯 Sensi 1000Hz & Otimização
-          </button>
-          <button onclick="setCategory('criadores')" data-cat="criadores" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition">
-            🤖 Editores IA & Streamers
-          </button>
-          <button onclick="setCategory('vip')" data-cat="vip" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition">
-            👑 Clube dos Melhores VIP
-          </button>
-        </div>
-
-        <div class="text-xs text-slate-400 font-medium" id="productsCountLabel">
-          Carregando catálogo oficial...
-        </div>
       </div>
     </section>
 
-    <!-- Grade de Produtos -->
-    <section id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+    <!-- Grade de Produtos Estilo App Store -->
+    <section id="productsGrid" class="products-grid">
       <!-- Renderizado dinamicamente via JS -->
     </section>
 
-    <!-- Garantias e Segurança Máxima -->
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
-      <div class="glass-card rounded-2xl p-5">
-        <div class="text-2xl mb-2">⚡</div>
-        <h3 class="font-display font-bold text-white text-base mb-1">Liberação em 3 Segundos</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">Pagou no Pix ou Cartão pelo Mercado Pago, a chave vitalícia aparece na sua tela e chega no seu WhatsApp e E-mail na mesma hora.</p>
+    <!-- Bento de Garantias & Suporte Direto no WhatsApp -->
+    <section class="trust-grid">
+      <div class="trust-card">
+        <div style="font-size: 26px; margin-bottom: 8px;">⚡</div>
+        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Entrega Automática em 3s</h3>
+        <p style="font-size: 13px; color: var(--text-secondary);">
+          Confirmou o Pix ou Cartão pelo Mercado Pago, sua Chave PRO aparece na tela na mesma hora e chega no seu WhatsApp e E-mail.
+        </p>
       </div>
-      <div class="glass-card rounded-2xl p-5">
-        <div class="text-2xl mb-2">🛡️</div>
-        <h3 class="font-display font-bold text-white text-base mb-1">Segurança Máxima Mercado Pago</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">Ambiente criptografado ponta a ponta com validação oficial do Mercado Pago e Compra Garantida.</p>
+      <div class="trust-card">
+        <div style="font-size: 26px; margin-bottom: 8px;">🛡️</div>
+        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Segurança Mercado Pago</h3>
+        <p style="font-size: 13px; color: var(--text-secondary);">
+          Pagamentos processados diretamente pelo Mercado Pago com criptografia SSL 256-bit e Compra Garantida.
+        </p>
       </div>
-      <div class="glass-card rounded-2xl p-5">
-        <div class="text-2xl mb-2">🔄</div>
-        <h3 class="font-display font-bold text-white text-base mb-1">Auto-Update Oficial</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">Nossos aplicativos contam com atualizador integrado conectado ao GitHub Oficial da DLuz Games.</p>
-      </div>
-      <div class="glass-card rounded-2xl p-5">
-        <div class="text-2xl mb-2">💬</div>
-        <h3 class="font-display font-bold text-white text-base mb-1">Suporte VIP Humanizado</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">Dúvidas na instalação? Nossa equipe e a assistente Frya atendem você diretamente no WhatsApp e Discord.</p>
-      </div>
-    </section>
-
-    <!-- Perguntas Frequentes (FAQ) -->
-    <section class="max-w-4xl mx-auto mb-12">
-      <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-center text-white mb-6">
-        Perguntas Frequentes <span class="text-neon">(FAQ)</span>
-      </h2>
-      <div class="space-y-3">
-        <details class="glass-card rounded-2xl p-5 group cursor-pointer">
-          <summary class="font-display font-bold text-white flex justify-between items-center list-none">
-            <span>1. Como eu recebo a minha Chave de Ativação e o Download após pagar?</span>
-            <span class="text-neon group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="text-sm text-slate-300 mt-3 leading-relaxed">
-            A entrega é <strong>100% imediata e automática</strong>! Assim que você escaneia o QR Code Pix do Mercado Pago, a própria tela da loja atualiza sozinha exibindo sua <strong>Chave PRO Vitalícia</strong> e os botões de download. Além disso, enviamos uma cópia completa no seu <strong>WhatsApp</strong> e no seu <strong>E-mail</strong>.
-          </p>
-        </details>
-        <details class="glass-card rounded-2xl p-5 group cursor-pointer">
-          <summary class="font-display font-bold text-white flex justify-between items-center list-none">
-            <span>2. O DLuz Mobilador Pro dá ban no Free Fire ou outros jogos?</span>
-            <span class="text-neon group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="text-sm text-slate-300 mt-3 leading-relaxed">
-            <strong>Zero risco de ban!</strong> Diferente de APKs modificados ou clonadores, o DLuz Mobilador Pro utiliza a tecnologia oficial de depuração Android (Scrcpy v5.0.1) rodando diretamente no PC. Você joga no aplicativo original da Play Store e cai em partidas 100% Mobile.
-          </p>
-        </details>
-        <details class="glass-card rounded-2xl p-5 group cursor-pointer">
-          <summary class="font-display font-bold text-white flex justify-between items-center list-none">
-            <span>3. Formatei meu PC ou perdi o link de download. Como recupero minha chave?</span>
-            <span class="text-neon group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="text-sm text-slate-300 mt-3 leading-relaxed">
-            Basta clicar no botão <strong>"🔑 Resgatar Minha Chave"</strong> no topo desta loja e digitar seu e-mail ou WhatsApp usado na compra. Todos os seus pedidos aprovados, chaves e links atualizados aparecerão na hora!
-          </p>
-        </details>
+      <div class="trust-card">
+        <div style="font-size: 26px; margin-bottom: 8px;">💬</div>
+        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Suporte Direto no Meu WhatsApp</h3>
+        <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 10px;">
+          Precisa de ajuda na instalação ou ativação? Fale diretamente comigo pelo WhatsApp oficial.
+        </p>
+        <a
+          id="trustWhatsappLink"
+          href="https://wa.me/5563981199852?text=Ol%C3%A1%20DLuz!%20Preciso%20de%20ajuda%20na%20Loja%20Oficial."
+          target="_blank"
+          rel="noopener"
+          style="font-size: 13px; font-weight: 700; color: var(--apple-blue);"
+        >
+          Chamar no WhatsApp agora ›
+        </a>
       </div>
     </section>
-
   </main>
 
-  <!-- Rodapé Institucional e Compliance -->
-  <footer class="bg-obsidian border-t border-white/10 py-10 px-4 sm:px-6 text-xs sm:text-sm text-slate-400">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-      <div class="space-y-3">
-        <div class="font-display font-extrabold text-lg text-white">LOJA <span class="text-neon">DLUZ GAMES</span></div>
-        <p class="text-xs text-slate-400 leading-relaxed">
-          Desenvolvimento oficial de softwares gamers de alta performance, emuladores otimizados e ferramentas de inteligência artificial para criadores.
-        </p>
-        <div class="text-xs text-slate-500">
-          Pagamentos processados com segurança máxima via <strong>Mercado Pago</strong>.
-        </div>
-      </div>
+  <!-- ==========================================
+       VIEW 2: PÁGINA DE VENDAS COMPLETA + CHECKOUT (/produto/:slug)
+       ========================================== -->
+  <section id="productSalesView" class="container sales-page-view hidden" style="flex: 1;">
+    <!-- Barra Superior da Página de Vendas -->
+    <div class="sales-subnav">
+      <button type="button" onclick="goHome(event)" class="ios-btn ios-btn-secondary ios-btn-sm">
+        <span>‹ Voltar para todos os produtos</span>
+      </button>
 
-      <div>
-        <h4 class="font-display font-bold text-white mb-3">Produtos em Destaque</h4>
-        <ul class="space-y-2 text-xs">
-          <li><a href="/produto/dluzmobilador-pro" onclick="openProductBySlug(event, 'dluzmobilador-pro')" class="hover:text-neon transition">DLuz Mobilador Pro v3.5.1</a></li>
-          <li><a href="/produto/dluz-film-pro" onclick="openProductBySlug(event, 'dluz-film-pro')" class="hover:text-neon transition">Dluz Film PRO v2.0 (Editor IA)</a></li>
-          <li><a href="/produto/dluz-sensi-bs-pro" onclick="openProductBySlug(event, 'dluz-sensi-bs-pro')" class="hover:text-neon transition">DLuz Sensi BS Pro 1000Hz</a></li>
-          <li><a href="/produto/dluzstacks" onclick="openProductBySlug(event, 'dluzstacks')" class="hover:text-neon transition">DLuzStacks Pro Direct3D 11</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-display font-bold text-white mb-3">Institucional & Legal</h4>
-        <ul class="space-y-2 text-xs">
-          <li><a href="/termos-de-servico" onclick="openPageModal(event, 'termos-de-servico')" class="hover:text-neon transition">Termos de Serviço</a></li>
-          <li><a href="/politica-de-privacidade" onclick="openPageModal(event, 'politica-de-privacidade')" class="hover:text-neon transition">Política de Privacidade (LGPD)</a></li>
-          <li><a href="/politica-de-reembolso" onclick="openPageModal(event, 'politica-de-reembolso')" class="hover:text-neon transition">Política de Reembolso (7 Dias)</a></li>
-          <li><a href="/contato" onclick="openPageModal(event, 'contato')" class="hover:text-neon transition">Contato e Suporte Oficial</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-display font-bold text-white mb-3">Área do Cliente</h4>
-        <ul class="space-y-2 text-xs">
-          <li><button onclick="openLookupModal()" class="hover:text-neon transition">🔑 Resgatar Minha Chave / Downloads</button></li>
-          <li><a href="https://dluzgames.com.br" target="_blank" rel="noopener" class="hover:text-neon transition">🌐 Portal DLuz Games</a></li>
-          <li><a href="https://dluz.com.br" target="_blank" rel="noopener" class="hover:text-neon transition">📰 Portal DLuz News</a></li>
-          <li><a href="/admin" class="text-slate-600 hover:text-slate-400 transition">⚙️ Painel Administrativo</a></li>
-        </ul>
+      <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+        <a
+          id="salesTopWhatsappBtn"
+          href="https://wa.me/5563981199852"
+          target="_blank"
+          rel="noopener"
+          class="ios-btn ios-btn-whatsapp ios-btn-sm"
+        >
+          <span>💬 Tirar Dúvida no WhatsApp</span>
+        </a>
+        <button type="button" onclick="scrollToCheckoutPanel()" class="ios-btn ios-btn-primary ios-btn-sm">
+          <span>⚡ Ir para o Pagamento</span>
+        </button>
       </div>
     </div>
 
-    <div class="max-w-7xl mx-auto pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-      <div>© 2026 DLuz Games. Todos os direitos reservados.</div>
-      <div class="flex items-center gap-3">
-        <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 text-slate-300">💠 Pix Instantâneo</span>
-        <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 text-slate-300">💳 Mercado Pago até 12x</span>
-        <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 text-neon">🔒 SSL 256-Bit</span>
+    <div class="sales-layout">
+      <!-- Coluna Esquerda: Apresentação Completa do Produto (Página de Vendas) -->
+      <div>
+        <div class="sales-card">
+          <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-bottom: 20px;">
+            <div id="salesAppIcon" class="ios-squircle-icon" style="width: 76px; height: 76px; font-size: 34px;">🎮</div>
+            <div style="flex: 1; min-width: 220px;">
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px;">
+                <span id="salesBadge" class="pill-badge" style="background: rgba(0,113,227,0.12); color: var(--apple-blue);">OFICIAL DLUZ</span>
+                <span id="salesDiscountBadge" class="pill-discount">OFERTA</span>
+              </div>
+              <h1 id="salesTitle" style="font-size: clamp(22px, 3vw, 32px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15;">
+                Nome do Produto
+              </h1>
+            </div>
+          </div>
+
+          <p id="salesShortDesc" style="font-size: 16px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 22px;"></p>
+
+          <!-- Bento de Destaques Inclusos -->
+          <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 10px;">
+            O que está incluso na sua compra
+          </h3>
+          <div id="salesFeaturesBento" class="sales-bento-features"></div>
+        </div>
+
+        <!-- Descrição Detalhada da Página de Vendas -->
+        <div class="sales-card">
+          <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 12px;">
+            Apresentação Completa & Especificações
+          </h3>
+          <div id="salesFullDescription" class="sales-prose"></div>
+        </div>
+
+        <!-- Card de Suporte Direto no WhatsApp do DLuz -->
+        <div class="sales-card" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: linear-gradient(135deg, rgba(37, 211, 102, 0.08), rgba(0, 113, 227, 0.06));">
+          <div>
+            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">Ficou com alguma dúvida antes de comprar?</h3>
+            <p style="font-size: 13.5px; color: var(--text-secondary);">
+              O suporte da loja é feito diretamente no meu WhatsApp pessoal. Clique ao lado e fale comigo agora!
+            </p>
+          </div>
+          <a
+            id="salesBottomWhatsappBtn"
+            href="https://wa.me/5563981199852"
+            target="_blank"
+            rel="noopener"
+            class="ios-btn ios-btn-whatsapp"
+          >
+            <span>💬 Chamar no WhatsApp do DLuz</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna Direita: Checkout Transparente Mercado Pago (Pix & Cartão) -->
+      <div id="checkoutPanelAnchor" class="checkout-sticky-panel">
+
+        <!-- ETAPA 1: FORMULÁRIO DE COMPRA RÁPIDA -->
+        <div id="checkoutFormStep">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+            <span style="font-size: 11.5px; font-weight: 700; color: var(--apple-blue); text-transform: uppercase; letter-spacing: 0.03em;">
+              🔒 Checkout Oficial Mercado Pago
+            </span>
+            <span style="font-size: 11.5px; font-weight: 600; color: #1FA834;">● Entrega Imediata</span>
+          </div>
+
+          <div style="background: var(--bg-primary); border-radius: 18px; padding: 16px; margin-bottom: 18px; border: 1px solid var(--border-subtle);">
+            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 2px;">Resumo do seu pedido:</div>
+            <div id="chkProductName" style="font-size: 14.5px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">-</div>
+            <div style="display: flex; align-items: baseline; justify-content: space-between; border-top: 1px solid var(--border-subtle); padding-top: 10px;">
+              <div>
+                <span id="chkOldPrice" class="price-strike" style="margin-right: 6px;">R$ 0,00</span>
+                <span style="font-size: 12px; color: var(--text-secondary);">Valor à vista:</span>
+              </div>
+              <div id="chkFinalPrice" style="font-size: 28px; font-weight: 800; color: var(--apple-blue); letter-spacing: -0.03em;">
+                R$ 0,00
+              </div>
+            </div>
+          </div>
+
+          <form id="salesCheckoutForm" onsubmit="handleCheckoutSubmit(event)">
+            <input type="hidden" id="chkProductId" />
+
+            <div class="ios-input-group">
+              <label class="ios-label">Seu Nome *</label>
+              <input
+                type="text"
+                id="chkBuyerName"
+                required
+                placeholder="Digite seu nome"
+                class="ios-input"
+              />
+            </div>
+
+            <div class="ios-input-group">
+              <label class="ios-label">Seu E-mail (Para receber a Chave e o Download) *</label>
+              <input
+                type="email"
+                id="chkBuyerEmail"
+                required
+                placeholder="seuemail@gmail.com"
+                class="ios-input"
+              />
+            </div>
+
+            <div class="ios-input-group">
+              <label class="ios-label">Seu WhatsApp com DDD (Entrega Automática em 3s) *</label>
+              <input
+                type="tel"
+                id="chkBuyerPhone"
+                required
+                placeholder="(63) 99999-9999"
+                class="ios-input"
+              />
+            </div>
+
+            <!-- Cupom de Desconto -->
+            <div class="ios-input-group">
+              <label class="ios-label">Cupom de Desconto (Opcional)</label>
+              <div style="display: flex; gap: 8px;">
+                <input
+                  type="text"
+                  id="chkCouponInput"
+                  placeholder="Ex: MELHOR10"
+                  class="ios-input"
+                  style="text-transform: uppercase; font-weight: 600;"
+                />
+                <button type="button" onclick="applyCheckoutCoupon()" class="ios-btn ios-btn-secondary" style="padding: 0 16px;">
+                  Aplicar
+                </button>
+              </div>
+              <div id="chkCouponMsg" class="hidden" style="font-size: 12px; margin-top: 6px; font-weight: 600;"></div>
+            </div>
+
+            <div id="chkErrorBox" class="hidden" style="background: rgba(255,59,48,0.1); border: 1px solid rgba(255,59,48,0.3); color: var(--apple-red); padding: 12px; border-radius: 12px; font-size: 12.5px; margin-bottom: 14px; font-weight: 600;"></div>
+
+            <button type="submit" id="chkSubmitBtn" class="ios-btn ios-btn-primary ios-btn-lg" style="width: 100%; margin-top: 4px;">
+              <span>⚡ Comprar Agora • Pix ou Cartão</span>
+            </button>
+
+            <div style="margin-top: 14px; text-align: center; font-size: 11.5px; color: var(--text-muted);">
+              🔒 Pagamento 100% seguro via <strong>Mercado Pago</strong>.<br />
+              Receba no seu WhatsApp, E-mail e aqui na tela em segundos.
+            </div>
+          </form>
+        </div>
+
+        <!-- ETAPA 2: QR CODE PIX GERADO + LINK CARTÃO MERCADO PAGO -->
+        <div id="checkoutPayStep" class="hidden" style="text-align: center;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 99px; background: rgba(255, 149, 0, 0.14); color: #D97706; font-size: 12px; font-weight: 700; margin-bottom: 12px;">
+            <span>⏳ Aguardando confirmação... Atualiza sozinho!</span>
+          </div>
+
+          <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 4px;">
+            Pedido <span id="payOrderNum" style="color: var(--apple-blue);">#0000</span> Gerado!
+          </h3>
+          <p style="font-size: 12.5px; color: var(--text-secondary); margin-bottom: 16px;">
+            Escaneie o QR Code Pix abaixo no app do seu banco ou copie o código Pix Copia e Cola:
+          </p>
+
+          <div style="background: #FFFFFF; padding: 16px; border-radius: 22px; display: inline-block; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card); margin-bottom: 14px;">
+            <img id="payQrImg" src="" alt="QR Code Pix" style="width: 210px; height: 210px; object-fit: contain; display: block;" />
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <div style="font-size: 12px; color: var(--text-muted);">Total a pagar:</div>
+            <div id="payTotalText" style="font-size: 28px; font-weight: 800; color: var(--text-primary);">R$ 0,00</div>
+          </div>
+
+          <div style="text-align: left; margin-bottom: 16px;">
+            <label class="ios-label">Código Pix Copia e Cola:</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" id="payPixCodeInput" readonly class="ios-input" style="font-family: monospace; font-size: 12px;" />
+              <button type="button" id="copyPixCodeBtn" onclick="copyPixToClipboard()" class="ios-btn ios-btn-primary">
+                📋 Copiar Pix
+              </button>
+            </div>
+          </div>
+
+          <div id="payCardWrap" class="hidden" style="margin-bottom: 16px; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+            <a id="payCardUrlBtn" href="#" target="_blank" rel="noopener" class="ios-btn ios-btn-secondary" style="width: 100%; font-weight: 700;">
+              <span>💳 Pagar com Cartão de Crédito (Mercado Pago até 12x)</span>
+            </a>
+          </div>
+
+          <div style="background: var(--bg-primary); border-radius: 14px; padding: 12px; font-size: 12px; color: var(--text-secondary); margin-bottom: 14px;">
+            ⚡ Assim que você pagar o Pix, esta tela liberará sua <strong>Chave de Ativação PRO</strong> e os <strong>Links de Download</strong> automaticamente!
+          </div>
+
+          <div style="display: flex; justify-content: space-between; gap: 8px;">
+            <button type="button" onclick="resetCheckoutToForm()" class="ios-btn ios-btn-secondary ios-btn-sm">
+              ← Alterar Dados
+            </button>
+            <a
+              id="payWhatsappSupportBtn"
+              href="https://wa.me/5563981199852"
+              target="_blank"
+              rel="noopener"
+              class="ios-btn ios-btn-whatsapp ios-btn-sm"
+            >
+              💬 Já paguei / Suporte WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- ETAPA 3: PAGAMENTO CONFIRMADO! ENTREGA DA CHAVE E DOWNLOAD -->
+        <div id="checkoutSuccessStep" class="hidden" style="text-align: center;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(40, 205, 65, 0.16); color: #1FA834; font-size: 28px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+            ✓
+          </div>
+          <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 4px;">Pagamento Aprovado! 🚀</h3>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 18px;">
+            Sua chave e links também foram enviados para o seu WhatsApp e E-mail.
+          </p>
+
+          <div id="succKeyBox" style="background: var(--bg-primary); border: 2px solid var(--apple-blue); border-radius: 18px; padding: 16px; margin-bottom: 18px;">
+            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">
+              🔑 Sua Chave de Ativação Oficial
+            </div>
+            <div id="succLicenseKey" style="font-family: monospace; font-size: 18px; font-weight: 800; color: var(--apple-blue); word-break: break-all; margin-bottom: 10px;">
+              DLUZ-PRO-XXXX-XXXX
+            </div>
+            <button type="button" onclick="copyApprovedKey()" class="ios-btn ios-btn-primary ios-btn-sm">
+              📋 Copiar Chave PRO
+            </button>
+          </div>
+
+          <div style="text-align: left;">
+            <div style="font-size: 12px; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px;">
+              📦 Seus Arquivos para Download:
+            </div>
+            <div id="succDownloadsBox" style="display: flex; flex-direction: column; gap: 8px;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MODAL: RESGATAR MINHA CHAVE / MINHAS COMPRAS
+       ========================================== -->
+  <div id="lookupModal" class="ios-modal-backdrop hidden">
+    <div class="ios-modal-box">
+      <button type="button" onclick="closeLookupModal()" class="ios-close-btn">✕</button>
+      <div style="font-size: 12px; font-weight: 700; color: var(--apple-blue); text-transform: uppercase; margin-bottom: 4px;">
+        🔑 Central do Cliente DLuz
+      </div>
+      <h2 style="font-size: 24px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px;">
+        Resgatar Chave & Downloads
+      </h2>
+      <p style="font-size: 13.5px; color: var(--text-secondary); margin-bottom: 18px;">
+        Digite o seu <strong>E-mail</strong> ou <strong>WhatsApp</strong> usado na compra para acessar imediatamente suas chaves de ativação e links atualizados:
+      </p>
+
+      <form onsubmit="submitOrderLookup(event)" style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <input
+          type="text"
+          id="lookupQueryInput"
+          required
+          placeholder="seuemail@gmail.com ou (63) 99999-9999"
+          class="ios-input"
+          style="flex: 1;"
+        />
+        <button type="submit" class="ios-btn ios-btn-primary">Buscar</button>
+      </form>
+
+      <div id="lookupResults" style="display: flex; flex-direction: column; gap: 12px;"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL: PÁGINAS INSTITUCIONAIS (TERMOS / PRIVACIDADE / REEMBOLSO / CONTATO)
+       ========================================== -->
+  <div id="pageModal" class="ios-modal-backdrop hidden">
+    <div class="ios-modal-box" style="max-width: 720px;">
+      <button type="button" onclick="closePageModal()" class="ios-close-btn">✕</button>
+      <h2 id="pageModalTitle" style="font-size: 24px; font-weight: 800; margin-bottom: 14px;"></h2>
+      <div id="pageModalBody" class="sales-prose"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       BOTÃO FLUTUANTE DO WHATSAPP DO DLUZ
+       ========================================== -->
+  <a
+    id="floatingWhatsappBtn"
+    href="https://wa.me/5563981199852?text=Ol%C3%A1%20DLuz!%20Vim%20pela%20Loja%20Oficial%20e%20preciso%20de%20suporte."
+    target="_blank"
+    rel="noopener"
+    class="whatsapp-float"
+  >
+    <span style="font-size: 18px;">💬</span>
+    <span>Suporte no WhatsApp</span>
+  </a>
+
+  <!-- ==========================================
+       RODAPÉ ESTILO APPLE STORE
+       ========================================== -->
+  <footer class="apple-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="font-weight: 800; font-size: 16px; color: var(--text-primary); margin-bottom: 8px;">
+            DLuz Store Oficial
+          </div>
+          <p style="font-size: 12.5px; line-height: 1.6; margin-bottom: 10px;">
+            Desenvolvimento oficial de softwares gamers de alta performance, emuladores 120 FPS e ferramentas com Inteligência Artificial.
+          </p>
+          <div style="font-size: 12px; color: var(--text-muted);">
+            Suporte Oficial WhatsApp: <strong>+55 (63) 98119-9852</strong>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Destaques</h4>
+          <ul>
+            <li><a href="/produto/dluzmobilador-pro" onclick="openSalesPageById(2755, false, event)">DLuz Mobilador Pro v3.5.1</a></li>
+            <li><a href="/produto/dluz-film-pro" onclick="openSalesPageById(2948, false, event)">Dluz Film PRO v2.0 (IA)</a></li>
+            <li><a href="/produto/dluz-sensi-bs-pro" onclick="openSalesPageById(2862, false, event)">DLuz Sensi BS Pro 1000Hz</a></li>
+            <li><a href="/produto/dluzstacks" onclick="openSalesPageById(2829, false, event)">DLuzStacks Pro Direct3D 11</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Institucional & Legal</h4>
+          <ul>
+            <li><a href="/termos-de-servico" onclick="openPageModal(event, 'termos-de-servico')">Termos de Serviço</a></li>
+            <li><a href="/politica-de-privacidade" onclick="openPageModal(event, 'politica-de-privacidade')">Política de Privacidade (LGPD)</a></li>
+            <li><a href="/politica-de-reembolso" onclick="openPageModal(event, 'politica-de-reembolso')">Garantia e Reembolso (7 Dias)</a></li>
+            <li><a href="/contato" onclick="openPageModal(event, 'contato')">Contato & WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Central do Cliente</h4>
+          <ul>
+            <li><button type="button" onclick="openLookupModal()" style="background:none;border:none;cursor:pointer;color:inherit;font-size:inherit;padding:0;">🔑 Resgatar Minha Chave</button></li>
+            <li><a id="footerWhatsappLink" href="https://wa.me/5563981199852" target="_blank" rel="noopener">💬 Atendimento no WhatsApp</a></li>
+            <li><a href="https://dluzgames.com.br" target="_blank" rel="noopener">🌐 Portal DLuz Games</a></li>
+            <li><a href="/admin" style="color: var(--text-muted);">⚙️ Painel Admin</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--text-muted);">
+        <div>Copyright © 2026 DLuz Games. Todos os direitos reservados.</div>
+        <div style="display: flex; gap: 14px;">
+          <span>💠 Pix Instantâneo</span>
+          <span>💳 Mercado Pago até 12x</span>
+          <span>🔒 SSL 256-Bit</span>
+        </div>
       </div>
     </div>
   </footer>
 
   <!-- ==========================================
-       MODAL 1: DETALHES DO PRODUTO (/produto/:slug)
+       SCRIPT PRINCIPAL DA LOJA (NAVEGAÇÃO, PÁGINA DE VENDAS & MERCADO PAGO)
        ========================================== -->
-  <div id="productModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
-    <div class="bg-[#0B0F19] border border-white/15 rounded-3xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl my-auto max-h-[92vh] overflow-y-auto">
-      <button onclick="closeProductModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold">✕</button>
-      <div id="productModalContent"></div>
-    </div>
-  </div>
-
-  <!-- ==========================================
-       MODAL 2: CHECKOUT 1-STEP MERCADO PAGO PIX & CARTÃO
-       ========================================== -->
-  <div id="checkoutModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
-    <div class="bg-[#0B0F19] border border-neon/40 rounded-3xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl my-auto max-h-[94vh] overflow-y-auto">
-      <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold">✕</button>
-
-      <!-- Etapa 1: Dados do Comprador -->
-      <div id="checkoutStepForm">
-        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neon mb-2">
-          <span>🔒 Checkout Seguro Mercado Pago</span>
-          <span>•</span>
-          <span>Liberação Imediata</span>
-        </div>
-        <h2 class="font-display font-extrabold text-xl sm:text-2xl text-white mb-4" id="checkoutProductTitle">
-          Finalizar Pedido
-        </h2>
-
-        <!-- Resumo do Produto -->
-        <div class="p-4 rounded-2xl bg-slate-900/90 border border-white/10 mb-5 flex items-center justify-between gap-4">
-          <div>
-            <div class="text-xs text-slate-400">Produto selecionado:</div>
-            <div class="font-bold text-sm text-white" id="checkoutSummaryName">-</div>
-            <div class="text-[11px] text-emerald-400 mt-0.5">✓ Entrega no WhatsApp + E-mail + Na Tela</div>
-          </div>
-          <div class="text-right">
-            <div class="text-xs text-slate-500 line-through" id="checkoutRegularPrice">R$ 0,00</div>
-            <div class="font-display font-extrabold text-2xl text-neon" id="checkoutFinalPrice">R$ 0,00</div>
-          </div>
-        </div>
-
-        <form id="checkoutForm" onsubmit="submitCheckout(event)" class="space-y-4">
-          <input type="hidden" id="checkoutProductId" />
-
-          <div>
-            <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Seu Nome *</label>
-            <input
-              type="text"
-              id="buyerName"
-              required
-              placeholder="Ex: Lucas Silva"
-              class="w-full bg-slate-900 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm text-white outline-none"
-            />
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold uppercase text-slate-300 mb-1">E-mail (Para receber a Chave) *</label>
-              <input
-                type="email"
-                id="buyerEmail"
-                required
-                placeholder="seuemail@gmail.com"
-                class="w-full bg-slate-900 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm text-white outline-none"
-              />
-            </div>
-            <div>
-              <label class="block text-xs font-bold uppercase text-slate-300 mb-1">WhatsApp com DDD (Entrega Instantânea) *</label>
-              <input
-                type="tel"
-                id="buyerPhone"
-                required
-                placeholder="(11) 99999-9999"
-                class="w-full bg-slate-900 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm text-white outline-none"
-              />
-            </div>
-          </div>
-
-          <!-- Cupom de Desconto -->
-          <div>
-            <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Cupom de Desconto (Opcional)</label>
-            <div class="flex gap-2">
-              <input
-                type="text"
-                id="buyerCoupon"
-                placeholder="Ex: MELHOR10"
-                class="flex-1 bg-slate-900 border border-slate-700 focus:border-gold rounded-xl px-4 py-2.5 text-sm text-white uppercase font-mono outline-none"
-              />
-              <button
-                type="button"
-                onclick="applyCouponCode()"
-                class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-white/15 text-xs font-bold text-gold transition"
-              >
-                Aplicar Cupom
-              </button>
-            </div>
-            <div id="couponFeedback" class="text-xs mt-1 hidden"></div>
-          </div>
-
-          <div id="checkoutErrorMsg" class="hidden p-3 rounded-xl bg-red-500/20 border border-red-500/40 text-xs text-red-300"></div>
-
-          <button
-            type="submit"
-            id="checkoutSubmitBtn"
-            class="w-full btn-neon py-4 rounded-xl text-base flex items-center justify-center gap-2"
-          >
-            <span>⚡ Gerar Pix Instantâneo / Pagar com Mercado Pago</span>
-          </button>
-
-          <p class="text-[11px] text-center text-slate-400">
-            🔒 Ambiente protegido por criptografia SSL 256-bit. Liberação automática 24 horas por dia, 7 dias por semana.
-          </p>
-        </form>
-      </div>
-
-      <!-- Etapa 2: QR Code Pix Gerado & Opção Cartão -->
-      <div id="checkoutStepPayment" class="hidden space-y-5 text-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 text-xs font-bold">
-          <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-          <span>Aguardando pagamento... A tela atualizará sozinha!</span>
-        </div>
-
-        <div>
-          <h3 class="font-display font-extrabold text-xl text-white">Pedido <span id="payOrderId" class="text-neon">#0000</span> Gerado!</h3>
-          <p class="text-xs text-slate-400 mt-1">Escaneie o QR Code abaixo no aplicativo do seu banco ou copie o código Pix Copia e Cola:</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-2xl inline-block mx-auto shadow-xl">
-          <img id="payQrImage" src="" alt="QR Code Pix Mercado Pago" class="w-56 h-56 object-contain mx-auto" />
-        </div>
-
-        <div class="text-center">
-          <div class="text-xs text-slate-400">Valor exato a pagar:</div>
-          <div class="font-display font-extrabold text-3xl text-neon" id="payAmountDisplay">R$ 0,00</div>
-        </div>
-
-        <!-- Pix Copia e Cola -->
-        <div class="space-y-2 text-left">
-          <label class="block text-xs font-bold uppercase text-slate-300">Código Pix Copia e Cola:</label>
-          <div class="flex gap-2">
-            <input
-              type="text"
-              id="payPixCopyInput"
-              readonly
-              class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-xs font-mono text-slate-300 outline-none"
-            />
-            <button
-              type="button"
-              onclick="copyPixCode()"
-              id="copyPixBtn"
-              class="btn-neon px-4 py-2.5 rounded-xl text-xs whitespace-nowrap"
-            >
-              📋 Copiar Pix
-            </button>
-          </div>
-        </div>
-
-        <!-- Botão Cartão de Crédito / Checkout Pro Mercado Pago -->
-        <div id="payCardContainer" class="hidden pt-2 border-t border-white/10">
-          <a
-            id="payCardLink"
-            href="#"
-            target="_blank"
-            rel="noopener"
-            class="w-full btn-gold py-3 rounded-xl text-sm flex items-center justify-center gap-2"
-          >
-            <span>💳 Pagar com Cartão de Crédito / Saldo Mercado Pago (até 12x)</span>
-          </a>
-        </div>
-
-        <div class="p-3.5 rounded-xl bg-slate-900/90 border border-white/10 text-xs text-slate-300 leading-relaxed">
-          ⚡ <strong>Assim que você confirmar o Pix no celular</strong>, sua Chave de Ativação PRO e o botão de Download aparecerão automaticamente nesta tela e no seu WhatsApp!
-        </div>
-      </div>
-
-      <!-- Etapa 3: Pagamento Aprovado! Entrega da Chave + Download -->
-      <div id="checkoutStepSuccess" class="hidden space-y-5 text-center">
-        <div class="w-16 h-16 rounded-full bg-neon/20 border-2 border-neon text-neon flex items-center justify-center text-3xl mx-auto">
-          ✓
-        </div>
-        <div>
-          <span class="px-3 py-1 rounded-full bg-neon/20 text-neon text-xs font-bold uppercase">Pagamento Confirmado!</span>
-          <h3 class="font-display font-extrabold text-2xl text-white mt-2">Seu Acesso Está Liberado! 🚀</h3>
-          <p class="text-xs text-slate-300 mt-1">Também enviamos uma cópia para o seu WhatsApp e E-mail.</p>
-        </div>
-
-        <!-- Bloco da Chave PRO -->
-        <div id="successKeyContainer" class="p-4 rounded-2xl bg-slate-900 border-2 border-neon/60 space-y-2">
-          <div class="text-xs font-bold uppercase text-gold">🔑 Sua Chave de Ativação Oficial:</div>
-          <div class="font-mono font-extrabold text-lg sm:text-xl text-neon tracking-wider break-all" id="successLicenseKey">
-            DLUZ-PRO-XXXX-XXXX
-          </div>
-          <button
-            type="button"
-            onclick="copyLicenseKey()"
-            class="px-4 py-1.5 rounded-lg bg-neon/20 hover:bg-neon/30 text-neon text-xs font-bold transition"
-          >
-            📋 Copiar Chave PRO
-          </button>
-        </div>
-
-        <!-- Botões de Download -->
-        <div class="space-y-2 text-left">
-          <div class="text-xs font-bold uppercase text-slate-300">📦 Links Oficiais para Download:</div>
-          <div id="successDownloadsList" class="space-y-2"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ==========================================
-       MODAL 3: RESGATAR MINHA CHAVE / CONSULTAR PEDIDO
-       ========================================== -->
-  <div id="lookupModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
-    <div class="bg-[#0B0F19] border border-white/15 rounded-3xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl my-auto">
-      <button onclick="closeLookupModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold">✕</button>
-      <div class="text-xs font-bold uppercase text-neon mb-1">🔑 Central do Cliente DLuz</div>
-      <h2 class="font-display font-extrabold text-2xl text-white mb-2">Resgatar Chave & Downloads</h2>
-      <p class="text-xs sm:text-sm text-slate-400 mb-5">
-        Digite o <strong>E-mail</strong> ou o <strong>WhatsApp</strong> utilizado na compra para visualizar suas chaves de ativação e baixar a versão mais recente dos aplicativos:
-      </p>
-      <form onsubmit="submitOrderLookup(event)" class="flex gap-2 mb-6">
-        <input
-          type="text"
-          id="lookupQueryInput"
-          required
-          placeholder="seuemail@gmail.com ou (11) 99999-9999"
-          class="flex-1 bg-slate-900 border border-slate-700 focus:border-neon rounded-xl px-4 py-3 text-sm text-white outline-none"
-        />
-        <button type="submit" class="btn-neon px-5 py-3 rounded-xl text-sm whitespace-nowrap">
-          Buscar
-        </button>
-      </form>
-      <div id="lookupResults" class="space-y-3 max-h-80 overflow-y-auto"></div>
-    </div>
-  </div>
-
-  <!-- ==========================================
-       MODAL 4: PÁGINAS INSTITUCIONAIS (TERMOS / PRIVACIDADE / REEMBOLSO / CONTATO)
-       ========================================== -->
-  <div id="pageModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
-    <div class="bg-[#0B0F19] border border-white/15 rounded-3xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl my-auto max-h-[90vh] overflow-y-auto">
-      <button onclick="closePageModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold">✕</button>
-      <h2 id="pageModalTitle" class="font-display font-extrabold text-2xl text-white mb-4"></h2>
-      <div id="pageModalBody" class="prose-dluz text-sm"></div>
-    </div>
-  </div>
-
-  <!-- Toast de Notificação -->
-  <div id="toastNotice" class="fixed bottom-5 right-5 z-50 hidden px-4 py-3 rounded-xl bg-neon text-black font-bold text-xs sm:text-sm shadow-2xl"></div>
-
   <script>
     let ALL_PRODUCTS = [];
     let CURRENT_CATEGORY = 'all';
     let SEARCH_QUERY = '';
-    let SELECTED_PRODUCT = null;
-    let APPLIED_COUPON = null;
-    let POLLING_TIMER = null;
+    let ACTIVE_PRODUCT = null;
+    let ACTIVE_COUPON = null;
+    let POLLING_INTERVAL = null;
+    let WHATSAPP_NUMBER = '5563981199852';
 
-    function showToast(msg) {
-      const el = document.getElementById('toastNotice');
-      el.textContent = msg;
-      el.classList.remove('hidden');
-      setTimeout(() => el.classList.add('hidden'), 3200);
+    // Notificação estilo Dynamic Island do iPhone
+    function notifyIsland(text) {
+      const island = document.getElementById('dynamicIsland');
+      const label = document.getElementById('dynamicIslandText');
+      if (!island || !label) return;
+      label.textContent = text;
+      island.classList.add('expanded');
+      setTimeout(() => {
+        island.classList.remove('expanded');
+      }, 2800);
     }
 
     function copyCouponTop(code) {
-      navigator.clipboard.writeText(code);
-      showToast(`🎁 Cupom ${code} copiado! Use no checkout para ganhar 10% OFF!`);
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code);
+      }
+      notifyIsland(`🎁 Cupom ${code} copiado! Use no pagamento para 10% OFF.`);
+    }
+
+    function toggleThemeMode() {
+      const html = document.documentElement;
+      const isDark = html.classList.toggle('dark-mode');
+      localStorage.setItem('dluz_store_theme', isDark ? 'dark' : 'light');
+      document.getElementById('themeToggleBtn').textContent = isDark ? '☀️' : '🌙';
+      notifyIsland(isDark ? '🌙 Modo Titanium Dark ativado' : '☀️ Modo Clean Apple ativado');
+    }
+
+    // Restaurar preferência de tema salva
+    (function restoreSavedTheme() {
+      const saved = localStorage.getItem('dluz_store_theme');
+      if (saved === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        window.addEventListener('DOMContentLoaded', () => {
+          const btn = document.getElementById('themeToggleBtn');
+          if (btn) btn.textContent = '☀️';
+        });
+      }
+    })();
+
+    function getWhatsappUrl(customMessage) {
+      const cleanPhone = String(WHATSAPP_NUMBER || '5563981199852').replace(/\D/g, '');
+      const msg = encodeURIComponent(customMessage || 'Olá DLuz! Estou na Loja Oficial e preciso de suporte.');
+      return `https://wa.me/${cleanPhone}?text=${msg}`;
+    }
+
+    function updateAllWhatsappLinks() {
+      const defaultUrl = getWhatsappUrl('Olá DLuz! Estou na Loja Oficial e preciso de suporte.');
+      ['headerWhatsappLink', 'trustWhatsappLink', 'floatingWhatsappBtn', 'footerWhatsappLink'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.href = defaultUrl;
+      });
     }
 
     function getCategoryLabel(cat) {
       const map = {
-        mobilador: 'Mobilador Zero Delay',
+        mobilador: 'Mobilador Pro',
         emuladores: 'Emuladores & Coop',
-        sensi: 'Sensi & Otimização',
-        criadores: 'Editores IA & Studio',
-        vip: 'Clube VIP'
+        sensi: 'Sensi 1000Hz & FPS',
+        criadores: 'IA Studio & Lives',
+        vip: 'Passaporte VIP'
       };
-      return map[cat] || 'Software Gamer';
+      return map[cat] || 'Software Oficial';
     }
 
-    // Gera arte de capa gamer SVG dinâmica de alto CTR para cada produto
-    function renderProductCoverSvg(p) {
-      const color = p.theme_color || '#39FF14';
-      const iconMap = {
-        gamepad: '🎮',
-        film: '🎬',
-        users: '🚗💥',
-        crosshair: '🎯',
-        shield: '🛡️',
-        cpu: '🚀',
-        sparkles: '✨',
-        trophy: '⚽',
-        video: '🎙️',
-        crown: '👑',
-        joystick: '🕹️',
-        sliders: '⚙️',
-        smartphone: '📱',
-        flame: '🔥',
-        zap: '⚡',
-        rocket: '🚀',
-        'fast-forward': '⚡'
+    function getProductIconGradient(p) {
+      const map = {
+        gamepad: { emoji: '🎮', bg: 'linear-gradient(135deg, #0071E3 0%, #00C7BE 100%)' },
+        film: { emoji: '🎬', bg: 'linear-gradient(135deg, #5856D6 0%, #007AFF 100%)' },
+        users: { emoji: '🚗', bg: 'linear-gradient(135deg, #FF9500 0%, #FF3B30 100%)' },
+        crosshair: { emoji: '🎯', bg: 'linear-gradient(135deg, #FF2D55 0%, #FF3B30 100%)' },
+        shield: { emoji: '🛡️', bg: 'linear-gradient(135deg, #FF9500 0%, #FF5E3A 100%)' },
+        cpu: { emoji: '⚡', bg: 'linear-gradient(135deg, #AF52DE 0%, #5856D6 100%)' },
+        sparkles: { emoji: '✨', bg: 'linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%)' },
+        trophy: { emoji: '⚽', bg: 'linear-gradient(135deg, #34C759 0%, #30B0C7 100%)' },
+        video: { emoji: '🎙️', bg: 'linear-gradient(135deg, #FF2D55 0%, #AF52DE 100%)' },
+        crown: { emoji: '👑', bg: 'linear-gradient(135deg, #FF9500 0%, #FFCC00 100%)' },
+        joystick: { emoji: '🕹️', bg: 'linear-gradient(135deg, #5856D6 0%, #AF52DE 100%)' },
+        sliders: { emoji: '⚙️', bg: 'linear-gradient(135deg, #30B0C7 0%, #007AFF 100%)' },
+        smartphone: { emoji: '📱', bg: 'linear-gradient(135deg, #007AFF 0%, #34C759 100%)' },
+        flame: { emoji: '🔥', bg: 'linear-gradient(135deg, #FF3B30 0%, #FF9500 100%)' },
+        zap: { emoji: '⚡', bg: 'linear-gradient(135deg, #0071E3 0%, #5856D6 100%)' },
+        rocket: { emoji: '🚀', bg: 'linear-gradient(135deg, #FF2D55 0%, #FF9500 100%)' },
+        'fast-forward': { emoji: '⚡', bg: 'linear-gradient(135deg, #34C759 0%, #0071E3 100%)' }
       };
-      const emoji = iconMap[p.icon] || '🎮';
-      const discount = p.regular_price > p.price
-        ? Math.round(((p.regular_price - p.price) / p.regular_price) * 100)
-        : 0;
-
-      return `
-        <div class="relative h-44 w-full overflow-hidden rounded-2xl border border-white/10 p-4 flex flex-col justify-between"
-             style="background: radial-gradient(circle at 80% 20%, ${color}33, transparent 55%), linear-gradient(135deg, #090D16 0%, #111827 100%);">
-          <div class="flex items-center justify-between gap-2 z-10">
-            <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider border"
-                  style="background: ${color}1F; color: ${color}; border-color: ${color}55;">
-              ${p.badge || 'OFICIAL DLUZ'}
-            </span>
-            ${discount > 0 ? `<span class="px-2 py-0.5 rounded-lg bg-red-500/90 text-white text-[11px] font-extrabold">-${discount}% OFF</span>` : ''}
-          </div>
-
-          <div class="flex items-center justify-between gap-3 z-10 my-auto">
-            <div class="text-4xl sm:text-5xl select-none filter drop-shadow-lg">${emoji}</div>
-            <div class="text-right">
-              <div class="text-[10px] font-mono uppercase tracking-widest text-slate-400">${getCategoryLabel(p.category)}</div>
-              <div class="font-display font-extrabold text-sm sm:text-base text-white line-clamp-1">${p.sku || 'DLUZ-PRO'}</div>
-            </div>
-          </div>
-
-          <div class="flex items-center justify-between text-[11px] text-slate-300 z-10 pt-2 border-t border-white/10">
-            <span>⚡ Entrega Instantânea</span>
-            <span class="font-semibold" style="color: ${color};">${p.license_type === 'licensed' ? '🔑 Chave PRO Inclusa' : '📥 Download Direto'}</span>
-          </div>
-        </div>
-      `;
+      return map[p.icon] || { emoji: '🎮', bg: 'linear-gradient(135deg, #0071E3 0%, #00C7BE 100%)' };
     }
 
-    function renderProducts() {
+    function renderCatalogGrid() {
       const grid = document.getElementById('productsGrid');
+      if (!grid) return;
+
       const filtered = ALL_PRODUCTS.filter((p) => {
         const matchCat = CURRENT_CATEGORY === 'all' || p.category === CURRENT_CATEGORY;
         const q = SEARCH_QUERY.toLowerCase();
@@ -768,16 +1739,15 @@
         return matchCat && matchSearch;
       });
 
-      document.getElementById('productsCountLabel').textContent =
-        `Exibindo ${filtered.length} de ${ALL_PRODUCTS.length} produtos oficiais`;
-
       if (filtered.length === 0) {
         grid.innerHTML = `
-          <div class="col-span-full glass-card rounded-3xl p-10 text-center">
-            <div class="text-3xl mb-2">🔍</div>
-            <h3 class="font-display font-bold text-lg text-white">Nenhum produto encontrado para essa busca</h3>
-            <p class="text-xs text-slate-400 mt-1">Tente limpar o filtro ou buscar por outro termo.</p>
-            <button onclick="setCategory('all'); handleSearch('');" class="mt-4 btn-neon px-4 py-2 rounded-xl text-xs">Ver Todos os Produtos</button>
+          <div style="grid-column: 1 / -1; background: var(--bg-secondary); border-radius: 28px; padding: 48px 24px; text-align: center; border: 1px solid var(--border-subtle);">
+            <div style="font-size: 36px; margin-bottom: 10px;">🔍</div>
+            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 6px;">Nenhum aplicativo encontrado</h3>
+            <p style="font-size: 13.5px; color: var(--text-secondary); margin-bottom: 16px;">Tente buscar por outro termo ou exibir todas as categorias.</p>
+            <button type="button" onclick="filterCategory('all'); handleSearchInput('');" class="ios-btn ios-btn-primary">
+              Mostrar Todos os Produtos
+            </button>
           </div>
         `;
         return;
@@ -785,65 +1755,71 @@
 
       grid.innerHTML = filtered
         .map((p) => {
-          const featuresHtml = (p.features || [])
-            .slice(0, 4)
+          const iconData = getProductIconGradient(p);
+          const discount =
+            p.regular_price > p.price
+              ? Math.round(((p.regular_price - p.price) / p.regular_price) * 100)
+              : 0;
+
+          const featuresList = (p.features || [])
+            .slice(0, 3)
             .map(
               (f) => `
-              <li class="flex items-start gap-2 text-xs text-slate-300">
-                <span class="text-neon font-bold mt-0.5">✓</span>
+              <li>
+                <span class="check-circle">✓</span>
                 <span>${f}</span>
               </li>`
             )
             .join('');
 
           return `
-            <article class="glass-card rounded-3xl p-5 flex flex-col justify-between">
+            <article class="ios-product-card" onclick="openSalesPageById(${p.id}, false, event)">
               <div>
-                ${renderProductCoverSvg(p)}
+                <div class="card-top-row">
+                  <div class="ios-squircle-icon" style="background: ${iconData.bg};">
+                    ${iconData.emoji}
+                  </div>
+                  <div class="card-badges">
+                    <span class="pill-badge" style="background: rgba(0, 113, 227, 0.1); color: var(--apple-blue);">
+                      ${p.badge || 'OFICIAL DLUZ'}
+                    </span>
+                    ${discount > 0 ? `<span class="pill-discount">-${discount}% OFF</span>` : ''}
+                  </div>
+                </div>
 
-                <h3 class="font-display font-bold text-lg text-white mt-4 leading-snug hover:text-neon transition cursor-pointer"
-                    onclick="openProductModal(${p.id})">
-                  ${p.name}
-                </h3>
+                <div class="card-category">${getCategoryLabel(p.category)}</div>
+                <h3 class="card-title">${p.name}</h3>
+                <p class="card-desc">${p.short_description || ''}</p>
 
-                <p class="text-xs text-slate-400 mt-2 line-clamp-2 leading-relaxed">
-                  ${p.short_description || ''}
-                </p>
-
-                <ul class="mt-4 space-y-1.5 border-t border-white/10 pt-3">
-                  ${featuresHtml}
+                <ul class="card-features">
+                  ${featuresList}
                 </ul>
               </div>
 
-              <div class="mt-5 pt-4 border-t border-white/10">
-                <div class="flex items-end justify-between mb-3">
-                  <div>
-                    ${
-                      p.regular_price > p.price
-                        ? `<div class="text-xs text-slate-500 line-through">De R$ ${p.regular_price.toFixed(2).replace('.', ',')}</div>`
-                        : `<div class="text-xs text-slate-500">Preço Oficial</div>`
-                    }
-                    <div class="font-display font-extrabold text-2xl text-neon">
-                      R$ ${p.price.toFixed(2).replace('.', ',')}
-                    </div>
-                  </div>
-                  <span class="text-[11px] text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-1 rounded-lg">
-                    Pix ou Cartão
-                  </span>
+              <div class="card-footer">
+                <div>
+                  ${
+                    p.regular_price > p.price
+                      ? `<div class="price-strike">De R$ ${p.regular_price.toFixed(2).replace('.', ',')}</div>`
+                      : `<div style="font-size: 11px; color: var(--text-muted);">Licença Oficial</div>`
+                  }
+                  <div class="price-current">R$ ${p.price.toFixed(2).replace('.', ',')}</div>
                 </div>
 
-                <div class="grid grid-cols-12 gap-2">
+                <div class="card-actions">
                   <button
-                    onclick="openCheckoutById(${p.id})"
-                    class="col-span-8 btn-neon py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-1.5"
-                  >
-                    <span>⚡ Comprar Agora</span>
-                  </button>
-                  <button
-                    onclick="openProductModal(${p.id})"
-                    class="col-span-4 py-3 px-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-xs font-semibold text-white transition"
+                    type="button"
+                    onclick="event.stopPropagation(); openSalesPageById(${p.id}, false)"
+                    class="ios-btn ios-btn-secondary ios-btn-sm"
                   >
                     Detalhes
+                  </button>
+                  <button
+                    type="button"
+                    onclick="event.stopPropagation(); openSalesPageById(${p.id}, true)"
+                    class="ios-btn ios-btn-primary ios-btn-sm"
+                  >
+                    Comprar
                   </button>
                 </div>
               </div>
@@ -853,121 +1829,141 @@
         .join('');
     }
 
-    function setCategory(cat) {
+    function filterCategory(cat) {
       CURRENT_CATEGORY = cat;
-      document.querySelectorAll('.cat-btn').forEach((btn) => {
-        if (btn.dataset.cat === cat) {
-          btn.className = 'cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-neon text-black whitespace-nowrap transition';
-        } else {
-          btn.className = 'cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 whitespace-nowrap transition';
-        }
+      document.querySelectorAll('.seg-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
       });
-      renderProducts();
+      renderCatalogGrid();
     }
 
-    function handleSearch(val) {
-      SEARCH_QUERY = val.trim();
-      renderProducts();
+    function handleSearchInput(val) {
+      SEARCH_QUERY = String(val || '').trim();
+      renderCatalogGrid();
     }
 
-    function openProductModal(productId) {
-      const p = ALL_PRODUCTS.find((item) => Number(item.id) === Number(productId));
-      if (!p) return;
+    // ==========================================
+    // NAVEGAÇÃO PARA A PÁGINA DE VENDAS COMPLETA (/produto/:slug)
+    // ==========================================
+    function openSalesPageById(productId, scrollToCheckout = false, ev = null) {
+      if (ev) ev.preventDefault();
+      const product = ALL_PRODUCTS.find((item) => Number(item.id) === Number(productId));
+      if (!product) return;
 
-      history.pushState({ productSlug: p.slug }, p.name, `/produto/${p.slug}`);
+      ACTIVE_PRODUCT = product;
+      ACTIVE_COUPON = null;
+      if (POLLING_INTERVAL) clearInterval(POLLING_INTERVAL);
 
-      const modal = document.getElementById('productModal');
-      const content = document.getElementById('productModalContent');
+      // Atualizar URL real no navegador
+      try {
+        history.pushState({ productId: product.id, slug: product.slug }, product.name, `/produto/${product.slug}`);
+      } catch {}
 
-      const featuresList = (p.features || [])
-        .map((f) => `<li class="flex items-center gap-2 text-xs sm:text-sm text-slate-200"><span class="text-neon font-bold">✓</span> ${f}</li>`)
+      // Preencher dados da Página de Vendas
+      const iconData = getProductIconGradient(product);
+      const appIcon = document.getElementById('salesAppIcon');
+      appIcon.style.background = iconData.bg;
+      appIcon.textContent = iconData.emoji;
+
+      document.getElementById('salesBadge').textContent = product.badge || 'OFICIAL DLUZ';
+      const discount =
+        product.regular_price > product.price
+          ? Math.round(((product.regular_price - product.price) / product.regular_price) * 100)
+          : 0;
+      const discEl = document.getElementById('salesDiscountBadge');
+      if (discount > 0) {
+        discEl.textContent = `ECONOMIZE ${discount}%`;
+        discEl.classList.remove('hidden');
+      } else {
+        discEl.classList.add('hidden');
+      }
+
+      document.getElementById('salesTitle').textContent = product.name;
+      document.getElementById('salesShortDesc').textContent = product.short_description || '';
+
+      // Bento de Features
+      const featuresBento = document.getElementById('salesFeaturesBento');
+      featuresBento.innerHTML = (product.features || [])
+        .map(
+          (f) => `
+          <div class="sales-bento-item">
+            <span class="check-circle" style="margin-top: 2px;">✓</span>
+            <span style="font-size: 13.5px; font-weight: 600; color: var(--text-primary);">${f}</span>
+          </div>`
+        )
         .join('');
 
-      content.innerHTML = `
-        <div class="space-y-5">
-          ${renderProductCoverSvg(p)}
-          <div>
-            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white">${p.name}</h2>
-            <p class="text-sm text-slate-300 mt-2">${p.short_description || ''}</p>
-          </div>
+      document.getElementById('salesFullDescription').innerHTML =
+        product.description || `<p>${product.short_description || ''}</p>`;
 
-          <div class="p-4 rounded-2xl bg-slate-900/90 border border-neon/30 flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <div class="text-xs text-slate-400 line-through">De R$ ${p.regular_price.toFixed(2).replace('.', ',')}</div>
-              <div class="font-display font-extrabold text-3xl text-neon">Por R$ ${p.price.toFixed(2).replace('.', ',')}</div>
-              <div class="text-xs text-emerald-400 mt-0.5">⚡ Liberação Imediata no WhatsApp, E-mail e na Tela</div>
-            </div>
-            <button
-              onclick="closeProductModal(); openCheckoutById(${p.id});"
-              class="btn-neon px-6 py-4 rounded-xl text-sm sm:text-base"
-            >
-              ⚡ Comprar Agora com Pix / Cartão
-            </button>
-          </div>
+      // Links do WhatsApp contextualizados com o nome do produto
+      const waQuestionUrl = getWhatsappUrl(
+        `Olá DLuz! Estou na página de vendas do produto "${product.name}" e gostaria de tirar uma dúvida.`
+      );
+      document.getElementById('salesTopWhatsappBtn').href = waQuestionUrl;
+      document.getElementById('salesBottomWhatsappBtn').href = waQuestionUrl;
+      document.getElementById('payWhatsappSupportBtn').href = getWhatsappUrl(
+        `Olá DLuz! Acabei de gerar um pedido para o produto "${product.name}" na Loja Oficial.`
+      );
 
-          ${
-            featuresList
-              ? `<div class="p-4 rounded-2xl bg-slate-900/60 border border-white/10">
-                   <h4 class="font-display font-bold text-sm uppercase text-gold mb-2">Destaques Inclusos:</h4>
-                   <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">${featuresList}</ul>
-                 </div>`
-              : ''
-          }
+      // Preencher Painel de Checkout na Direita
+      resetCheckoutToForm();
+      document.getElementById('chkProductId').value = product.id;
+      document.getElementById('chkProductName').textContent = product.name;
+      document.getElementById('chkOldPrice').textContent = `R$ ${product.regular_price.toFixed(2).replace('.', ',')}`;
+      document.getElementById('chkFinalPrice').textContent = `R$ ${product.price.toFixed(2).replace('.', ',')}`;
+      document.getElementById('chkCouponInput').value = '';
+      document.getElementById('chkCouponMsg').classList.add('hidden');
 
-          <div class="prose-dluz text-sm border-t border-white/10 pt-4">
-            ${p.description || ''}
-          </div>
-        </div>
-      `;
+      // Alternar Visibilidade: esconder Home e exibir Página de Vendas
+      document.getElementById('storeHomeView').classList.add('hidden');
+      document.getElementById('productSalesView').classList.remove('hidden');
 
-      modal.classList.remove('hidden');
+      if (scrollToCheckout) {
+        setTimeout(() => {
+          scrollToCheckoutPanel();
+        }, 80);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
 
-    function closeProductModal() {
-      document.getElementById('productModal').classList.add('hidden');
+    function scrollToCheckoutPanel() {
+      const panel = document.getElementById('checkoutPanelAnchor');
+      if (panel) {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const nameInput = document.getElementById('chkBuyerName');
+        if (nameInput) setTimeout(() => nameInput.focus(), 350);
+      }
     }
 
-    function openProductBySlug(e, slug) {
-      if (e) e.preventDefault();
-      const p = ALL_PRODUCTS.find((item) => item.slug === slug || item.slug.includes(slug));
-      if (p) openProductModal(p.id);
+    function goHome(ev) {
+      if (ev) ev.preventDefault();
+      if (POLLING_INTERVAL) clearInterval(POLLING_INTERVAL);
+      document.getElementById('productSalesView').classList.add('hidden');
+      document.getElementById('storeHomeView').classList.remove('hidden');
+      closeLookupModal();
+      closePageModal();
+      try {
+        history.pushState({}, 'Loja Oficial DLuz', '/');
+      } catch {}
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetCheckoutToForm() {
+      document.getElementById('checkoutFormStep').classList.remove('hidden');
+      document.getElementById('checkoutPayStep').classList.add('hidden');
+      document.getElementById('checkoutSuccessStep').classList.add('hidden');
+      document.getElementById('chkErrorBox').classList.add('hidden');
     }
 
     // ==========================================
-    // FLUXO DE CHECKOUT 1-STEP MERCADO PAGO
+    // CUPOM E FINALIZAÇÃO DE COMPRA MERCADO PAGO
     // ==========================================
-    function openCheckoutById(productId) {
-      const p = ALL_PRODUCTS.find((item) => Number(item.id) === Number(productId));
-      if (!p) return;
-
-      SELECTED_PRODUCT = p;
-      APPLIED_COUPON = null;
-      if (POLLING_TIMER) clearInterval(POLLING_TIMER);
-
-      document.getElementById('checkoutStepForm').classList.remove('hidden');
-      document.getElementById('checkoutStepPayment').classList.add('hidden');
-      document.getElementById('checkoutStepSuccess').classList.add('hidden');
-      document.getElementById('checkoutErrorMsg').classList.add('hidden');
-      document.getElementById('couponFeedback').classList.add('hidden');
-      document.getElementById('buyerCoupon').value = '';
-
-      document.getElementById('checkoutProductId').value = p.id;
-      document.getElementById('checkoutSummaryName').textContent = p.name;
-      document.getElementById('checkoutRegularPrice').textContent = `R$ ${p.regular_price.toFixed(2).replace('.', ',')}`;
-      document.getElementById('checkoutFinalPrice').textContent = `R$ ${p.price.toFixed(2).replace('.', ',')}`;
-
-      document.getElementById('checkoutModal').classList.remove('hidden');
-    }
-
-    function closeCheckoutModal() {
-      if (POLLING_TIMER) clearInterval(POLLING_TIMER);
-      document.getElementById('checkoutModal').classList.add('hidden');
-    }
-
-    async function applyCouponCode() {
-      if (!SELECTED_PRODUCT) return;
-      const code = document.getElementById('buyerCoupon').value.trim().toUpperCase();
-      const fb = document.getElementById('couponFeedback');
+    async function applyCheckoutCoupon() {
+      if (!ACTIVE_PRODUCT) return;
+      const code = document.getElementById('chkCouponInput').value.trim().toUpperCase();
+      const msgEl = document.getElementById('chkCouponMsg');
       if (!code) return;
 
       try {
@@ -977,51 +1973,52 @@
           body: JSON.stringify({ code })
         });
         const data = await res.json();
-        fb.classList.remove('hidden');
+        msgEl.classList.remove('hidden');
 
         if (!res.ok || !data.valid) {
-          APPLIED_COUPON = null;
-          fb.className = 'text-xs mt-1 text-red-400';
-          fb.textContent = data.message || 'Cupom inválido.';
-          document.getElementById('checkoutFinalPrice').textContent = `R$ ${SELECTED_PRODUCT.price.toFixed(2).replace('.', ',')}`;
+          ACTIVE_COUPON = null;
+          msgEl.style.color = 'var(--apple-red)';
+          msgEl.textContent = data.message || 'Cupom inválido ou expirado.';
+          document.getElementById('chkFinalPrice').textContent = `R$ ${ACTIVE_PRODUCT.price.toFixed(2).replace('.', ',')}`;
           return;
         }
 
-        APPLIED_COUPON = data;
-        let finalVal = SELECTED_PRODUCT.price;
+        ACTIVE_COUPON = data;
+        let finalPrice = ACTIVE_PRODUCT.price;
         if (data.discount_percent > 0) {
-          finalVal = finalVal - (finalVal * data.discount_percent) / 100;
+          finalPrice -= (finalPrice * data.discount_percent) / 100;
         } else if (data.discount_fixed > 0) {
-          finalVal = finalVal - data.discount_fixed;
+          finalPrice -= data.discount_fixed;
         }
-        finalVal = Math.max(1, finalVal);
+        finalPrice = Math.max(1, finalPrice);
 
-        fb.className = 'text-xs mt-1 text-neon font-semibold';
-        fb.textContent = `✓ Cupom ${data.code} aplicado com sucesso!`;
-        document.getElementById('checkoutFinalPrice').textContent = `R$ ${finalVal.toFixed(2).replace('.', ',')}`;
-      } catch (err) {
-        fb.classList.remove('hidden');
-        fb.className = 'text-xs mt-1 text-red-400';
-        fb.textContent = 'Erro ao validar cupom.';
+        msgEl.style.color = '#1FA834';
+        msgEl.textContent = `✓ Cupom ${data.code} aplicado! Desconto ativado.`;
+        document.getElementById('chkFinalPrice').textContent = `R$ ${finalPrice.toFixed(2).replace('.', ',')}`;
+        notifyIsland(`🎉 Cupom ${data.code} aplicado com sucesso!`);
+      } catch {
+        msgEl.classList.remove('hidden');
+        msgEl.style.color = 'var(--apple-red)';
+        msgEl.textContent = 'Não foi possível validar o cupom.';
       }
     }
 
-    async function submitCheckout(e) {
-      e.preventDefault();
-      const btn = document.getElementById('checkoutSubmitBtn');
-      const errBox = document.getElementById('checkoutErrorMsg');
+    async function handleCheckoutSubmit(ev) {
+      ev.preventDefault();
+      const btn = document.getElementById('chkSubmitBtn');
+      const errBox = document.getElementById('chkErrorBox');
       errBox.classList.add('hidden');
 
       const payload = {
-        product_id: Number(document.getElementById('checkoutProductId').value),
-        first_name: document.getElementById('buyerName').value.trim(),
-        email: document.getElementById('buyerEmail').value.trim(),
-        phone: document.getElementById('buyerPhone').value.trim(),
-        coupon_code: APPLIED_COUPON ? APPLIED_COUPON.code : document.getElementById('buyerCoupon').value.trim()
+        product_id: Number(document.getElementById('chkProductId').value),
+        first_name: document.getElementById('chkBuyerName').value.trim(),
+        email: document.getElementById('chkBuyerEmail').value.trim(),
+        phone: document.getElementById('chkBuyerPhone').value.trim(),
+        coupon_code: ACTIVE_COUPON ? ACTIVE_COUPON.code : document.getElementById('chkCouponInput').value.trim()
       };
 
       btn.disabled = true;
-      btn.innerHTML = '<span>⏳ Gerando Pagamento Seguro no Mercado Pago...</span>';
+      btn.innerHTML = '<span>⏳ Gerando Pix & Checkout Mercado Pago...</span>';
 
       try {
         const res = await fetch('/api/checkout', {
@@ -1032,105 +2029,109 @@
         const data = await res.json();
 
         if (!res.ok || !data.success) {
-          throw new Error(data.error || 'Falha ao iniciar checkout.');
+          throw new Error(data.error || 'Erro ao gerar pagamento.');
         }
 
         const order = data.order;
-        document.getElementById('checkoutStepForm').classList.add('hidden');
-        document.getElementById('checkoutStepPayment').classList.remove('hidden');
+        document.getElementById('checkoutFormStep').classList.add('hidden');
+        document.getElementById('checkoutPayStep').classList.remove('hidden');
 
-        document.getElementById('payOrderId').textContent = `#${order.id}`;
-        document.getElementById('payAmountDisplay').textContent = `R$ ${Number(order.total).toFixed(2).replace('.', ',')}`;
-        document.getElementById('payQrImage').src = order.pix_qr_base64;
-        document.getElementById('payPixCopyInput').value = order.pix_qr_code;
+        document.getElementById('payOrderNum').textContent = `#${order.id}`;
+        document.getElementById('payTotalText').textContent = `R$ ${Number(order.total).toFixed(2).replace('.', ',')}`;
+        document.getElementById('payQrImg').src = order.pix_qr_base64;
+        document.getElementById('payPixCodeInput').value = order.pix_qr_code;
 
-        const cardContainer = document.getElementById('payCardContainer');
-        const cardLink = document.getElementById('payCardLink');
+        const cardWrap = document.getElementById('payCardWrap');
+        const cardBtn = document.getElementById('payCardUrlBtn');
         if (order.checkout_url) {
-          cardLink.href = order.checkout_url;
-          cardContainer.classList.remove('hidden');
+          cardBtn.href = order.checkout_url;
+          cardWrap.classList.remove('hidden');
         } else {
-          cardContainer.classList.add('hidden');
+          cardWrap.classList.add('hidden');
         }
 
-        startOrderPolling(order.order_key);
+        notifyIsland(`⚡ Pedido #${order.id} gerado! Escaneie o QR Code Pix.`);
+        startOrderStatusPolling(order.order_key);
       } catch (err) {
         errBox.textContent = err.message;
         errBox.classList.remove('hidden');
       } finally {
         btn.disabled = false;
-        btn.innerHTML = '<span>⚡ Gerar Pix Instantâneo / Pagar com Mercado Pago</span>';
+        btn.innerHTML = '<span>⚡ Comprar Agora • Pix ou Cartão</span>';
       }
     }
 
-    function copyPixCode() {
-      const input = document.getElementById('payPixCopyInput');
+    function copyPixToClipboard() {
+      const input = document.getElementById('payPixCodeInput');
+      if (!input) return;
       navigator.clipboard.writeText(input.value);
-      const btn = document.getElementById('copyPixBtn');
+      const btn = document.getElementById('copyPixCodeBtn');
       btn.textContent = '✓ Copiado!';
-      showToast('📋 Código Pix Copia e Cola copiado! Cole no app do seu banco.');
-      setTimeout(() => (btn.textContent = '📋 Copiar Pix'), 2500);
+      notifyIsland('📋 Código Pix Copia e Cola copiado!');
+      setTimeout(() => {
+        btn.textContent = '📋 Copiar Pix';
+      }, 2500);
     }
 
-    function startOrderPolling(orderKey) {
-      if (POLLING_TIMER) clearInterval(POLLING_TIMER);
-      POLLING_TIMER = setInterval(async () => {
+    function startOrderStatusPolling(orderKey) {
+      if (POLLING_INTERVAL) clearInterval(POLLING_INTERVAL);
+      POLLING_INTERVAL = setInterval(async () => {
         try {
           const res = await fetch(`/api/orders/status/${orderKey}`);
           if (!res.ok) return;
           const data = await res.json();
           if (data.status === 'completed') {
-            clearInterval(POLLING_TIMER);
-            showApprovedOrderScreen(data);
+            clearInterval(POLLING_INTERVAL);
+            renderApprovedOrderStep(data);
           }
         } catch {}
       }, 3000);
     }
 
-    function showApprovedOrderScreen(orderData) {
-      document.getElementById('checkoutStepForm').classList.add('hidden');
-      document.getElementById('checkoutStepPayment').classList.add('hidden');
-      document.getElementById('checkoutStepSuccess').classList.remove('hidden');
+    function renderApprovedOrderStep(orderData) {
+      document.getElementById('checkoutFormStep').classList.add('hidden');
+      document.getElementById('checkoutPayStep').classList.add('hidden');
+      document.getElementById('checkoutSuccessStep').classList.remove('hidden');
+      notifyIsland('🎉 Pagamento confirmado! Sua Chave PRO está liberada!');
 
-      const keyContainer = document.getElementById('successKeyContainer');
-      const keyEl = document.getElementById('successLicenseKey');
+      const keyBox = document.getElementById('succKeyBox');
+      const keyText = document.getElementById('succLicenseKey');
       if (orderData.license_key && orderData.license_key !== 'PRODUTO-LIBERADO-SEM-CHAVE') {
-        keyContainer.classList.remove('hidden');
-        keyEl.textContent = orderData.license_key;
+        keyBox.classList.remove('hidden');
+        keyText.textContent = orderData.license_key;
       } else {
-        keyContainer.classList.add('hidden');
+        keyBox.classList.add('hidden');
       }
 
-      const dlContainer = document.getElementById('successDownloadsList');
+      const dlBox = document.getElementById('succDownloadsBox');
       const dls = orderData.downloads || [];
       if (dls.length > 0) {
-        dlContainer.innerHTML = dls
+        dlBox.innerHTML = dls
           .map(
             (d) => `
-            <a href="${d.file}" target="_blank" rel="noopener"
-               class="w-full btn-neon py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-between">
+            <a href="${d.file}" target="_blank" rel="noopener" class="ios-btn ios-btn-primary" style="width: 100%; justify-content: space-between;">
               <span>📥 ${d.name}</span>
-              <span>Baixar Agora →</span>
+              <span>Baixar ›</span>
             </a>`
           )
           .join('');
       } else {
-        dlContainer.innerHTML = `
-          <div class="p-3 rounded-xl bg-slate-900 border border-white/10 text-xs text-slate-300">
-            As instruções completas e o acesso foram enviados para o seu WhatsApp e E-mail!
+        dlBox.innerHTML = `
+          <div style="padding: 12px; border-radius: 12px; background: var(--bg-primary); font-size: 12.5px; color: var(--text-secondary);">
+            Os dados de acesso foram enviados diretamente para o seu WhatsApp e E-mail!
           </div>
         `;
       }
     }
 
-    function copyLicenseKey() {
-      const k = document.getElementById('successLicenseKey').textContent.trim();
-      navigator.clipboard.writeText(k);
-      showToast('🔑 Chave PRO copiada para a área de transferência!');
+    function copyApprovedKey() {
+      const key = document.getElementById('succLicenseKey').textContent.trim();
+      navigator.clipboard.writeText(key);
+      notifyIsland('🔑 Chave PRO copiada com sucesso!');
     }
 
     // ==========================================
-    // PORTAL DE RESGATE DE CHAVES & DOWNLOADS
+    // MODAL DE RESGATE DE CHAVE & PEDIDOS
     // ==========================================
     function openLookupModal() {
       document.getElementById('lookupModal').classList.remove('hidden');
@@ -1140,11 +2141,11 @@
       document.getElementById('lookupModal').classList.add('hidden');
     }
 
-    async function submitOrderLookup(e) {
-      e.preventDefault();
+    async function submitOrderLookup(ev) {
+      ev.preventDefault();
       const q = document.getElementById('lookupQueryInput').value.trim();
       const box = document.getElementById('lookupResults');
-      box.innerHTML = '<div class="text-xs text-slate-400">Buscando seus pedidos...</div>';
+      box.innerHTML = '<div style="font-size: 13px; color: var(--text-muted);">Buscando seus pedidos...</div>';
 
       try {
         const res = await fetch('/api/orders/lookup', {
@@ -1153,12 +2154,12 @@
           body: JSON.stringify({ query: q })
         });
         const data = await res.json();
-        if (!res.ok) throw new Error(data.error || 'Erro na busca');
+        if (!res.ok) throw new Error(data.error || 'Erro ao consultar');
 
         if (!data.orders || data.orders.length === 0) {
           box.innerHTML = `
-            <div class="p-4 rounded-2xl bg-slate-900 border border-white/10 text-xs text-slate-300">
-              Nenhum pedido encontrado para <strong>${q}</strong>. Verifique se digitou o mesmo e-mail ou telefone da compra.
+            <div style="padding: 16px; border-radius: 16px; background: var(--bg-primary); font-size: 13px; color: var(--text-secondary);">
+              Nenhum pedido encontrado para <strong>${q}</strong>. Caso precise de ajuda, chame no nosso <a href="${getWhatsappUrl('Olá DLuz! Preciso recuperar minha chave de ativação.')}" target="_blank" style="color: var(--apple-blue); font-weight: 700;">WhatsApp de Suporte</a>.
             </div>
           `;
           return;
@@ -1170,23 +2171,23 @@
             const dls = (o.downloads || [])
               .map(
                 (d) =>
-                  `<a href="${d.file}" target="_blank" class="inline-block mt-2 mr-2 px-3 py-1.5 rounded-lg bg-neon text-black font-bold text-xs">📥 ${d.name}</a>`
+                  `<a href="${d.file}" target="_blank" class="ios-btn ios-btn-primary ios-btn-sm" style="margin-top: 8px; margin-right: 6px;">📥 ${d.name}</a>`
               )
               .join('');
 
             return `
-              <div class="p-4 rounded-2xl bg-slate-900 border ${isPaid ? 'border-neon/40' : 'border-white/10'} space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="font-display font-bold text-white text-sm">Pedido #${o.id} — ${o.product_name}</span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase ${
-                    isPaid ? 'bg-neon/20 text-neon' : 'bg-amber-500/20 text-amber-300'
-                  }">${isPaid ? 'Aprovado' : 'Aguardando Pagamento'}</span>
+              <div style="padding: 16px; border-radius: 18px; background: var(--bg-primary); border: 1px solid var(--border-subtle);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <strong style="font-size: 14px;">Pedido #${o.id} — ${o.product_name}</strong>
+                  <span class="pill-badge" style="background: ${isPaid ? 'rgba(40,205,65,0.15)' : 'rgba(255,149,0,0.15)'}; color: ${isPaid ? '#1FA834' : '#D97706'};">
+                    ${isPaid ? 'Aprovado' : 'Pendente'}
+                  </span>
                 </div>
                 ${
                   isPaid && o.license_key && o.license_key !== 'PRODUTO-LIBERADO-SEM-CHAVE'
-                    ? `<div class="p-2.5 rounded-xl bg-black/50 border border-white/10 flex items-center justify-between">
-                         <code class="text-xs text-neon font-bold">${o.license_key}</code>
-                         <button onclick="navigator.clipboard.writeText('${o.license_key}'); showToast('Chave copiada!');" class="text-[11px] text-gold font-bold underline">Copiar</button>
+                    ? `<div style="display: flex; align-items: center; justify-content: space-between; background: var(--bg-secondary); padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border-subtle);">
+                         <code style="font-weight: 800; color: var(--apple-blue); font-size: 13px;">${o.license_key}</code>
+                         <button type="button" onclick="navigator.clipboard.writeText('${o.license_key}'); notifyIsland('🔑 Chave copiada!');" class="ios-btn ios-btn-secondary ios-btn-sm">Copiar</button>
                        </div>`
                     : ''
                 }
@@ -1196,17 +2197,17 @@
           })
           .join('');
       } catch (err) {
-        box.innerHTML = `<div class="text-xs text-red-400">${err.message}</div>`;
+        box.innerHTML = `<div style="color: var(--apple-red); font-size: 13px;">${err.message}</div>`;
       }
     }
 
     // ==========================================
     // PÁGINAS INSTITUCIONAIS
     // ==========================================
-    async function openPageModal(e, slug) {
-      if (e) e.preventDefault();
+    async function openPageModal(ev, slug) {
+      if (ev) ev.preventDefault();
       try {
-        const cleanSlug = slug.replace(/-2$/, '');
+        const cleanSlug = String(slug || '').replace(/-2$/, '');
         const res = await fetch(`/api/pages/${cleanSlug}`);
         if (!res.ok) return;
         const page = await res.json();
@@ -1220,66 +2221,70 @@
       document.getElementById('pageModal').classList.add('hidden');
     }
 
-    function navigateHome(e) {
-      if (e) e.preventDefault();
-      closeProductModal();
-      closeCheckoutModal();
-      closeLookupModal();
-      closePageModal();
-      history.pushState({}, 'Loja Oficial DLuz Games', '/');
+    // Suporte ao botão Voltar do navegador
+    window.addEventListener('popstate', () => {
+      handleRouteOnLoad();
+    });
+
+    function handleRouteOnLoad() {
+      const params = new URLSearchParams(window.location.search);
+      const addToCartId = params.get('add-to-cart');
+      if (addToCartId && /^\d+$/.test(addToCartId)) {
+        openSalesPageById(Number(addToCartId), true);
+        return;
+      }
+
+      const pathName = window.location.pathname.replace(/\/$/, '');
+      if (!pathName || pathName === '') {
+        document.getElementById('productSalesView').classList.add('hidden');
+        document.getElementById('storeHomeView').classList.remove('hidden');
+        return;
+      }
+
+      if (pathName.startsWith('/produto/')) {
+        const slug = decodeURIComponent(pathName.replace('/produto/', ''));
+        const found = ALL_PRODUCTS.find(
+          (p) => p.slug === slug || p.slug.includes(slug) || slug.includes(p.slug)
+        );
+        if (found) {
+          openSalesPageById(found.id, false);
+          return;
+        }
+      }
+
+      if (pathName === '/consultar-pedido' || pathName === '/minha-conta') {
+        openLookupModal();
+        return;
+      }
+
+      const instPages = [
+        'termos-de-servico',
+        'termos-de-servico-2',
+        'politica-de-privacidade',
+        'politica-de-privacidade-2',
+        'politica-de-reembolso',
+        'contato',
+        'contato-2'
+      ];
+      const cleanPath = pathName.replace(/^\//, '');
+      if (instPages.includes(cleanPath)) {
+        openPageModal(null, cleanPath);
+      }
     }
 
-    // ==========================================
-    // INICIALIZAÇÃO E ROTEAMENTO DE LINKS ANTIGOS
-    // ==========================================
     async function initStore() {
       try {
         const res = await fetch('/api/products');
         const data = await res.json();
         ALL_PRODUCTS = data.products || [];
-        renderProducts();
-
-        // Verificar parâmetros e rotas legadas do WooCommerce:
-        // 1. ?add-to-cart=2755
-        const params = new URLSearchParams(window.location.search);
-        const addToCartId = params.get('add-to-cart');
-        if (addToCartId && /^\d+$/.test(addToCartId)) {
-          openCheckoutById(Number(addToCartId));
-          return;
+        if (data.whatsapp_support) {
+          WHATSAPP_NUMBER = data.whatsapp_support;
         }
-
-        const pathName = window.location.pathname.replace(/\/$/, '');
-
-        // 2. /produto/<slug>
-        if (pathName.startsWith('/produto/')) {
-          const slug = decodeURIComponent(pathName.replace('/produto/', ''));
-          const found = ALL_PRODUCTS.find(
-            (p) => p.slug === slug || p.slug.includes(slug) || slug.includes(p.slug)
-          );
-          if (found) openProductModal(found.id);
-        }
-
-        // 3. /consultar-pedido ou /minha-conta
-        if (pathName === '/consultar-pedido' || pathName === '/minha-conta') {
-          openLookupModal();
-        }
-
-        // 4. Páginas institucionais diretas
-        const instPages = [
-          'termos-de-servico',
-          'termos-de-servico-2',
-          'politica-de-privacidade',
-          'politica-de-privacidade-2',
-          'politica-de-reembolso',
-          'contato',
-          'contato-2'
-        ];
-        const cleanPath = pathName.replace(/^\//, '');
-        if (instPages.includes(cleanPath)) {
-          openPageModal(null, cleanPath);
-        }
+        updateAllWhatsappLinks();
+        renderCatalogGrid();
+        handleRouteOnLoad();
       } catch (err) {
-        console.error('Erro ao carregar loja:', err);
+        console.error('Erro ao inicializar loja:', err);
       }
     }
 

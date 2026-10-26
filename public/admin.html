@@ -207,8 +207,18 @@
             </div>
 
             <div class="border-t border-white/10 pt-4">
-              <h3 class="font-display font-bold text-sm text-gold mb-3"> contingência Pix & Servidor de Licenças</h3>
+              <h3 class="font-display font-bold text-sm text-gold mb-3">💬 WhatsApp de Atendimento & Contingência Pix</h3>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-300 mb-1">WhatsApp de Suporte (com DDI e DDD)</label>
+                  <input
+                    type="text"
+                    id="setWhatsappSupport"
+                    placeholder="5563981199852"
+                    class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white outline-none"
+                  />
+                  <p class="text-[11px] text-slate-400 mt-1">Número oficial onde os clientes abrem chat de suporte.</p>
+                </div>
                 <div>
                   <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Chave Pix Reserva (EMV BRCode)</label>
                   <input
@@ -217,7 +227,7 @@
                     class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white outline-none"
                   />
                 </div>
-                <div>
+                <div class="sm:col-span-2">
                   <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Nova Senha do Painel Admin (Opcional)</label>
                   <input
                     type="password"
@@ -308,6 +318,7 @@
           : 'Nenhum Access Token salvo ainda.';
         document.getElementById('setMpPublicKey').value = s.mp_public_key || '';
         document.getElementById('setPixFallbackKey').value = s.pix_fallback_key || 'duilioluzefo@gmail.com';
+        document.getElementById('setWhatsappSupport').value = s.whatsapp_support || '5563981199852';
       } catch (err) {
         console.error(err);
       }
@@ -434,9 +445,9 @@
       e.preventDefault();
       const fb = document.getElementById('settingsFeedback');
       const payload = {
-        mp_Public_key: document.getElementById('setMpPublicKey').value.trim(),
         mp_public_key: document.getElementById('setMpPublicKey').value.trim(),
-        pix_fallback_key: document.getElementById('setPixFallbackKey').value.trim()
+        pix_fallback_key: document.getElementById('setPixFallbackKey').value.trim(),
+        whatsapp_support: document.getElementById('setWhatsappSupport').value.trim()
       };
 
       const tokenVal = document.getElementById('setMpAccessToken').value.trim();
