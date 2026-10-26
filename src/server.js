@@ -425,6 +425,41 @@ app.get("/api/pages/:slug", async (req, res) => {
   }
 });
 
+// 8. Download Seguro de Arquivos Privados (GitHub Releases Proxy)
+const GITHUB_PAT = process.env.GITHUB_PAT_TOKEN || "";
+
+app.get(["/download/orbix", "/download/dluz-orbix", "/download/dluz-orbix-setup"], async (req, res) => {
+  try {
+    const token = GITHUB_PAT || (await getSetting("github_pat_token", ""));
+    const assetId = "679597957"; // DLuz-Orbix-Setup-Leve.zip no repo privado DLuz-Orbix
+    const ghRes = await fetch(`https://api.github.com/repos/dluzgames/DLuz-Orbix/releases/assets/${assetId}`, {
+      headers: {
+        ...(token ? { "Authorization": `token ${token}` } : {}),
+        "User-Agent": "DLuzStore-Proxy",
+        "Accept": "application/octet-stream"
+      },
+      redirect: "manual"
+    });
+
+    const location = ghRes.headers.get("location");
+    if (location) {
+      return res.redirect(302, location);
+    }
+
+    if (!ghRes.ok) {
+      return res.status(502).send("Erro ao obter link de download do GitHub.");
+    }
+
+    res.setHeader("Content-Disposition", 'attachment; filename="DLuz-Orbix-Setup-Leve.zip"');
+    res.setHeader("Content-Type", "application/zip");
+    const { Readable } = require("stream");
+    Readable.fromWeb(ghRes.body).pipe(res);
+  } catch (err) {
+    console.error("Erro no download proxy:", err);
+    res.status(500).send("Erro interno ao processar download.");
+  }
+});
+
 // ==========================================
 // WEBHOOK OFICIAL MERCADO PAGO (SEGURANÇA MÁXIMA)
 // ==========================================

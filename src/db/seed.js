@@ -5,6 +5,63 @@
 
 const INITIAL_PRODUCTS = [
   {
+    id: 2950,
+    image_url: "/images/products/dluz-orbix.jpg",
+    name: "DLuz Orbix Setup Leve — Mobilador 120 FPS Híbrido & Emulador Orbion (Licença Vitalícia)",
+    slug: "dluz-orbix-setup-leve",
+    sku: "DLUZ-ORBIX-SETUP",
+    category: "mobilador",
+    badge: "⚡ NOVO • 120 FPS CRAVADO",
+    theme_color: "#0284C7",
+    icon: "gamepad",
+    regular_price: 39.90,
+    sale_price: 24.90,
+    price: 24.90,
+    status: "publish",
+    featured: 1,
+    license_type: "licensed",
+    short_description: "O novo Mobilador Orbix Híbrido com 120 FPS cravados no celular e PC, motor Scrcpy 5.0.1 Zero Delay, mapeamento idêntico ao BlueStacks, suporte a FSR3, DLSS, NIS (14ms de latência) e compatibilidade com Android 17.",
+    description: `
+      <h3>⚡ NOVO MOBILADOR ORBIX: 120 FPS CRAVADO NO CELULAR E BLUESTACKS HÍBRIDO!</h3>
+      <p>O <strong>DLuz Orbix Setup Leve</strong> é o mobilador híbrido definitivo Level Extreme! Combina a leveza máxima do mobilador direto no celular com o poder do motor do emulador Orbion, entregando <strong>120 FPS cravados</strong> (testado e comprovado no Poco F3 e diversos aparelhos), com resposta imediata e zero atraso.</p>
+      <h4>🔥 Destaques e Recursos Exclusivos:</h4>
+      <ul>
+        <li><strong>⚡ 120 FPS Cravado no Celular e PC:</strong> Fluidez extrema para Free Fire e jogos competitivos com Zero Delay real.</li>
+        <li><strong>🎮 Mapeamento e Interface Idênticos ao BlueStacks:</strong> Ajuste independente de sensibilidade X e Y para puxada de capa perfeita, sem aceleração de mouse.</li>
+        <li><strong>🚀 Motor Scrcpy v5.0.1 Integrado:</strong> Transmissão direta com Direct3D 11 / Vulkan e consumo ultrabaixo de CPU/RAM.</li>
+        <li><strong>💎 Suporte a Upscaling Inteligente (FSR 3, DLSS e NIS):</strong> Imagem ultra nítida com latência de apenas 14ms.</li>
+        <li><strong>🛡️ Compatível com Android 17 & 100% Anti-Ban:</strong> Joga em salas oficiais mobile sem modificar o APK do jogo.</li>
+        <li><strong>🔑 Licença Vitalícia Oficial:</strong> Pagamento único com envio automático imediato no WhatsApp e E-mail.</li>
+      </ul>
+      <h4>💻 Requisitos:</h4>
+      <ul>
+        <li>PC ou Notebook com Windows 10 ou Windows 11.</li>
+        <li>Celular Android com Depuração USB ativada + Cabo USB.</li>
+      </ul>
+    `,
+    features: [
+      "120 FPS Cravado com Zero Delay Real (< 14ms)",
+      "Sistema Híbrido: Mobilador Leve + Emulador Orbion",
+      "Mapeamento & Sensibilidade X/Y idênticos ao BlueStacks",
+      "Mouse Raw Input 1000Hz sem aceleração (Scrcpy 5.0.1)",
+      "Suporte a Upscaling por IA: FSR3, DLSS e NIS",
+      "100% Anti-Ban (Pareamento Mobile Oficial)",
+      "Licença Vitalícia + Envio Imediato por WhatsApp e E-mail"
+    ],
+    downloads: [
+      {
+        id: "dluz-orbix-setup-download",
+        name: "DLuz Orbix Setup Leve (.zip) — Download Oficial",
+        file: "https://loja.dluz.com.br/download/orbix"
+      },
+      {
+        id: "dluz-orbix-github-release",
+        name: "DLuz Orbix Setup Leve (.zip) — Espelho GitHub Release",
+        file: "https://github.com/dluzgames/DLuz-Orbix/releases/download/v1.0.0/DLuz-Orbix-Setup-Leve.zip"
+      }
+    ]
+  },
+  {
     id: 2755,
     image_url: "https://dluzgames.com.br/wp-content/uploads/2026/08/dluzmobilador-pro.webp",
     name: "DLuz Mobilador Pro v3.5.1 — Zero Delay 120 FPS (Licença Vitalícia)",
