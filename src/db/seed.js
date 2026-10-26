@@ -6,7 +6,7 @@
 const INITIAL_PRODUCTS = [
   {
     id: 2950,
-    image_url: "/images/products/dluz-orbix.jpg",
+    image_url: "/images/products/dluz-orbix-cover.jpg",
     name: "DLuz Orbix Setup Leve — Mobilador e Emulador com Android 17 (120 FPS Cravado • Licença Vitalícia)",
     slug: "dluz-orbix-setup-leve",
     sku: "DLUZ-ORBIX-SETUP",
