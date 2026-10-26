@@ -334,10 +334,13 @@
       gap: 28px;
     }
 
-    /* Coluna 1: Galeria de Fotos e Imagem Principal */
+    /* Coluna 1: Galeria de Fotos e Imagem Principal (Square & Sticky) */
     .ml-gallery-col {
       display: flex;
       gap: 14px;
+      align-self: start;
+      position: sticky;
+      top: 96px;
     }
 
     .ml-thumbnails {
@@ -375,49 +378,76 @@
       box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
     }
 
-    .ml-main-stage {
+    .ml-stage-box {
       flex: 1;
-      min-height: 420px;
-      border: 1px solid var(--ml-border);
-      border-radius: 10px;
       display: flex;
       flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .ml-main-stage {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      max-height: 420px;
+      border: 1px solid var(--ml-border);
+      border-radius: 12px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at 50% 50%, #F8FAFC 0%, #FFFFFF 100%);
+      background: #FFFFFF;
       padding: 16px;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
 
     .ml-main-badge-ribbon {
       position: absolute;
-      top: 14px;
-      left: 14px;
+      top: 12px;
+      left: 12px;
       background: var(--ml-green);
       color: #FFFFFF;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
-      padding: 4px 9px;
+      padding: 3px 8px;
       border-radius: 4px;
       letter-spacing: 0.02em;
       z-index: 2;
     }
 
     .ml-main-stage-img {
+      width: 100%;
+      height: 100%;
       max-width: 100%;
-      max-height: 340px;
+      max-height: 100%;
       object-fit: contain;
       border-radius: 8px;
-      transition: transform 0.3s ease;
-      margin-bottom: 14px;
+      transition: transform 0.25s ease;
+      display: block;
+    }
+
+    .ml-main-stage:hover .ml-main-stage-img {
+      transform: scale(1.03);
+    }
+
+    .ml-stage-footer {
+      text-align: center;
+      padding-top: 2px;
     }
 
     .ml-main-stage-label {
       font-size: 13px;
       color: var(--ml-text-sub);
-      text-align: center;
       font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .ml-stage-guarantee {
+      font-size: 12px;
+      color: #16A34A;
+      font-weight: 700;
+      margin-top: 4px;
     }
 
     /* Coluna 2: Informações do Produto */
@@ -1068,6 +1098,10 @@
       }
       .ml-gallery-col {
         flex-direction: column-reverse;
+        position: static;
+      }
+      .ml-main-stage {
+        max-height: 360px;
       }
       .ml-thumbnails {
         flex-direction: row;
@@ -1188,20 +1222,24 @@
     <!-- Container Principal 3 Colunas -->
     <div class="ml-product-container">
 
-      <!-- COLUNA 1: GALERIA E IMAGEM PRINCIPAL -->
+      <!-- COLUNA 1: GALERIA E IMAGEM PRINCIPAL (SQUARE BOX) -->
       <div class="ml-gallery-col">
         <div class="ml-thumbnails" id="mlThumbsContainer">
           <!-- Gerado dinamicamente via JS -->
         </div>
 
-        <div class="ml-main-stage">
-          <div class="ml-main-badge-ribbon">ENVIO IMEDIATO ⚡</div>
-          <img id="mlStageImg" src="" alt="Produto" class="ml-main-stage-img" onerror="this.onerror=null; this.src='/images/logo.png'; this.style.objectFit='contain'; this.style.padding='20px';" />
-          <div id="mlStageTitle" class="ml-main-stage-label">
-            DLuz Games • Software Oficial Licenciado
+        <div class="ml-stage-box">
+          <div class="ml-main-stage">
+            <div class="ml-main-badge-ribbon">ENVIO IMEDIATO ⚡</div>
+            <img id="mlStageImg" src="" alt="Produto" class="ml-main-stage-img" onerror="this.onerror=null; this.src='/images/logo.png'; this.style.objectFit='contain'; this.style.padding='20px';" />
           </div>
-          <div style="font-size: 12px; color: #16A34A; font-weight: 700; margin-top: 6px;">
-            ✓ Licença Vitalícia + Download Oficial
+          <div class="ml-stage-footer">
+            <div id="mlStageTitle" class="ml-main-stage-label">
+              DLuz Games • Software Oficial Licenciado
+            </div>
+            <div class="ml-stage-guarantee">
+              ✓ Licença Vitalícia + Download Oficial
+            </div>
           </div>
         </div>
       </div>
@@ -1450,7 +1488,7 @@
           <div class="ml-guarantee-row">
             <span>⭐</span>
             <div>
-              <strong>7 dias de garantia total</strong> de fábrica contra incompatibilidade.
+              <strong>Garantia contra incompatibilidade:</strong> 7 dias de garantia total ou seu dinheiro de volta.
             </div>
           </div>
           <div class="ml-guarantee-row">
