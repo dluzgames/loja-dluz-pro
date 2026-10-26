@@ -52,6 +52,18 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
   }
 
   const order = formatOrderRow(rawOrder);
+
+  // 1. Marcar status como 'completed' no banco de dados antes de consultar o Servidor de Licenças
+  await dbRun(
+    `UPDATE orders
+     SET status = 'completed',
+         paid_at = COALESCE(paid_at, CURRENT_TIMESTAMP),
+         updated_at = CURRENT_TIMESTAMP
+     WHERE id = ?`,
+    [orderId]
+  );
+  order.status = "completed";
+
   const licenseServerUrl = await getSetting(
     "license_server_url",
     "https://lf7k749dplzo1qaa2au0izl1.dluz.com.br/api/webhook/woocommerce"
