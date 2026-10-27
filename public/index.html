@@ -1379,6 +1379,600 @@
       }
     }
 
+  
+    /* ==========================================
+       CHECKOUT DEDICADO DE ALTA CONVERSÃO (DLUZ STORE)
+       ========================================== */
+    .ml-checkout-page {
+      padding-top: 24px;
+      padding-bottom: 60px;
+    }
+
+    .ml-checkout-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .ml-checkout-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ml-blue);
+      text-decoration: none;
+      cursor: pointer;
+      background: #FFFFFF;
+      border: 1px solid var(--ml-border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .ml-checkout-back-btn:hover {
+      background: var(--ml-blue-light);
+      border-color: var(--ml-blue);
+    }
+
+    .ml-checkout-security-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #16A34A;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .ml-checkout-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .ck-card {
+      background: #FFFFFF;
+      border: 1px solid var(--ml-border);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      margin-bottom: 22px;
+    }
+
+    .ck-step-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .ck-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--ml-blue);
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ck-step-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--ml-text-main);
+      margin-bottom: 2px;
+    }
+
+    .ck-step-sub {
+      font-size: 12.5px;
+      color: var(--ml-text-sub);
+    }
+
+    .ck-fields-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .ck-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .ck-field-label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ml-text-main);
+      margin-bottom: 6px;
+    }
+
+    .ck-input {
+      width: 100%;
+      height: 44px;
+      padding: 0 14px;
+      font-size: 14px;
+      color: var(--ml-text-main);
+      background: #F8FAFC;
+      border: 1.5px solid var(--ml-border);
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .ck-input:focus {
+      background: #FFFFFF;
+      border-color: var(--ml-blue);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .ck-cpf-notice {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 11.5px;
+      color: #1E40AF;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* FORMAS DE PAGAMENTO */
+    .ck-pay-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ck-pay-option {
+      border: 2px solid var(--ml-border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .ck-pay-option:hover {
+      border-color: #94A3B8;
+      background: #F8FAFC;
+    }
+    .ck-pay-option.active {
+      border-color: var(--ml-blue);
+      background: #F0F7FF;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+    }
+
+    .ck-radio-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid #CBD5E1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .ck-pay-option.active .ck-radio-circle {
+      border-color: var(--ml-blue);
+    }
+    .ck-radio-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--ml-blue);
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.2s;
+    }
+    .ck-pay-option.active .ck-radio-dot {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .ck-pay-info {
+      flex: 1;
+    }
+
+    .ck-pay-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 3px;
+      flex-wrap: wrap;
+    }
+
+    .ck-pay-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ml-text-main);
+    }
+
+    .ck-pay-badge-green {
+      background: #DCFCE7;
+      color: #15803D;
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .ck-pay-badge-blue {
+      background: #DBEAFE;
+      color: #1E40AF;
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .ck-pay-desc {
+      font-size: 12px;
+      color: var(--ml-text-sub);
+      line-height: 1.4;
+    }
+
+    .ck-pay-icons {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .ck-brand-pill {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 6px;
+      border-radius: 4px;
+      background: #E2E8F0;
+      color: #334155;
+    }
+
+    /* BOTÃO SUBMIT */
+    .ck-submit-btn {
+      width: 100%;
+      height: 52px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #16A34A, #15803D);
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+      transition: all 0.2s;
+    }
+    .ck-submit-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(22, 163, 74, 0.45);
+    }
+    .ck-submit-btn.card-mode {
+      background: linear-gradient(135deg, #0284C7, #0369A1);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+    }
+    .ck-submit-btn.card-mode:hover {
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
+    }
+    .ck-submit-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .ck-error-banner {
+      background: #FEF2F2;
+      border: 1.5px solid #F87171;
+      border-radius: 8px;
+      padding: 12px;
+      color: #991B1B;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ck-guarantees-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--ml-border);
+      text-align: center;
+    }
+
+    .ck-guarantee-col {
+      font-size: 11px;
+      color: var(--ml-text-sub);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .ck-guarantee-icon {
+      font-size: 18px;
+    }
+
+    /* COLUNA DIREITA: RESUMO DO PEDIDO */
+    .ck-summary-card {
+      background: #FFFFFF;
+      border: 1px solid var(--ml-border);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      position: sticky;
+      top: 24px;
+    }
+
+    .ck-summary-header {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--ml-text-main);
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--ml-border);
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ck-prod-preview {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .ck-prod-thumb-wrap {
+      width: 74px;
+      height: 74px;
+      border-radius: 10px;
+      border: 1px solid var(--ml-border);
+      background: #0B0F19;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .ck-prod-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ck-prod-info {
+      flex: 1;
+    }
+    .ck-prod-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--ml-text-main);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .ck-prod-badge {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #0284C7;
+      background: #E0F2FE;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .ck-summary-divider {
+      height: 1px;
+      background: var(--ml-border);
+      margin: 16px 0;
+    }
+
+    .ck-price-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13.5px;
+      color: var(--ml-text-sub);
+      margin-bottom: 8px;
+    }
+
+    .ck-price-line.total {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ml-text-main);
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1.5px dashed var(--ml-border);
+    }
+    .ck-price-total-val {
+      font-size: 24px;
+      font-weight: 900;
+      color: #16A34A;
+    }
+
+    .ck-card-installments-text {
+      text-align: right;
+      font-size: 11.5px;
+      color: var(--ml-text-sub);
+      margin-top: 2px;
+    }
+
+    /* CUPOM DE DESCONTO NO RESUMO */
+    .ck-coupon-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--ml-border);
+    }
+    .ck-coupon-form {
+      display: flex;
+      gap: 6px;
+    }
+    .ck-coupon-input {
+      flex: 1;
+      height: 38px;
+      padding: 0 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      background: #F8FAFC;
+      border: 1px solid var(--ml-border);
+      border-radius: 6px;
+      outline: none;
+    }
+    .ck-coupon-input:focus {
+      border-color: var(--ml-blue);
+      background: #FFFFFF;
+    }
+    .ck-coupon-btn {
+      padding: 0 14px;
+      height: 38px;
+      font-size: 12.5px;
+      font-weight: 700;
+      background: #0F172A;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .ck-coupon-feedback {
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .ck-support-callout {
+      margin-top: 18px;
+      background: #F8FAFC;
+      border: 1px solid var(--ml-border);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12px;
+      color: var(--ml-text-sub);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ck-support-callout a {
+      color: var(--ml-blue);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* MODAL DO PIX */
+    .ck-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .ck-modal-content {
+      background: #FFFFFF;
+      border-radius: 16px;
+      max-width: 480px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    .ck-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #F1F5F9;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+    }
+    .ck-modal-close:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
+    .ck-pulse-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .ck-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2563EB;
+      box-shadow: 0 0 0 rgba(37, 99, 235, 0.7);
+      animation: ckPulse 1.8s infinite;
+    }
+    @keyframes ckPulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+    }
+
+    @media (max-width: 860px) {
+      .ml-checkout-grid {
+        grid-template-columns: 1fr;
+      }
+      .ck-fields-grid {
+        grid-template-columns: 1fr;
+      }
+      .ck-summary-card {
+        position: static;
+        order: -1;
+      }
+      .ck-guarantees-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1571,49 +2165,28 @@
           Estoque disponível (Licença Vitalícia)
         </div>
 
-        <!-- Formulário de Compra Mercado Pago Integrado -->
-        <div id="mlBuyFormStep">
-          <form id="mlCheckoutForm" onsubmit="handleMlCheckout(event)">
-            <input type="hidden" id="mlCheckoutProdId" />
-
-            <div class="ml-checkout-form-box">
-              <div style="font-size: 12px; font-weight: 700; color: #0F172A; margin-bottom: 8px;">
-                Dados para Envio da Licença:
-              </div>
-
-              <div class="ml-field-group">
-                <label class="ml-field-label">Seu Nome *</label>
-                <input type="text" id="mlBuyerName" required placeholder="Digite seu nome" class="ml-field-input" />
-              </div>
-
-              <div class="ml-field-group">
-                <label class="ml-field-label">Seu E-mail *</label>
-                <input type="email" id="mlBuyerEmail" required placeholder="seuemail@gmail.com" class="ml-field-input" />
-              </div>
-
-              <div class="ml-field-group">
-                <label class="ml-field-label">Seu WhatsApp com DDD *</label>
-                <input type="tel" id="mlBuyerPhone" required placeholder="(63) 99999-9999" class="ml-field-input" />
-              </div>
-
-              <div class="ml-field-group">
-                <label class="ml-field-label">Cupom de Desconto</label>
-                <div style="display: flex; gap: 6px;">
-                  <input type="text" id="mlCouponInput" placeholder="Inserir cupom" class="ml-field-input" style="text-transform: uppercase;" />
-                  <button type="button" onclick="applyMlCoupon()" class="ml-btn-buy" style="width: auto; padding: 0 12px; font-size: 13px;">
-                    Aplicar
-                  </button>
-                </div>
-                <div id="mlCouponFeedback" class="hidden" style="font-size: 11.5px; margin-top: 4px; font-weight: 700;"></div>
-              </div>
-
-              <div id="mlCheckoutError" class="hidden" style="color: #DC2626; font-size: 12px; margin-bottom: 8px; font-weight: 700;"></div>
-
-              <button type="submit" id="mlSubmitBtn" class="ml-btn-buy" style="margin-top: 6px;">
-                Comprar agora
-              </button>
+        <!-- Ação Direta para o Checkout Seguro Dedicado -->
+        <div id="mlBuyFormStep" style="margin-top: 14px;">
+          <div style="background: #F8FAFC; border: 1.5px solid var(--ml-border); border-radius: 12px; padding: 18px; text-align: center; margin-bottom: 12px;">
+            <div style="font-size: 12px; font-weight: 700; color: var(--ml-text-sub); text-transform: uppercase; letter-spacing: 0.04em;">
+              Preço Promocional Exclusivo
             </div>
-          </form>
+            <div style="font-size: 32px; font-weight: 900; color: var(--ml-text-main); margin: 4px 0 2px;">
+              R$ <span id="mlBuyBoxPrice">0,00</span>
+            </div>
+            <div style="font-size: 12px; color: var(--ml-text-sub); margin-bottom: 14px;">
+              ou em até 12x no cartão via Mercado Pago
+            </div>
+
+            <button type="button" onclick="openDedicatedCheckout(SELECTED_PROD ? SELECTED_PROD.id : 2950)" class="ml-btn-buy" style="height: 50px; font-size: 16px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);">
+              <span>⚡ Comprar agora (Pix ou Cartão) ➔</span>
+            </button>
+            
+            <div style="font-size: 11.5px; color: #16A34A; font-weight: 700; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 4px;">
+              <span>🔒</span>
+              <span>Checkout Oficial Mercado Pago • 100% Seguro</span>
+            </div>
+          </div>
 
           <a
             id="mlBuyWhatsappBtn"
@@ -1621,7 +2194,6 @@
             target="_blank"
             rel="noopener"
             class="ml-btn-whatsapp"
-            style="margin-top: 10px;"
           >
             <span>💬 Falar com o DLuz no WhatsApp</span>
           </a>
@@ -1765,6 +2337,300 @@
   <!-- ==========================================
        VIEW 2: GRADE GERAL DE PRODUTOS (COM IMAGENS REAIS)
        ========================================== -->
+  
+  <!-- ==========================================
+       VIEW 3: PÁGINA DEDICADA DE CHECKOUT (PIX OU CARTÃO MERCADO PAGO)
+       ========================================== -->
+  <main id="mlCheckoutView" class="container ml-checkout-page hidden">
+    <!-- Navegação do Checkout -->
+    <div class="ml-checkout-nav">
+      <a href="/" onclick="goBackFromCheckout(event)" class="ml-checkout-back-btn">
+        <span>‹ Voltar</span>
+      </a>
+      <div class="ml-checkout-security-badge">
+        <span>🔒</span>
+        <span>Ambiente 100% Criptografado SSL • Mercado Pago</span>
+      </div>
+    </div>
+
+    <!-- Grid do Checkout -->
+    <div class="ml-checkout-grid">
+
+      <!-- COLUNA ESQUERDA: FORMULÁRIO DO CLIENTE E PAGAMENTO -->
+      <div class="ml-checkout-main">
+        <form id="ckDedicatedForm" onsubmit="handleDedicatedCheckoutSubmit(event)">
+
+          <!-- CARD 1: DADOS PESSOAIS PARA ENVIO DA LICENÇA -->
+          <div class="ck-card">
+            <div class="ck-step-header">
+              <div class="ck-step-num">1</div>
+              <div>
+                <div class="ck-step-title">Dados para Envio da Licença</div>
+                <div class="ck-step-sub">Sua chave oficial e links de download serão liberados para estes dados.</div>
+              </div>
+            </div>
+
+            <div class="ck-fields-grid">
+              <div class="ck-field-full">
+                <label class="ck-field-label">Seu Nome Completo *</label>
+                <input type="text" id="ckBuyerName" required placeholder="Digite seu nome completo" class="ck-input" />
+              </div>
+
+              <div class="ck-field-full">
+                <label class="ck-field-label">Seu E-mail (Recebimento da Chave) *</label>
+                <input type="email" id="ckBuyerEmail" required placeholder="seuemail@gmail.com" class="ck-input" />
+              </div>
+
+              <div>
+                <label class="ck-field-label">WhatsApp com DDD *</label>
+                <input type="tel" id="ckBuyerPhone" required placeholder="(63) 99999-9999" maxlength="15" class="ck-input" oninput="applyPhoneMask(this)" />
+              </div>
+
+              <div>
+                <label class="ck-field-label">CPF do Titular *</label>
+                <input type="tel" id="ckBuyerCpf" required placeholder="000.000.000-00" maxlength="14" class="ck-input" oninput="applyCpfMask(this)" />
+              </div>
+            </div>
+
+            <div class="ck-cpf-notice">
+              <span>🛡️</span>
+              <span>O <strong>CPF</strong> e <strong>WhatsApp</strong> são obrigatórios pelo Banco Central e Mercado Pago para validação antifraude e envio imediato do comprovante.</span>
+            </div>
+          </div>
+
+          <!-- CARD 2: ESCOLHA DA FORMA DE PAGAMENTO -->
+          <div class="ck-card">
+            <div class="ck-step-header">
+              <div class="ck-step-num">2</div>
+              <div>
+                <div class="ck-step-title">Forma de Pagamento</div>
+                <div class="ck-step-sub">Selecione como prefere pagar via Mercado Pago:</div>
+              </div>
+            </div>
+
+            <div class="ck-pay-options">
+              <!-- OPÇÃO 1: PIX OFICIAL MERCADO PAGO -->
+              <div id="ckOptionPix" class="ck-pay-option active" onclick="selectCkPaymentMethod('pix')">
+                <div class="ck-radio-circle">
+                  <div class="ck-radio-dot"></div>
+                </div>
+                <div class="ck-pay-info">
+                  <div class="ck-pay-title-row">
+                    <span class="ck-pay-title">Pix Mercado Pago</span>
+                    <span class="ck-pay-badge-green">Aprovação Imediata ⚡</span>
+                  </div>
+                  <div class="ck-pay-desc">
+                    Código QR e Copia e Cola gerados na hora. Chave liberada em 3 segundos nesta tela e no WhatsApp.
+                  </div>
+                </div>
+                <div class="ck-pay-icons">
+                  <span style="font-size: 22px;">⚡</span>
+                </div>
+              </div>
+
+              <!-- OPÇÃO 2: CARTÃO DE CRÉDITO EM ATÉ 12X -->
+              <div id="ckOptionCard" class="ck-pay-option" onclick="selectCkPaymentMethod('card')">
+                <div class="ck-radio-circle">
+                  <div class="ck-radio-dot"></div>
+                </div>
+                <div class="ck-pay-info">
+                  <div class="ck-pay-title-row">
+                    <span class="ck-pay-title">Cartão de Crédito</span>
+                    <span class="ck-pay-badge-blue">Em até 12x 💳</span>
+                  </div>
+                  <div class="ck-pay-desc">
+                    Pague com proteção total no Checkout Oficial do Mercado Pago em até 12 parcelas.
+                  </div>
+                </div>
+                <div class="ck-pay-icons">
+                  <span class="ck-brand-pill">VISA</span>
+                  <span class="ck-brand-pill">MASTER</span>
+                  <span class="ck-brand-pill">ELO</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- MENSAGEM DE ERRO SE HOUVER -->
+            <div id="ckErrorBanner" class="ck-error-banner hidden" style="margin-top: 18px;">
+              <span>⚠️</span>
+              <span id="ckErrorMsgText">Preencha todos os campos obrigatórios.</span>
+            </div>
+
+            <!-- BOTÃO DE FINALIZAÇÃO -->
+            <div style="margin-top: 20px;">
+              <button type="submit" id="ckSubmitBtn" class="ck-submit-btn">
+                <span>⚡ Gerar Pix e Receber Acesso Imediato ➔</span>
+              </button>
+            </div>
+
+            <!-- GARANTIAS -->
+            <div class="ck-guarantees-row">
+              <div class="ck-guarantee-col">
+                <span class="ck-guarantee-icon">🛡️</span>
+                <strong>Compra Garantida</strong>
+                <span>Mercado Pago 100% Protegido</span>
+              </div>
+              <div class="ck-guarantee-col">
+                <span class="ck-guarantee-icon">⚡</span>
+                <strong>Entrega Imediata</strong>
+                <span>No WhatsApp e E-mail</span>
+              </div>
+              <div class="ck-guarantee-col">
+                <span class="ck-guarantee-icon">⭐</span>
+                <strong>Garantia 7 Dias</strong>
+                <span>Satisfação ou Reembolso</span>
+              </div>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+
+      <!-- COLUNA DIREITA: RESUMO DO PEDIDO -->
+      <div class="ml-checkout-summary">
+        <div class="ck-summary-card">
+          <div class="ck-summary-header">
+            <span>Resumo do Pedido</span>
+            <span style="font-size: 11px; font-weight: 700; color: #16A34A; background: #DCFCE7; padding: 2px 8px; border-radius: 4px;">1 ITEM</span>
+          </div>
+
+          <div class="ck-prod-preview">
+            <div class="ck-prod-thumb-wrap">
+              <img id="ckSummaryImg" src="" alt="Produto" onerror="this.onerror=null; this.src='/images/logo.png';" />
+            </div>
+            <div class="ck-prod-info">
+              <div id="ckSummaryTitle" class="ck-prod-title">Carregando produto...</div>
+              <span id="ckSummaryBadge" class="ck-prod-badge">Licença Vitalícia Oficial</span>
+            </div>
+          </div>
+
+          <div class="ck-summary-divider"></div>
+
+          <div class="ck-price-line">
+            <span>Preço original:</span>
+            <span id="ckOldPriceDisplay" style="text-decoration: line-through;">R$ 0,00</span>
+          </div>
+
+          <div class="ck-price-line" id="ckDiscountRow" style="display: none; color: #16A34A;">
+            <span>Desconto cupom:</span>
+            <span id="ckDiscountDisplay">- R$ 0,00</span>
+          </div>
+
+          <div class="ck-price-line total">
+            <span>Total a pagar:</span>
+            <span id="ckFinalPrice" class="ck-price-total-val">R$ 0,00</span>
+          </div>
+          <div id="ckInstallmentsText" class="ck-card-installments-text">
+            ou em até 12x no cartão de crédito
+          </div>
+
+          <!-- CUPOM DE DESCONTO -->
+          <div class="ck-coupon-box">
+            <label class="ck-field-label" style="font-size: 11.5px;">Tem um Cupom de Desconto?</label>
+            <div class="ck-coupon-form">
+              <input type="text" id="ckCouponInput" placeholder="Código do cupom" class="ck-coupon-input" />
+              <button type="button" onclick="applyDedicatedCoupon()" class="ck-coupon-btn">Aplicar</button>
+            </div>
+            <div id="ckCouponFeedback" class="ck-coupon-feedback hidden"></div>
+          </div>
+
+          <!-- SUPORTE WHATSAPP -->
+          <div class="ck-support-callout">
+            <span style="font-size: 20px;">💬</span>
+            <div>
+              Dúvidas antes de pagar?<br />
+              <a id="ckWhatsappHelpLink" href="https://wa.me/5563981199852" target="_blank" rel="noopener">Fale com o suporte no WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================
+       MODAL DEDICADO DO PIX COM POLLING TEMPO REAL
+       ========================================== -->
+  <div id="ckPixModal" class="ck-modal-backdrop hidden">
+    <div class="ck-modal-content">
+      <button type="button" onclick="closeCkPixModal()" class="ck-modal-close">✕</button>
+
+      <!-- ETAPA 1: AGUARDANDO PAGAMENTO -->
+      <div id="ckPixWaitingState">
+        <div class="ck-pulse-pill">
+          <span class="ck-pulse-dot"></span>
+          <span>Aguardando Pagamento em Tempo Real</span>
+        </div>
+
+        <h3 style="font-size: 18px; font-weight: 800; color: #0F172A; margin-bottom: 6px;">
+          Pedido <span id="ckModalOrderNumber">#0000</span> Gerado!
+        </h3>
+        <p style="font-size: 13px; color: #64748B; margin-bottom: 16px;">
+          Abra o app do seu banco e escaneie o QR Code ou use o Pix Copia e Cola:
+        </p>
+
+        <div style="background: #FFFFFF; border: 2px solid #E2E8F0; border-radius: 12px; padding: 12px; display: inline-block; margin-bottom: 12px;">
+          <img id="ckModalQrImage" src="" alt="QR Code Pix" style="width: 200px; height: 200px; display: block;" />
+        </div>
+
+        <div style="font-size: 13px; color: #64748B;">Valor Total do Pix:</div>
+        <div id="ckModalTotalDisplay" style="font-size: 24px; font-weight: 900; color: #16A34A; margin-bottom: 14px;">
+          R$ 0,00
+        </div>
+
+        <div style="text-align: left; margin-bottom: 14px;">
+          <label class="ck-field-label" style="font-size: 12px;">Pix Copia e Cola:</label>
+          <div style="display: flex; gap: 6px;">
+            <input type="text" id="ckModalPixString" readonly class="ck-input" style="font-family: monospace; font-size: 11.5px; height: 40px;" />
+            <button type="button" id="ckModalCopyBtn" onclick="copyCkPixString()" class="ck-coupon-btn" style="background: #16A34A; white-space: nowrap; height: 40px; padding: 0 16px;">
+              Copiar Pix
+            </button>
+          </div>
+        </div>
+
+        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 10px; font-size: 12px; color: #15803D; line-height: 1.4;">
+          ⚡ <strong>Reconhecimento Instantâneo:</strong> assim que você pagar no app do banco, esta tela atualizará sozinha liberando sua Chave Vitalícia e os links de download!
+        </div>
+      </div>
+
+      <!-- ETAPA 2: PAGAMENTO APROVADO COM SUCESSO -->
+      <div id="ckPixSuccessState" class="hidden">
+        <div style="width: 54px; height: 54px; border-radius: 50%; background: #DCFCE7; color: #16A34A; font-size: 28px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+          ✓
+        </div>
+        <h3 style="font-size: 20px; font-weight: 800; color: #16A34A; margin-bottom: 4px;">
+          Pagamento Aprovado com Sucesso!
+        </h3>
+        <p style="font-size: 13px; color: #64748B; margin-bottom: 16px;">
+          Sua licença e downloads foram liberados abaixo e enviados para seu WhatsApp!
+        </p>
+
+        <div id="ckModalKeyBox" style="background: #F8FAFC; border: 1.5px dashed #CBD5E1; border-radius: 10px; padding: 14px; margin-bottom: 16px;">
+          <div style="font-size: 11px; font-weight: 800; color: #64748B; text-transform: uppercase;">
+            Sua Chave de Ativação Vitalícia:
+          </div>
+          <div id="ckModalLicenseKey" style="font-family: monospace; font-size: 18px; font-weight: 900; color: #2563EB; margin: 8px 0;">
+            DLUZ-PRO-XXXX
+          </div>
+          <button type="button" onclick="copyCkLicenseKey()" class="ck-coupon-btn" style="background: #2563EB; width: 100%; height: 38px;">
+            Copiar Chave PRO
+          </button>
+        </div>
+
+        <div style="text-align: left; margin-bottom: 14px;">
+          <div style="font-size: 12.5px; font-weight: 700; margin-bottom: 8px;">Downloads Disponíveis:</div>
+          <div id="ckModalDownloadsList" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        </div>
+
+        <button type="button" onclick="closeCkPixModal(); goHome();" class="ck-submit-btn" style="height: 42px; font-size: 14px; background: #0F172A;">
+          Concluir e Voltar à Loja
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <main id="mlCatalogView" class="container ml-catalog-view">
 
     <!-- ==========================================
@@ -1798,7 +2664,7 @@
               </div>
               <span class="orbix-hero-installments">em até 12x via Mercado Pago ou Pix em 3 segundos</span>
             </div>
-            <button type="button" class="orbix-hero-btn" onclick="event.stopPropagation(); openProductPageById(2950);">
+            <button type="button" class="orbix-hero-btn" onclick="event.stopPropagation(); openDedicatedCheckout(2950);">
               Ver Detalhes e Comprar Agora ➔
             </button>
           </div>
@@ -2087,6 +2953,8 @@
       }
 
       document.getElementById('mlCurrentPrice').textContent = prod.price.toFixed(2).replace('.', ',');
+      const bbPrice = document.getElementById('mlBuyBoxPrice');
+      if (bbPrice) bbPrice.textContent = prod.price.toFixed(2).replace('.', ',');
 
       // Lista de Destaques
       const hlBox = document.getElementById('mlHighlightsList');
@@ -2119,6 +2987,7 @@
 
       // Alternar Views: Oculta catálogo e exibe página VIP do Mercado Livre
       document.getElementById('mlCatalogView').classList.add('hidden');
+      document.getElementById('mlCheckoutView').classList.add('hidden');
       document.getElementById('mlProductView').classList.remove('hidden');
 
       if (scrollToBuy) {
@@ -2145,6 +3014,7 @@
       if (ev) ev.preventDefault();
       if (ORDER_POLL_TIMER) clearInterval(ORDER_POLL_TIMER);
       document.getElementById('mlProductView').classList.add('hidden');
+      document.getElementById('mlCheckoutView').classList.add('hidden');
       document.getElementById('mlCatalogView').classList.remove('hidden');
       closePaymentMethodsModal();
       closeLookupModal();
@@ -2306,6 +3176,35 @@
     }
 
     function renderMlApprovedOrder(orderData) {
+      // Se o modal do checkout estiver aberto, atualiza para sucesso
+      const ckPixModal = document.getElementById('ckPixModal');
+      if (ckPixModal && !ckPixModal.classList.contains('hidden')) {
+        document.getElementById('ckPixWaitingState').classList.add('hidden');
+        document.getElementById('ckPixSuccessState').classList.remove('hidden');
+
+        const keyBox = document.getElementById('ckModalKeyBox');
+        const keyEl = document.getElementById('ckModalLicenseKey');
+        if (orderData.license_key && orderData.license_key !== 'PRODUTO-LIBERADO-SEM-CHAVE') {
+          keyBox.classList.remove('hidden');
+          keyEl.textContent = orderData.license_key;
+        } else {
+          keyBox.classList.add('hidden');
+        }
+
+        const dlBox = document.getElementById('ckModalDownloadsList');
+        const dls = orderData.downloads || [];
+        if (dls.length > 0) {
+          dlBox.innerHTML = dls
+            .map(
+              (d) => `
+              <a href="${d.file}" target="_blank" rel="noopener" class="ck-coupon-btn" style="background: #16A34A; padding: 10px 14px; text-align: left; justify-content: space-between; display: flex; text-decoration: none; font-size: 13px;">
+                <span>📥 ${d.name}</span>
+                <span>Baixar ›</span>
+              </a>`
+            )
+            .join('');
+        }
+      }
       document.getElementById('mlBuyFormStep').classList.add('hidden');
       document.getElementById('mlBuyPayStep').classList.add('hidden');
       document.getElementById('mlBuySuccessStep').classList.remove('hidden');
@@ -2440,11 +3339,318 @@
       handleRoute();
     });
 
+    
+    // ==========================================
+    // LOGICA DO CHECKOUT DEDICADO (PIX / CARTAO)
+    // ==========================================
+    let CK_PAYMENT_METHOD = 'pix'; // 'pix' ou 'card'
+    let CK_APPLIED_COUPON = null;
+
+    function selectCkPaymentMethod(method) {
+      CK_PAYMENT_METHOD = method;
+      const optPix = document.getElementById('ckOptionPix');
+      const optCard = document.getElementById('ckOptionCard');
+      const btn = document.getElementById('ckSubmitBtn');
+
+      if (method === 'pix') {
+        optPix.classList.add('active');
+        optCard.classList.remove('active');
+        btn.classList.remove('card-mode');
+        btn.innerHTML = '<span>⚡ Gerar Pix e Receber Acesso Imediato ➔</span>';
+      } else {
+        optCard.classList.add('active');
+        optPix.classList.remove('active');
+        btn.classList.add('card-mode');
+        btn.innerHTML = '<span>💳 Pagar no Cartão via Mercado Pago em até 12x ➔</span>';
+      }
+    }
+
+    function applyCpfMask(input) {
+      let v = input.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 9) {
+        v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, '$1.$2.$3-$4');
+      } else if (v.length > 6) {
+        v = v.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1.$2.$3');
+      } else if (v.length > 3) {
+        v = v.replace(/(\d{3})(\d{1,3})/, '$1.$2');
+      }
+      input.value = v;
+    }
+
+    function applyPhoneMask(input) {
+      let v = input.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 10) {
+        v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      } else if (v.length > 6) {
+        v = v.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+      } else if (v.length > 2) {
+        v = v.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+      }
+      input.value = v;
+    }
+
+    function openDedicatedCheckout(prodId, pushState = true) {
+      const prod = ALL_PRODUCTS.find((p) => Number(p.id) === Number(prodId)) || ALL_PRODUCTS[0];
+      if (!prod) return;
+
+      SELECTED_PROD = prod;
+      CK_APPLIED_COUPON = null;
+
+      // Ocultar outras views e exibir checkout
+      document.getElementById('mlCatalogView').classList.add('hidden');
+      document.getElementById('mlProductView').classList.add('hidden');
+      document.getElementById('mlCheckoutView').classList.remove('hidden');
+
+      // Preencher Resumo do Produto
+      const img = document.getElementById('ckSummaryImg');
+      if (img) img.src = prod.image_url || '/images/logo.png';
+
+      const title = document.getElementById('ckSummaryTitle');
+      if (title) title.textContent = prod.name;
+
+      const oldPr = document.getElementById('ckOldPriceDisplay');
+      if (oldPr) {
+        if (prod.regular_price && prod.regular_price > prod.price) {
+          oldPr.textContent = `R$ ${prod.regular_price.toFixed(2).replace('.', ',')}`;
+          oldPr.style.display = 'inline';
+        } else {
+          oldPr.style.display = 'none';
+        }
+      }
+
+      updateCkPriceDisplays();
+
+      // Resetar cupom e erros
+      const cpInput = document.getElementById('ckCouponInput');
+      if (cpInput) cpInput.value = '';
+      const cpFb = document.getElementById('ckCouponFeedback');
+      if (cpFb) cpFb.classList.add('hidden');
+
+      const errBanner = document.getElementById('ckErrorBanner');
+      if (errBanner) errBanner.classList.add('hidden');
+
+      // WhatsApp link de suporte
+      const waLink = document.getElementById('ckWhatsappHelpLink');
+      if (waLink) {
+        waLink.href = getWhatsappLink(`Olá DLuz! Estou finalizando a compra do ${prod.name} e preciso de ajuda.`);
+      }
+
+      selectCkPaymentMethod('pix');
+
+      if (pushState) {
+        try {
+          history.pushState({ view: 'checkout', id: prod.id }, 'Checkout — ' + prod.name, '/checkout?id=' + prod.id);
+        } catch {}
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateCkPriceDisplays() {
+      if (!SELECTED_PROD) return;
+      let finalPr = Number(SELECTED_PROD.price);
+
+      const discRow = document.getElementById('ckDiscountRow');
+      const discVal = document.getElementById('ckDiscountDisplay');
+
+      if (CK_APPLIED_COUPON) {
+        let discAmount = 0;
+        if (CK_APPLIED_COUPON.discount_percent > 0) {
+          discAmount = (finalPr * CK_APPLIED_COUPON.discount_percent) / 100;
+        } else if (CK_APPLIED_COUPON.discount_fixed > 0) {
+          discAmount = CK_APPLIED_COUPON.discount_fixed;
+        }
+        finalPr = Math.max(1.0, finalPr - discAmount);
+
+        if (discRow && discVal) {
+          discRow.style.display = 'flex';
+          discVal.textContent = `- R$ ${discAmount.toFixed(2).replace('.', ',')}`;
+        }
+      } else {
+        if (discRow) discRow.style.display = 'none';
+      }
+
+      const totalEl = document.getElementById('ckFinalPrice');
+      if (totalEl) {
+        totalEl.textContent = `R$ ${finalPr.toFixed(2).replace('.', ',')}`;
+      }
+
+      const instEl = document.getElementById('ckInstallmentsText');
+      if (instEl) {
+        const par12 = (finalPr / 12).toFixed(2).replace('.', ',');
+        instEl.textContent = `ou até 12x de R$ ${par12} no cartão de crédito`;
+      }
+    }
+
+    async function applyDedicatedCoupon() {
+      if (!SELECTED_PROD) return;
+      const codeInput = document.getElementById('ckCouponInput');
+      const code = codeInput ? codeInput.value.trim().toUpperCase() : '';
+      const fb = document.getElementById('ckCouponFeedback');
+      if (!fb || !code) return;
+
+      try {
+        const res = await fetch('/api/coupons/validate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code })
+        });
+        const data = await res.json();
+        fb.classList.remove('hidden');
+
+        if (!res.ok || !data.valid) {
+          CK_APPLIED_COUPON = null;
+          fb.style.color = '#DC2626';
+          fb.textContent = data.message || 'Cupom inválido.';
+          updateCkPriceDisplays();
+          return;
+        }
+
+        CK_APPLIED_COUPON = data;
+        fb.style.color = '#16A34A';
+        fb.textContent = `✓ Cupom ${data.code} aplicado com sucesso!`;
+        updateCkPriceDisplays();
+      } catch (err) {
+        fb.classList.remove('hidden');
+        fb.style.color = '#DC2626';
+        fb.textContent = 'Erro ao validar cupom.';
+      }
+    }
+
+    async function handleDedicatedCheckoutSubmit(ev) {
+      ev.preventDefault();
+      if (!SELECTED_PROD) return;
+
+      const errBanner = document.getElementById('ckErrorBanner');
+      const errMsg = document.getElementById('ckErrorMsgText');
+      errBanner.classList.add('hidden');
+
+      const name = document.getElementById('ckBuyerName').value.trim();
+      const email = document.getElementById('ckBuyerEmail').value.trim();
+      const phone = document.getElementById('ckBuyerPhone').value.trim();
+      const cpf = document.getElementById('ckBuyerCpf').value.trim();
+      const cleanCpf = cpf.replace(/\D/g, '');
+      const cleanPhone = phone.replace(/\D/g, '');
+
+      if (!name || !email || !phone || !cpf) {
+        errMsg.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+        errBanner.classList.remove('hidden');
+        return;
+      }
+
+      if (cleanCpf.length < 11) {
+        errMsg.textContent = 'CPF incompleto. Por favor, digite os 11 números do seu CPF.';
+        errBanner.classList.remove('hidden');
+        document.getElementById('ckBuyerCpf').focus();
+        return;
+      }
+
+      if (cleanPhone.length < 10) {
+        errMsg.textContent = 'Telefone incompleto. Digite seu DDD + número do WhatsApp.';
+        errBanner.classList.remove('hidden');
+        document.getElementById('ckBuyerPhone').focus();
+        return;
+      }
+
+      const btn = document.getElementById('ckSubmitBtn');
+      btn.disabled = true;
+      const originalBtnHtml = btn.innerHTML;
+      btn.innerHTML = '<span>⏳ Conectando ao Mercado Pago...</span>';
+
+      try {
+        const payload = {
+          product_id: SELECTED_PROD.id,
+          first_name: name,
+          email: email,
+          phone: phone,
+          cpf: cleanCpf,
+          payment_method: CK_PAYMENT_METHOD,
+          coupon_code: CK_APPLIED_COUPON ? CK_APPLIED_COUPON.code : ''
+        };
+
+        const res = await fetch('/api/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          throw new Error(data.error || 'Erro ao processar compra.');
+        }
+
+        const order = data.order;
+
+        if (CK_PAYMENT_METHOD === 'card' && order.checkout_url) {
+          // REDIRECIONAMENTO IMEDIATO PARA O MERCADO PAGO CHECKOUT PRO
+          btn.innerHTML = '<span>Redirecionando para o Mercado Pago...</span>';
+          window.location.href = order.checkout_url;
+          return;
+        }
+
+        // FLUXO DO PIX: EXIBIR MODAL DE PIX COM POLLING
+        document.getElementById('ckModalOrderNumber').textContent = `#${order.id}`;
+        document.getElementById('ckModalTotalDisplay').textContent = `R$ ${Number(order.total).toFixed(2).replace('.', ',')}`;
+        document.getElementById('ckModalQrImage').src = order.pix_qr_base64;
+        document.getElementById('ckModalPixString').value = order.pix_qr_code;
+
+        document.getElementById('ckPixWaitingState').classList.remove('hidden');
+        document.getElementById('ckPixSuccessState').classList.add('hidden');
+        document.getElementById('ckPixModal').classList.remove('hidden');
+
+        startMlOrderPolling(order.order_key);
+      } catch (err) {
+        errMsg.textContent = err.message || 'Erro ao conectar ao Mercado Pago.';
+        errBanner.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalBtnHtml;
+      }
+    }
+
+    function closeCkPixModal() {
+      document.getElementById('ckPixModal').classList.add('hidden');
+    }
+
+    function copyCkPixString() {
+      const input = document.getElementById('ckModalPixString');
+      navigator.clipboard.writeText(input.value);
+      const btn = document.getElementById('ckModalCopyBtn');
+      btn.textContent = '✓ Copiado!';
+      setTimeout(() => (btn.textContent = 'Copiar Pix'), 2500);
+      alert('Código Pix Copia e Cola copiado! Abra o aplicativo do seu banco para pagar.');
+    }
+
+    function copyCkLicenseKey() {
+      const key = document.getElementById('ckModalLicenseKey').textContent.trim();
+      navigator.clipboard.writeText(key);
+      alert('Chave PRO copiada para a área de transferência!');
+    }
+
+    function goBackFromCheckout(ev) {
+      if (ev) ev.preventDefault();
+      if (SELECTED_PROD) {
+        openProductPageById(SELECTED_PROD.id, true);
+      } else {
+        goHome(ev);
+      }
+    }
+
     function handleRoute() {
       const params = new URLSearchParams(window.location.search);
       const addId = params.get('add-to-cart');
       if (addId && /^\d+$/.test(addId)) {
-        openProductPageById(Number(addId), true);
+        openDedicatedCheckout(Number(addId), true);
+        return;
+      }
+
+      const pName = window.location.pathname.replace(/\/$/, '');
+
+      // ROTA DEDICADA DE CHECKOUT: /checkout ou /finalizar-compra
+      if (pName === '/checkout' || pName === '/finalizar-compra') {
+        const prodIdParam = params.get('id') || params.get('product') || params.get('prod');
+        const targetId = prodIdParam && /^\d+$/.test(prodIdParam) ? Number(prodIdParam) : 2950;
+        openDedicatedCheckout(targetId, false);
         return;
       }
 

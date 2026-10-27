@@ -223,11 +223,18 @@ app.post("/api/coupons/validate", async (req, res) => {
 // 4. Criar Pedido e Gerar Pagamento Mercado Pago (Pix QR Code + Checkout Pro)
 app.post("/api/checkout", checkoutLimiter, async (req, res) => {
   try {
-    const { product_id, first_name, last_name, email, phone, cpf, coupon_code } = req.body || {};
+    const { product_id, first_name, last_name, email, phone, cpf, coupon_code, payment_method } = req.body || {};
 
     if (!product_id || !first_name || !email || !phone) {
       return res.status(400).json({
         error: "Preencha Nome, E-mail e WhatsApp para receber sua Chave de Ativação."
+      });
+    }
+
+    const cleanCpf = String(cpf || "").replace(/\D/g, "");
+    if (!cleanCpf || cleanCpf.length < 11) {
+      return res.status(400).json({
+        error: "Informe um CPF válido para emissão do pagamento e nota fiscal no Mercado Pago."
       });
     }
 
@@ -272,11 +279,15 @@ app.post("/api/checkout", checkoutLimiter, async (req, res) => {
       }
     ];
 
+    const isCard = String(payment_method || "").toLowerCase() === "card";
+    const payMethodKey = isCard ? "mercadopago_card" : "mercadopago_pix";
+    const payMethodTitle = isCard ? "Cartão de Crédito Mercado Pago" : "Pix Mercado Pago";
+
     const insertRes = await dbRun(
       `INSERT INTO orders (
         order_key, status, currency, total, discount_total, coupon_code,
-        first_name, last_name, email, phone, cpf, items_json, customer_ip
-      ) VALUES (?, 'pending', 'BRL', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        first_name, last_name, email, phone, cpf, payment_method, payment_method_title, items_json, customer_ip
+      ) VALUES (?, 'pending', 'BRL', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         orderKey,
         finalTotal,
@@ -286,7 +297,9 @@ app.post("/api/checkout", checkoutLimiter, async (req, res) => {
         String(last_name || "").trim(),
         String(email).trim().toLowerCase(),
         String(phone).trim(),
-        String(cpf || "").trim(),
+        String(cleanCpf).trim(),
+        payMethodKey,
+        payMethodTitle,
         JSON.stringify(items),
         String(ip)
       ]
@@ -304,6 +317,8 @@ app.post("/api/checkout", checkoutLimiter, async (req, res) => {
         last_name: String(last_name || "").trim(),
         email: String(email).trim().toLowerCase(),
         phone: String(phone).trim(),
+        cpf: cleanCpf,
+        payment_method: payment_method || "pix",
         items
       },
       baseUrl

@@ -41,6 +41,21 @@ async function initDatabase() {
   db.exec("PRAGMA journal_mode = WAL;");
   db.exec("PRAGMA foreign_keys = ON;");
 
+  // Migrações seguras de colunas
+  const safeMigrations = [
+    "ALTER TABLE orders ADD COLUMN cpf TEXT DEFAULT ''",
+    "ALTER TABLE orders ADD COLUMN payment_method TEXT DEFAULT 'mercadopago_pix'",
+    "ALTER TABLE orders ADD COLUMN payment_method_title TEXT DEFAULT 'Pix Mercado Pago'",
+    "ALTER TABLE orders ADD COLUMN checkout_url TEXT DEFAULT ''"
+  ];
+  for (const sql of safeMigrations) {
+    try {
+      db.exec(sql + ";");
+    } catch (e) {
+      // Ignora se a coluna já existir
+    }
+  }
+
   db.exec(`
     CREATE TABLE IF NOT EXISTS products (
       id INTEGER PRIMARY KEY,

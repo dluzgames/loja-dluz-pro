@@ -114,6 +114,13 @@ async function createMercadoPagoPayment(order, baseUrl) {
   let checkoutUrl = "";
   let mode = "mercadopago_api";
 
+  const cleanCpf = String(order.cpf || "").replace(/\D/g, "");
+  const cleanPhone = String(order.phone || "").replace(/\D/g, "");
+  const fullName = String(order.first_name || "Cliente").trim();
+  const nameParts = fullName.split(" ");
+  const firstName = nameParts[0] || "Cliente";
+  const lastName = nameParts.slice(1).join(" ") || String(order.last_name || "Gamer").trim() || "Gamer";
+
   if (accessToken && accessToken.length > 20) {
     // 1. Criar Pix Transparente Oficial via Mercado Pago API v1
     try {
@@ -126,8 +133,14 @@ async function createMercadoPagoPayment(order, baseUrl) {
         notification_url: webhookUrl,
         payer: {
           email: order.email || "cliente@dluzgames.com.br",
-          first_name: order.first_name || "Cliente",
-          last_name: order.last_name || "Gamer"
+          first_name: firstName,
+          last_name: lastName,
+          ...(cleanCpf.length >= 11 ? {
+            identification: {
+              type: cleanCpf.length === 14 ? "CNPJ" : "CPF",
+              number: cleanCpf
+            }
+          } : {})
         }
       };
 
@@ -169,9 +182,21 @@ async function createMercadoPagoPayment(order, baseUrl) {
           unit_price: Number(Number(item.price || order.total).toFixed(2))
         })),
         payer: {
-          name: order.first_name,
-          surname: order.last_name || "",
-          email: order.email
+          name: firstName,
+          surname: lastName,
+          email: order.email,
+          ...(cleanPhone.length >= 10 ? {
+            phone: {
+              area_code: cleanPhone.substring(0, 2),
+              number: cleanPhone.substring(2)
+            }
+          } : {}),
+          ...(cleanCpf.length >= 11 ? {
+            identification: {
+              type: cleanCpf.length === 14 ? "CNPJ" : "CPF",
+              number: cleanCpf
+            }
+          } : {})
         },
         external_reference: String(order.id),
         notification_url: webhookUrl,
