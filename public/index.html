@@ -2980,10 +2980,14 @@
 
       // Preparar formulário do Buy Box
       backToMlBuyForm();
-      document.getElementById('mlCheckoutProdId').value = prod.id;
-      document.getElementById('mlCouponInput').value = '';
-      document.getElementById('mlCouponFeedback').classList.add('hidden');
-      document.getElementById('mlCheckoutError').classList.add('hidden');
+      const ckProdIdEl = document.getElementById('mlCheckoutProdId');
+      if (ckProdIdEl) ckProdIdEl.value = prod.id;
+      const ckCpInputEl = document.getElementById('mlCouponInput');
+      if (ckCpInputEl) ckCpInputEl.value = '';
+      const ckCpFbEl = document.getElementById('mlCouponFeedback');
+      if (ckCpFbEl) ckCpFbEl.classList.add('hidden');
+      const ckErrEl = document.getElementById('mlCheckoutError');
+      if (ckErrEl) ckErrEl.classList.add('hidden');
 
       // Alternar Views: Oculta catálogo e exibe página VIP do Mercado Livre
       document.getElementById('mlCatalogView').classList.add('hidden');
@@ -3025,9 +3029,12 @@
     }
 
     function backToMlBuyForm() {
-      document.getElementById('mlBuyFormStep').classList.remove('hidden');
-      document.getElementById('mlBuyPayStep').classList.add('hidden');
-      document.getElementById('mlBuySuccessStep').classList.add('hidden');
+      const stepForm = document.getElementById('mlBuyFormStep');
+      if (stepForm) stepForm.classList.remove('hidden');
+      const stepPay = document.getElementById('mlBuyPayStep');
+      if (stepPay) stepPay.classList.add('hidden');
+      const stepSucc = document.getElementById('mlBuySuccessStep');
+      if (stepSucc) stepSucc.classList.add('hidden');
     }
 
     function copyCurrentPageUrl(ev) {
