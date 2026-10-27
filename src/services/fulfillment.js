@@ -67,7 +67,7 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
   );
   order.status = "completed";
 
-  // Identificar se é o Orbix Player para Linux
+  // Identificar se é o Orbix Player para Linux ou Canal Dark 100% Automático
   const isOrbixLinux = (order.items || []).some(
     (item) =>
       item.slug === "orbix-player-para-linux" ||
@@ -77,9 +77,20 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
       String(item.name || "").toLowerCase().includes("orbix player")
   );
 
+  const isCanalDark = (order.items || []).some(
+    (item) =>
+      item.slug === "canal-dark-100-automatico" ||
+      item.sku === "DLUZ-CANAL-DARK-AUTO" ||
+      item.product_id === 2970 ||
+      item.id === 2970 ||
+      String(item.name || "").toLowerCase().includes("canal dark")
+  );
+
   let generatedKey = order.license_key || "";
   let whatsappStatus = "pending";
   let licenseResData = null;
+
+  let canalDarkApiToken = "";
 
   if (isOrbixLinux) {
     // 2.A. EMISSÃO OFICIAL DO SERIAL DO ORBIX PLAYER LINUX (ECDSA P-256)
@@ -96,6 +107,19 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
       console.error(`[Fulfillment] Erro ao emitir serial do Orbix Player para pedido #${order.id}:`, err.message);
       generatedKey = `ORBX-PENDENTE-${order.id}`;
     }
+  } else if (isCanalDark) {
+    // 2.B. EMISSÃO DO PACOTE CANAL DARK 100% AUTOMÁTICO + API 18 MESES
+    const crypto = require("crypto");
+    const randHex1 = crypto.randomBytes(4).toString("hex").toUpperCase();
+    const randHex2 = crypto.randomBytes(4).toString("hex").toUpperCase();
+    generatedKey = `DLUZ-DARK-${randHex1}-${randHex2}`;
+    canalDarkApiToken = `DARK-18M-${order.id}-${crypto.randomBytes(3).toString("hex").toUpperCase()}`;
+    licenseResData = {
+      type: "canal_dark_suite",
+      key: generatedKey,
+      api_token: canalDarkApiToken,
+      api_months: 18
+    };
   } else {
     // 2.B. FLUXO PADRÃO COM O SERVIDOR DE LICENÇAS WOOCOMMERCE
     const licenseServerUrl = await getSetting(
@@ -188,6 +212,40 @@ https://loja.dluz.com.br/download/orbix-player/${order.order_key}/tar
 🌐 Portal Oficial: https://dluzgames.com.br
 
 Qualquer dúvida, fale direto conosco aqui no WhatsApp! Bom jogo! 🚀🎮🔥`;
+      } else if (isCanalDark) {
+        message = `👋 Olá, *${order.first_name}*! Tudo bem? Aqui é da equipe *DLuz Games*! 🚀🎬
+
+Muito obrigado pela sua compra na nossa Loja Oficial! Seu pedido *#${order.id}* (*Canal Dark 100% Automático*) foi aprovado com sucesso!
+
+━━━━━━━━━━━━━━━━━━━━
+🔑 *SUA CHAVE DE ATIVAÇÃO VITALÍCIA (SUITE DARK):*
+\`${generatedKey}\`
+
+⚡ *SUA CHAVE DA API DE IA (18 MESES GRÁTIS INCLUSOS):*
+\`${canalDarkApiToken || "DARK-API-18M-ATIVADA"}\`
+━━━━━━━━━━━━━━━━━━━━
+
+📦 *SEUS SOFTWARES & PRODUTOS INCLUSOS:*
+1. 🎙️ *Clonador e Sintetizador de Voz Neural Studio* (Voz ultra-realista)
+2. 🎮 *Downloader Inteligente de Gameplays 4K 60FPS* (Sem comentários)
+3. 🎬 *Extrator de Notícias, Mídias e B-Rolls* (Vídeos de alta retenção)
+4. 🎵 *Gerador de Trilhas com Sound Vacuum* (Áudio dinâmico)
+5. ✂️ *Editor de Vídeo Profissional* (Cortes secos e legendas cinéticas)
+6. ⚡ *Acesso Completo à API Oficial por 18 Meses 100% Grátis*
+
+📥 *ACESSO & DOWNLOAD DO PACOTE COMPLETO:*
+https://loja.dluz.com.br/download/canal-dark/${order.order_key}/suite
+
+📖 *COMO ATIVAR:*
+1. Acesse o link acima para baixar os softwares e instaladores.
+2. Ative as ferramentas com sua Chave de Ativação Vitalícia PRO.
+3. Insira sua chave de API para desbloquear 18 meses de inteligência artificial ilimitada.
+
+⭐ *SUPORTE & COMUNIDADE DE CRIADORES DARK:*
+💬 Discord VIP: https://discord.gg/r2tUSVnkn2
+🌐 Portal Oficial: https://dluzgames.com.br
+
+Qualquer dúvida, fale conosco aqui no WhatsApp! Bons vídeos e muito sucesso no seu canal! 🚀🎬🔥`;
       } else {
         const downloadsList = (mainItem.downloads || [])
           .map((d) => `🔹 *${d.name}:*\n${d.file}`)

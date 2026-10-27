@@ -383,6 +383,10 @@ app.get("/api/orders/status/:orderKey", async (req, res) => {
       const isOrbixLinux = (order.items || []).some(
         (i) => i.slug === "orbix-player-para-linux" || i.sku === "DLUZ-ORBIX-LINUX" || i.id === 2960
       );
+      const isCanalDark = (order.items || []).some(
+        (i) => i.slug === "canal-dark-100-automatico" || i.sku === "DLUZ-CANAL-DARK-AUTO" || i.id === 2970 || String(i.name || "").toLowerCase().includes("canal dark")
+      );
+
       if (isOrbixLinux) {
         downloads = [
           {
@@ -396,6 +400,17 @@ app.get("/api/orders/status/:orderKey", async (req, res) => {
           {
             name: "Hashes de Verificação (SHA256SUMS)",
             file: `/download/orbix-player/${order.order_key}/sha256`
+          }
+        ];
+      } else if (isCanalDark) {
+        downloads = [
+          {
+            name: "Pack Canal Dark 100% Automático — Suite Completa de Softwares",
+            file: `/download/canal-dark/${order.order_key}/suite`
+          },
+          {
+            name: "Guia Rápido & Ativação da API Oficial (18 Meses Inclusos)",
+            file: `/download/canal-dark/${order.order_key}/guia`
           }
         ];
       }
@@ -577,6 +592,100 @@ app.get([
     res.setHeader("Content-Type", contentType);
     res.setHeader("Content-Disposition", `attachment; filename="${targetFileName}"`);
     fs.createReadStream(filePath).pipe(res);
+  } catch (err) {
+    res.status(500).send("Erro ao processar download.");
+  }
+});
+
+// 9. Download Seguro do Pack Canal Dark 100% Automático
+app.get([
+  "/download/canal-dark/:orderKey/:fileType",
+  "/download/canal-dark/:fileType"
+], async (req, res) => {
+  try {
+    const orderKey = req.params.orderKey || req.query.token || req.query.key || "";
+    const fileType = req.params.fileType || req.params.orderKey || "suite";
+
+    let isAuthorized = false;
+    if (req.session && req.session.adminUser) {
+      isAuthorized = true;
+    } else if (orderKey) {
+      const order = await dbGet("SELECT id, status FROM orders WHERE order_key = ?", [orderKey]);
+      if (order && order.status === "completed") {
+        isAuthorized = true;
+      }
+    }
+
+    if (!isAuthorized) {
+      return res.status(403).send(`
+        <!DOCTYPE html>
+        <html lang="pt-BR">
+        <head><meta charset="utf-8"><title>Acesso Restrito — Canal Dark 100% Automático</title>
+        <style>body{font-family:sans-serif;background:#0B0F19;color:#F8FAFC;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;}
+        .card{background:#1E293B;padding:36px;border-radius:14px;text-align:center;max-width:440px;border:1px solid #334155;box-shadow:0 8px 30px rgba(0,0,0,0.5);}
+        h2{color:#C084FC;margin-top:0;}a{display:inline-block;margin-top:18px;background:#8B5CF6;color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:bold;}</style>
+        </head>
+        <body><div class="card">
+        <h2>🔒 Download Protegido</h2>
+        <p>Este download é exclusivo para compradores do Canal Dark 100% Automático na Loja DLuz.</p>
+        <a href="https://loja.dluz.com.br/produto/canal-dark-100-automatico">Adquirir Pacote Oficial (R$ 78,00)</a>
+        </div></body></html>
+      `);
+    }
+
+    // Fallback amigável com Central do Criador e downloads
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    res.send(`
+      <!DOCTYPE html>
+      <html lang="pt-BR">
+      <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Canal Dark 100% Automático — Central do Criador DLuz</title>
+      <style>
+        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#07090E;color:#F8FAFC;padding:40px 20px;margin:0;}
+        .container{max-width:680px;margin:0 auto;background:#0F172A;border:1px solid #8B5CF6;border-radius:20px;padding:36px;box-shadow:0 10px 40px rgba(139,92,246,0.15);}
+        h1{color:#C084FC;font-size:24px;margin-top:0;display:flex;align-items:center;gap:10px;}
+        .badge{display:inline-block;background:rgba(139,92,246,0.2);color:#C084FC;font-size:12px;font-weight:bold;padding:4px 10px;border-radius:20px;margin-bottom:16px;}
+        .card{background:#1E293B;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:18px;margin-bottom:14px;}
+        .card h3{margin:0 0 6px 0;font-size:15px;color:#F1F5F9;}
+        .card p{margin:0;font-size:13px;color:#94A3B8;}
+        .btn{display:inline-block;background:#8B5CF6;color:#fff;font-weight:bold;padding:12px 24px;border-radius:10px;text-decoration:none;margin-top:20px;transition:0.2s;}
+        .btn:hover{background:#7C3AED;}
+      </style></head>
+      <body>
+      <div class="container">
+        <span class="badge">🔥 ACESSO VIP CONFIRMADO</span>
+        <h1>🚀 Canal Dark 100% Automático</h1>
+        <p style="color:#94A3B8;font-size:14px;">Parabéns pela sua compra! Abaixo estão as suas ferramentas e recursos liberados:</p>
+        
+        <div class="card">
+          <h3>🎙️ 1. Clonador e Sintetizador de Voz Neural Studio</h3>
+          <p>Síntese vocal com cadência ultra-humana e emoção de locutor profissional.</p>
+        </div>
+        <div class="card">
+          <h3>🎮 2. Downloader de Gameplays 4K 60FPS</h3>
+          <p>Cenas limpas dos jogos mais virais sem HUD e sem comentários.</p>
+        </div>
+        <div class="card">
+          <h3>🎬 3. Minerador de Mídias, Manchetes e B-Rolls</h3>
+          <p>Captura automática de notícias atualizadas para ganchos virais nos primeiros 3 segundos.</p>
+        </div>
+        <div class="card">
+          <h3>🎵 4. Gerador de Trilhas com Sound Vacuum</h3>
+          <p>BGM adaptativa com corte de áudio no clímax da narrativa para máxima retenção.</p>
+        </div>
+        <div class="card">
+          <h3>✂️ 5. Editor de Vídeo Profissional 100% Automático</h3>
+          <p>Cortes secos no beat, punch-zoom e legendas cinéticas em Amarelo Ouro e Verde Neon.</p>
+        </div>
+        <div class="card" style="border-color:#39FF14;">
+          <h3 style="color:#39FF14;">⚡ 6. API Oficial Grátis por 18 Meses</h3>
+          <p>Acesso total liberado para automação e inteligência artificial ilimitada.</p>
+        </div>
+
+        <a class="btn" href="https://discord.gg/r2tUSVnkn2">Acessar Canal VIP no Discord ➔</a>
+      </div>
+      </body></html>
+    `);
   } catch (err) {
     res.status(500).send("Erro ao processar download.");
   }

@@ -5,6 +5,78 @@
 
 const INITIAL_PRODUCTS = [
   {
+    "id": 2970,
+    "image_url": "/images/products/canal-dark-automatico.jpg",
+    "name": "Canal Dark 100% Automático — Pack Completo: Voz + Gameplays 4K + Mídias + Músicas + Editor IA (API Grátis 18 Meses)",
+    "slug": "canal-dark-100-automatico",
+    "sku": "DLUZ-CANAL-DARK-AUTO",
+    "category": "criadores",
+    "badge": "🔥 COMBO DEFINITIVO • TODOS OS PRODUTOS + API 18 MESES GRÁTIS",
+    "theme_color": "#8B5CF6",
+    "icon": "video",
+    "regular_price": 197.0,
+    "sale_price": 78.0,
+    "price": 78.0,
+    "status": "publish",
+    "featured": 1,
+    "license_type": "licensed",
+    "short_description": "Crie canais dark e vídeos virais para YouTube, TikTok e Reels 100% no piloto automático! Inclui TODOS os produtos: Clonador de Voz Neural Studio, Downloader de Gameplays 4K sem comentários, Extrator de Notícias/Mídias, Trilha Sonora com Sound Vacuum, Editor com Legendas Cinéticas e 18 Meses de API Grátis inclusa!",
+    "description": `
+      <h3>🚀 CANAL DARK 100% AUTOMÁTICO: O ECOSSISTEMA DEFINITIVO PARA CRIADORES E VÍDEOS VIRAIS!</h3>
+      <p>O <strong>Canal Dark 100% Automático</strong> é o pacote completo "Tudo-em-Um" da DLuz Games projetado para automatizar toda a esteira de produção de conteúdo para YouTube longo, Shorts, TikTok e Reels. Você não precisa aparecer, não precisa gravar voz e não precisa perder horas editando manualmente.</p>
+      
+      <h4>🔥 O QUE VAI INCLUSO NO PACOTE (TODOS OS PRODUTOS LIBERADOS):</h4>
+      <ul>
+        <li><strong>🎙️ 1. Software de Clonagem e Síntese de Voz Neural Studio:</strong> Voz ultra-realista com cadência humana, respiração natural e dicção de locutor profissional (sem voz robótica). Suporta múltiplos timbres e dublagem fluente.</li>
+        <li><strong>🎮 2. Downloader Inteligente de Gameplays 4K 60FPS:</strong> Localiza e baixa automaticamente gameplays limpas (sem HUD, sem comentários e sem marca d\'água) dos jogos mais hypados do momento para servir de fundo magnético para os seus vídeos.</li>
+        <li><strong>🎬 3. Minerador e Downloader Automático de Mídias & B-Rolls:</strong> Coleta manchetes de notícias atualizadas, imagens em alta resolução, reações e takes contextuais para prender a atenção do público nos primeiros 3 segundos (retenção máxima).</li>
+        <li><strong>🎵 4. Gerador & Sincronizador de Músicas com Sound Vacuum:</strong> Trilha sonora adaptativa que acompanha a emoção da narrativa (alegre, suspense, tensão, hype) e aplica silêncio dramático (Sound Vacuum) no ponto exato da revelação para gerar máxima expectativa.</li>
+        <li><strong>✂️ 5. Editor de Vídeo Profissional 100% Automatizado:</strong> Montagem acelerada com cortes secos a cada 2 a 3 segundos, punch-zoom dinâmico, legendas cinéticas palavra por palavra (em Amarelo Ouro #FFD700 e Verde Neon #39FF14) e efeitos sonoros (SFX) sincronizados no grid de beats.</li>
+        <li><strong>⚡ 6. API Oficial de Inteligência Artificial GRÁTIS por 18 Meses:</strong> Acesso total e irrestrito à API de IA integrada para geração ilimitada de roteiros, transcrição, dublagem e automação por 1 ano e meio (18 meses) sem qualquer mensalidade ou custo adicional!</li>
+        <li><strong>🛡️ Licença Vitalícia dos Softwares:</strong> Pagamento único sem assinatura! Os softwares são seus para sempre, com atualizações automáticas e acesso à Comunidade VIP no Discord.</li>
+      </ul>
+
+      <h4>🎯 Para Quem é Este Pacote:</h4>
+      <ul>
+        <li>Criadores de <strong>Canais Dark no YouTube</strong> (curiosidades, histórias, tecnologia, futebol, games, mistérios e finanças).</li>
+        <li>Produtores de conteúdo para <strong>TikTok, Instagram Reels e YouTube Shorts</strong> que buscam escala e monetização rápida.</li>
+        <li>Afiliados e donos de e-commerce que criam vídeos de produtos e anúncios de alta conversão.</li>
+      </ul>
+
+      <h4>📦 O que Você Recebe Após a Compra:</h4>
+      <ul>
+        <li>Acesso imediato para download de todos os softwares da suite;</li>
+        <li>Chave de Licença Vitalícia PRO de ativação;</li>
+        <li>Credencial da API Oficial liberada por 18 Meses;</li>
+        <li>Tutoriais em vídeo e guias rápidos de instalação passo a passo;</li>
+        <li>Acesso ao canal VIP de criadores no Discord oficial da DLuz Games.</li>
+      </ul>
+    `,
+    "features": [
+      "Clonagem de Voz Neural com Cadência e Emoção Humana",
+      "Downloader de Gameplays 4K 60FPS sem Comentários",
+      "Extrator Automático de Mídias, Notícias e B-Rolls",
+      "Músicas Adaptativas com Efeito Sound Vacuum",
+      "Editor de Vídeo com Legendas Cinéticas e SFX",
+      "18 Meses de API de Inteligência Artificial Grátis",
+      "Licença Vitalícia com Pagamento Único (Sem Mensalidades)",
+      "Envio Automático no WhatsApp e E-mail Imediato"
+    ],
+    "downloads": [
+      {
+        "id": "dark_suite_portal",
+        "name": "Canal Dark Automático — Painel do Criador & Instaladores",
+        "file": "https://loja.dluz.com.br/download/canal-dark/suite"
+      },
+      {
+        "id": "dark_api_guide",
+        "name": "Guia de Ativação da API Oficial (18 Meses Inclusos)",
+        "file": "https://loja.dluz.com.br/download/canal-dark/guia"
+      }
+    ]
+  },
+
+  {
     "id": 2960,
     "image_url": "/images/products/orbix-player-linux.jpg",
     "name": "Orbix Player para Linux — Android Nativo para Jogos no PC (120 FPS • Licença Vitalícia)",
