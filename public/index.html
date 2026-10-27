@@ -3654,7 +3654,6 @@
         return;
       }
 
-      const pName = window.location.pathname.replace(/\/$/, '');
       if (pName.startsWith('/produto/')) {
         const slug = decodeURIComponent(pName.replace('/produto/', ''));
         const found = ALL_PRODUCTS.find(
@@ -3672,6 +3671,7 @@
       }
 
       document.getElementById('mlProductView').classList.add('hidden');
+      document.getElementById('mlCheckoutView').classList.add('hidden');
       document.getElementById('mlCatalogView').classList.remove('hidden');
     }
 
