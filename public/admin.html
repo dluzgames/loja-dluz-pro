@@ -10,7 +10,7 @@
       const tbody = document.getElementById('licencasTableBody');
       if (!tbody) return;
       try {
-        const res = await fetch('/api/admin/licencas');
+        const res = await fetch('/api/admin/licencas', { headers: getAuthHeaders() });
         const data = await res.json();
         if (!data.success || !data.licencas || data.licencas.length === 0) {
           tbody.innerHTML = '<tr><td colspan="8" class="text-center py-6 text-slate-500">Nenhuma licença emitida até o momento.</td></tr>';
@@ -58,7 +58,7 @@
       try {
         const res = await fetch('/api/admin/licencas/gerar', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
           body: JSON.stringify({ nome, email, dias, maquina })
         });
         const data = await res.json();
@@ -415,7 +415,7 @@
       try {
         const res = await fetch('/api/admin/login', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
           body: JSON.stringify({ email, password })
         });
         const data = await res.json();
