@@ -778,13 +778,16 @@
 
     function switchTab(tab) {
       ['orders', 'products', 'settings', 'licencas'].forEach((t) => {
-        if (tab === 'licencas') carregarLicencasOrbix();
         document.getElementById(`tabContent-${t}`).classList.toggle('hidden', t !== tab);
         document.getElementById(`tabBtn-${t}`).className =
           t === tab
             ? 'px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-neon text-black'
             : 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800';
       });
+      if (tab === 'licencas') {
+        carregarStatusChaveOrbix();
+        carregarLicencasOrbix();
+      }
     }
 
     async function logoutAdmin() {
