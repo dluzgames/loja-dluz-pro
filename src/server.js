@@ -863,6 +863,32 @@ app.post("/api/admin/licencas/gerar", requireAdmin, async (req, res) => {
   }
 });
 
+// Admin: Consultar Status da Chave Privada ECDSA P-256
+app.get("/api/admin/licencas/chave-status", requireAdmin, async (req, res) => {
+  try {
+    const { consultarStatusChaveOrbix } = require("./services/orbix-license");
+    const status = await consultarStatusChaveOrbix();
+    res.json({ success: true, status });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Admin: Salvar e Validar Chave Privada ECDSA P-256 + Sincronizar Coolify
+app.post("/api/admin/licencas/salvar-chave", requireAdmin, async (req, res) => {
+  try {
+    const { pem } = req.body || {};
+    if (!pem || typeof pem !== "string" || pem.trim().length < 30) {
+      return res.status(400).json({ error: "Conteúdo da chave PEM é obrigatório." });
+    }
+    const { salvarChavePrivadaOrbix } = require("./services/orbix-license");
+    const result = await salvarChavePrivadaOrbix(pem);
+    res.json(result);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 app.post("/api/admin/orders/:id/approve", requireAdmin, async (req, res) => {
   try {
     const result = await fulfillApprovedOrder(Number(req.params.id), true);
