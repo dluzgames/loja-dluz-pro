@@ -238,7 +238,7 @@ async function initDatabase() {
     store_subtitle: "Softwares Gamer PRO, Emuladores 120 FPS & Ferramentas com IA",
     mp_access_token: process.env.MP_ACCESS_TOKEN || "APP_USR-2399224026397919-032909-b3b728ac46eb4efa82acf05b732b60eb-147323035",
     mp_public_key: process.env.MP_PUBLIC_KEY || "APP_USR-52168119-160d-4d6c-9dd8-5e2cbfb392f4",
-    mp_webhook_secret: process.env.MP_WEBHOOK_SECRET || "",
+    mp_webhook_secret: process.env.MP_WEBHOOK_SECRET || "12b75ae19eda99e3cb06c78eff0da7e7d7c99d1a8cf6387884302a818ef76f2c",
     pix_fallback_key: process.env.PIX_FALLBACK_KEY || "duilioluzefo@gmail.com",
     pix_fallback_name: "MANOEL DUILIO DA LUZ SOUSA",
     pix_fallback_city: "PARAISO DO TOCANTINS",
