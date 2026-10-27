@@ -379,6 +379,27 @@ app.get("/api/orders/status/:orderKey", async (req, res) => {
     }
 
     if (order.status === "completed") {
+      let downloads = order.items?.[0]?.downloads || [];
+      const isOrbixLinux = (order.items || []).some(
+        (i) => i.slug === "orbix-player-para-linux" || i.sku === "DLUZ-ORBIX-LINUX" || i.id === 2960
+      );
+      if (isOrbixLinux) {
+        downloads = [
+          {
+            name: "Orbix Player para Linux (.deb) — Ubuntu, Pop!_OS, Mint, Debian, Zorin",
+            file: `/download/orbix-player/${order.order_key}/deb`
+          },
+          {
+            name: "Orbix Player para Linux (.tar.gz) — Outras Distribuições",
+            file: `/download/orbix-player/${order.order_key}/tar`
+          },
+          {
+            name: "Hashes de Verificação (SHA256SUMS)",
+            file: `/download/orbix-player/${order.order_key}/sha256`
+          }
+        ];
+      }
+
       return res.json({
         id: order.id,
         order_key: order.order_key,
@@ -386,7 +407,7 @@ app.get("/api/orders/status/:orderKey", async (req, res) => {
         total: order.total,
         license_key: order.license_key,
         product_name: order.items?.[0]?.name || "Software DLuz Games",
-        downloads: order.items?.[0]?.downloads || []
+        downloads
       });
     }
 
@@ -489,6 +510,75 @@ app.get(["/download/orbix", "/download/dluz-orbix", "/download/dluz-orbix-setup"
   } catch (err) {
     console.error("Erro no download proxy:", err);
     res.status(500).send("Erro interno ao processar download.");
+  }
+});
+
+// 8. Download Seguro do Orbix Player para Linux (.deb, .tar.gz, sha256)
+app.get([
+  "/download/orbix-player/:orderKey/:fileType",
+  "/download/orbix-player/:fileType"
+], async (req, res) => {
+  try {
+    const orderKey = req.params.orderKey || req.query.token || req.query.key || "";
+    const fileType = req.params.fileType || req.params.orderKey || "";
+
+    let isAuthorized = false;
+    if (req.session && req.session.adminUser) {
+      isAuthorized = true;
+    } else if (orderKey) {
+      const order = await dbGet("SELECT id, status FROM orders WHERE order_key = ?", [orderKey]);
+      if (order && order.status === "completed") {
+        isAuthorized = true;
+      }
+    }
+
+    if (!isAuthorized) {
+      return res.status(403).send(`
+        <!DOCTYPE html>
+        <html lang="pt-BR">
+        <head><meta charset="utf-8"><title>Acesso Restrito — Orbix Player</title>
+        <style>body{font-family:sans-serif;background:#0B0F19;color:#F8FAFC;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;}
+        .card{background:#1E293B;padding:36px;border-radius:14px;text-align:center;max-width:440px;border:1px solid #334155;box-shadow:0 8px 30px rgba(0,0,0,0.5);}
+        h2{color:#38BDF8;margin-top:0;}a{display:inline-block;margin-top:18px;background:#0284C7;color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:bold;}</style>
+        </head>
+        <body><div class="card">
+          <h2>🐧 Orbix Player para Linux</h2>
+          <p>O download dos instaladores (.deb e .tar.gz) é exclusivo para clientes com licença ativa.</p>
+          <p>Consulte seu pedido ou fale com nosso suporte oficial no WhatsApp.</p>
+          <a href="/consultar-pedido">Consultar Meu Pedido</a>
+        </div></body>
+        </html>
+      `);
+    }
+
+    const downloadsDir = path.join(__dirname, "../data/downloads");
+    let targetFileName = "";
+    let contentType = "application/octet-stream";
+
+    const cleanType = String(fileType || "").toLowerCase();
+    if (cleanType === "deb" || cleanType.includes(".deb")) {
+      targetFileName = "orbix-player_1.0.0_amd64.deb";
+      contentType = "application/vnd.debian.binary-package";
+    } else if (cleanType === "tar" || cleanType.includes(".tar") || cleanType.includes("tar.gz")) {
+      targetFileName = "orbix-player-1.0.0-linux-x64.tar.gz";
+      contentType = "application/gzip";
+    } else if (cleanType === "sha256" || cleanType === "sha256sums") {
+      targetFileName = "SHA256SUMS";
+      contentType = "text/plain; charset=utf-8";
+    } else {
+      return res.status(404).send("Arquivo não encontrado.");
+    }
+
+    const filePath = path.join(downloadsDir, targetFileName);
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).send("Instalador em processamento no servidor.");
+    }
+
+    res.setHeader("Content-Type", contentType);
+    res.setHeader("Content-Disposition", `attachment; filename="${targetFileName}"`);
+    fs.createReadStream(filePath).pipe(res);
+  } catch (err) {
+    res.status(500).send("Erro ao processar download.");
   }
 });
 
@@ -738,6 +828,41 @@ app.put("/api/admin/products/:id", requireAdmin, async (req, res) => {
 });
 
 // Admin: Aprovar Pedido Manualmente / Reenviar Chave no WhatsApp
+// Admin: Gestão de Licenças e Seriais Orbix Player
+app.get("/api/admin/licencas", requireAdmin, async (req, res) => {
+  try {
+    const q = String(req.query.q || "").trim().toLowerCase();
+    let sql = "SELECT * FROM licencas";
+    let params = [];
+    if (q) {
+      sql += " WHERE LOWER(email) LIKE ? OR LOWER(nome) LIKE ? OR serial LIKE ? OR pedido_id = ?";
+      params = [`%${q}%`, `%${q}%`, `%${q}%`, Number(q) || 0];
+    }
+    sql += " ORDER BY id DESC LIMIT 100";
+    const licencas = await dbAll(sql, params);
+    res.json({ success: true, licencas });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post("/api/admin/licencas/gerar", requireAdmin, async (req, res) => {
+  try {
+    const { dias, maquina, email, nome, motivo } = req.body || {};
+    const { emitirSerialManual } = require("./services/orbix-license");
+    const lic = await emitirSerialManual({
+      dias: Number(dias) || 0,
+      maquina: maquina || null,
+      email: email || "",
+      nome: nome || "",
+      motivo: motivo || "geracao_manual_admin"
+    });
+    res.json({ success: true, licenca: lic });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.post("/api/admin/orders/:id/approve", requireAdmin, async (req, res) => {
   try {
     const result = await fulfillApprovedOrder(Number(req.params.id), true);

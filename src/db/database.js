@@ -138,6 +138,27 @@ async function initDatabase() {
       updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
 
+    CREATE TABLE IF NOT EXISTS licencas (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      pedido_id INTEGER UNIQUE,
+      order_key TEXT,
+      numero INTEGER UNIQUE NOT NULL,
+      serial TEXT NOT NULL,
+      email TEXT NOT NULL,
+      nome TEXT NOT NULL,
+      plano TEXT DEFAULT 'vitalicio',
+      expira_em DATETIME DEFAULT NULL,
+      maquina TEXT DEFAULT NULL,
+      status TEXT DEFAULT 'ativa',
+      criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS serial_sequence (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      current_number INTEGER NOT NULL DEFAULT 100000
+    );
+    INSERT OR IGNORE INTO serial_sequence (id, current_number) VALUES (1, 100000);
+
     CREATE TABLE IF NOT EXISTS settings (
       key TEXT PRIMARY KEY,
       value TEXT NOT NULL,

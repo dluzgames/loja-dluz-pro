@@ -5,6 +5,80 @@
 
 const INITIAL_PRODUCTS = [
   {
+    "id": 2960,
+    "image_url": "/images/products/orbix-player-linux.jpg",
+    "name": "Orbix Player para Linux — Android Nativo para Jogos no PC (120 FPS • Licença Vitalícia)",
+    "slug": "orbix-player-para-linux",
+    "sku": "DLUZ-ORBIX-LINUX",
+    "category": "emuladores",
+    "badge": "🐧 LINUX • ANDROID NATIVO & 120 FPS",
+    "theme_color": "#0284C7",
+    "icon": "terminal",
+    "regular_price": 49.9,
+    "sale_price": 29.9,
+    "price": 29.9,
+    "status": "publish",
+    "featured": 1,
+    "license_type": "licensed",
+    "short_description": "O primeiro player Android nativo para Linux (Ubuntu, Debian, Pop!_OS, Mint e Zorin) com mapeamento completo de teclado e mouse, mira precisa, upscaling FSR e até 120 FPS em jogos compatíveis com placa NVIDIA, AMD ou Intel.",
+    "description": `
+      <h3>🐧 ORBIX PLAYER PARA LINUX: ANDROID NATIVO DE ALTA PERFORMANCE COM 120 FPS!</h3>
+      <p>O <strong>Orbix Player para Linux</strong> é a solução definitiva e otimizada para rodar Android e jogos mobile diretamente no seu computador com Linux, com teclado e mouse mapeados com extrema precisão, mira cirúrgica e suporte a FSR (FidelityFX Super Resolution).</p>
+      
+      <h4>🔥 Destaques e Vantagens Exclusivas:</h4>
+      <ul>
+        <li><strong>🎮 Controles de Jogo Completos:</strong> Teclado e mouse mapeados de fábrica, ajuste independente de sensibilidade e mira suave sem aceleração.</li>
+        <li><strong>⚡ Até 120 FPS Cravado:</strong> Máxima taxa de quadros em jogos compatíveis, aproveitando a aceleração gráfica nativa do Kernel Linux.</li>
+        <li><strong>🚀 Ampla Compatibilidade de Hardware:</strong> Funciona perfeitamente com placas de vídeo <strong>NVIDIA, AMD e Intel</strong> (tanto placas dedicadas quanto gráficos integrados).</li>
+        <li><strong>📦 Instalação Simples e Rápida:</strong> O sistema Android (~2,5 GB) é baixado pelo próprio programa na primeira inicialização com apenas 1 clique. Se a internet cair, o download continua de onde parou.</li>
+        <li><strong>🛡️ Licença Vitalícia Criptografada (ECDSA P-256):</strong> Pagamento único sem mensalidades! Seu serial oficial exclusivo (iniciado em <code>ORBX-</code>) é entregue na hora na tela, no WhatsApp e no seu e-mail.</li>
+      </ul>
+
+      <h4>💻 Requisitos do Sistema:</h4>
+      <ul>
+        <li><strong>Sistema Operacional:</strong> Linux 64 bits (Ubuntu 22.04+, Pop!_OS, Linux Mint 21+, Debian 12+, Zorin OS ou qualquer distribuição moderna compatível).</li>
+        <li><strong>Processador:</strong> CPU 64 bits com suporte a Virtualização habilitada na BIOS (Intel VT-x ou AMD-V / SVM).</li>
+        <li><strong>Memória RAM:</strong> 8 GB de RAM (16 GB recomendado para multitarefas).</li>
+        <li><strong>Armazenamento:</strong> 10 GB de espaço livre em disco.</li>
+        <li><strong>Conexão:</strong> Acesso à internet para baixar a imagem do Android na primeira inicialização.</li>
+      </ul>
+
+      <h4>❓ Dúvidas e Solução de Problemas Comuns (FAQ):</h4>
+      <ul>
+        <li><strong>Mensagem \"/dev/kvm não existe\":</strong> Ative a tecnologia de virtualização (Intel VT-x ou AMD SVM) nas configurações da BIOS/UEFI do seu computador.</li>
+        <li><strong>Como instalar no Ubuntu/Debian/Mint:</strong> Dê dois cliques no arquivo <code>orbix-player_1.0.0_amd64.deb</code> e clique em Instalar, ou execute no terminal: <code>sudo apt install ./orbix-player_1.0.0_amd64.deb</code>.</li>
+        <li><strong>Outras distribuições (Fedora, Arch, etc.):</strong> Extraia o pacote <code>orbix-player-1.0.0-linux-x64.tar.gz</code> e execute <code>bash install.sh</code>.</li>
+        <li><strong>Onde inserir a licença:</strong> Ao abrir o Orbix Player pelo menu de aplicativos, cole seu serial <code>ORBX-...</code> e clique em <em>Ativar</em>.</li>
+      </ul>
+    `,
+    "features": [
+      "Android Nativo para Linux com Aceleração de Hardware",
+      "Teclado e Mouse Mapeados com Mira Precisa",
+      "Suporte a até 120 FPS e Upscaling FSR",
+      "Compatível com Placas NVIDIA, AMD e Intel",
+      "Instalador .deb para Ubuntu/Mint/Debian e .tar.gz universal",
+      "Android baixado automaticamente em 1 clique",
+      "Licença Vitalícia com Serial Oficial Criptografado (ORBX-)"
+    ],
+    "downloads": [
+      {
+        "id": "orbix-player-deb",
+        "name": "Orbix Player para Linux (.deb) — Ubuntu, Mint, Pop!_OS, Debian",
+        "file": "/download/orbix-player/deb"
+      },
+      {
+        "id": "orbix-player-tar",
+        "name": "Orbix Player para Linux (.tar.gz) — Outras Distribuições",
+        "file": "/download/orbix-player/tar"
+      },
+      {
+        "id": "orbix-player-sums",
+        "name": "Hashes de Verificação (SHA256SUMS)",
+        "file": "/download/orbix-player/sha256"
+      }
+    ]
+  },
+  {
     "id": 2950,
     "image_url": "/images/products/dluz-orbix-cover.jpg",
     "name": "DLuz Orbix Setup Leve — Mobilador e Emulador com Android 17 (120 FPS Cravado • Licença Vitalícia)",

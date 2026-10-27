@@ -5,7 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Painel Admin — Loja Oficial DLuz Games</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+    async function carregarLicencasOrbix() {
+      const tbody = document.getElementById('licencasTableBody');
+      if (!tbody) return;
+      try {
+        const res = await fetch('/api/admin/licencas');
+        const data = await res.json();
+        if (!data.success || !data.licencas || data.licencas.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="8" class="text-center py-6 text-slate-500">Nenhuma licença emitida até o momento.</td></tr>';
+          return;
+        }
+
+        tbody.innerHTML = data.licencas.map(l => `
+          <tr class="hover:bg-white/5">
+            <td class="py-3 font-mono font-bold text-cyan-400">#${l.numero}</td>
+            <td class="font-bold">${l.pedido_id ? '#' + l.pedido_id : 'Manual'}</td>
+            <td>${l.nome || 'Cliente'}</td>
+            <td class="text-slate-400">${l.email || '—'}</td>
+            <td>
+              <div class="flex items-center gap-2">
+                <code class="bg-black/40 px-2 py-1 rounded text-cyan-300 font-mono text-[11px] max-w-[200px] truncate" title="${l.serial}">${l.serial}</code>
+                <button onclick="navigator.clipboard.writeText('${l.serial}'); alert('Serial copiado!');" class="text-xs text-cyan-400 hover:underline">Copiar</button>
+              </div>
+            </td>
+            <td><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-300 uppercase">${l.plano}</span></td>
+            <td>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold ${l.status === 'ativa' ? 'bg-green-500/20 text-green-300' : 'bg-red-500/20 text-red-300'} uppercase">${l.status}</span>
+            </td>
+            <td class="text-slate-500">${new Date(l.criado_em).toLocaleDateString('pt-BR')}</td>
+          </tr>
+        `).join('');
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="8" class="text-center py-4 text-red-400">Erro: ${err.message}</td></tr>`;
+      }
+    }
+
+    async function handleGerarSerialManual(ev) {
+      ev.preventDefault();
+      const btn = document.getElementById('manLicSubmitBtn');
+      const resBox = document.getElementById('manLicResultBox');
+      resBox.classList.add('hidden');
+
+      const nome = document.getElementById('manLicNome').value.trim();
+      const email = document.getElementById('manLicEmail').value.trim();
+      const dias = Number(document.getElementById('manLicDias').value) || 0;
+      const maquina = document.getElementById('manLicMaquina').value.trim() || null;
+
+      btn.disabled = true;
+      btn.textContent = 'Gerando...';
+
+      try {
+        const res = await fetch('/api/admin/licencas/gerar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nome, email, dias, maquina })
+        });
+        const data = await res.json();
+        if (!res.ok || !data.success) throw new Error(data.error || 'Erro ao gerar serial.');
+
+        resBox.classList.remove('hidden');
+        resBox.innerHTML = `
+          <div class="text-green-400 font-bold mb-1">✓ Serial Gerado com Sucesso! (Número #${data.licenca.numero})</div>
+          <div class="bg-black/60 p-3 rounded-lg border border-cyan-500/30 flex justify-between items-center gap-2">
+            <span class="text-cyan-300 select-all">${data.licenca.serial}</span>
+            <button type="button" onclick="navigator.clipboard.writeText('${data.licenca.serial}'); alert('Copiado!');" class="bg-cyan-500 text-black px-3 py-1 rounded text-xs font-bold">Copiar</button>
+          </div>
+        `;
+        carregarLicencasOrbix();
+      } catch (err) {
+        alert('Erro: ' + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Gerar Serial Orbix ➔';
+      }
+    }
+
+  </script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -117,6 +193,9 @@
         </button>
         <button onclick="switchTab('settings')" id="tabBtn-settings" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800">
           💳 Provedor Mercado Pago & Segurança
+        </button>
+        <button onclick="switchTab('licencas')" id="tabBtn-licencas" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800">
+          🐧 Licenças Orbix Player
         </button>
       </div>
 
@@ -251,6 +330,75 @@
           </form>
         </div>
       </section>
+    
+      <!-- ABA 4: LICENÇAS ORBIX PLAYER -->
+      <section id="tabContent-licencas" class="space-y-6 hidden">
+        <!-- Emissão Manual de Serial -->
+        <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+            <div>
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <span>🔑</span> Gerar Serial Manual (Cortesia / Suporte)
+              </h3>
+              <p class="text-xs text-slate-400">Emite um serial oficial assinado (ECDSA P-256) com sequência atômica (100000+).</p>
+            </div>
+          </div>
+          <form onsubmit="handleGerarSerialManual(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Nome do Cliente</label>
+              <input type="text" id="manLicNome" placeholder="Ex: Lucas Gamer" class="w-full bg-slate-800/80 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-neon" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">E-mail</label>
+              <input type="email" id="manLicEmail" placeholder="cliente@gmail.com" class="w-full bg-slate-800/80 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-neon" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Validade (Dias)</label>
+              <input type="number" id="manLicDias" value="0" min="0" placeholder="0 = Vitalício" class="w-full bg-slate-800/80 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-neon" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">ID Máquina (Opcional - 12 hex)</label>
+              <input type="text" id="manLicMaquina" maxlength="12" placeholder="Ex: a1b2c3d4e5f6" class="w-full bg-slate-800/80 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-neon" />
+            </div>
+            <div class="sm:col-span-4 flex justify-end">
+              <button type="submit" id="manLicSubmitBtn" class="bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold px-6 py-2.5 rounded-xl text-sm transition-all shadow-lg shadow-cyan-500/20">
+                Gerar Serial Orbix ➔
+              </button>
+            </div>
+          </form>
+          <div id="manLicResultBox" class="hidden mt-4 bg-slate-950 border border-cyan-500/40 rounded-xl p-4 text-xs font-mono"></div>
+        </div>
+
+        <!-- Tabela de Licenças Emitidas -->
+        <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-5 overflow-x-auto">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span>📋</span> Licenças Emitidas (Orbix Player para Linux)
+            </h3>
+            <button onclick="carregarLicencasOrbix()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs text-slate-300">
+              🔄 Atualizar
+            </button>
+          </div>
+          <table class="w-full text-left text-xs">
+            <thead>
+              <tr class="text-slate-400 border-b border-white/10 pb-3">
+                <th class="py-2">Nº Seq.</th>
+                <th>Pedido</th>
+                <th>Cliente</th>
+                <th>E-mail</th>
+                <th>Serial Oficial</th>
+                <th>Plano</th>
+                <th>Status</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody id="licencasTableBody" class="divide-y divide-white/5 text-slate-300">
+              <tr><td colspan="8" class="text-center py-6 text-slate-500">Carregando licenças...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
     </main>
   </div>
 
@@ -493,7 +641,8 @@
     }
 
     function switchTab(tab) {
-      ['orders', 'products', 'settings'].forEach((t) => {
+      ['orders', 'products', 'settings', 'licencas'].forEach((t) => {
+        if (tab === 'licencas') carregarLicencasOrbix();
         document.getElementById(`tabContent-${t}`).classList.toggle('hidden', t !== tab);
         document.getElementById(`tabBtn-${t}`).className =
           t === tab
