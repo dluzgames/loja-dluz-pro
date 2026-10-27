@@ -22,7 +22,8 @@ const {
 const {
   createMercadoPagoPayment,
   verifyAndFetchMpPayment,
-  testMercadoPagoConnection
+  testMercadoPagoConnection,
+  syncAndReconcileMpPayments
 } = require("./services/mercadopago");
 
 const {
@@ -504,6 +505,17 @@ app.post("/api/webhooks/mercadopago", async (req, res) => {
       rawOrder = await dbGet("SELECT * FROM orders WHERE mp_payment_id = ?", [String(payment.id)]);
     }
 
+    if (!rawOrder && mpStatus === "approved") {
+      console.log(`[Webhook MP] Pedido não encontrado localmente para pagamento aprovado #${payment.id}. Reconciliando automaticamente...`);
+      await syncAndReconcileMpPayments();
+      if (externalRef && /^\d+$/.test(externalRef)) {
+        rawOrder = await dbGet("SELECT * FROM orders WHERE id = ?", [Number(externalRef)]);
+      }
+      if (!rawOrder) {
+        rawOrder = await dbGet("SELECT * FROM orders WHERE mp_payment_id = ?", [String(payment.id)]);
+      }
+    }
+
     if (!rawOrder) {
       return res.status(200).json({ received: true, warning: "Order not found locally" });
     }
@@ -825,7 +837,18 @@ app.get("*", (req, res) => {
 });
 
 initDatabase()
-  .then(() => {
+  .then(async () => {
+    // Reconciliação imediata na inicialização para resgatar pagamentos aprovados
+    try {
+      console.log("[Mercado Pago] Executando sincronização inicial de pagamentos...");
+      await syncAndReconcileMpPayments();
+    } catch (reconcileErr) {
+      console.error("[Mercado Pago Startup Error]:", reconcileErr.message);
+    }
+
+    // Poller contínuo a cada 60 segundos garantindo que nenhuma venda fique pendente
+    setInterval(syncAndReconcileMpPayments, 60000);
+
     app.listen(PORT, "0.0.0.0", () => {
       console.log(`🚀 Loja Oficial DLuz Games rodando na porta ${PORT}`);
     });

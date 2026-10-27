@@ -1,7 +1,9 @@
 const https = require("https");
 const crypto = require("crypto");
 const QRCode = require("qrcode");
-const { getSetting } = require("../db/database");
+const { getSetting, dbGet, dbRun, formatOrderRow } = require("../db/database");
+const { INITIAL_PRODUCTS } = require("../db/seed");
+const { fulfillApprovedOrder } = require("./fulfillment");
 
 function httpsJson(urlStr, options = {}, payload = null) {
   return new Promise((resolve, reject) => {
@@ -306,8 +308,137 @@ async function testMercadoPagoConnection(customToken = null) {
   return { ok: false, status: res.status, details: res.data };
 }
 
+
+/**
+ * Sincroniza pagamentos aprovados do Mercado Pago e reconcilia automaticamente
+ * com os pedidos locais. Se um pedido foi aprovado no MP mas não consta como completed
+ * ou foi perdido por redeploy, cria/atualiza o pedido e dispara a liberação imediata da licença!
+ */
+async function syncAndReconcileMpPayments() {
+  try {
+    const accessToken = (await getSetting("mp_access_token", process.env.MP_ACCESS_TOKEN || "")).trim();
+    if (!accessToken || accessToken.length < 20) return;
+
+    const res = await httpsJson(
+      "https://api.mercadopago.com/v1/payments/search?sort=date_created&criteria=desc&status=approved&limit=30",
+      {
+        method: "GET",
+        headers: { "Authorization": `Bearer ${accessToken}` }
+      }
+    );
+
+    if (res.status !== 200 || !res.data?.results) return;
+
+    for (const payment of res.data.results) {
+      const extRef = String(payment.external_reference || "").trim();
+      const mpPaymentId = String(payment.id);
+
+      // 1. Procurar pedido existente por id ou mp_payment_id
+      let order = null;
+      if (extRef && /^\d+$/.test(extRef)) {
+        order = await dbGet("SELECT * FROM orders WHERE id = ?", [Number(extRef)]);
+      }
+      if (!order) {
+        order = await dbGet("SELECT * FROM orders WHERE mp_payment_id = ?", [mpPaymentId]);
+      }
+
+      // 2. Se o pedido já existe e está completed, nada a fazer
+      if (order && order.status === "completed") {
+        continue;
+      }
+
+      // 3. Se o pedido não existe, auto-criar a partir dos dados do pagamento
+      if (!order) {
+        const desc = (payment.description || "").toLowerCase();
+        let matchedProduct = null;
+        for (const p of INITIAL_PRODUCTS) {
+          if (desc.includes((p.name || "").toLowerCase()) || desc.includes((p.slug || "").toLowerCase())) {
+            matchedProduct = p;
+            break;
+          }
+        }
+        if (!matchedProduct) {
+          if (desc.includes("mobilador") || desc.includes("orbix")) {
+            matchedProduct = INITIAL_PRODUCTS.find(p => p.slug.includes("orbix") || p.slug.includes("mobilador"));
+          } else if (desc.includes("gta")) {
+            matchedProduct = INITIAL_PRODUCTS.find(p => p.slug.includes("gta"));
+          }
+        }
+        if (!matchedProduct) {
+          matchedProduct = INITIAL_PRODUCTS[0];
+        }
+
+        const orderId = (extRef && /^\d+$/.test(extRef)) ? Number(extRef) : undefined;
+        const payerEmail = payment.payer?.email || "cliente@mercadopago.com";
+        const payerName = payment.payer?.first_name || "Cliente Gamer";
+        const payerPhone = payment.payer?.phone?.number ? `${payment.payer.phone.area_code || ""}${payment.payer.phone.number}` : "";
+        const orderKey = "dluz_mp_" + mpPaymentId;
+
+        const items = [{
+          id: matchedProduct.id,
+          product_id: matchedProduct.id,
+          name: matchedProduct.name,
+          slug: matchedProduct.slug,
+          price: Number(payment.transaction_amount),
+          quantity: 1,
+          license_type: matchedProduct.license_type,
+          downloads: matchedProduct.downloads || []
+        }];
+
+        if (orderId) {
+          await dbRun(
+            `INSERT OR IGNORE INTO orders (
+              id, order_key, status, currency, total, discount_total, coupon_code,
+              first_name, last_name, email, phone, cpf, items_json, mp_payment_id, created_at, paid_at
+            ) VALUES (?, ?, 'pending', 'BRL', ?, 0, '', ?, '', ?, '', ?, ?, ?, ?, CURRENT_TIMESTAMP)`,
+            [
+              orderId,
+              orderKey,
+              payment.transaction_amount,
+              payerName,
+              payerEmail,
+              payerPhone,
+              JSON.stringify(items),
+              mpPaymentId,
+              payment.date_created || new Date().toISOString()
+            ]
+          );
+          order = await dbGet("SELECT * FROM orders WHERE id = ?", [orderId]);
+        } else {
+          const insertRes = await dbRun(
+            `INSERT INTO orders (
+              order_key, status, currency, total, discount_total, coupon_code,
+              first_name, last_name, email, phone, cpf, items_json, mp_payment_id, created_at, paid_at
+            ) VALUES (?, 'pending', 'BRL', ?, 0, '', ?, '', ?, '', ?, ?, ?, ?, CURRENT_TIMESTAMP)`,
+            [
+              orderKey,
+              payment.transaction_amount,
+              payerName,
+              payerEmail,
+              payerPhone,
+              JSON.stringify(items),
+              mpPaymentId,
+              payment.date_created || new Date().toISOString()
+            ]
+          );
+          order = await dbGet("SELECT * FROM orders WHERE id = ?", [insertRes.lastID]);
+        }
+      }
+
+      // 4. Executar liberação da licença se o pedido ainda não estiver completed
+      if (order && order.status !== "completed") {
+        console.log(`[Reconciler] Auto-liberando pedido #${order.id} referente ao pagamento MP #${mpPaymentId}...`);
+        await fulfillApprovedOrder(order.id);
+      }
+    }
+  } catch (err) {
+    console.error("[Reconciler Error]:", err.message);
+  }
+}
+
 module.exports = {
   createMercadoPagoPayment,
   verifyAndFetchMpPayment,
-  testMercadoPagoConnection
+  testMercadoPagoConnection,
+  syncAndReconcileMpPayments
 };
