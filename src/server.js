@@ -153,7 +153,7 @@ app.get([
 app.get("/api/products", async (req, res) => {
   try {
     const rows = await dbAll(
-      "SELECT * FROM products WHERE status = 'publish' ORDER BY (CASE WHEN slug = 'dluz-orbix-setup-leve' THEN 0 ELSE 1 END), featured DESC, price ASC"
+      "SELECT * FROM products WHERE status = 'publish' ORDER BY (CASE WHEN slug = 'dluz-orbix-setup-leve' THEN 0 WHEN slug = 'orbix-player-para-linux' THEN 1 ELSE 2 END), featured DESC, price ASC"
     );
     const mpToken = await getSetting("mp_access_token", "");
     const whatsappSupport = await getSetting("whatsapp_support", "5563981199852");
@@ -1112,21 +1112,18 @@ app.get("*", (req, res) => {
 });
 
 initDatabase()
-  .then(async () => {
-    // Reconciliação imediata na inicialização para resgatar pagamentos aprovados
-    try {
-      console.log("[Mercado Pago] Executando sincronização inicial de pagamentos...");
-      await syncAndReconcileMpPayments();
-    } catch (reconcileErr) {
-      console.error("[Mercado Pago Startup Error]:", reconcileErr.message);
-    }
-
-    // Poller contínuo a cada 60 segundos garantindo que nenhuma venda fique pendente
-    setInterval(syncAndReconcileMpPayments, 60000);
-
+  .then(() => {
     app.listen(PORT, "0.0.0.0", () => {
       console.log(`🚀 Loja Oficial DLuz Games rodando na porta ${PORT}`);
     });
+
+    // Reconciliação em segundo plano na inicialização sem bloquear o servidor
+    syncAndReconcileMpPayments().catch((reconcileErr) => {
+      console.error("[Mercado Pago Startup Error]:", reconcileErr.message);
+    });
+
+    // Poller contínuo a cada 60 segundos garantindo que nenhuma venda fique pendente
+    setInterval(syncAndReconcileMpPayments, 60000);
   })
   .catch((err) => {
     console.error("Falha ao inicializar banco de dados da loja:", err);

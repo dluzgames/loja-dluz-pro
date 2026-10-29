@@ -1122,8 +1122,91 @@
     }
   
     /* ==========================================
-       DLUZ ORBIX HERO SPOTLIGHT BANNER
+       DLUZ ORBIX HERO SPOTLIGHT BANNER & DUO GRID
        ========================================== */
+    .orbix-duo-wrapper {
+      margin-bottom: 24px;
+    }
+
+    .orbix-duo-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding: 0 4px;
+    }
+
+    .orbix-duo-headline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .orbix-duo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #0284C7 0%, #0891B2 100%);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+      text-transform: uppercase;
+    }
+
+    .orbix-duo-subtitle {
+      font-size: 13px;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+
+    .orbix-duo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .orbix-duo-grid .orbix-spotlight-hero {
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px 24px;
+    }
+
+    .orbix-duo-grid .orbix-hero-content {
+      gap: 18px;
+    }
+
+    .orbix-duo-grid .orbix-hero-title {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .orbix-duo-grid .orbix-hero-desc {
+      font-size: 12.5px;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+
+    .orbix-duo-grid .orbix-hero-img-wrap {
+      width: 140px;
+      height: 140px;
+    }
+
+    .orbix-duo-grid .orbix-hero-btn {
+      padding: 10px 18px;
+      font-size: 13px;
+    }
+
+    .orbix-duo-grid .orbix-hero-num {
+      font-size: 25px;
+    }
+
     .orbix-spotlight-hero {
       background: linear-gradient(135deg, #070D1E 0%, #0A192F 50%, #0D2847 100%);
       border: 1px solid rgba(2, 132, 199, 0.45);
@@ -1141,6 +1224,75 @@
       transform: translateY(-2px);
       box-shadow: 0 12px 40px rgba(2, 132, 199, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.15);
       border-color: #38BDF8;
+    }
+
+    /* Orbix Linux Variant */
+    .orbix-hero-linux {
+      background: linear-gradient(135deg, #04141E 0%, #082836 50%, #0D3E52 100%) !important;
+      border: 1px solid rgba(6, 182, 212, 0.45) !important;
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .orbix-hero-linux:hover {
+      border-color: #22D3EE !important;
+      box-shadow: 0 12px 40px rgba(6, 182, 212, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .orbix-hero-badge-linux {
+      background: rgba(6, 182, 212, 0.2) !important;
+      border: 1px solid rgba(34, 211, 238, 0.45) !important;
+      color: #67E8F9 !important;
+    }
+
+    .orbix-pulse-cyan {
+      background: #22D3EE !important;
+      box-shadow: 0 0 8px #22D3EE !important;
+    }
+
+    .orbix-hero-price-val-linux .orbix-hero-currency {
+      color: #22D3EE !important;
+    }
+
+    .orbix-hero-btn-linux {
+      background: linear-gradient(135deg, #0891B2 0%, #0E7490 100%) !important;
+      border: 1px solid rgba(34, 211, 238, 0.3) !important;
+      box-shadow: 0 4px 14px rgba(6, 182, 212, 0.4) !important;
+    }
+
+    .orbix-hero-btn-linux:hover {
+      background: linear-gradient(135deg, #0E7490 0%, #155E75 100%) !important;
+      box-shadow: 0 6px 20px rgba(6, 182, 212, 0.55) !important;
+    }
+
+    .orbix-hero-img-wrap-linux {
+      border: 1px solid rgba(34, 211, 238, 0.35) !important;
+    }
+
+    .orbix-hero-img-badge-linux {
+      background: rgba(6, 32, 44, 0.95) !important;
+      color: #67E8F9 !important;
+      border-top: 1px solid rgba(34, 211, 238, 0.3) !important;
+    }
+
+    /* Linux Card in Grid */
+    .ml-card-orbix-linux {
+      border: 2px solid #06B6D4 !important;
+      box-shadow: 0 6px 24px rgba(6, 182, 212, 0.25) !important;
+    }
+
+    .orbix-ribbon-linux {
+      background: linear-gradient(135deg, #0891B2, #0E7490) !important;
+      box-shadow: 0 2px 8px rgba(6, 182, 212, 0.4) !important;
+    }
+
+    @media (max-width: 1024px) {
+      .orbix-duo-grid {
+        grid-template-columns: 1fr;
+      }
+      .orbix-duo-grid .orbix-hero-img-wrap {
+        width: 150px;
+        height: 150px;
+      }
     }
 
     .orbix-hero-badge {
@@ -2634,45 +2786,98 @@
   <main id="mlCatalogView" class="container ml-catalog-view">
 
     <!-- ==========================================
-         HERO SPOTLIGHT: DLUZ ORBIX EM DESTAQUE
+         HERO SPOTLIGHT DUO: DLUZ ORBIX (WINDOWS & LINUX)
          ========================================== -->
-    <div class="orbix-spotlight-hero" onclick="openProductPageById(2950)">
-      <div class="orbix-hero-badge">
-        <span class="orbix-pulse-dot"></span>
-        <span>LANÇAMENTO OFICIAL EM DESTAQUE • MOBILADOR & EMULADOR HÍBRIDO</span>
+    <div class="orbix-duo-wrapper">
+      <div class="orbix-duo-header">
+        <div class="orbix-duo-headline">
+          <span class="orbix-duo-badge">🔥 ECOSSISTEMA ORBIX EM DESTAQUE</span>
+          <span class="orbix-duo-subtitle">Escolha sua plataforma: 120 FPS cravado, latência zero e licença vitalícia oficial</span>
+        </div>
       </div>
-      <div class="orbix-hero-content">
-        <div class="orbix-hero-text">
-          <h2 class="orbix-hero-title">DLuz Orbix Setup Leve — 120 FPS Cravado</h2>
-          <div class="orbix-hero-tags">
-            <span class="orbix-tag">⚡ 120 FPS Cravado</span>
-            <span class="orbix-tag">📱 Android 17 Nativo</span>
-            <span class="orbix-tag">🎮 Sensibilidade BlueStacks</span>
-            <span class="orbix-tag">🚀 Motor Scrcpy 5.0.1</span>
-            <span class="orbix-tag">🛡️ 100% Anti-Ban</span>
+
+      <div class="orbix-duo-grid">
+        <!-- CARD 1: DLUZ ORBIX WINDOWS -->
+        <div class="orbix-spotlight-hero orbix-hero-windows" onclick="openProductPageById(2950)">
+          <div class="orbix-hero-badge">
+            <span class="orbix-pulse-dot"></span>
+            <span>🪟 VERSÃO WINDOWS • 10 & 11</span>
           </div>
-          <p class="orbix-hero-desc">
-            O primeiro sistema híbrido com renderização nativa Direct3D 11 / Vulkan e latência de apenas 14ms. Jogue no celular e no PC com pareamento mobile oficial, sem emulador pesado e com licença vitalícia!
-          </p>
-          <div class="orbix-hero-action-row">
-            <div class="orbix-hero-price-wrap">
-              <span class="orbix-hero-old-price">R$ 39,90</span>
-              <div class="orbix-hero-price-val">
-                <span class="orbix-hero-currency">R$</span>
-                <span class="orbix-hero-num">24,90</span>
-                <span class="orbix-hero-off">38% OFF</span>
+          <div class="orbix-hero-content">
+            <div class="orbix-hero-text">
+              <h2 class="orbix-hero-title">DLuz Orbix Setup Leve</h2>
+              <div class="orbix-hero-tags">
+                <span class="orbix-tag">⚡ 120 FPS Cravado</span>
+                <span class="orbix-tag">📱 Android 17 Nativo</span>
+                <span class="orbix-tag">🎮 Sense BlueStacks</span>
+                <span class="orbix-tag">🚀 Direct3D 11</span>
               </div>
-              <span class="orbix-hero-installments">em até 12x via Mercado Pago ou Pix em 3 segundos</span>
+              <p class="orbix-hero-desc">
+                Sistema híbrido definitivo para PC Windows. Motor Scrcpy 5.0.1, latência de apenas 14ms e pareamento mobile 100% oficial sem emulador pesado.
+              </p>
+              <div class="orbix-hero-action-row">
+                <div class="orbix-hero-price-wrap">
+                  <span class="orbix-hero-old-price">R$ 39,90</span>
+                  <div class="orbix-hero-price-val">
+                    <span class="orbix-hero-currency">R$</span>
+                    <span class="orbix-hero-num">24,90</span>
+                    <span class="orbix-hero-off">38% OFF</span>
+                  </div>
+                  <span class="orbix-hero-installments">em até 12x ou Pix em 3 seg • Vitalício</span>
+                </div>
+                <button type="button" class="orbix-hero-btn" onclick="event.stopPropagation(); openDedicatedCheckout(2950);">
+                  Comprar Windows ➔
+                </button>
+              </div>
             </div>
-            <button type="button" class="orbix-hero-btn" onclick="event.stopPropagation(); openDedicatedCheckout(2950);">
-              Ver Detalhes e Comprar Agora ➔
-            </button>
+            <div class="orbix-hero-media">
+              <div class="orbix-hero-img-wrap">
+                <img src="/images/products/dluz-orbix-cover.jpg" alt="DLuz Orbix Windows" class="orbix-hero-img" />
+                <div class="orbix-hero-img-badge">WINDOWS • 120 FPS</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="orbix-hero-media">
-          <div class="orbix-hero-img-wrap">
-            <img src="/images/products/dluz-orbix-cover.jpg" alt="DLuz Orbix Híbrido" class="orbix-hero-img" />
-            <div class="orbix-hero-img-badge">120 FPS • ANDROID 17</div>
+
+        <!-- CARD 2: ORBIX PLAYER LINUX -->
+        <div class="orbix-spotlight-hero orbix-hero-linux" onclick="openProductPageById(2960)">
+          <div class="orbix-hero-badge orbix-hero-badge-linux">
+            <span class="orbix-pulse-dot orbix-pulse-cyan"></span>
+            <span>🐧 NOVIDADE • VERSÃO LINUX NATIVA</span>
+          </div>
+          <div class="orbix-hero-content">
+            <div class="orbix-hero-text">
+              <h2 class="orbix-hero-title">Orbix Player para Linux</h2>
+              <div class="orbix-hero-tags">
+                <span class="orbix-tag">🐧 100% Linux Nativo</span>
+                <span class="orbix-tag">⚡ 120 FPS Cravado</span>
+                <span class="orbix-tag">🛡️ Wayland & X11</span>
+                <span class="orbix-tag">🎮 Mapeador Gamer</span>
+              </div>
+              <p class="orbix-hero-desc">
+                Android nativo para Ubuntu, Debian, Fedora, Arch, Mint e Pop!_OS. Aceleração Vulkan/OpenGL na GPU e pareamento gamer com latência zero.
+              </p>
+              <div class="orbix-hero-action-row">
+                <div class="orbix-hero-price-wrap">
+                  <span class="orbix-hero-old-price">R$ 49,90</span>
+                  <div class="orbix-hero-price-val orbix-hero-price-val-linux">
+                    <span class="orbix-hero-currency">R$</span>
+                    <span class="orbix-hero-num">29,90</span>
+                    <span class="orbix-hero-off">40% OFF</span>
+                  </div>
+                  <span class="orbix-hero-installments">em até 12x ou Pix em 3 seg • Vitalício</span>
+                </div>
+                <button type="button" class="orbix-hero-btn orbix-hero-btn-linux" onclick="event.stopPropagation(); openDedicatedCheckout(2960);">
+                  Comprar Linux ➔
+                </button>
+              </div>
+            </div>
+            <div class="orbix-hero-media">
+              <div class="orbix-hero-img-wrap orbix-hero-img-wrap-linux">
+                <img src="/images/products/orbix-player-linux.jpg" alt="Orbix Player Linux" class="orbix-hero-img" />
+                <div class="orbix-hero-img-badge orbix-hero-img-badge-linux">LINUX • 120 FPS NATIVO</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2836,9 +3041,17 @@
           const imgUrl = p.image_url || '/images/logo.png';
           const badgeText = p.badge || 'PRO';
 
-          const isOrbix = p.slug === 'dluz-orbix-setup-leve';
-          const cardClass = isOrbix ? 'ml-card-poly ml-card-orbix-highlight' : 'ml-card-poly';
-          const orbixRibbon = isOrbix ? '<div class="orbix-grid-ribbon">⭐ DESTAQUE</div>' : '';
+          const isOrbixWindows = p.slug === 'dluz-orbix-setup-leve' || p.id === 2950;
+          const isOrbixLinux = p.slug === 'orbix-player-para-linux' || p.id === 2960;
+          const isOrbix = isOrbixWindows || isOrbixLinux;
+
+          const cardClass = isOrbixWindows 
+            ? 'ml-card-poly ml-card-orbix-highlight' 
+            : (isOrbixLinux ? 'ml-card-poly ml-card-orbix-highlight ml-card-orbix-linux' : 'ml-card-poly');
+
+          const orbixRibbon = isOrbixWindows 
+            ? '<div class="orbix-grid-ribbon">⭐ DESTAQUE WINDOWS</div>' 
+            : (isOrbixLinux ? '<div class="orbix-grid-ribbon orbix-ribbon-linux">🐧 DESTAQUE LINUX</div>' : '');
 
           return `
             <div class="${cardClass}" onclick="openProductPageById(${p.id})">
