@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 const crypto = require("crypto");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
@@ -630,7 +631,8 @@ app.get([
     res.setHeader("Content-Disposition", `attachment; filename="${targetFileName}"`);
     fs.createReadStream(filePath).pipe(res);
   } catch (err) {
-    res.status(500).send("Erro ao processar download.");
+    console.error("[Download Orbix Error]:", err);
+    res.status(500).send("Erro ao processar download: " + err.message);
   }
 });
 
