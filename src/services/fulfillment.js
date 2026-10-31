@@ -67,14 +67,28 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
   );
   order.status = "completed";
 
-  // Identificar se é o Orbix Player para Linux ou Canal Dark 100% Automático
+  // Identificar se é o Orbix Player (Windows ou Linux) ou Canal Dark 100% Automático
+  const isOrbixWindows = (order.items || []).some(
+    (item) =>
+      item.slug === "dluz-orbix-setup-leve" ||
+      item.sku === "DLUZ-ORBIX-SETUP" ||
+      item.product_id === 2950 ||
+      item.id === 2950 ||
+      String(item.name || "").toLowerCase().includes("orbix player para windows") ||
+      String(item.name || "").toLowerCase().includes("orbix setup")
+  );
+
   const isOrbixLinux = (order.items || []).some(
     (item) =>
       item.slug === "orbix-player-para-linux" ||
       item.sku === "DLUZ-ORBIX-LINUX" ||
       item.product_id === 2960 ||
       item.id === 2960 ||
-      String(item.name || "").toLowerCase().includes("orbix player")
+      String(item.name || "").toLowerCase().includes("orbix player para linux")
+  );
+
+  const isOrbix = isOrbixWindows || isOrbixLinux || (order.items || []).some(
+    (item) => String(item.name || "").toLowerCase().includes("orbix")
   );
 
   const isCanalDark = (order.items || []).some(
@@ -92,13 +106,13 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
 
   let canalDarkApiToken = "";
 
-  if (isOrbixLinux) {
-    // 2.A. EMISSÃO OFICIAL DO SERIAL DO ORBIX PLAYER LINUX (ECDSA P-256)
+  if (isOrbix) {
+    // 2.A. EMISSÃO OFICIAL DO SERIAL DO ORBIX PLAYER (ECDSA P-256) - VÁLIDO PARA WINDOWS & LINUX
     try {
       const orbixLic = await obterOuCriarLicencaOrbix(order);
       generatedKey = orbixLic.serial;
       licenseResData = {
-        type: "orbix_linux_serial",
+        type: isOrbixWindows ? "orbix_windows_serial" : "orbix_linux_serial",
         serial: generatedKey,
         numero: orbixLic.numero,
         status: orbixLic.status
@@ -178,13 +192,46 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
       const mainItem = order.items?.[0] || { name: "DLuz Games Software" };
       let message = "";
 
-      if (isOrbixLinux) {
-        message = `👋 Olá, *${order.first_name}*! Tudo bem? Aqui é da equipe *DLuz Games*! 🚀🐧
+      if (isOrbixWindows) {
+        message = `👋 Olá, *${order.first_name}*! Tudo bem? Aqui é da equipe *DLuz Games*! 🚀🪟
 
-Muito obrigado pela sua compra na nossa Loja Oficial! Seu pedido *#${order.id}* (*Orbix Player para Linux*) foi aprovado com sucesso!
+Muito obrigado pela sua compra na nossa Loja Oficial! Seu pedido *${order.id}* (*Orbix Player para Windows*) foi aprovado com sucesso!
 
 ━━━━━━━━━━━━━━━━━━━━
-🔑 *SEU SERIAL OFICIAL ORBIX PLAYER (LINUX):*
+🔑 *SEU SERIAL OFICIAL ORBIX PLAYER (VITALÍCIO):*
+\`${generatedKey}\`
+━━━━━━━━━━━━━━━━━━━━
+
+📦 *SEU LINK EXCLUSIVO DE DOWNLOAD (WINDOWS):*
+🪟 *Instalador de Arquivo Único (Windows 10 & 11 64 bits):*
+https://loja.dluz.com.br/download/orbix-player/${order.order_key}/exe
+
+🐧 *(Seu serial também é válido no Linux! Os instaladores .deb e .tar.gz estão disponíveis na tela do seu pedido).*
+
+📖 *PASSO A PASSO PARA INSTALAR NO WINDOWS:*
+1. Baixe *DLuz-Orbix-Setup.exe* pelo link acima e abra.
+2. Se aparecer a mensagem *"O Windows protegeu o computador"*, clique em *Mais informações → Executar assim mesmo* (o instalador ainda não tem certificado comercial, mas é 100% oficial e seguro).
+3. Clique em *Instalar*. O instalador baixa o emulador e a imagem Android 17 (~2,7 GB) sozinho diretamente do Google. Se a internet oscilar, ele continua de onde parou.
+4. Se o instalador avisar que o *WHPX* (Plataforma do Hipervisor do Windows) está desligado, clique no botão para ligar e *reinicie o Windows*.
+5. Abra o *Orbion* pela Área de Trabalho, cole o serial acima (começando em \`ORBX-\`) e clique em *Ativar*.
+6. O primeiro boot do Android leva de 3 a 5 minutos para configuração inicial de root e perfil de performance. As próximas aberturas levam ~1 minuto!
+
+💡 *DICAS E REQUISITOS:*
+- Requer Windows 10/11 64 bits com WHPX ativado.
+- Recomendado ter ~25 GB livres em disco para o Android e seus jogos.
+
+⭐ *SUPORTE & COMUNIDADE:*
+💬 Discord VIP: https://discord.gg/r2tUSVnkn2
+🌐 Portal Oficial: https://dluzgames.com.br
+
+Qualquer dúvida, fale direto conosco aqui no WhatsApp! Bom jogo! 🚀🎮🔥`;
+      } else if (isOrbixLinux) {
+        message = `👋 Olá, *${order.first_name}*! Tudo bem? Aqui é da equipe *DLuz Games*! 🚀🐧
+
+Muito obrigado pela sua compra na nossa Loja Oficial! Seu pedido *${order.id}* (*Orbix Player para Linux*) foi aprovado com sucesso!
+
+━━━━━━━━━━━━━━━━━━━━
+🔑 *SEU SERIAL OFICIAL ORBIX PLAYER (LINUX & WINDOWS):*
 \`${generatedKey}\`
 ━━━━━━━━━━━━━━━━━━━━
 
@@ -194,6 +241,9 @@ https://loja.dluz.com.br/download/orbix-player/${order.order_key}/deb
 
 📦 *Outras Distribuições Linux (.tar.gz):*
 https://loja.dluz.com.br/download/orbix-player/${order.order_key}/tar
+
+🪟 *Versão Windows (DLuz-Orbix-Setup.exe):*
+https://loja.dluz.com.br/download/orbix-player/${order.order_key}/exe
 
 📖 *COMO INSTALAR:*
 1. Baixe o arquivo .deb (ou extraia o .tar.gz e rode \`bash install.sh\`).

@@ -387,18 +387,25 @@ app.get("/api/orders/status/:orderKey", async (req, res) => {
         (i) => i.slug === "canal-dark-100-automatico" || i.sku === "DLUZ-CANAL-DARK-AUTO" || i.id === 2970 || String(i.name || "").toLowerCase().includes("canal dark")
       );
 
-      if (isOrbixLinux) {
+      const isOrbixWindows = (order.items || []).some(
+        (i) => i.slug === "dluz-orbix-setup-leve" || i.sku === "DLUZ-ORBIX-SETUP" || i.id === 2950 || String(i.name || "").toLowerCase().includes("orbix setup")
+      );
+      if (isOrbixWindows || isOrbixLinux) {
         downloads = [
           {
-            name: "Orbix Player para Linux (.deb) — Ubuntu, Pop!_OS, Mint, Debian, Zorin",
+            name: "🎮 Orbix Player para Windows (DLuz-Orbix-Setup.exe) — Instalador Oficial Único",
+            file: `/download/orbix-player/${order.order_key}/exe`
+          },
+          {
+            name: "🐧 Orbix Player para Linux (.deb) — Ubuntu, Pop!_OS, Mint, Debian, Zorin",
             file: `/download/orbix-player/${order.order_key}/deb`
           },
           {
-            name: "Orbix Player para Linux (.tar.gz) — Outras Distribuições",
+            name: "📦 Orbix Player para Linux (.tar.gz) — Outras Distribuições",
             file: `/download/orbix-player/${order.order_key}/tar`
           },
           {
-            name: "Hashes de Verificação (SHA256SUMS)",
+            name: "🔒 Hashes de Verificação (SHA256SUMS)",
             file: `/download/orbix-player/${order.order_key}/sha256`
           }
         ];
@@ -571,7 +578,10 @@ app.get([
     let contentType = "application/octet-stream";
 
     const cleanType = String(fileType || "").toLowerCase();
-    if (cleanType === "deb" || cleanType.includes(".deb")) {
+    if (cleanType === "exe" || cleanType.includes(".exe") || cleanType === "setup") {
+      targetFileName = "DLuz-Orbix-Setup.exe";
+      contentType = "application/vnd.microsoft.portable-executable";
+    } else if (cleanType === "deb" || cleanType.includes(".deb")) {
       targetFileName = "orbix-player_1.0.0_amd64.deb";
       contentType = "application/vnd.debian.binary-package";
     } else if (cleanType === "tar" || cleanType.includes(".tar") || cleanType.includes("tar.gz")) {
@@ -586,6 +596,33 @@ app.get([
 
     const filePath = path.join(downloadsDir, targetFileName);
     if (!fs.existsSync(filePath)) {
+      // Fallback seguro via GitHub Release Privada para DLuz-Orbix-Setup.exe
+      if (targetFileName === "DLuz-Orbix-Setup.exe") {
+        try {
+          const ghToken = GITHUB_PAT || (await getSetting("github_pat_token", ""));
+          const assetId = "693912428";
+          const ghRes = await fetch(`https://api.github.com/repos/dluzgames/orbix-player-windows/releases/assets/${assetId}`, {
+            headers: {
+              ...(ghToken ? { "Authorization": `token ${ghToken}` } : {}),
+              "User-Agent": "DLuzStore-Proxy",
+              "Accept": "application/octet-stream"
+            },
+            redirect: "manual"
+          });
+          const redirectLoc = ghRes.headers.get("location");
+          if (redirectLoc) {
+            return res.redirect(302, redirectLoc);
+          }
+          if (ghRes.ok) {
+            res.setHeader("Content-Disposition", 'attachment; filename="DLuz-Orbix-Setup.exe"');
+            res.setHeader("Content-Type", contentType);
+            const { Readable } = require("stream");
+            return Readable.fromWeb(ghRes.body).pipe(res);
+          }
+        } catch (ghErr) {
+          console.error("[Download Proxy Error]:", ghErr.message);
+        }
+      }
       return res.status(404).send("Instalador em processamento no servidor.");
     }
 

@@ -150,14 +150,14 @@ const INITIAL_PRODUCTS = [
       }
     ]
   },
-  {
+    {
     "id": 2950,
     "image_url": "/images/products/dluz-orbix-cover.jpg",
-    "name": "DLuz Orbix Setup Leve — Mobilador e Emulador com Android 17 (120 FPS Cravado • Licença Vitalícia)",
+    "name": "Orbix Player para Windows — Emulador & Mobilador com Android 17 (120 FPS • Licença Vitalícia)",
     "slug": "dluz-orbix-setup-leve",
     "sku": "DLUZ-ORBIX-SETUP",
     "category": "mobilador",
-    "badge": "⚡ ANDROID 17 • MOBILADOR & EMULADOR",
+    "badge": "🪟 WINDOWS • EMULADOR & MOBILADOR 120 FPS",
     "theme_color": "#0284C7",
     "icon": "gamepad",
     "regular_price": 39.9,
@@ -166,27 +166,33 @@ const INITIAL_PRODUCTS = [
     "status": "publish",
     "featured": 1,
     "license_type": "licensed",
-    "short_description": "O novo Mobilador Orbix Híbrido com 120 FPS cravados no celular e PC, motor Scrcpy 5.0.1 Zero Delay, mapeamento idêntico ao BlueStacks, suporte a FSR3, DLSS, NIS (14ms de latência) e compatibilidade com Android 17.",
-    "description": "\n      <h3>⚡ NOVO MOBILADOR ORBIX: 120 FPS CRAVADO NO CELULAR E BLUESTACKS HÍBRIDO!</h3>\n      <p>O <strong>DLuz Orbix Setup Leve</strong> é o mobilador híbrido definitivo Level Extreme! Combina a leveza máxima do mobilador direto no celular com o poder do motor do emulador Orbion, entregando <strong>120 FPS cravados</strong> (testado e comprovado no Poco F3 e diversos aparelhos), com resposta imediata e zero atraso.</p>\n      <h4>🔥 Destaques e Recursos Exclusivos:</h4>\n      <ul>\n        <li><strong>⚡ 120 FPS Cravado no Celular e PC:</strong> Fluidez extrema para Free Fire e jogos competitivos com Zero Delay real.</li>\n        <li><strong>🎮 Mapeamento e Interface Idênticos ao BlueStacks:</strong> Ajuste independente de sensibilidade X e Y para puxada de capa perfeita, sem aceleração de mouse.</li>\n        <li><strong>🚀 Motor Scrcpy v5.0.1 Integrado:</strong> Transmissão direta com Direct3D 11 / Vulkan e consumo ultrabaixo de CPU/RAM.</li>\n        <li><strong>💎 Suporte a Upscaling Inteligente (FSR 3, DLSS e NIS):</strong> Imagem ultra nítida com latência de apenas 14ms.</li>\n        <li><strong>🛡️ Compatível com Android 17 & 100% Anti-Ban:</strong> Joga em salas oficiais mobile sem modificar o APK do jogo.</li>\n        <li><strong>🔑 Licença Vitalícia Oficial:</strong> Pagamento único com envio automático imediato no WhatsApp e E-mail.</li>\n      </ul>\n      <h4>💻 Requisitos:</h4>\n      <ul>\n        <li>PC ou Notebook com Windows 10 ou Windows 11.</li>\n        <li>Celular Android com Depuração USB ativada + Cabo USB.</li>\n      </ul>\n    ",
+    "short_description": "O novo Orbix Player para Windows (10/11 64 bits): Emulador Android 17 (Orbion) + Mobilador USB (scrcpy) em janela única, 120 FPS cravado, sensibilidade BlueStacks, motor Direct3D 11 / Vulkan e ativação por serial vitalício.",
+    "description": "\n      <h3>⚡ ORBIX PLAYER PARA WINDOWS: 120 FPS CRAVADO NO PC E CELULAR!</h3>\n      <p>O <strong>Orbix Player (Windows)</strong> é o player Android definitivo para Windows 10 e 11! Ele combina o poderoso motor do <strong>Orbion</strong> (Android 17 Google APIs x86_64 com root via WHPX) com o mobilador leve <strong>Orbix</strong> (scrcpy 5.0.1 com servidor de toque próprio <code>orbix-ctl</code>), entregando <strong>120 FPS cravados</strong> com latência mínima de apenas 14ms e ativação por chave vitalícia oficial (ECDSA P-256).</p>\n      <h4>🔥 Destaques e Recursos Exclusivos:</h4>\n      <ul>\n        <li><strong>⚡ 120 FPS Cravado Real:</strong> Renderização Direct3D 11 e Vulkan com ANGLE para Free Fire e jogos competitivos com Zero Delay.</li>\n        <li><strong>🎮 Mapeamento Idêntico ao BlueStacks:</strong> Ajuste independente de sensibilidade X e Y, modo tiro com cursor travado e mira contínua sem aceleração de mouse.</li>\n        <li><strong>📱 Dois Modos na Mesma Janela:</strong> Modo Orbion (Android virtual 17 no PC) e Modo Orbix (espelhamento do celular USB/Wi-Fi).</li>\n        <li><strong>💎 Suporte a Upscaling Inteligente:</strong> FSR3 Frame Generation, FSR1 EASU+RCAS, NIS e DLSS SR.</li>\n        <li><strong>🔑 Chave de Licença Vitalícia Oficial:</strong> Serial criptografado ECDSA P-256 emitido na hora após o pagamento, válido tanto no Windows quanto no Linux.</li>\n      </ul>\n      <h4>📖 Como Instalar e Ativar no Windows:</h4>\n      <ol>\n        <li>Baixe o instalador de arquivo único <code>DLuz-Orbix-Setup.exe</code> pelo link enviado na compra.</li>\n        <li>Se aparecer a mensagem <em>\"O Windows protegeu o computador\"</em>, clique em <strong>Mais informações → Executar assim mesmo</strong> (o instalador é 100% seguro).</li>\n        <li>Clique em <strong>Instalar</strong>. O instalador baixa o emulador e a imagem do Android 17 (~2,7 GB) sozinho diretamente do Google. Se a internet oscilar, ele retoma de onde parou.</li>\n        <li>Se o instalador avisar que o <strong>WHPX</strong> (Plataforma do Hipervisor do Windows) está desligado, clique no botão para ligar e <strong>reinicie o Windows</strong>.</li>\n        <li>Abra o <strong>Orbion</strong> pela Área de Trabalho, cole o serial recebido (começa com <code>ORBX-</code>) e clique em <strong>Ativar</strong>.</li>\n        <li>O primeiro boot do Android leva de 3 a 5 minutos para configuração de root e perfil de desempenho. As próximas inicializações levam cerca de 1 minuto!</li>\n      </ol>\n      <h4>❓ Dúvidas Frequentes (FAQ):</h4>\n      <ul>\n        <li><strong>\"Serial inválido\":</strong> Certifique-se de copiar o serial inteiro, desde o prefixo <code>ORBX-</code> até o último caractere.</li>\n        <li><strong>\"Emitido para outro computador\":</strong> Caso tenha trocado de máquina, envie o ID exibido na tela para nosso suporte oficial no WhatsApp.</li>\n        <li><strong>\"O emulador não liga\":</strong> Verifique se a virtualização está ativa na BIOS, se o WHPX está ligado e certifique-se de ter pelo menos 25 GB livres em disco.</li>\n      </ul>\n    ",
     "features": [
       "120 FPS Cravado com Zero Delay Real (< 14ms)",
-      "Sistema Híbrido: Mobilador Leve + Emulador Orbion",
+      "Dois Modos: Emulador Android 17 (Orbion) + Mobilador USB (Orbix)",
       "Mapeamento & Sensibilidade X/Y idênticos ao BlueStacks",
-      "Mouse Raw Input 1000Hz sem aceleração (Scrcpy 5.0.1)",
-      "Suporte a Upscaling por IA: FSR3, DLSS e NIS",
-      "100% Anti-Ban (Pareamento Mobile Oficial)",
-      "Licença Vitalícia + Envio Imediato por WhatsApp e E-mail"
+      "Mouse Raw Input sem aceleração com mira contínua",
+      "Suporte a Upscaling por IA: FSR3, DLSS SR e NIS",
+      "Instalador de Arquivo Único (DLuz-Orbix-Setup.exe)",
+      "Licença Vitalícia Oficial (ORBX-...) válida em Windows e Linux",
+      "Envio Automático Imediato por WhatsApp e E-mail"
     ],
     "downloads": [
       {
-        "id": "dluz-orbix-setup-download",
-        "name": "DLuz Orbix Setup Leve (.zip) — Download Oficial",
-        "file": "https://loja.dluz.com.br/download/orbix"
+        "id": "orbix-windows-setup-exe",
+        "name": "Orbix Player para Windows (DLuz-Orbix-Setup.exe) — Instalador Oficial Único",
+        "file": "/download/orbix-player/exe"
       },
       {
-        "id": "dluz-orbix-github-release",
-        "name": "DLuz Orbix Setup Leve (.zip) — Espelho GitHub Release",
-        "file": "https://github.com/dluzgames/DLuz-Orbix/releases/download/v1.0.0/DLuz-Orbix-Setup-Leve.zip"
+        "id": "orbix-linux-deb",
+        "name": "Orbix Player para Linux (.deb) — Ubuntu, Pop!_OS, Mint, Debian, Zorin",
+        "file": "/download/orbix-player/deb"
+      },
+      {
+        "id": "orbix-linux-tar",
+        "name": "Orbix Player para Linux (.tar.gz) — Outras Distribuições",
+        "file": "/download/orbix-player/tar"
       }
     ]
   },
