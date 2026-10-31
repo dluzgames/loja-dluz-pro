@@ -730,6 +730,96 @@ app.get([
   }
 });
 
+// 10. Download Seguro do DLuz Music Pro Oficial (APK arm64 & Universal)
+app.get([
+  "/download/dluz-music-pro/:orderKey/:fileType",
+  "/download/dluz-music-pro/:fileType"
+], async (req, res) => {
+  try {
+    const orderKey = req.params.orderKey || req.query.token || req.query.key || "";
+    const fileType = req.params.fileType || req.params.orderKey || "arm64";
+
+    let isAuthorized = false;
+    if (req.session && req.session.adminUser) {
+      isAuthorized = true;
+    } else if (orderKey) {
+      const order = await dbGet("SELECT id, status FROM orders WHERE order_key = ?", [orderKey]);
+      if (order && order.status === "completed") {
+        isAuthorized = true;
+      }
+    }
+
+    if (!isAuthorized) {
+      return res.status(403).send(`
+        <!DOCTYPE html>
+        <html lang="pt-BR">
+        <head><meta charset="utf-8"><title>Acesso Restrito — DLuz Music Pro</title>
+        <style>body{font-family:sans-serif;background:#0B0F19;color:#F8FAFC;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;}
+        .card{background:#1E293B;padding:36px;border-radius:14px;text-align:center;max-width:440px;border:1px solid #334155;box-shadow:0 8px 30px rgba(0,0,0,0.5);}
+        h2{color:#EC4899;margin-top:0;}a{display:inline-block;margin-top:18px;background:#DB2777;color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:bold;}</style>
+        </head>
+        <body><div class="card">
+          <h2>🎵 DLuz Music Pro Oficial</h2>
+          <p>O download dos arquivos APK oficiais é exclusivo para clientes com pedido confirmado.</p>
+          <p>Consulte seu pedido ou fale com nosso suporte oficial no WhatsApp.</p>
+          <a href="/consultar-pedido">Consultar Meu Pedido</a>
+        </div></body>
+        </html>
+      `);
+    }
+
+    const cleanType = String(fileType || "").toLowerCase();
+    let targetFileName = "";
+    let assetId = "";
+
+    if (cleanType === "arm64" || cleanType.includes("arm64")) {
+      targetFileName = "DLuzMusicPro_v1.0.0_arm64.apk";
+      assetId = "695903476";
+    } else {
+      targetFileName = "DLuzMusicPro_v1.0.0_Universal.apk";
+      assetId = "695903578";
+    }
+
+    const downloadsDir = path.join(__dirname, "../data/downloads");
+    const localFilePath = path.join(downloadsDir, targetFileName);
+    if (fs.existsSync(localFilePath)) {
+      res.setHeader("Content-Disposition", `attachment; filename="${targetFileName}"`);
+      res.setHeader("Content-Type", "application/vnd.android.package-archive");
+      return res.sendFile(localFilePath);
+    }
+
+    // Proxy seguro via GitHub Release asset
+    try {
+      const ghToken = GITHUB_PAT || (await getSetting("github_pat_token", ""));
+      const ghRes = await fetch(`https://api.github.com/repos/dluzgames/DluzMusicPro/releases/assets/${assetId}`, {
+        headers: {
+          ...(ghToken ? { "Authorization": `token ${ghToken}` } : {}),
+          "User-Agent": "DLuzStore-Proxy",
+          "Accept": "application/octet-stream"
+        },
+        redirect: "manual"
+      });
+      const redirectLoc = ghRes.headers.get("location");
+      if (redirectLoc) {
+        return res.redirect(302, redirectLoc);
+      }
+      if (ghRes.ok) {
+        res.setHeader("Content-Disposition", `attachment; filename="${targetFileName}"`);
+        res.setHeader("Content-Type", "application/vnd.android.package-archive");
+        const { Readable } = require("stream");
+        return Readable.fromWeb(ghRes.body).pipe(res);
+      }
+    } catch (ghErr) {
+      console.error("[DLuz Music Pro Proxy Error]:", ghErr.message);
+    }
+
+    return res.status(404).send("Instalador em processamento no servidor.");
+  } catch (err) {
+    console.error("[Download DLuz Music Pro Error]:", err.message);
+    res.status(500).send("Erro interno ao processar download.");
+  }
+});
+
 // ==========================================
 // WEBHOOK OFICIAL MERCADO PAGO (SEGURANÇA MÁXIMA)
 // ==========================================

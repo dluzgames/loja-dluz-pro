@@ -100,13 +100,31 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
       String(item.name || "").toLowerCase().includes("canal dark")
   );
 
+  const isDluzMusic = (order.items || []).some(
+    (item) =>
+      item.slug === "dluz-music-pro" ||
+      item.sku === "DLUZ-MUSIC-PRO-V1" ||
+      item.product_id === 2980 ||
+      item.id === 2980 ||
+      String(item.name || "").toLowerCase().includes("music pro") ||
+      String(item.name || "").toLowerCase().includes("dluz music")
+  );
+
   let generatedKey = order.license_key || "";
   let whatsappStatus = "pending";
   let licenseResData = null;
 
   let canalDarkApiToken = "";
 
-  if (isOrbix) {
+  if (isDluzMusic) {
+    generatedKey = "DLUZ-MUSIC-PRO-VITALICIO";
+    licenseResData = {
+      type: "dluz_music_pro",
+      serial: generatedKey,
+      status: "ativa",
+      plano: "vitalicio"
+    };
+  } else if (isOrbix) {
     // 2.A. EMISSÃO OFICIAL DO SERIAL DO ORBIX PLAYER (ECDSA P-256) - VÁLIDO PARA WINDOWS & LINUX
     try {
       const orbixLic = await obterOuCriarLicencaOrbix(order);
@@ -262,6 +280,24 @@ https://loja.dluz.com.br/download/orbix-player/${order.order_key}/exe
 🌐 Portal Oficial: https://dluzgames.com.br
 
 Qualquer dúvida, fale direto conosco aqui no WhatsApp! Bom jogo! 🚀🎮🔥`;
+      } else if (isDluzMusic) {
+        message = `Fala, *${order.first_name}*! 🚀
+Seu pedido do *DLuz Music Pro (Licença Vitalícia)* foi aprovado com sucesso!
+
+🎵 O streaming sem anúncios definitivo já está liberado para você.
+
+📥 *Links de Download Direto do APK Oficial:*
+• Versão Principal Otimizada (arm64): https://loja.dluz.com.br/download/dluz-music-pro/${order.order_key}/arm64
+• Versão Universal Android: https://loja.dluz.com.br/download/dluz-music-pro/${order.order_key}/universal
+
+🔑 *Status:* Ativação Vitalícia Confirmada
+📖 *Como instalar:* Basta baixar o arquivo .apk no seu celular Android, autorizar a instalação e curtir suas músicas sem limites e sem anúncios!
+
+⭐ *SUPORTE & COMUNIDADE:*
+💬 Discord VIP: https://discord.gg/r2tUSVnkn2
+🌐 Portal Oficial: https://dluzgames.com.br
+
+Qualquer dúvida, é só nos chamar por aqui. Bem-vindo à DLuz Games! 🚀🎵🔥`;
       } else if (isCanalDark) {
         message = `👋 Olá, *${order.first_name}*! Tudo bem? Aqui é da equipe *DLuz Games*! 🚀🎬
 

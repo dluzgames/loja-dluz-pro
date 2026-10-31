@@ -5,6 +5,71 @@
 
 const INITIAL_PRODUCTS = [
   {
+    "id": 2980,
+    "image_url": "/images/products/dluz-music-pro.jpg",
+    "name": "DLuz Music Pro — Streaming de Música & Vídeo Sem Anúncios (Licença Vitalícia)",
+    "slug": "dluz-music-pro",
+    "sku": "DLUZ-MUSIC-PRO-V1",
+    "category": "apps",
+    "badge": "🎵 LANÇAMENTO • ZERO ANÚNCIOS VITALÍCIO",
+    "theme_color": "#EC4899",
+    "icon": "music",
+    "regular_price": 59.9,
+    "sale_price": 35.0,
+    "price": 35.0,
+    "status": "publish",
+    "featured": 1,
+    "license_type": "licensed",
+    "short_description": "O streaming de música definitivo sem anúncios e sem mensalidade! O DLuz Music Pro traz áudio Hi-Res, download offline, letras sincronizadas em tempo real, integração total com paradas do Brasil e equalizador turbinado por um pagamento único vitalício de R$ 35,00.",
+    "description": `
+      <h3>🎵 Chega de Pagar Mensalidades Caras de Streaming!</h3>
+      <p>O <strong>DLuz Music Pro</strong> é o aplicativo definitivo para quem quer ouvir qualquer música, álbum ou playlist do mundo em alta fidelidade, <strong>100% livre de anúncios</strong>, com letras sincronizadas na tela e downloads ilimitados para ouvir sem internet no celular.</p>
+
+      <p>Esqueça assinaturas mensais de R$ 25 a R$ 40 todo mês. Com o DLuz Music Pro, você faz um <strong>pagamento único de R$ 35,00</strong> e tem acesso vitalício garantido no seu smartphone Android!</p>
+
+      <h4>🔥 O Que Você Recebe com o DLuz Music Pro:</h4>
+      <ul>
+        <li><strong>🚫 Zero Anúncios & Sem Interrupções:</strong> Ouça suas músicas do início ao fim sem comerciais, banners ou pausas irritantes.</li>
+        <li><strong>🇧🇷 Padrão Brasil Nativo:</strong> As paradas mais tocadas do Brasil (Top Sertanejo, Trap, Funk, Forró, Gospel e MPB) já carregadas direto na tela inicial.</li>
+        <li><strong>📥 Download Offline Ilimitado:</strong> Baixe faixas avulsas ou playlists completas em alta qualidade para escutar na estrada, na academia ou no avião sem gastar seus dados móveis.</li>
+        <li><strong>🎤 Letras Sincronizadas Palavra por Palavra:</strong> Acompanhe a letra em tempo real com tradução instantânea e visual limpo estilo karaokê.</li>
+        <li><strong>🔊 Áudio Hi-Res & Equalizador Profissional:</strong> Graves profundos, reforço de volume e perfis de áudio personalizados para fones Bluetooth e som automotivo.</li>
+        <li><strong>🚗 Modo Carro & Android Auto:</strong> Controles grandes e práticos para troca de faixa rápida e integração com a tela de bloqueio e central multimídia.</li>
+        <li><strong>⚡ Leve e Econômico:</strong> Ocupa pouquíssimo espaço na memória interna e consome até 4x menos bateria que os apps convencionais de streaming.</li>
+        <li><strong>🔑 Acesso Vitalício PRO:</strong> Pague uma única vez e use para sempre, com atualizações incluídas.</li>
+      </ul>
+
+      <h4>📱 Requisitos e Compatibilidade:</h4>
+      <ul>
+        <li>Compatível com qualquer smartphone ou tablet Android (Android 8.0 até Android 15/16).</li>
+        <li>Instalação rápida via arquivo APK oficial com suporte direto da equipe DLuz Games.</li>
+      </ul>
+    `,
+    "features": [
+      "Zero Anúncios e Comerciais para Sempre",
+      "Download de Músicas & Playlists Offline em Alta Fidelidade",
+      "Letras Sincronizadas Palavra por Palavra em Tempo Real",
+      "Paradas Mais Tocadas do Brasil na Tela Inicial",
+      "Áudio Hi-Res com Equalizador e Bass Boost",
+      "Modo Carro & Android Auto Integrados",
+      "Instaladores Nativos arm64 Otimizado e Universal",
+      "Licença Vitalícia Oficial (Zero Mensalidades)",
+      "Envio Automático no WhatsApp e E-mail Imediato"
+    ],
+    "downloads": [
+      {
+        "id": "dluz-music-pro-arm64",
+        "name": "DLuz Music Pro v1.0.0 (Nativo 64-bit arm64 - Mais Rápido)",
+        "file": "/download/dluz-music-pro/arm64"
+      },
+      {
+        "id": "dluz-music-pro-universal",
+        "name": "DLuz Music Pro v1.0.0 (Versão Universal Android)",
+        "file": "/download/dluz-music-pro/universal"
+      }
+    ]
+  },
+  {
     "id": 2970,
     "image_url": "/images/products/canal-dark-automatico.jpg",
     "name": "Canal Dark 100% Automático — Pack Completo: Voz + Gameplays 4K + Mídias + Músicas + Editor IA (API Grátis 18 Meses)",
