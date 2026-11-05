@@ -124,21 +124,6 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
       status: "ativa",
       plano: "vitalicio"
     };
-  } else if (isOrbix) {
-    // 2.A. EMISSÃO OFICIAL DO SERIAL DO ORBIX PLAYER (ECDSA P-256) - VÁLIDO PARA WINDOWS & LINUX
-    try {
-      const orbixLic = await obterOuCriarLicencaOrbix(order);
-      generatedKey = orbixLic.serial;
-      licenseResData = {
-        type: isOrbixWindows ? "orbix_windows_serial" : "orbix_linux_serial",
-        serial: generatedKey,
-        numero: orbixLic.numero,
-        status: orbixLic.status
-      };
-    } catch (err) {
-      console.error(`[Fulfillment] Erro ao emitir serial do Orbix Player para pedido #${order.id}:`, err.message);
-      generatedKey = `ORBX-PENDENTE-${order.id}`;
-    }
   } else if (isCanalDark) {
     // 2.B. EMISSÃO DO PACOTE CANAL DARK 100% AUTOMÁTICO + API 18 MESES
     const crypto = require("crypto");
@@ -213,10 +198,10 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
       if (isOrbixWindows) {
         message = `👋 Olá, *${order.first_name}*! Tudo bem? Aqui é da equipe *DLuz Games*! 🚀🪟
 
-Muito obrigado pela sua compra na nossa Loja Oficial! Seu pedido *${order.id}* (*Orbix Player para Windows*) foi aprovado com sucesso!
+Muito obrigado pela sua compra na nossa Loja Oficial! Seu pedido *#${order.id}* (*Orbix Player para Windows*) foi aprovado com sucesso!
 
 ━━━━━━━━━━━━━━━━━━━━
-🔑 *SEU SERIAL OFICIAL ORBIX PLAYER (VITALÍCIO):*
+🔑 *SUA CHAVE DE ATIVAÇÃO VITALÍCIA PRO:*
 \`${generatedKey}\`
 ━━━━━━━━━━━━━━━━━━━━
 
@@ -227,29 +212,11 @@ https://loja.dluz.com.br/download/orbix-player/${order.order_key}/online
 📦 *Instalador Completo (~2,9 GB — Já traz o Android dentro, instala sem internet):*
 https://loja.dluz.com.br/download/orbix-player/${order.order_key}/completo
 
-🐧 *(Seu serial também é válido no Linux! Os instaladores .deb e .tar.gz estão disponíveis na tela do seu pedido).*
-
-📖 *PASSO A PASSO PARA INSTALAR NO WINDOWS:*
-1. Baixe o arquivo e abra. Não precisa extrair nada.
-2. Se aparecer "O Windows protegeu o computador", clique em "Mais informações" e depois em "Executar assim mesmo".
-3. Confira a pasta (o padrão é C:\DLuzOrbix) e clique em Instalar.
-4. Se o instalador avisar que o WHPX está desligado, clique no botão para ligar e reinicie o Windows.
-5. Abra o Orbion pelo atalho da Área de Trabalho.
-6. Cole o serial acima (começa com \`ORBX-\`) e clique em Ativar.
-7. O primeiro boot do Android pode levar até 15 minutos, porque ele prepara o sistema e reinicia sozinho. Não feche o programa. Depois, cerca de 1 minuto.
-8. Para instalar jogos, use o botão "Instalar APK" na barra lateral do Orbion.
-
-💡 *REQUISITOS:*
-- Windows 10 ou 11, 64 bits.
-- Virtualização ligada na BIOS (Intel VT-x ou AMD-V).
-- 8 GB de RAM (16 GB recomendado) e ~25 GB livres em disco.
-- Placa de vídeo com suporte a Vulkan e DirectX 12.
-
-❓ *PROBLEMAS COMUNS:*
-- "Arquivo corrompido ou incompleto": o download não terminou. Baixe de novo.
-- "Falta espaço no disco": libere espaço ou clique em Alterar e escolha outro disco.
-- "Arquivos sumiram logo depois de copiados": é o antivírus. Adicione a pasta C:\DLuzOrbix como exceção e instale de novo.
-- O instalador gera o arquivo Orbix-erro-instalacao.txt na sua Área de Trabalho caso ocorra qualquer erro. Envie esse arquivo ao suporte.
+📖 *PASSO A PASSO PARA ATIVAR E JOGAR:*
+1. Baixe o instalador e abra no seu computador.
+2. Abra o Orbix Player / Orbion pelo atalho da Área de Trabalho.
+3. Cole a sua chave oficial vitalícia acima e clique em *Ativar*.
+4. Pronto! O emulador será desbloqueado permanentemente a 120 FPS!
 
 ⭐ *SUPORTE & COMUNIDADE:*
 💬 Discord VIP: https://discord.gg/r2tUSVnkn2
@@ -259,37 +226,26 @@ Qualquer dúvida, fale direto conosco aqui no WhatsApp! Bom jogo! 🚀🎮🔥`;
       } else if (isOrbixLinux) {
         message = `👋 Olá, *${order.first_name}*! Tudo bem? Aqui é da equipe *DLuz Games*! 🚀🐧
 
-Muito obrigado pela sua compra na nossa Loja Oficial! Seu pedido *${order.id}* (*Orbix Player para Linux*) foi aprovado com sucesso!
+Muito obrigado pela sua compra na nossa Loja Oficial! Seu pedido *#${order.id}* (*Orbix Player para Linux*) foi aprovado com sucesso!
 
 ━━━━━━━━━━━━━━━━━━━━
-🔑 *SEU SERIAL OFICIAL ORBIX PLAYER (LINUX & WINDOWS):*
+🔑 *SUA CHAVE DE ATIVAÇÃO VITALÍCIA PRO:*
 \`${generatedKey}\`
 ━━━━━━━━━━━━━━━━━━━━
 
-📦 *SEUS LINKS EXCLUSIVOS DE DOWNLOAD:*
+📦 *SEUS LINKS EXCLUSIVOS DE DOWNLOAD (LINUX):*
 🐧 *Instalador Ubuntu, Pop!_OS, Mint, Debian, Zorin (.deb):*
 https://loja.dluz.com.br/download/orbix-player/${order.order_key}/deb
 
 📦 *Outras Distribuições Linux (.tar.gz):*
 https://loja.dluz.com.br/download/orbix-player/${order.order_key}/tar
 
-🪟 *Versão Windows Online (Recomendado ~200 MB):*
-https://loja.dluz.com.br/download/orbix-player/${order.order_key}/online
-
-🪟 *Versão Windows Completa (Sem Internet ~2,9 GB):*
-https://loja.dluz.com.br/download/orbix-player/${order.order_key}/completo
-
 📖 *COMO INSTALAR:*
-1. Baixe o arquivo .deb (ou extraia o .tar.gz e rode \`bash install.sh\`).
-2. Dê dois cliques e clique em *Instalar* (ou no terminal: \`sudo apt install ./orbix-player_1.0.0_amd64.deb\`).
-3. Abra o *Orbix Player* no menu de aplicativos.
-4. Cole o serial acima e clique em *Ativar*.
-5. Clique em *"Baixar e instalar"* para o Android baixar (cerca de 2,5 GB só na primeira vez). Se a internet cair, ele continua de onde parou.
-6. Pronto: o Android liga sozinho. Instale seus jogos e jogue a 120 FPS!
-
-💡 *REQUISITOS IMPORTANTES:*
-- A virtualização precisa estar ativada na BIOS (Intel VT-x ou AMD-V / SVM).
-- Placa de vídeo NVIDIA, AMD ou Intel.
+1. Baixe o pacote .deb (ou extraia o .tar.gz e execute bash install.sh).
+2. Instale com dois cliques ou via terminal: sudo apt install ./orbix-player_1.0.0_amd64.deb
+3. Abra o Orbix Player no menu de aplicativos.
+4. Cole a sua chave oficial vitalícia acima e clique em *Ativar*.
+5. Pronto: aproveite o Android nativo com 120 FPS!
 
 ⭐ *SUPORTE & COMUNIDADE:*
 💬 Discord VIP: https://discord.gg/r2tUSVnkn2

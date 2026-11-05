@@ -391,7 +391,7 @@ app.get("/api/orders/status/:orderKey", async (req, res) => {
       const isOrbixWindows = (order.items || []).some(
         (i) => i.slug === "dluz-orbix-setup-leve" || i.sku === "DLUZ-ORBIX-SETUP" || i.id === 2950 || String(i.name || "").toLowerCase().includes("orbix setup")
       );
-      if (isOrbixWindows || isOrbixLinux) {
+      if (isOrbixWindows) {
         downloads = [
           {
             name: "⚡ Orbix Player para Windows (Recomendado ~200 MB) — DLuz-Orbix-Setup-Online.exe",
@@ -400,7 +400,10 @@ app.get("/api/orders/status/:orderKey", async (req, res) => {
           {
             name: "📦 Orbix Player para Windows (Instalação Sem Internet ~2,9 GB) — DLuz-Orbix-Setup-Completo.exe",
             file: `/download/orbix-player/${order.order_key}/completo`
-          },
+          }
+        ];
+      } else if (isOrbixLinux) {
+        downloads = [
           {
             name: "🐧 Orbix Player para Linux (.deb) — Ubuntu, Pop!_OS, Mint, Debian, Zorin",
             file: `/download/orbix-player/${order.order_key}/deb`

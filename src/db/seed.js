@@ -253,21 +253,6 @@ const INITIAL_PRODUCTS = [
         "id": "orbix-windows-completo-exe",
         "name": "📦 Orbix Player para Windows (Instalação Sem Internet ~2,9 GB) — DLuz-Orbix-Setup-Completo.exe",
         "file": "/download/orbix-player/completo"
-      },
-      {
-        "id": "orbix-linux-deb",
-        "name": "🐧 Orbix Player para Linux (.deb) — Ubuntu, Pop!_OS, Mint, Debian, Zorin",
-        "file": "/download/orbix-player/deb"
-      },
-      {
-        "id": "orbix-linux-tar",
-        "name": "📦 Orbix Player para Linux (.tar.gz) — Outras Distribuições",
-        "file": "/download/orbix-player/tar"
-      },
-      {
-        "id": "orbix-player-sums",
-        "name": "🔒 Hashes de Verificação (SHA256SUMS)",
-        "file": "/download/orbix-player/sha256"
       }
     ]
   },
