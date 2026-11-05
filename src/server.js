@@ -394,8 +394,12 @@ app.get("/api/orders/status/:orderKey", async (req, res) => {
       if (isOrbixWindows || isOrbixLinux) {
         downloads = [
           {
-            name: "🎮 Orbix Player para Windows (DLuz-Orbix-Setup.exe) — Instalador Oficial Único",
-            file: `/download/orbix-player/${order.order_key}/exe`
+            name: "⚡ Orbix Player para Windows (Recomendado ~200 MB) — DLuz-Orbix-Setup-Online.exe",
+            file: `/download/orbix-player/${order.order_key}/online`
+          },
+          {
+            name: "📦 Orbix Player para Windows (Instalação Sem Internet ~2,9 GB) — DLuz-Orbix-Setup-Completo.exe",
+            file: `/download/orbix-player/${order.order_key}/completo`
           },
           {
             name: "🐧 Orbix Player para Linux (.deb) — Ubuntu, Pop!_OS, Mint, Debian, Zorin",
@@ -505,35 +509,7 @@ app.get("/api/pages/:slug", async (req, res) => {
 const GITHUB_PAT = process.env.GITHUB_PAT_TOKEN || "";
 
 app.get(["/download/orbix", "/download/dluz-orbix", "/download/dluz-orbix-setup"], async (req, res) => {
-  try {
-    const token = GITHUB_PAT || (await getSetting("github_pat_token", ""));
-    const assetId = "679597957"; // DLuz-Orbix-Setup-Leve.zip no repo privado DLuz-Orbix
-    const ghRes = await fetch(`https://api.github.com/repos/dluzgames/DLuz-Orbix/releases/assets/${assetId}`, {
-      headers: {
-        ...(token ? { "Authorization": `token ${token}` } : {}),
-        "User-Agent": "DLuzStore-Proxy",
-        "Accept": "application/octet-stream"
-      },
-      redirect: "manual"
-    });
-
-    const location = ghRes.headers.get("location");
-    if (location) {
-      return res.redirect(302, location);
-    }
-
-    if (!ghRes.ok) {
-      return res.status(502).send("Erro ao obter link de download do GitHub.");
-    }
-
-    res.setHeader("Content-Disposition", 'attachment; filename="DLuz-Orbix-Setup-Leve.zip"');
-    res.setHeader("Content-Type", "application/zip");
-    const { Readable } = require("stream");
-    Readable.fromWeb(ghRes.body).pipe(res);
-  } catch (err) {
-    console.error("Erro no download proxy:", err);
-    res.status(500).send("Erro interno ao processar download.");
-  }
+  return res.redirect(302, "/download/orbix-player/online");
 });
 
 // 8. Download Seguro do Orbix Player para Linux (.deb, .tar.gz, sha256)
@@ -579,8 +555,11 @@ app.get([
     let contentType = "application/octet-stream";
 
     const cleanType = String(fileType || "").toLowerCase();
-    if (cleanType === "exe" || cleanType.includes(".exe") || cleanType === "setup") {
-      targetFileName = "DLuz-Orbix-Setup.exe";
+    if (cleanType === "online" || cleanType.includes("online") || cleanType === "exe" || cleanType === "setup" || cleanType === "windows") {
+      targetFileName = "DLuz-Orbix-Setup-Online.exe";
+      contentType = "application/vnd.microsoft.portable-executable";
+    } else if (cleanType === "completo" || cleanType.includes("completo") || cleanType === "offline" || cleanType === "full") {
+      targetFileName = "DLuz-Orbix-Setup-Completo.exe";
       contentType = "application/vnd.microsoft.portable-executable";
     } else if (cleanType === "deb" || cleanType.includes(".deb")) {
       targetFileName = "orbix-player_1.0.0_amd64.deb";
@@ -597,11 +576,11 @@ app.get([
 
     const filePath = path.join(downloadsDir, targetFileName);
     if (!fs.existsSync(filePath)) {
-      // Fallback seguro via GitHub Release Privada para DLuz-Orbix-Setup.exe
-      if (targetFileName === "DLuz-Orbix-Setup.exe") {
+      // Fallback seguro via GitHub Release Privada v1.0.1 para DLuz-Orbix-Setup-Online.exe
+      if (targetFileName === "DLuz-Orbix-Setup-Online.exe") {
         try {
           const ghToken = GITHUB_PAT || (await getSetting("github_pat_token", ""));
-          const assetId = "693912428";
+          const assetId = "711730016"; // Asset ID do DLuz-Orbix-Setup-Online.exe na Release v1.0.1
           const ghRes = await fetch(`https://api.github.com/repos/dluzgames/orbix-player-windows/releases/assets/${assetId}`, {
             headers: {
               ...(ghToken ? { "Authorization": `token ${ghToken}` } : {}),
@@ -615,7 +594,7 @@ app.get([
             return res.redirect(302, redirectLoc);
           }
           if (ghRes.ok) {
-            res.setHeader("Content-Disposition", 'attachment; filename="DLuz-Orbix-Setup.exe"');
+            res.setHeader("Content-Disposition", 'attachment; filename="DLuz-Orbix-Setup-Online.exe"');
             res.setHeader("Content-Type", contentType);
             const { Readable } = require("stream");
             return Readable.fromWeb(ghRes.body).pipe(res);

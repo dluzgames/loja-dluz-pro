@@ -220,23 +220,36 @@ Muito obrigado pela sua compra na nossa Loja Oficial! Seu pedido *${order.id}* (
 \`${generatedKey}\`
 ━━━━━━━━━━━━━━━━━━━━
 
-📦 *SEU LINK EXCLUSIVO DE DOWNLOAD (WINDOWS):*
-🪟 *Instalador de Arquivo Único (Windows 10 & 11 64 bits):*
-https://loja.dluz.com.br/download/orbix-player/${order.order_key}/exe
+📦 *SEUS LINKS EXCLUSIVOS DE DOWNLOAD (WINDOWS):*
+⚡ *Instalador Online (Recomendado ~200 MB — Baixa o Android do Google na instalação):*
+https://loja.dluz.com.br/download/orbix-player/${order.order_key}/online
+
+📦 *Instalador Completo (~2,9 GB — Já traz o Android dentro, instala sem internet):*
+https://loja.dluz.com.br/download/orbix-player/${order.order_key}/completo
 
 🐧 *(Seu serial também é válido no Linux! Os instaladores .deb e .tar.gz estão disponíveis na tela do seu pedido).*
 
 📖 *PASSO A PASSO PARA INSTALAR NO WINDOWS:*
-1. Baixe *DLuz-Orbix-Setup.exe* pelo link acima e abra.
-2. Se aparecer a mensagem *"O Windows protegeu o computador"*, clique em *Mais informações → Executar assim mesmo* (o instalador ainda não tem certificado comercial, mas é 100% oficial e seguro).
-3. Clique em *Instalar*. O instalador baixa o emulador e a imagem Android 17 (~2,7 GB) sozinho diretamente do Google. Se a internet oscilar, ele continua de onde parou.
-4. Se o instalador avisar que o *WHPX* (Plataforma do Hipervisor do Windows) está desligado, clique no botão para ligar e *reinicie o Windows*.
-5. Abra o *Orbion* pela Área de Trabalho, cole o serial acima (começando em \`ORBX-\`) e clique em *Ativar*.
-6. O primeiro boot do Android leva de 3 a 5 minutos para configuração inicial de root e perfil de performance. As próximas aberturas levam ~1 minuto!
+1. Baixe o arquivo e abra. Não precisa extrair nada.
+2. Se aparecer "O Windows protegeu o computador", clique em "Mais informações" e depois em "Executar assim mesmo".
+3. Confira a pasta (o padrão é C:\DLuzOrbix) e clique em Instalar.
+4. Se o instalador avisar que o WHPX está desligado, clique no botão para ligar e reinicie o Windows.
+5. Abra o Orbion pelo atalho da Área de Trabalho.
+6. Cole o serial acima (começa com \`ORBX-\`) e clique em Ativar.
+7. O primeiro boot do Android pode levar até 15 minutos, porque ele prepara o sistema e reinicia sozinho. Não feche o programa. Depois, cerca de 1 minuto.
+8. Para instalar jogos, use o botão "Instalar APK" na barra lateral do Orbion.
 
-💡 *DICAS E REQUISITOS:*
-- Requer Windows 10/11 64 bits com WHPX ativado.
-- Recomendado ter ~25 GB livres em disco para o Android e seus jogos.
+💡 *REQUISITOS:*
+- Windows 10 ou 11, 64 bits.
+- Virtualização ligada na BIOS (Intel VT-x ou AMD-V).
+- 8 GB de RAM (16 GB recomendado) e ~25 GB livres em disco.
+- Placa de vídeo com suporte a Vulkan e DirectX 12.
+
+❓ *PROBLEMAS COMUNS:*
+- "Arquivo corrompido ou incompleto": o download não terminou. Baixe de novo.
+- "Falta espaço no disco": libere espaço ou clique em Alterar e escolha outro disco.
+- "Arquivos sumiram logo depois de copiados": é o antivírus. Adicione a pasta C:\DLuzOrbix como exceção e instale de novo.
+- O instalador gera o arquivo Orbix-erro-instalacao.txt na sua Área de Trabalho caso ocorra qualquer erro. Envie esse arquivo ao suporte.
 
 ⭐ *SUPORTE & COMUNIDADE:*
 💬 Discord VIP: https://discord.gg/r2tUSVnkn2
@@ -260,8 +273,11 @@ https://loja.dluz.com.br/download/orbix-player/${order.order_key}/deb
 📦 *Outras Distribuições Linux (.tar.gz):*
 https://loja.dluz.com.br/download/orbix-player/${order.order_key}/tar
 
-🪟 *Versão Windows (DLuz-Orbix-Setup.exe):*
-https://loja.dluz.com.br/download/orbix-player/${order.order_key}/exe
+🪟 *Versão Windows Online (Recomendado ~200 MB):*
+https://loja.dluz.com.br/download/orbix-player/${order.order_key}/online
+
+🪟 *Versão Windows Completa (Sem Internet ~2,9 GB):*
+https://loja.dluz.com.br/download/orbix-player/${order.order_key}/completo
 
 📖 *COMO INSTALAR:*
 1. Baixe o arquivo .deb (ou extraia o .tar.gz e rode \`bash install.sh\`).
