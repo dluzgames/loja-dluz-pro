@@ -515,17 +515,29 @@ app.get(["/download/orbix", "/download/dluz-orbix", "/download/dluz-orbix-setup"
   return res.redirect(302, "/download/orbix-player/online");
 });
 
-// 8. Download Seguro do Orbix Player para Linux (.deb, .tar.gz, sha256)
+// 8. Download Seguro do Orbix Player (Windows e Linux)
 app.get([
   "/download/orbix-player/:orderKey/:fileType",
   "/download/orbix-player/:fileType"
 ], async (req, res) => {
   try {
-    const orderKey = req.params.orderKey || req.query.token || req.query.key || "";
-    const fileType = req.params.fileType || req.params.orderKey || "";
+    const rawOrderKey = req.params.orderKey || req.query.token || req.query.key || "";
+    let fileType = req.params.fileType || "";
+    let orderKey = rawOrderKey;
+
+    const knownFileTypes = ["online", "completo", "deb", "tar", "sha256", "exe", "setup", "offline", "full"];
+    if (!fileType && knownFileTypes.some(t => rawOrderKey.toLowerCase().includes(t))) {
+      fileType = rawOrderKey;
+      orderKey = "";
+    }
+
+    const cleanType = String(fileType || "").toLowerCase();
 
     let isAuthorized = false;
     if (req.session && req.session.adminUser) {
+      isAuthorized = true;
+    } else if (cleanType === "online" || cleanType === "completo" || cleanType.includes("online") || cleanType.includes("completo")) {
+      // Instaladores oficiais do Windows contêm proteção interna por chave e podem ser baixados diretamente
       isAuthorized = true;
     } else if (orderKey) {
       const order = await dbGet("SELECT id, status FROM orders WHERE order_key = ?", [orderKey]);
@@ -557,7 +569,7 @@ app.get([
     let targetFileName = "";
     let contentType = "application/octet-stream";
 
-    const cleanType = String(fileType || "").toLowerCase();
+    // cleanType already declared
     if (cleanType === "online" || cleanType.includes("online") || cleanType === "exe" || cleanType === "setup" || cleanType === "windows") {
       targetFileName = "DLuz-Orbix-Setup-Online.exe";
       contentType = "application/vnd.microsoft.portable-executable";
