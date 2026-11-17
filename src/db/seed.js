@@ -5,6 +5,70 @@
 
 const INITIAL_PRODUCTS = [
   {
+    "id": 2990,
+    "image_url": "/images/products/curso-video-automatico.jpg",
+    "name": "Sistema Vídeo Automático IA — Curso Completo + Plugins (Claude, Codex, Antigravity & OpenCode Grátis)",
+    "slug": "curso-video-automatico-ia",
+    "sku": "DLUZ-VIDEO-AUTO-IA",
+    "category": "criadores",
+    "badge": "🤖 LANÇAMENTO • CURSO + PLUGINS + VOZ & AVATAR IA",
+    "theme_color": "#F59E0B",
+    "icon": "video",
+    "regular_price": 197.0,
+    "sale_price": 47.0,
+    "price": 47.0,
+    "status": "publish",
+    "featured": 1,
+    "license_type": "licensed",
+    "short_description": "Aprenda a montar sua máquina de vídeos 100% no automático para YouTube (longos e Shorts), Reels e TikTok usando LLMs grátis, clonagem de voz e Avatar IA! Funciona no Claude, Codex do GPT, Antigravity e OpenCode grátis. Inclui o curso em vídeo + pack de plugins DLuz.",
+    "description": `
+      <h3>🤖 CRIE VÍDEOS NO AUTOMÁTICO COM IA — SEM APARECER, SEM GRAVAR E SEM ABRIR EDITOR!</h3>
+      <p>O <strong>Sistema Vídeo Automático IA (Curso + Plugins DLuz)</strong> entrega o método exato e os plugins prontos usados pela DLuz Games para produzir até <strong>18 vídeos num único dia</strong> (longos 16:9 e Shorts 9:16), completos com roteiro humanizado, narração com voz clonada, Avatar IA, legenda palavra por palavra, trilha sonora e capa de alto CTR.</p>
+      <p><strong>👉 Veja a Página de Apresentação Completa:</strong> <a href="/video-automatico" style="color:#2563EB;font-weight:700;text-decoration:underline;">Acessar Página de Vendas & Demonstração</a></p>
+
+      <h4>🔥 COMPATÍVEL COM OS 4 PRINCIPAIS AMBIENTES DE IA:</h4>
+      <ul>
+        <li><strong>⚡ Antigravity:</strong> Fluxo completo com skills oficiais, HyperFrames 3D e geração de capas integradas.</li>
+        <li><strong>🧠 Claude (Claude Code / Anthropic):</strong> Comandos e plugins estruturados para roteiro, edição e conferência automática.</li>
+        <li><strong>🚀 Codex do GPT (OpenAI):</strong> Setup pronto para rodar automação em série direto pelo Codex CLI/IDE.</li>
+        <li><strong>💸 OpenCode Grátis + LLMs Gratuitas:</strong> Passo a passo completo para rodar tudo usando modelos gratuitos (custo zero de API!) e clonagem de voz gratuita/local.</li>
+      </ul>
+
+      <h4>📦 O QUE VOCÊ RECEBE NESTE PACOTE:</h4>
+      <ul>
+        <li><strong>🎓 Curso Completo Passo a Passo em Vídeo:</strong> Da instalação do zero até a geração e publicação automática no YouTube, Shorts, Reels e TikTok.</li>
+        <li><strong>🧩 Pack Oficial de Plugins & Skills DLuz:</strong> Todas as configurações, prompts, templates 3D (Three.js + GSAP), scripts de conferência ASR (Whisper) e automação de legendas/trilhas.</li>
+        <li><strong>🎙️ Módulo de Clonagem de Voz & Avatar IA:</strong> Como clonar sua própria voz ou usar vozes neurais em português (sem parecer robô) e gerar apresentadores por IA idênticos a você.</li>
+        <li><strong>🖼️ Gerador de Capas de Alto CTR (16:9 e 9:16):</strong> Crie thumbnails chamativas no padrão profissional automaticamente.</li>
+        <li><strong>🔄 Atualizações Contínuas:</strong> Novos vídeos de aula e atualizações do plugin liberados direto na sua área de download.</li>
+      </ul>
+
+      <h4>🎯 FUNCIONAL EM QUALQUER NICHO:</h4>
+      <ul>
+        <li>Canais de Games, Notícias, Futebol, Curiosidades, Tecnologia, Finanças, História ou Mistérios.</li>
+      </ul>
+    `,
+    "features": [
+      "Curso Completo em Vídeo do Zero ao Piloto Automático",
+      "Pack de Plugins Oficiais DLuz (Edição 3D, Áudio, Legenda e Capa)",
+      "Funciona no Claude, Codex do GPT, Antigravity e OpenCode Grátis",
+      "Método com LLMs Grátis (Produza sem gastar com API cara)",
+      "Clonagem de Voz Realista + Avatar IA (Sem precisar gravar sempre)",
+      "Conferência Automática Palavra por Palavra com Whisper",
+      "Entrega Vídeo Longo (16:9), Short (9:16) e Capa de Alto CTR",
+      "Acesso Vitalício + Atualizações de Aulas e Plugins",
+      "Envio Automático Imediato no WhatsApp e E-mail"
+    ],
+    "downloads": [
+      {
+        "id": "video_auto_portal",
+        "name": "Portal do Aluno & Pack de Plugins DLuz (Aulas + Instaladores)",
+        "file": "https://loja.dluz.com.br/video-automatico#area-membros"
+      }
+    ]
+  },
+
+  {
     "id": 2980,
     "image_url": "/images/products/dluz-music-pro.jpg",
     "name": "DLuz Music Pro — Streaming de Música & Vídeo Sem Anúncios (Licença Vitalícia)",

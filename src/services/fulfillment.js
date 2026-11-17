@@ -110,13 +110,34 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
       String(item.name || "").toLowerCase().includes("dluz music")
   );
 
+  const isVideoAuto = (order.items || []).some(
+    (item) =>
+      item.slug === "curso-video-automatico-ia" ||
+      item.sku === "DLUZ-VIDEO-AUTO-IA" ||
+      item.product_id === 2990 ||
+      item.id === 2990 ||
+      String(item.name || "").toLowerCase().includes("vídeo automático") ||
+      String(item.name || "").toLowerCase().includes("video automatico")
+  );
+
   let generatedKey = order.license_key || "";
   let whatsappStatus = "pending";
   let licenseResData = null;
 
   let canalDarkApiToken = "";
 
-  if (isDluzMusic) {
+  if (isVideoAuto) {
+    const crypto = require("crypto");
+    const r1 = crypto.randomBytes(4).toString("hex").toUpperCase();
+    const r2 = crypto.randomBytes(4).toString("hex").toUpperCase();
+    generatedKey = `DLUZ-VAUTO-${r1}-${r2}`;
+    licenseResData = {
+      type: "video_automatico_curso_plugins",
+      key: generatedKey,
+      status: "ativa",
+      plano: "vitalicio"
+    };
+  } else if (isDluzMusic) {
     generatedKey = "DLUZ-MUSIC-PRO-VITALICIO";
     licenseResData = {
       type: "dluz_music_pro",
@@ -195,7 +216,31 @@ async function fulfillApprovedOrder(orderId, forceResend = false) {
       const mainItem = order.items?.[0] || { name: "DLuz Games Software" };
       let message = "";
 
-      if (isOrbixWindows) {
+      if (isVideoAuto) {
+        message = `👋 Olá, *${order.first_name}*! Tudo bem? Aqui é da equipe *DLuz Games*! 🤖🎬
+
+Muito obrigado pela sua compra! Seu pedido *#${order.id}* (*Sistema Vídeo Automático IA — Curso + Plugins*) foi aprovado com sucesso!
+
+━━━━━━━━━━━━━━━━━━━━
+🔑 *SUA CHAVE DE ACESSO VITALÍCIA:*
+\`${generatedKey}\`
+━━━━━━━━━━━━━━━━━━━━
+
+📦 *ACESSO AO CURSO & PACK DE PLUGINS:*
+🌐 *Portal & Atualizações:* https://loja.dluz.com.br/video-automatico#area-membros
+🔎 *Consultar Pedido & Downloads:* https://loja.dluz.com.br/consultar-pedido
+
+🚀 *O QUE ESTÁ LIBERADO PARA VOCÊ:*
+• Aulas passo a passo (Claude, Codex GPT, Antigravity & OpenCode Grátis)
+• Configuração com LLMs Grátis + Clonagem de Voz + Avatar IA
+• Pack de Plugins DLuz (Edição 3D, Legenda Dinâmica, Áudio & Capa Alto CTR)
+
+⭐ *SUPORTE & COMUNIDADE VIP:*
+💬 Discord VIP: https://discord.gg/r2tUSVnkn2
+🌐 Loja Oficial: https://loja.dluz.com.br
+
+Qualquer dúvida para instalar ou rodar seu primeiro vídeo automático, chama a gente aqui no WhatsApp! Bora automatizar! 🚀🔥`;
+      } else if (isOrbixWindows) {
         message = `👋 Olá, *${order.first_name}*! Tudo bem? Aqui é da equipe *DLuz Games*! 🚀🪟
 
 Muito obrigado pela sua compra na nossa Loja Oficial! Seu pedido *#${order.id}* (*Orbix Player para Windows*) foi aprovado com sucesso!

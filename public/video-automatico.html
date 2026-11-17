@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Sistema Vídeo Automático IA — Curso + Plugins DLuz Games</title>
+  <meta name="description" content="Crie vídeos longos e Shorts pro YouTube 100% no automático com Claude, Codex GPT, Antigravity ou OpenCode grátis, usando LLMs gratuitas, voz clonada e Avatar IA." />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #060811;
+      --bg-card: #0E1324;
+      --bg-soft: #141B31;
+      --border: rgba(148, 163, 184, 0.16);
+      --text: #F8FAFC;
+      --muted: #94A3B8;
+      --gold: #FBBF24;
+      --gold-dark: #D97706;
+      --red: #FF3A57;
+      --blue: #38BDF8;
+      --green: #22C55E;
+      --claude: #FF9466;
+      --gpt: #3DF0B0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      background: radial-gradient(circle at 50% 0%, #171236 0%, var(--bg) 52%);
+      color: var(--text);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    /* Topbar */
+    .topbar {
+      position: sticky; top: 0; z-index: 60;
+      background: rgba(6, 8, 17, 0.86); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0; gap: 16px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 16px; }
+    .brand img { height: 34px; width: auto; }
+    .topbar-cta {
+      background: linear-gradient(135deg, var(--gold), #F59E0B);
+      color: #090B12; font-weight: 800; font-size: 14px;
+      padding: 10px 18px; border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.25);
+      transition: transform .15s ease;
+      white-space: nowrap;
+    }
+    .topbar-cta:hover { transform: translateY(-1px); }
+
+    /* Hero */
+    .hero { padding: 48px 0 64px; text-align: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 14px; border-radius: 999px;
+      background: rgba(255, 58, 87, 0.14); border: 1px solid rgba(255, 58, 87, 0.4);
+      color: #FDA4AF; font-size: 12.5px; font-weight: 700; letter-spacing: .04em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 58px); font-weight: 800; line-height: 1.08;
+      letter-spacing: -0.025em; max-width: 920px; margin: 0 auto 18px;
+    }
+    .hero h1 .hl {
+      background: linear-gradient(90deg, #FDE047, #F59E0B 55%, #FF3A57);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2.1vw, 20px); color: #CBD5E1;
+      max-width: 780px; margin: 0 auto 32px;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px;
+      align-items: center; text-align: left; margin-top: 28px;
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+
+    /* VSL / Media Frame */
+    .vsl-card {
+      background: var(--bg-card); border: 1px solid rgba(251, 191, 36, 0.3);
+      border-radius: 18px; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+    .vsl-wrap { position: relative; aspect-ratio: 16 / 9; background: #03050B; }
+    .vsl-wrap img, .vsl-wrap video, .vsl-wrap iframe {
+      width: 100%; height: 100%; object-fit: cover; display: block; border: 0;
+    }
+    .vsl-caption {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+      padding: 12px 16px; background: #0A0E1B; border-top: 1px solid var(--border);
+      font-size: 13px; color: var(--muted);
+    }
+    .vsl-caption strong { color: var(--gold); }
+
+    /* Offer Box */
+    .offer-card {
+      background: linear-gradient(180deg, #131A30 0%, #0C1020 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 18px;
+      padding: 26px; box-shadow: 0 20px 50px rgba(0,0,0,.45);
+    }
+    .offer-kicker {
+      font-size: 12px; font-weight: 800; color: var(--blue);
+      text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px;
+    }
+    .price-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
+    .price-old { font-size: 18px; color: #64748B; text-decoration: line-through; font-weight: 600; }
+    .price-new { font-size: 46px; font-weight: 800; color: var(--green); line-height: 1; letter-spacing: -0.03em; }
+    .price-tag {
+      background: rgba(34, 197, 94, 0.16); color: #86EFAC;
+      font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 999px;
+    }
+    .offer-list { list-style: none; display: grid; gap: 9px; margin: 18px 0 22px; font-size: 14.5px; color: #E2E8F0; }
+    .offer-list li { display: flex; gap: 9px; align-items: flex-start; }
+    .offer-list .ck { color: var(--green); font-weight: 800; }
+    .btn-buy-main {
+      display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+      background: linear-gradient(135deg, #22C55E, #16A34A); color: #fff;
+      font-weight: 800; font-size: 17px; padding: 16px 22px; border-radius: 12px;
+      box-shadow: 0 12px 28px rgba(22, 163, 74, 0.35); transition: transform .15s ease, filter .15s ease;
+    }
+    .btn-buy-main:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .trust-mini {
+      margin-top: 12px; text-align: center; font-size: 12.5px; color: var(--muted);
+    }
+
+    /* Stats */
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      margin: 12px 0 64px;
+    }
+    @media (max-width: 768px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+    .stat-box {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px; text-align: center;
+    }
+    .stat-num { font-size: 32px; font-weight: 800; color: var(--gold); line-height: 1.1; }
+    .stat-lbl { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* Sections */
+    .sec { padding: 56px 0; border-top: 1px solid var(--border); }
+    .sec-head { text-align: center; max-width: 740px; margin: 0 auto 36px; }
+    .sec-head h2 { font-size: clamp(24px, 3.6vw, 38px); font-weight: 800; margin-bottom: 10px; }
+    .sec-head p { color: var(--muted); font-size: 16px; }
+
+    /* Engines grid */
+    .engines { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 900px) { .engines { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .engines { grid-template-columns: 1fr; } }
+    .eng-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 22px; transition: border-color .2s, transform .2s;
+    }
+    .eng-card:hover { transform: translateY(-3px); border-color: rgba(251, 191, 36, 0.45); }
+    .eng-pill {
+      display: inline-block; font-size: 11.5px; font-weight: 800; padding: 4px 10px;
+      border-radius: 8px; margin-bottom: 12px; text-transform: uppercase;
+    }
+    .eng-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+    .eng-card p { font-size: 14px; color: #CBD5E1; }
+
+    /* Modules */
+    .modules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 900px) { .modules { grid-template-columns: 1fr; } }
+    .mod-card {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px;
+    }
+    .mod-num { font-size: 12px; font-weight: 800; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+    .mod-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+    .mod-card ul { list-style: none; display: grid; gap: 7px; font-size: 14px; color: #CBD5E1; }
+    .mod-card li::before { content: "▸ "; color: var(--blue); font-weight: 800; }
+
+    /* Nichos */
+    .nichos { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
+    .nicho-chip {
+      background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.28);
+      color: #BAE6FD; padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight: 600;
+    }
+
+    /* FAQ */
+    .faq-list { max-width: 820px; margin: 0 auto; display: grid; gap: 12px; }
+    .faq-item {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; background: transparent; border: 0; color: var(--text); text-align: left;
+      padding: 18px 20px; font-size: 16px; font-weight: 700; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .faq-a { padding: 0 20px 18px; font-size: 14.5px; color: #CBD5E1; display: none; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-plus { transform: rotate(45deg); }
+    .faq-plus { font-size: 22px; color: var(--gold); transition: transform .2s; }
+
+    /* Final CTA */
+    .final-box {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(251, 191, 36, 0.14));
+      border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 22px;
+      padding: 40px 28px; text-align: center; max-width: 880px; margin: 0 auto;
+    }
+    .final-box h2 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
+    .final-box p { color: #E2E8F0; max-width: 660px; margin: 0 auto 24px; font-size: 16px; }
+    .final-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn-sec {
+      padding: 15px 22px; border-radius: 12px; border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.85); color: #F8FAFC; font-weight: 700; font-size: 15px;
+    }
+    footer {
+      border-top: 1px solid var(--border); padding: 28px 0; text-align: center;
+      font-size: 13px; color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/" class="brand">
+        <img src="/images/logo.png" alt="DLuz Games" />
+        <span>DLuz Games · Loja Oficial</span>
+      </a>
+      <a href="/checkout?id=2990" class="topbar-cta">Garantir Acesso por R$ 47 →</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">🤖 REVELAÇÃO REAL: ESSE ROSTO E ESSA VOZ FORAM CRIADOS POR IA</div>
+      <h1>
+        Produza <span class="hl">Vídeos em Série pro YouTube</span> no Automático — Sem Gravar e Sem Editar
+      </h1>
+      <p class="hero-sub">
+        O mesmo sistema que gerou <strong>18 vídeos num único dia</strong> (9 longos + 9 Shorts) usando
+        <strong>LLMs grátis</strong>, <strong>clonagem de voz realista</strong> e <strong>Avatar IA</strong> —
+        rodando no <strong>Claude</strong>, <strong>Codex do GPT</strong>, <strong>Antigravity</strong> ou <strong>OpenCode grátis</strong>.
+      </p>
+
+      <div class="hero-grid">
+        <!-- SLOT DO VÍDEO VSL: troque o src/poster ou insira iframe do YouTube quando subir seus vídeos gravados -->
+        <div class="vsl-card">
+          <div class="vsl-wrap">
+            <!-- ESPAÇO RESERVADO PARA VÍDEO PRINCIPAL (VSL / DEMONSTRAÇÃO) -->
+            <img src="/images/products/curso-video-automatico.jpg" alt="Sistema Vídeo Automático IA — Curso + Plugins DLuz" />
+          </div>
+          <div class="vsl-caption">
+            <span>🎬 <strong>Aulas + Plugins Prontos:</strong> em breve vídeos gravados direto aqui</span>
+            <span>⚡ Entrega imediata via WhatsApp &amp; E-mail</span>
+          </div>
+        </div>
+
+        <div class="offer-card" id="oferta">
+          <div class="offer-kicker">Oferta de Lançamento · Acesso Vitalício</div>
+          <h2 style="font-size: 22px; font-weight: 800; line-height: 1.25;">
+            Curso Sistema Vídeo Automático IA + Pack de Plugins DLuz
+          </h2>
+          <div class="price-row">
+            <span class="price-old">De R$ 197,00</span>
+            <span class="price-new">R$ 47,00</span>
+            <span class="price-tag">76% OFF HOJE</span>
+          </div>
+          <ul class="offer-list">
+            <li><span class="ck">✓</span><span><strong>Curso em Vídeo Passo a Passo</strong> do zero ao primeiro vídeo automático no ar</span></li>
+            <li><span class="ck">✓</span><span><strong>Pack Completo de Plugins DLuz</strong> (roteiro, voz, Whisper, edição 3D e capa)</span></li>
+            <li><span class="ck">✓</span><span><strong>Modo LLMs Grátis:</strong> produza sem gastar fortunas com APIs pagas</span></li>
+            <li><span class="ck">✓</span><span><strong>Clonagem de Voz + Avatar IA</strong> idênticos a você falando o roteiro</span></li>
+            <li><span class="ck">✓</span><span><strong>Roda em 4 plataformas:</strong> Claude, Codex GPT, Antigravity e OpenCode grátis</span></li>
+            <li><span class="ck">✓</span><span><strong>Atualizações futuras garantidas</strong> com novos vídeos e plugins inclusos</span></li>
+          </ul>
+          <a href="/checkout?id=2990" class="btn-buy-main">
+            ⚡ Quero Meu Acesso Agora (Pix ou Cartão)
+          </a>
+          <div class="trust-mini">
+            🔒 Pagamento 100% seguro via Mercado Pago · Garantia de 7 dias · Liberação imediata
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="stats">
+      <div class="stat-box">
+        <div class="stat-num">18 Vídeos</div>
+        <div class="stat-lbl">produzidos em um único dia (9 longos + 9 Shorts)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">4 IAs</div>
+        <div class="stat-lbl">Claude, Codex GPT, Antigravity e OpenCode grátis</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">0 Min</div>
+        <div class="stat-lbl">abrindo Premiere, CapCut ou After Effects na mão</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">R$ 47</div>
+        <div class="stat-lbl">pagamento único vitalício com plugins inclusos</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Funciona na Ferramenta que Você Já Usa (Inclusive Grátis!)</h2>
+        <p>Não fique preso a uma única assinatura cara. Os plugins e fluxos do curso foram estruturados para rodar nos 4 maiores ambientes de agentes do mercado.</p>
+      </div>
+      <div class="engines">
+        <div class="eng-card">
+          <span class="eng-pill" style="background:rgba(255,148,102,.15);color:var(--claude);">Anthropic</span>
+          <h3>Claude</h3>
+          <p>Use os plugins e skills organizados direto no Claude Code / Claude para pesquisar pautas, humanizar roteiros e montar toda a composição.</p>
+        </div>
+        <div class="eng-card">
+          <span class="eng-pill" style="background:rgba(61,240,176,.15);color:var(--gpt);">OpenAI</span>
+          <h3>Codex do GPT</h3>
+          <p>Compatível com o fluxo do Codex CLI/App para automatizar cortes, legendas, conferência palavra por palavra e renderização em GPU.</p>
+        </div>
+        <div class="eng-card">
+          <span class="eng-pill" style="background:rgba(56,189,248,.15);color:var(--blue);">Google</span>
+          <h3>Antigravity</h3>
+          <p>Integração nativa com skills, subagentes e ferramentas visuais para gerar vídeo longo 16:9, Short 9:16 e capa de alto CTR juntos.</p>
+        </div>
+        <div class="eng-card">
+          <span class="eng-pill" style="background:rgba(251,191,36,.15);color:var(--gold);">Custo Zero</span>
+          <h3>OpenCode + LLMs Grátis</h3>
+          <p>Não quer pagar mensalidade? Aprenda a conectar o OpenCode gratuito com modelos grátis e clonagem de voz sem custo por vídeo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="area-membros">
+    <div class="container">
+      <div class="sec-head">
+        <h2>O Que Você Vai Aprender e Levar no Pacote</h2>
+        <p>Você manda apenas o tema — a automação faz o trabalho pesado de uma equipe inteira de produção.</p>
+      </div>
+      <div class="modules">
+        <div class="mod-card">
+          <div class="mod-num">Módulo 01 · Setup &amp; LLMs Grátis</div>
+          <h3>Instalação em Qualquer PC</h3>
+          <ul>
+            <li>Configuração passo a passo no Claude, Codex GPT, Antigravity e OpenCode</li>
+            <li>Como conectar modelos gratuitos (LLMs grátis) sem quebrar o bolso</li>
+            <li>Instalação do Pack de Plugins DLuz em minutos</li>
+          </ul>
+        </div>
+        <div class="mod-card">
+          <div class="mod-num">Módulo 02 · Voz Clonada &amp; Avatar</div>
+          <h3>Sua Voz e Seu Rosto por IA</h3>
+          <ul>
+            <li>Clonagem de voz realista em PT-BR (incluindo opções gratuitas e locais)</li>
+            <li>Como criar seu Avatar IA falando no estúdio ou dentro de telas</li>
+            <li>Conferência automática palavra por palavra com Whisper (zero erro de fala)</li>
+          </ul>
+        </div>
+        <div class="mod-card">
+          <div class="mod-num">Módulo 03 · Edição 3D &amp; Capas</div>
+          <h3>Entrega Completa + Publicação</h3>
+          <ul>
+            <li>Edição programática com Three.js, GSAP, trilha e SFX automáticos</li>
+            <li>Legendas dinâmicas palavra por palavra em amarelo ouro e branco</li>
+            <li>Geração automática de capas de alto CTR (16:9 e 9:16) prontas pro YouTube</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nichos">
+        <span class="nicho-chip">🎮 Canais de Games</span>
+        <span class="nicho-chip">📰 Notícias &amp; Atualidades</span>
+        <span class="nicho-chip">⚽ Futebol &amp; Esportes</span>
+        <span class="nicho-chip">🧠 Curiosidades Virais</span>
+        <span class="nicho-chip">🤖 Tecnologia &amp; IA</span>
+        <span class="nicho-chip">📱 Shorts, Reels &amp; TikTok</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Dúvidas Frequentes</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button type="button" class="faq-q">Preciso saber programar para usar os plugins? <span class="faq-plus">+</span></button>
+          <div class="faq-a">Não! O curso mostra o passo a passo completo na tela para você instalar e rodar tudo dando comandos simples em português (basta mandar o tema do vídeo).</div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q">Consigo rodar realmente com LLM grátis e sem gastar com voz? <span class="faq-plus">+</span></button>
+          <div class="faq-a">Sim! Mostramos como usar modelos gratuitos no OpenCode/OpenRouter e motores gratuitos/locais de clonagem de voz e narração, além de como usar Claude, Codex GPT e Antigravity se você já tiver assinatura.</div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q">O que vem incluso hoje e o que chega depois? <span class="faq-plus">+</span></button>
+          <div class="faq-a">Você garante acesso vitalício pelo preço promocional de lançamento (R$ 47,00) com envio imediato da chave e acesso à área de alunos, onde todas as aulas gravadas e atualizações dos plugins são liberadas sem custo adicional.</div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q">Como recebo o acesso após pagar? <span class="faq-plus">+</span></button>
+          <div class="faq-a">Assim que o Pix ou Cartão for aprovado pelo Mercado Pago, você recebe sua chave e o link de acesso automaticamente na tela, no seu WhatsApp e no seu e-mail.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <div class="final-box">
+        <h2>Coloque Sua Máquina de Vídeos para Rodar Hoje</h2>
+        <p>Aproveite o valor de lançamento por <strong>R$ 47,00</strong> (de R$ 197,00) com acesso vitalício aos plugins e aulas.</p>
+        <div class="final-actions">
+          <a href="/checkout?id=2990" class="btn-buy-main" style="width:auto;padding:16px 32px;">
+            ⚡ Garantir Agora por R$ 47,00
+          </a>
+          <a href="/produto/curso-video-automatico-ia" class="btn-sec">Ver Página na Loja →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      Copyright © 2026 DLuz Games · <a href="/" style="color:#60A5FA;">Voltar para Loja Oficial</a> ·
+      <a href="/politica-de-reembolso" style="color:#60A5FA;">Garantia 7 Dias</a> ·
+      <a href="https://wa.me/5563981199852" target="_blank" rel="noopener" style="color:#60A5FA;">Suporte WhatsApp</a>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        btn.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -58,6 +58,8 @@ app.use(
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
         fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
         imgSrc: ["'self'", "data:", "https:", "blob:"],
+        mediaSrc: ["'self'", "data:", "https:", "blob:"],
+        frameSrc: ["'self'", "https://www.youtube.com", "https://www.youtube-nocookie.com", "https://player.vimeo.com"],
         connectSrc: ["'self'", "https://api.mercadopago.com"]
       }
     },
@@ -1202,6 +1204,19 @@ app.use(express.static(publicDir));
 app.get("/admin", (req, res) => {
   res.sendFile(path.join(publicDir, "admin.html"));
 });
+
+// Página de Vendas Dedicada — Sistema Vídeo Automático IA (Curso + Plugins)
+app.get(
+  [
+    "/video-automatico",
+    "/video-automatico/",
+    "/curso-video-automatico",
+    "/curso-video-automatico/"
+  ],
+  (req, res) => {
+    res.sendFile(path.join(publicDir, "video-automatico.html"));
+  }
+);
 
 // Compatibilidade total com links antigos do WooCommerce e páginas institucionais
 app.get(
