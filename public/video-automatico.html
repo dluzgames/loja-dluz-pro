@@ -3,444 +3,509 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Sistema Vídeo Automático IA — Curso + Plugins DLuz Games</title>
-  <meta name="description" content="Crie vídeos longos e Shorts pro YouTube 100% no automático com Claude, Codex GPT, Antigravity ou OpenCode grátis, usando LLMs gratuitas, voz clonada e Avatar IA." />
+  <title>Sistema Vídeo Automático IA — Curso + Plugins | Loja Oficial DLuz Games</title>
+  <meta name="description" content="Crie vídeos longos e Shorts pro YouTube no piloto automático com Claude, Codex GPT, Antigravity ou OpenCode grátis, usando LLMs gratuitas, voz clonada e Avatar IA." />
   <link rel="icon" type="image/png" href="/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #060811;
-      --bg-card: #0E1324;
-      --bg-soft: #141B31;
-      --border: rgba(148, 163, 184, 0.16);
-      --text: #F8FAFC;
-      --muted: #94A3B8;
-      --gold: #FBBF24;
-      --gold-dark: #D97706;
-      --red: #FF3A57;
-      --blue: #38BDF8;
-      --green: #22C55E;
-      --claude: #FF9466;
-      --gpt: #3DF0B0;
+      --nav-bg: #0B0F19;
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --surface-warm: #F1F5F9;
+      --ink: #0F172A;
+      --ink-sub: #475569;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --blue: #2563EB;
+      --blue-hover: #1D4ED8;
+      --green: #16A34A;
+      --green-hover: #15803D;
+      --red: #DC2626;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-      background: radial-gradient(circle at 50% 0%, #171236 0%, var(--bg) 52%);
-      color: var(--text);
+      font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
       line-height: 1.55;
-      overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
-    .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
-    /* Topbar */
-    .topbar {
-      position: sticky; top: 0; z-index: 60;
-      background: rgba(6, 8, 17, 0.86); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+    /* Topbar idêntica à Loja DLuz */
+    .site-header {
+      background: var(--nav-bg);
+      color: #F8FAFC;
+      border-bottom: 1px solid #1E293B;
+      position: sticky; top: 0; z-index: 50;
     }
-    .topbar-inner {
+    .header-inner {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 12px 0; gap: 16px;
+      gap: 16px; padding: 12px 0;
     }
     .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 16px; }
-    .brand img { height: 34px; width: auto; }
-    .topbar-cta {
-      background: linear-gradient(135deg, var(--gold), #F59E0B);
-      color: #090B12; font-weight: 800; font-size: 14px;
-      padding: 10px 18px; border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.25);
-      transition: transform .15s ease;
-      white-space: nowrap;
+    .brand img { height: 36px; width: auto; }
+    .header-actions { display: flex; align-items: center; gap: 16px; }
+    .link-back { font-size: 13.5px; color: #94A3B8; font-weight: 600; }
+    .link-back:hover { color: #FFFFFF; }
+    .btn-header {
+      background: var(--green); color: #FFFFFF; font-weight: 700; font-size: 13.5px;
+      padding: 9px 16px; border-radius: 8px; transition: background .15s; white-space: nowrap;
     }
-    .topbar-cta:hover { transform: translateY(-1px); }
+    .btn-header:hover { background: var(--green-hover); }
 
-    /* Hero */
-    .hero { padding: 48px 0 64px; text-align: center; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 7px 14px; border-radius: 999px;
-      background: rgba(255, 58, 87, 0.14); border: 1px solid rgba(255, 58, 87, 0.4);
-      color: #FDA4AF; font-size: 12.5px; font-weight: 700; letter-spacing: .04em;
-      text-transform: uppercase; margin-bottom: 20px;
+    /* Hero Assimétrico Claro */
+    .hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 40px 0 52px; }
+    .hero-kicker {
+      font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--red); margin-bottom: 10px;
     }
     .hero h1 {
-      font-size: clamp(32px, 5vw, 58px); font-weight: 800; line-height: 1.08;
-      letter-spacing: -0.025em; max-width: 920px; margin: 0 auto 18px;
-    }
-    .hero h1 .hl {
-      background: linear-gradient(90deg, #FDE047, #F59E0B 55%, #FF3A57);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      font-size: clamp(28px, 4.2vw, 46px); font-weight: 800; line-height: 1.1;
+      letter-spacing: -0.025em; color: var(--ink); max-width: 860px; margin-bottom: 14px;
     }
     .hero-sub {
-      font-size: clamp(16px, 2.1vw, 20px); color: #CBD5E1;
-      max-width: 780px; margin: 0 auto 32px;
-    }
-    .hero-grid {
-      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px;
-      align-items: center; text-align: left; margin-top: 28px;
-    }
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
+      font-size: clamp(15.5px, 1.8vw, 18.5px); color: var(--ink-sub);
+      max-width: 780px; margin-bottom: 30px;
     }
 
-    /* VSL / Media Frame */
-    .vsl-card {
-      background: var(--bg-card); border: 1px solid rgba(251, 191, 36, 0.3);
-      border-radius: 18px; overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    .hero-grid {
+      display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 28px; align-items: start;
     }
-    .vsl-wrap { position: relative; aspect-ratio: 16 / 9; background: #03050B; }
-    .vsl-wrap img, .vsl-wrap video, .vsl-wrap iframe {
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+    .vsl-box {
+      background: #0B0F19; border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border); box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+    }
+    .vsl-frame { aspect-ratio: 16 / 9; position: relative; background: #0B0F19; }
+    .vsl-frame img, .vsl-frame video, .vsl-frame iframe {
       width: 100%; height: 100%; object-fit: cover; display: block; border: 0;
     }
-    .vsl-caption {
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-      padding: 12px 16px; background: #0A0E1B; border-top: 1px solid var(--border);
-      font-size: 13px; color: var(--muted);
-    }
-    .vsl-caption strong { color: var(--gold); }
-
-    /* Offer Box */
-    .offer-card {
-      background: linear-gradient(180deg, #131A30 0%, #0C1020 100%);
-      border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 18px;
-      padding: 26px; box-shadow: 0 20px 50px rgba(0,0,0,.45);
-    }
-    .offer-kicker {
-      font-size: 12px; font-weight: 800; color: var(--blue);
-      text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px;
-    }
-    .price-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
-    .price-old { font-size: 18px; color: #64748B; text-decoration: line-through; font-weight: 600; }
-    .price-new { font-size: 46px; font-weight: 800; color: var(--green); line-height: 1; letter-spacing: -0.03em; }
-    .price-tag {
-      background: rgba(34, 197, 94, 0.16); color: #86EFAC;
-      font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 999px;
-    }
-    .offer-list { list-style: none; display: grid; gap: 9px; margin: 18px 0 22px; font-size: 14.5px; color: #E2E8F0; }
-    .offer-list li { display: flex; gap: 9px; align-items: flex-start; }
-    .offer-list .ck { color: var(--green); font-weight: 800; }
-    .btn-buy-main {
-      display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
-      background: linear-gradient(135deg, #22C55E, #16A34A); color: #fff;
-      font-weight: 800; font-size: 17px; padding: 16px 22px; border-radius: 12px;
-      box-shadow: 0 12px 28px rgba(22, 163, 74, 0.35); transition: transform .15s ease, filter .15s ease;
-    }
-    .btn-buy-main:hover { transform: translateY(-2px); filter: brightness(1.06); }
-    .trust-mini {
-      margin-top: 12px; text-align: center; font-size: 12.5px; color: var(--muted);
+    .vsl-note {
+      padding: 12px 16px; background: #F1F5F9; color: var(--ink-sub);
+      font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+      border-top: 1px solid var(--border);
     }
 
-    /* Stats */
-    .stats {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-      margin: 12px 0 64px;
+    /* Checkout Card Limpo Estilo Loja */
+    .buy-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
     }
-    @media (max-width: 768px) { .stats { grid-template-columns: repeat(2, 1fr); } }
-    .stat-box {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 14px; padding: 20px; text-align: center;
+    .buy-title { font-size: 18px; font-weight: 800; line-height: 1.3; margin-bottom: 14px; }
+    .price-block { padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .price-old { font-size: 14px; color: var(--muted); text-decoration: line-through; display: block; }
+    .price-main { display: flex; align-items: center; gap: 10px; margin-top: 2px; }
+    .price-val { font-size: 38px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
+    .price-off {
+      background: #DCFCE7; color: #166534; font-size: 12px; font-weight: 800;
+      padding: 4px 8px; border-radius: 6px;
     }
-    .stat-num { font-size: 32px; font-weight: 800; color: var(--gold); line-height: 1.1; }
-    .stat-lbl { font-size: 13px; color: var(--muted); margin-top: 6px; }
+    .price-inst { font-size: 13px; color: var(--green); font-weight: 600; margin-top: 6px; }
 
-    /* Sections */
-    .sec { padding: 56px 0; border-top: 1px solid var(--border); }
-    .sec-head { text-align: center; max-width: 740px; margin: 0 auto 36px; }
-    .sec-head h2 { font-size: clamp(24px, 3.6vw, 38px); font-weight: 800; margin-bottom: 10px; }
-    .sec-head p { color: var(--muted); font-size: 16px; }
+    .check-list { list-style: none; display: grid; gap: 9px; font-size: 14px; color: var(--ink-sub); margin-bottom: 20px; }
+    .check-list li { display: flex; gap: 8px; align-items: flex-start; }
+    .check-list b { color: var(--ink); }
+    .ck { color: var(--green); font-weight: 800; }
 
-    /* Engines grid */
-    .engines { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    @media (max-width: 900px) { .engines { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 520px) { .engines { grid-template-columns: 1fr; } }
-    .eng-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 16px; padding: 22px; transition: border-color .2s, transform .2s;
+    .btn-buy {
+      display: flex; align-items: center; justify-content: center; width: 100%;
+      background: var(--green); color: #FFFFFF; font-weight: 800; font-size: 16px;
+      padding: 15px 18px; border-radius: 10px; transition: background .15s;
     }
-    .eng-card:hover { transform: translateY(-3px); border-color: rgba(251, 191, 36, 0.45); }
-    .eng-pill {
-      display: inline-block; font-size: 11.5px; font-weight: 800; padding: 4px 10px;
-      border-radius: 8px; margin-bottom: 12px; text-transform: uppercase;
+    .btn-buy:hover { background: var(--green-hover); }
+    .btn-secondary-link {
+      display: block; text-align: center; margin-top: 10px; font-size: 13.5px;
+      font-weight: 600; color: var(--blue);
     }
-    .eng-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
-    .eng-card p { font-size: 14px; color: #CBD5E1; }
+    .trust-row { margin-top: 14px; font-size: 12px; color: var(--muted); text-align: center; }
 
-    /* Modules */
-    .modules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    @media (max-width: 900px) { .modules { grid-template-columns: 1fr; } }
-    .mod-card {
-      background: var(--bg-soft); border: 1px solid var(--border);
-      border-radius: 16px; padding: 24px;
+    /* Seção Escura Sólida (Prova & Pipeline) */
+    .dark-band { background: var(--nav-bg); color: #F8FAFC; padding: 60px 0; }
+    .split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    @media (max-width: 820px) { .split-2 { grid-template-columns: 1fr; } }
+    .dark-band h2 { font-size: clamp(24px, 3vw, 34px); font-weight: 800; line-height: 1.18; margin-bottom: 14px; }
+    .dark-band p { color: #CBD5E1; font-size: 15.5px; margin-bottom: 22px; }
+    .step-list { border-top: 1px solid #1E293B; }
+    .step-row {
+      display: grid; grid-template-columns: 44px 1fr; gap: 14px;
+      padding: 16px 0; border-bottom: 1px solid #1E293B;
     }
-    .mod-num { font-size: 12px; font-weight: 800; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
-    .mod-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
-    .mod-card ul { list-style: none; display: grid; gap: 7px; font-size: 14px; color: #CBD5E1; }
-    .mod-card li::before { content: "▸ "; color: var(--blue); font-weight: 800; }
+    .step-n { font-weight: 800; font-size: 15px; color: #FBBF24; }
+    .step-t { font-weight: 700; font-size: 15.5px; color: #FFFFFF; margin-bottom: 3px; }
+    .step-d { font-size: 14px; color: #94A3B8; }
 
-    /* Nichos */
-    .nichos { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
-    .nicho-chip {
-      background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.28);
-      color: #BAE6FD; padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight: 600;
+    .metrics-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+      background: #111827; border: 1px solid #1E293B; border-radius: 12px; padding: 26px;
     }
+    @media (max-width: 560px) { .metrics-strip { grid-template-columns: 1fr; } }
+    .m-num { font-size: 30px; font-weight: 800; color: #FFFFFF; line-height: 1.1; }
+    .m-lbl { font-size: 13px; color: #94A3B8; margin-top: 5px; }
+
+    /* Seção Tabs Interativas das 4 IAs */
+    .sec { padding: 60px 0; }
+    .sec-white { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .sec-head { max-width: 720px; margin-bottom: 28px; }
+    .sec-head h2 { font-size: clamp(24px, 3vw, 34px); font-weight: 800; margin-bottom: 8px; }
+    .sec-head p { color: var(--ink-sub); font-size: 15.5px; }
+
+    .tabs-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .tab-btn {
+      border: 1px solid var(--border); background: var(--bg); color: var(--ink-sub);
+      padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer;
+    }
+    .tab-btn.active { background: var(--nav-bg); color: #FFFFFF; border-color: var(--nav-bg); }
+    .tab-panel {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: center;
+    }
+    @media (max-width: 760px) { .tab-panel { grid-template-columns: 1fr; } }
+    .tab-panel h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .tab-panel p { color: var(--ink-sub); font-size: 15px; margin-bottom: 14px; }
+    .tab-bullets { list-style: none; display: grid; gap: 7px; font-size: 14px; color: var(--ink); }
+    .tab-bullets li::before { content: "→ "; color: var(--blue); font-weight: 800; }
+    .tab-meta {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px;
+      font-size: 13.5px; color: var(--ink-sub);
+    }
+    .tab-meta strong { display: block; color: var(--ink); font-size: 15px; margin-bottom: 6px; }
+
+    /* Módulos em Lista Editorial Limpa */
+    .mod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 860px) { .mod-grid { grid-template-columns: 1fr; } }
+    .mod-col { border-top: 3px solid var(--ink); padding-top: 16px; }
+    .mod-tag { font-size: 12px; font-weight: 800; color: var(--blue); text-transform: uppercase; letter-spacing: .05em; }
+    .mod-col h3 { font-size: 19px; font-weight: 800; margin: 6px 0 12px; }
+    .mod-col ul { list-style: none; display: grid; gap: 8px; font-size: 14px; color: var(--ink-sub); }
 
     /* FAQ */
-    .faq-list { max-width: 820px; margin: 0 auto; display: grid; gap: 12px; }
-    .faq-item {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
-    }
+    .faq-wrap { max-width: 780px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
     .faq-q {
-      width: 100%; background: transparent; border: 0; color: var(--text); text-align: left;
-      padding: 18px 20px; font-size: 16px; font-weight: 700; cursor: pointer;
-      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      width: 100%; background: transparent; border: 0; text-align: left;
+      padding: 18px 0; font-size: 16px; font-weight: 700; color: var(--ink);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px;
     }
-    .faq-a { padding: 0 20px 18px; font-size: 14.5px; color: #CBD5E1; display: none; }
+    .faq-a { padding-bottom: 18px; font-size: 14.5px; color: var(--ink-sub); display: none; }
     .faq-item.open .faq-a { display: block; }
-    .faq-item.open .faq-plus { transform: rotate(45deg); }
-    .faq-plus { font-size: 22px; color: var(--gold); transition: transform .2s; }
+    .faq-plus { font-size: 20px; color: var(--muted); }
 
-    /* Final CTA */
-    .final-box {
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(251, 191, 36, 0.14));
-      border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 22px;
-      padding: 40px 28px; text-align: center; max-width: 880px; margin: 0 auto;
+    /* CTA Rodapé */
+    .closing {
+      background: var(--nav-bg); color: #FFFFFF; padding: 52px 0;
     }
-    .final-box h2 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
-    .final-box p { color: #E2E8F0; max-width: 660px; margin: 0 auto 24px; font-size: 16px; }
-    .final-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-    .btn-sec {
-      padding: 15px 22px; border-radius: 12px; border: 1px solid var(--border);
-      background: rgba(15, 23, 42, 0.85); color: #F8FAFC; font-weight: 700; font-size: 15px;
+    .closing-inner {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;
     }
-    footer {
-      border-top: 1px solid var(--border); padding: 28px 0; text-align: center;
-      font-size: 13px; color: var(--muted);
+    .closing h2 { font-size: clamp(22px, 3vw, 32px); font-weight: 800; margin-bottom: 6px; }
+    .closing p { color: #94A3B8; font-size: 15px; }
+    .site-footer {
+      background: #070A12; color: #64748B; padding: 22px 0; font-size: 12.5px;
+      border-top: 1px solid #1E293B;
     }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
+  <header class="site-header">
+    <div class="container header-inner">
       <a href="/" class="brand">
         <img src="/images/logo.png" alt="DLuz Games" />
         <span>DLuz Games · Loja Oficial</span>
       </a>
-      <a href="/checkout?id=2990" class="topbar-cta">Garantir Acesso por R$ 47 →</a>
+      <div class="header-actions">
+        <a href="/" class="link-back">← Ver catálogo completo</a>
+        <a href="/checkout?id=2990" class="btn-header">Garantir por R$ 47</a>
+      </div>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <div class="eyebrow">🤖 REVELAÇÃO REAL: ESSE ROSTO E ESSA VOZ FORAM CRIADOS POR IA</div>
-      <h1>
-        Produza <span class="hl">Vídeos em Série pro YouTube</span> no Automático — Sem Gravar e Sem Editar
-      </h1>
+      <div class="hero-kicker">Revelação: o anúncio desse curso usou Avatar IA e voz clonada</div>
+      <h1>Crie vídeos pro YouTube no piloto automático — com LLMs grátis, voz clonada e Avatar IA.</h1>
       <p class="hero-sub">
-        O mesmo sistema que gerou <strong>18 vídeos num único dia</strong> (9 longos + 9 Shorts) usando
-        <strong>LLMs grátis</strong>, <strong>clonagem de voz realista</strong> e <strong>Avatar IA</strong> —
-        rodando no <strong>Claude</strong>, <strong>Codex do GPT</strong>, <strong>Antigravity</strong> ou <strong>OpenCode grátis</strong>.
+        Leve o curso passo a passo junto com o pack de plugins que usamos na DLuz Games para gerar até 18 vídeos em um dia só (longos 16:9 e Shorts 9:16), rodando no Claude, Codex do GPT, Antigravity ou OpenCode grátis.
       </p>
 
       <div class="hero-grid">
-        <!-- SLOT DO VÍDEO VSL: troque o src/poster ou insira iframe do YouTube quando subir seus vídeos gravados -->
-        <div class="vsl-card">
-          <div class="vsl-wrap">
-            <!-- ESPAÇO RESERVADO PARA VÍDEO PRINCIPAL (VSL / DEMONSTRAÇÃO) -->
+        <div class="vsl-box">
+          <div class="vsl-frame">
+            <!-- ESPAÇO RESERVADO PARA VÍDEO PRINCIPAL (VSL / DEMONSTRAÇÃO): substitua pela tag <video> ou <iframe> do YouTube quando subir sua gravação -->
             <img src="/images/products/curso-video-automatico.jpg" alt="Sistema Vídeo Automático IA — Curso + Plugins DLuz" />
           </div>
-          <div class="vsl-caption">
-            <span>🎬 <strong>Aulas + Plugins Prontos:</strong> em breve vídeos gravados direto aqui</span>
-            <span>⚡ Entrega imediata via WhatsApp &amp; E-mail</span>
+          <div class="vsl-note">
+            <span><strong>Área do Aluno:</strong> espaço preparado para as aulas gravadas + pacote de plugins</span>
+            <span>Liberação imediata no WhatsApp e E-mail</span>
           </div>
         </div>
 
-        <div class="offer-card" id="oferta">
-          <div class="offer-kicker">Oferta de Lançamento · Acesso Vitalício</div>
-          <h2 style="font-size: 22px; font-weight: 800; line-height: 1.25;">
-            Curso Sistema Vídeo Automático IA + Pack de Plugins DLuz
-          </h2>
-          <div class="price-row">
+        <div class="buy-box" id="oferta">
+          <div class="buy-title">Sistema Vídeo Automático IA — Curso + Plugins</div>
+          <div class="price-block">
             <span class="price-old">De R$ 197,00</span>
-            <span class="price-new">R$ 47,00</span>
-            <span class="price-tag">76% OFF HOJE</span>
+            <div class="price-main">
+              <span class="price-val">R$ 47,00</span>
+              <span class="price-off">76% OFF</span>
+            </div>
+            <div class="price-inst">Pagamento único · Pix instantâneo ou até 12x no cartão</div>
           </div>
-          <ul class="offer-list">
-            <li><span class="ck">✓</span><span><strong>Curso em Vídeo Passo a Passo</strong> do zero ao primeiro vídeo automático no ar</span></li>
-            <li><span class="ck">✓</span><span><strong>Pack Completo de Plugins DLuz</strong> (roteiro, voz, Whisper, edição 3D e capa)</span></li>
-            <li><span class="ck">✓</span><span><strong>Modo LLMs Grátis:</strong> produza sem gastar fortunas com APIs pagas</span></li>
-            <li><span class="ck">✓</span><span><strong>Clonagem de Voz + Avatar IA</strong> idênticos a você falando o roteiro</span></li>
-            <li><span class="ck">✓</span><span><strong>Roda em 4 plataformas:</strong> Claude, Codex GPT, Antigravity e OpenCode grátis</span></li>
-            <li><span class="ck">✓</span><span><strong>Atualizações futuras garantidas</strong> com novos vídeos e plugins inclusos</span></li>
+
+          <ul class="check-list">
+            <li><span class="ck">✓</span><span><b>Curso completo</b> do zero ao seu primeiro vídeo automático publicado</span></li>
+            <li><span class="ck">✓</span><span><b>Pack de plugins DLuz</b> (roteiro, voz, Whisper, edição 3D e capa)</span></li>
+            <li><span class="ck">✓</span><span><b>Roda sem pagar API cara:</b> passo a passo com OpenCode e LLMs grátis</span></li>
+            <li><span class="ck">✓</span><span><b>Clonagem de voz + Avatar IA</b> em português com sincronia realista</span></li>
+            <li><span class="ck">✓</span><span><b>Atualizações garantidas</b> com novos vídeos e melhorias do plugin</span></li>
           </ul>
-          <a href="/checkout?id=2990" class="btn-buy-main">
-            ⚡ Quero Meu Acesso Agora (Pix ou Cartão)
-          </a>
-          <div class="trust-mini">
-            🔒 Pagamento 100% seguro via Mercado Pago · Garantia de 7 dias · Liberação imediata
+
+          <a href="/checkout?id=2990" class="btn-buy">Comprar agora no Mercado Pago →</a>
+          <a href="/produto/curso-video-automatico-ia" class="btn-secondary-link">Ver ficha completa do produto na loja</a>
+          <div class="trust-row">Compra protegida · Garantia de 7 dias · Suporte direto DLuz Games</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-band">
+    <div class="container split-2">
+      <div>
+        <h2>Você envia só o tema. O sistema entrega o vídeo pronto pra subir.</h2>
+        <p>Em vez de gastar horas escrevendo roteiro, gravando áudio, caçando B-roll e arrumando legenda quadro a quadro, o plugin automatiza cada etapa no seu computador.</p>
+        <div class="metrics-strip">
+          <div>
+            <div class="m-num">18/dia</div>
+            <div class="m-lbl">9 longos + 9 Shorts gerados em 24h</div>
+          </div>
+          <div>
+            <div class="m-num">4 IAs</div>
+            <div class="m-lbl">Claude, Codex, Antigravity e OpenCode</div>
+          </div>
+          <div>
+            <div class="m-num">R$ 0</div>
+            <div class="m-lbl">Opção completa com LLMs grátis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-list">
+        <div class="step-row">
+          <div class="step-n">01</div>
+          <div>
+            <div class="step-t">Pesquisa e roteiro na sua voz</div>
+            <div class="step-d">Busca fatos reais do tema e escreve direto no ritmo de YouTube e Shorts, sem enrolação inicial.</div>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-n">02</div>
+          <div>
+            <div class="step-t">Narração clonada + conferência Whisper</div>
+            <div class="step-d">Gera a voz clonada (ou síntese local) e confere cada palavra antes de montar o vídeo.</div>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-n">03</div>
+          <div>
+            <div class="step-t">Avatar IA + edição 3D + capa alto CTR</div>
+            <div class="step-d">Monta as cenas, sincroniza legenda dinâmica, trilha sonora e entrega 16:9, 9:16 e thumbnail.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="container">
-    <div class="stats">
-      <div class="stat-box">
-        <div class="stat-num">18 Vídeos</div>
-        <div class="stat-lbl">produzidos em um único dia (9 longos + 9 Shorts)</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">4 IAs</div>
-        <div class="stat-lbl">Claude, Codex GPT, Antigravity e OpenCode grátis</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">0 Min</div>
-        <div class="stat-lbl">abrindo Premiere, CapCut ou After Effects na mão</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">R$ 47</div>
-        <div class="stat-lbl">pagamento único vitalício com plugins inclusos</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec">
+  <section class="sec sec-white">
     <div class="container">
       <div class="sec-head">
-        <h2>Funciona na Ferramenta que Você Já Usa (Inclusive Grátis!)</h2>
-        <p>Não fique preso a uma única assinatura cara. Os plugins e fluxos do curso foram estruturados para rodar nos 4 maiores ambientes de agentes do mercado.</p>
+        <h2>Roda no ambiente que você escolher</h2>
+        <p>Selecione abaixo para ver como o pacote funciona em cada ferramenta — inclusive 100% gratuito.</p>
       </div>
-      <div class="engines">
-        <div class="eng-card">
-          <span class="eng-pill" style="background:rgba(255,148,102,.15);color:var(--claude);">Anthropic</span>
-          <h3>Claude</h3>
-          <p>Use os plugins e skills organizados direto no Claude Code / Claude para pesquisar pautas, humanizar roteiros e montar toda a composição.</p>
-        </div>
-        <div class="eng-card">
-          <span class="eng-pill" style="background:rgba(61,240,176,.15);color:var(--gpt);">OpenAI</span>
-          <h3>Codex do GPT</h3>
-          <p>Compatível com o fluxo do Codex CLI/App para automatizar cortes, legendas, conferência palavra por palavra e renderização em GPU.</p>
-        </div>
-        <div class="eng-card">
-          <span class="eng-pill" style="background:rgba(56,189,248,.15);color:var(--blue);">Google</span>
-          <h3>Antigravity</h3>
-          <p>Integração nativa com skills, subagentes e ferramentas visuais para gerar vídeo longo 16:9, Short 9:16 e capa de alto CTR juntos.</p>
-        </div>
-        <div class="eng-card">
-          <span class="eng-pill" style="background:rgba(251,191,36,.15);color:var(--gold);">Custo Zero</span>
-          <h3>OpenCode + LLMs Grátis</h3>
-          <p>Não quer pagar mensalidade? Aprenda a conectar o OpenCode gratuito com modelos grátis e clonagem de voz sem custo por vídeo.</p>
-        </div>
+
+      <div class="tabs-bar" role="tablist">
+        <button type="button" class="tab-btn active" data-tab="opencode">OpenCode + LLMs Grátis</button>
+        <button type="button" class="tab-btn" data-tab="claude">Claude</button>
+        <button type="button" class="tab-btn" data-tab="codex">Codex do GPT</button>
+        <button type="button" class="tab-btn" data-tab="antigravity">Antigravity</button>
       </div>
+
+      <div id="tabContent" class="tab-panel"></div>
     </div>
   </section>
 
   <section class="sec" id="area-membros">
     <div class="container">
       <div class="sec-head">
-        <h2>O Que Você Vai Aprender e Levar no Pacote</h2>
-        <p>Você manda apenas o tema — a automação faz o trabalho pesado de uma equipe inteira de produção.</p>
-      </div>
-      <div class="modules">
-        <div class="mod-card">
-          <div class="mod-num">Módulo 01 · Setup &amp; LLMs Grátis</div>
-          <h3>Instalação em Qualquer PC</h3>
-          <ul>
-            <li>Configuração passo a passo no Claude, Codex GPT, Antigravity e OpenCode</li>
-            <li>Como conectar modelos gratuitos (LLMs grátis) sem quebrar o bolso</li>
-            <li>Instalação do Pack de Plugins DLuz em minutos</li>
-          </ul>
-        </div>
-        <div class="mod-card">
-          <div class="mod-num">Módulo 02 · Voz Clonada &amp; Avatar</div>
-          <h3>Sua Voz e Seu Rosto por IA</h3>
-          <ul>
-            <li>Clonagem de voz realista em PT-BR (incluindo opções gratuitas e locais)</li>
-            <li>Como criar seu Avatar IA falando no estúdio ou dentro de telas</li>
-            <li>Conferência automática palavra por palavra com Whisper (zero erro de fala)</li>
-          </ul>
-        </div>
-        <div class="mod-card">
-          <div class="mod-num">Módulo 03 · Edição 3D &amp; Capas</div>
-          <h3>Entrega Completa + Publicação</h3>
-          <ul>
-            <li>Edição programática com Three.js, GSAP, trilha e SFX automáticos</li>
-            <li>Legendas dinâmicas palavra por palavra em amarelo ouro e branco</li>
-            <li>Geração automática de capas de alto CTR (16:9 e 9:16) prontas pro YouTube</li>
-          </ul>
-        </div>
+        <h2>Conteúdo do curso e pack de plugins</h2>
+        <p>Estrutura prática para você instalar hoje e usar em canais de games, notícias, futebol, curiosidades ou tecnologia.</p>
       </div>
 
-      <div class="nichos">
-        <span class="nicho-chip">🎮 Canais de Games</span>
-        <span class="nicho-chip">📰 Notícias &amp; Atualidades</span>
-        <span class="nicho-chip">⚽ Futebol &amp; Esportes</span>
-        <span class="nicho-chip">🧠 Curiosidades Virais</span>
-        <span class="nicho-chip">🤖 Tecnologia &amp; IA</span>
-        <span class="nicho-chip">📱 Shorts, Reels &amp; TikTok</span>
+      <div class="mod-grid">
+        <div class="mod-col">
+          <span class="mod-tag">Módulo 01</span>
+          <h3>Setup &amp; LLMs Grátis</h3>
+          <ul>
+            <li>• Instalação passo a passo no Windows</li>
+            <li>• Configuração do OpenCode com modelos gratuitos</li>
+            <li>• Conexão com Claude, Codex GPT e Antigravity</li>
+            <li>• Ativação do pack de plugins DLuz</li>
+          </ul>
+        </div>
+        <div class="mod-col">
+          <span class="mod-tag">Módulo 02</span>
+          <h3>Voz Clonada &amp; Avatar IA</h3>
+          <ul>
+            <li>• Clonagem de voz realista em português</li>
+            <li>• Opções gratuitas e execução local</li>
+            <li>• Como gerar Avatar IA idêntico a você</li>
+            <li>• Conferência automática de fala com Whisper</li>
+          </ul>
+        </div>
+        <div class="mod-col">
+          <span class="mod-tag">Módulo 03</span>
+          <h3>Edição, Capas &amp; Escala</h3>
+          <ul>
+            <li>• Render automático em 16:9 e 9:16</li>
+            <li>• Legendas sincronizadas e biblioteca de áudio</li>
+            <li>• Thumbnails de alto CTR em segundos</li>
+            <li>• Novas aulas gravadas adicionadas na área do aluno</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="sec">
+  <section class="sec sec-white">
     <div class="container">
       <div class="sec-head">
-        <h2>Dúvidas Frequentes</h2>
+        <h2>Perguntas frequentes</h2>
       </div>
-      <div class="faq-list">
+      <div class="faq-wrap">
         <div class="faq-item open">
-          <button type="button" class="faq-q">Preciso saber programar para usar os plugins? <span class="faq-plus">+</span></button>
-          <div class="faq-a">Não! O curso mostra o passo a passo completo na tela para você instalar e rodar tudo dando comandos simples em português (basta mandar o tema do vídeo).</div>
+          <button type="button" class="faq-q">Preciso saber programar para rodar os plugins? <span class="faq-plus">−</span></button>
+          <div class="faq-a">Não. O curso mostra o passo a passo completo na tela para você instalar e depois apenas enviar o tema do vídeo em português.</div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q">Consigo rodar realmente com LLM grátis e sem gastar com voz? <span class="faq-plus">+</span></button>
-          <div class="faq-a">Sim! Mostramos como usar modelos gratuitos no OpenCode/OpenRouter e motores gratuitos/locais de clonagem de voz e narração, além de como usar Claude, Codex GPT e Antigravity se você já tiver assinatura.</div>
+          <button type="button" class="faq-q">Dá mesmo para produzir com LLM grátis e sem assinatura cara? <span class="faq-plus">+</span></button>
+          <div class="faq-a">Sim. Ensinamos a configurar o OpenCode gratuito com modelos abertos/gratuitos e opções sem custo para clonagem de voz, além de compatibilidade com Claude, Codex do GPT e Antigravity.</div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q">O que vem incluso hoje e o que chega depois? <span class="faq-plus">+</span></button>
-          <div class="faq-a">Você garante acesso vitalício pelo preço promocional de lançamento (R$ 47,00) com envio imediato da chave e acesso à área de alunos, onde todas as aulas gravadas e atualizações dos plugins são liberadas sem custo adicional.</div>
+          <button type="button" class="faq-q">Como recebo o acesso e os novos vídeos que forem adicionados? <span class="faq-plus">+</span></button>
+          <div class="faq-a">Assim que o Pix ou cartão é confirmado pelo Mercado Pago, você recebe sua chave vitalícia e os links de acesso na tela, no WhatsApp e por e-mail. Todos os novos vídeos e atualizações do plugin ficam liberados sem custo extra.</div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q">Como recebo o acesso após pagar? <span class="faq-plus">+</span></button>
-          <div class="faq-a">Assim que o Pix ou Cartão for aprovado pelo Mercado Pago, você recebe sua chave e o link de acesso automaticamente na tela, no seu WhatsApp e no seu e-mail.</div>
+          <button type="button" class="faq-q">Serve para qual tipo de canal? <span class="faq-plus">+</span></button>
+          <div class="faq-a">Qualquer nicho no YouTube, Reels ou TikTok: games, notícias, futebol, curiosidades, tecnologia, história e ofertas.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="container">
-      <div class="final-box">
-        <h2>Coloque Sua Máquina de Vídeos para Rodar Hoje</h2>
-        <p>Aproveite o valor de lançamento por <strong>R$ 47,00</strong> (de R$ 197,00) com acesso vitalício aos plugins e aulas.</p>
-        <div class="final-actions">
-          <a href="/checkout?id=2990" class="btn-buy-main" style="width:auto;padding:16px 32px;">
-            ⚡ Garantir Agora por R$ 47,00
-          </a>
-          <a href="/produto/curso-video-automatico-ia" class="btn-sec">Ver Página na Loja →</a>
-        </div>
+  <section class="closing">
+    <div class="container closing-inner">
+      <div>
+        <h2>Comece hoje por R$ 47,00 (pagamento único)</h2>
+        <p>Acesso vitalício ao curso + pack completo de plugins DLuz com garantia de 7 dias.</p>
       </div>
+      <a href="/checkout?id=2990" class="btn-buy" style="width:auto;padding:15px 28px;">Garantir Acesso Agora →</a>
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      Copyright © 2026 DLuz Games · <a href="/" style="color:#60A5FA;">Voltar para Loja Oficial</a> ·
-      <a href="/politica-de-reembolso" style="color:#60A5FA;">Garantia 7 Dias</a> ·
-      <a href="https://wa.me/5563981199852" target="_blank" rel="noopener" style="color:#60A5FA;">Suporte WhatsApp</a>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Copyright © 2026 DLuz Games · Loja Oficial</span>
+      <span>
+        <a href="/">Catálogo</a> ·
+        <a href="/politica-de-reembolso">Reembolso 7 Dias</a> ·
+        <a href="https://wa.me/5563981199852" target="_blank" rel="noopener">Suporte WhatsApp</a>
+      </span>
     </div>
   </footer>
 
   <script>
-    document.querySelectorAll('.faq-q').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        btn.parentElement.classList.toggle('open');
+    const TABS = {
+      opencode: {
+        title: "OpenCode + LLMs Grátis (Custo Zero)",
+        desc: "Ideal para quem quer começar sem pagar mensalidade de ferramenta. Você conecta modelos gratuitos no OpenCode e roda o fluxo de roteiro, conferência e montagem sem gastar com API.",
+        bullets: [
+          "Instalação guiada do OpenCode no seu computador",
+          "Configuração pronta para modelos gratuitos em português",
+          "Mesma qualidade de legenda sincronizada, trilha e capa"
+        ],
+        metaTitle: "Custo por vídeo",
+        metaBody: "Modo econômico pensado para quem está começando ou quer produzir dezenas de testes por semana."
+      },
+      claude: {
+        title: "Claude (Anthropic)",
+        desc: "Use os plugins e instruções estruturadas diretamente no Claude para escrever roteiros com ritmo natural, orquestrar áudio clonado e montar vídeos longos e Shorts.",
+        bullets: [
+          "Roteiros humanizados sem cara de texto robótico",
+          "Skills prontas para pesquisa, áudio, legenda e render",
+          "Compatível com o fluxo de plugins DLuz"
+        ],
+        metaTitle: "Destaque no Claude",
+        metaBody: "Excelente para textos mais naturais, humor e estruturação de vídeos longos de 3 a 8 minutos."
+      },
+      codex: {
+        title: "Codex do GPT (OpenAI)",
+        desc: "Para quem já usa o ecossistema da OpenAI, os plugins funcionam direto no Codex executando os scripts de áudio, Whisper, Three.js e renderização em GPU.",
+        bullets: [
+          "Execução direta em linha de comando no seu PC",
+          "Compatível com o mesmo pacote de templates e áudio",
+          "Automatiza da pauta ao arquivo final MP4"
+        ],
+        metaTitle: "Destaque no Codex",
+        metaBody: "Ótima velocidade de execução em lote e automação direta no terminal do projeto."
+      },
+      antigravity: {
+        title: "Antigravity (Google)",
+        desc: "O ambiente completo usado pela DLuz Games no dia a dia: integra skills, geração de imagens para capas de alto CTR, Avatar IA e renderização HyperFrames em paralelo.",
+        bullets: [
+          "Pipeline completo com geração de capas integrada",
+          "Integração com Avatar IA e clonagem de voz",
+          "Entrega simultânea de vídeo longo (16:9) e Short (9:16)"
+        ],
+        metaTitle: "Destaque no Antigravity",
+        metaBody: "Ambiente mais completo para conectar geração de imagem, voz, Avatar e render em um único lugar."
+      }
+    };
+
+    const panel = document.getElementById("tabContent");
+    function renderTab(key) {
+      const t = TABS[key];
+      panel.innerHTML = `
+        <div>
+          <h3>${t.title}</h3>
+          <p>${t.desc}</p>
+          <ul class="tab-bullets">${t.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
+        </div>
+        <div class="tab-meta">
+          <strong>${t.metaTitle}</strong>
+          <span>${t.metaBody}</span>
+        </div>
+      `;
+    }
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderTab(btn.getAttribute("data-tab"));
+      });
+    });
+    renderTab("opencode");
+
+    document.querySelectorAll(".faq-q").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        const open = item.classList.toggle("open");
+        btn.querySelector(".faq-plus").textContent = open ? "−" : "+";
       });
     });
   </script>
